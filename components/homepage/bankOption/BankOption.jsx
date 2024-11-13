@@ -11,14 +11,6 @@ const LIST = [
 
 
 
-
-
-
-
-
-
-
-
 const BankOption = () => {
 
 
@@ -26,7 +18,7 @@ const BankOption = () => {
 
 
   return (
-    <section className="w-full bg-slate-400 py-16 mesh font-Inter relative">
+    <section className="w-full bg-slate-400 py-16  font-Inter relative ">
 
        
 

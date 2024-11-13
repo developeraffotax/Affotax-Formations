@@ -32,7 +32,7 @@ body {
 
 
 
-.mesh2 {
+.mesh3 {
   background-color: #f9f5f6;
   background-image: radial-gradient(at 12% 7%, #f9f5f6 0%, transparent 60%), radial-gradient(at 80% 27%, #f8e8ee 0%, transparent 50%), radial-gradient(at 61% 88%, #fdcedf 0%, transparent 40%), radial-gradient(at 18% 14%, #f2bed1 0%, transparent 30%);
 
@@ -43,3 +43,23 @@ body {
   background-color: #002b5b;
 background-image: radial-gradient(at 19% 96%, #002b5b 0%, transparent 60%), radial-gradient(at 10% 7%, #2b4865 0%, transparent 50%), radial-gradient(at 5% 22%, #256d85 0%, transparent 40%), radial-gradient(at 8% 23%, #8fe3cf 0%, transparent 30%);
 }
+
+
+  .mesh2 {
+    background-image: linear-gradient(
+      180deg,
+      hsl(212deg 100% 18%) 0%,
+      hsl(217deg 65% 22%) 8%,
+      hsl(220deg 49% 25%) 17%,
+      hsl(222deg 39% 27%) 25%,
+      hsl(224deg 31% 29%) 33%,
+      hsl(225deg 25% 31%) 42%,
+      hsl(226deg 20% 33%) 50%,
+      hsl(227deg 16% 35%) 58%,
+      hsl(228deg 12% 37%) 67%,
+      hsl(229deg 8% 39%) 75%,
+      hsl(230deg 5% 40%) 83%,
+      hsl(230deg 3% 42%) 92%,
+      hsl(0deg 0% 44%) 100%
+    );
+  }

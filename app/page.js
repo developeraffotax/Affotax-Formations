@@ -1,13 +1,14 @@
-import BankOption from "@/components/homepage/BankOption";
-import Hero from "@/components/homepage/Hero";
-import UnderHero from "@/components/homepage/UnderHero";
+import BankOption from "@/components/homepage/bankOption/BankOption";
+import Hero from "@/components/homepage/hero/Hero";
+import Steps from "@/components/homepage/steps/Steps";
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <UnderHero />
+      {/* <UnderHero /> */}
       <BankOption />
+      <Steps />
     </>
   );
 }

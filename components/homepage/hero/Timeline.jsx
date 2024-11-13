@@ -7,7 +7,7 @@ import { IoBagCheckOutline } from "react-icons/io5";
 const Timeline = () => {
   return (
    
-<div className="w-full  flex flex-col justify-center sm:py-0 ">
+<div className="w-full  flex flex-col    justify-center sm:py-0 max-xl:hidden ">
   <div className=" sm:max-w-xl sm:mx-auto w-full px-2 sm:px-0">
 
     <div className=" text-gray-700 antialiased text-sm font-semibold pt-20 pb-32">
@@ -60,7 +60,7 @@ const Timeline = () => {
           <div className="flex justify-start w-full mx-auto items-center">
             <div className="w-full sm:w-1/2 sm:pr-8">
               <div className="p-2 bg-white rounded shadow">
-              3. Checkout
+              3. Checkout & Pay
               </div>
             </div>
           </div>
