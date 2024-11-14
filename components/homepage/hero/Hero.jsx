@@ -46,7 +46,7 @@ const Hero = () => {
 
 
       </div>
-      <div className="absolute -bottom-24 left-[50%]  -translate-x-[50%] z-50 w-full">
+      <div className="absolute -bottom-24 left-[50%]  -translate-x-[50%] z-50 w-full max-xl:hidden">
       <UnderHero />
       </div>
     </section>
