@@ -3,6 +3,7 @@
 import Header from "@/components/header/Header";
 import "./globals.css";
 import { useEffect } from "react";
+import Footer from "@/components/footer/Footer";
 
 // export const metadata = {
 //   title: "Create Next App",
@@ -52,6 +53,7 @@ export default function RootLayout({ children }) {
         {children}
 
         </div>
+        <Footer />
         
         </body>
     </html>
