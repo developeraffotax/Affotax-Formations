@@ -63,3 +63,24 @@ background-image: radial-gradient(at 19% 96%, #002b5b 0%, transparent 60%), radi
       hsl(0deg 0% 44%) 100%
     );
   }
+
+
+
+  .mesh5 {
+    background-color: #074173;
+background-image: radial-gradient(at 77% 24%, #074173 0%, transparent 60%), radial-gradient(at 67% 34%, #1679ab 0%, transparent 50%), radial-gradient(at 78% 83%, #5debd7 0%, transparent 40%), radial-gradient(at 61% 41%, #c5ff95 0%, transparent 30%);
+  }
+
+
+  .mesh6 {
+    background-color: #401f71;
+background-image: radial-gradient(at 56% 78%, #401f71 0%, transparent 60%), radial-gradient(at 28% 77%, #824d74 0%, transparent 50%), radial-gradient(at 96% 17%, #be7b72 0%, transparent 40%), radial-gradient(at 37% 75%, #fdaf7b 0%, transparent 30%);
+  }
+
+
+  .mesh7 {
+    background-color:hsla(211,100%,17%,1);
+    background-image:
+    radial-gradient(at 100% 89%, hsla(212,48%,47%,0.48) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, hsla(245,0%,67%,0.57) 0px, transparent 50%);
+  }

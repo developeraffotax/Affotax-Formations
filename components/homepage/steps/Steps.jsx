@@ -15,7 +15,7 @@ const LIST = [
 
 const Steps = () => {
   return (
-    <section  className="w-full bg-[#F3EFEA] ">
+    <section  className="w-full  bg-gradient-to-tl from-gray-100 to-orange-50 pt-0 pb-16">
       <div className="w-full mx-auto container">
       <div className="w-full px-4 py-16  ">
       <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">

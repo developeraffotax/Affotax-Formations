@@ -14,7 +14,7 @@ const Hero = () => {
 
             <div className="text-white pt-20 pb-20">
           <div className="flex flex-col items-start justify- gap-8 mb-16 max-w-2xl">
-            <h1 className="text-5xl">UK Company Formation</h1>
+            <h1 className="text-5xl font-semibold font-poppins">UK Company Formation</h1>
 
             <h2 className="text-xl text-gray-100 "> {" "} Register your new UK limited company, Open a business bank account, and stay tax compliant - all in one place - quick, easy and secure.{" "} </h2>
             <h3 className="text-base  text-gray-200"> {" "} Free accountant consultation- answer your all tax questions after company registration!!{" "} </h3>
