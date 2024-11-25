@@ -7,10 +7,10 @@ import { IoBagCheckOutline } from "react-icons/io5";
 
 
 const LIST = [
-  {step: 'Choose a company name', icon: <IoMdSearch />, id: uuidv4()},
-  {step: 'Select your package', icon: <MdOutlineLocalOffer />, id: uuidv4()},
-  {step: 'Checkout and pay', icon: <FaRegCircleCheck />, id: uuidv4()},
-  {step: 'Complete your order', icon: <IoBagCheckOutline />, id: uuidv4()},
+  {step: 'CHOOSE A COMPANY NAME', icon: <IoMdSearch />, id: uuidv4()},
+  {step: 'SELECT YOUR PACKAGE', icon: <MdOutlineLocalOffer />, id: uuidv4()},
+  {step: 'CHECKOUT & PAY', icon: <FaRegCircleCheck />, id: uuidv4()},
+  {step: 'COMPLETE YOUR ORDER', icon: <IoBagCheckOutline />, id: uuidv4()},
 ]
 
 const Steps = () => {
@@ -29,14 +29,14 @@ const Steps = () => {
             return (
               <div key={el.id} className="relative text-center">
             
-                  <div className="flex shadow-[0px_4px_6px_0px_rgba(0,_0,_0,_0.2)] items-center justify-center text-5xl text-primary mx-auto mb-4 rounded-full mesh3  sm:w-32 sm:h-32">
+                  <div className="flex shadow-[0px_4px_6px_0px_rgba(0,_0,_0,_0.2)] items-center justify-center text-5xl text-primary mx-auto mb-4 rounded-full bg-white/30 backdrop-blur-md   sm:w-32 sm:h-32">
                       {el.icon}
                   </div>
 
 
-                  <h6 className="mb-2 text-2xl font-bold">Step {i+1}</h6>
+                  <h6 className="mb-2 text-2xl font-Montserrat  font-semibold ">Step {i+1}</h6>
 
-                  <p className="max-w-md mb-3 text-sm text-gray-900 sm:mx-auto">
+                  <p className="max-w-md mb-3 text-lg font-Inter text-gray-900 sm:mx-auto">
                   {el.step}
                   </p>
 

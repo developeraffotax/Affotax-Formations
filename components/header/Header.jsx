@@ -58,7 +58,7 @@ const Header = () => {
 
               <ul className=" flex  items-center gap-3 ">
                 <Link href="/" className="cursor-pointer hover:text-gray-700"> Blog </Link>
-                <Link href="/" className="cursor-pointer hover:text-gray-700"> Contact Us </Link>
+                <Link href="/contact-us" className="cursor-pointer hover:text-gray-700"> Contact Us </Link>
                 <Link href="/login" className="cursor-pointer hover:text-gray-700" > <span className="flex justify-center items-center gap-1 "> <MdOutlineLock /> <p className="">Login</p> </span> </Link>
               </ul>
             </nav>

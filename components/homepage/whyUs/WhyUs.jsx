@@ -31,12 +31,12 @@ const WhyUs = () => {
 
 
   return (
-    <section className="w-full  bg-gradient-to-bl from-gray-100 to-orange-50  pt-0 pb-16 font-Inter">
+    <section className="w-full  bg-gradient-to-bl from-gray-100 to-orange-50  pt-0 pb-20 font-Inter">
       <div className="w-full container mx-auto">
 
 
 
-            <h2 className="w-full text-4xl font-semibold font-poppins text-center mb-12 ">Why Choose Your Company with Affotax Formation</h2>
+            <h2 className="w-full text-4xl font-semibold font-poppins text-center mb-12 max-w-2xl mx-auto">Why Choose Your Company with Affotax Formation</h2>
 
 
 

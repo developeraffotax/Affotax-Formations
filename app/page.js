@@ -11,7 +11,7 @@ export default function Home() {
       {/* <UnderHero /> */}
       <Pricing />
       <BankOption />
-      <Steps />
+       <Steps />
       <WhyUs />
     </>
   );
