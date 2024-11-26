@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import Logo from "./Logo";
 import { MdOutlineKeyboardBackspace, MdOutlineMarkEmailRead } from "react-icons/md";
 import { IoLogoWhatsapp, IoMenu } from "react-icons/io5";
@@ -10,6 +10,8 @@ import Link from "next/link";
 import { FaPhone } from "react-icons/fa6";
 import { IoMdMail } from "react-icons/io";
 import Image from "next/image";
+import ServicesMenu from "./ServicesMenu";
+import { MdKeyboardArrowDown } from "react-icons/md";
 
 
 
@@ -34,6 +36,41 @@ const Header = () => {
 
 
 
+  const [isMenuShow, setIsMenuShow] = useState(false);
+
+
+  //const [classList, setClassList] = useState(['absolute', 'w-full', 'top-28', 'bg-gray-200',  'scale-100', 'transition-all'])
+
+
+
+  const servicesMenuClasses = ['absolute', 'w-full', 'top-28', 'bg-white', 'shadow-md',  'scale-100', 'transition-all'];
+  const servicesMenuClasses2 = ['absolute', 'w-full', 'top-28', 'bg-white', 'scale-0', 'transition-all'];
+
+
+  const onClickHandler = () => {
+
+
+
+
+
+      setIsMenuShow(prev => !prev)
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   return (
     <> <section id="main-header" className=" max-xl:hidden w-full fixed bg-slate-100 backdrop-blur-sm py-4  top-0 left-0 z-[9999] transition-all duration-500 h-28 shadow-[0px_6px_6px_0px_rgba(0,_0,_0,_0.1)]" >
         <div className="w-full container mx-auto ">
@@ -50,20 +87,31 @@ const Header = () => {
 
             <nav className="w-full flex flex-row justify-between items-center font-Inter ">
               <ul className=" flex  items-center gap-4 ">
-                <Link href="/" className="cursor-pointer hover:text-gray-700"> Home </Link>
-                <Link href="/company-formation" className="cursor-pointer hover:text-gray-700" > Company Formation </Link>
-                <Link href="/services" className="cursor-pointer hover:text-gray-700" > Business Services </Link>
+                <Link href="/" className="cursor-pointer hover:text-orange-500"> Home </Link>
+                <Link href="/company-formation" className="cursor-pointer hover:text-orange-500" > Company Formation </Link>
+                <li onClick={onClickHandler}  className={`cursor-pointer hover:text-orange-500 ${isMenuShow ? 'text-orange-500' : ''}`} > Business Services <MdKeyboardArrowDown className={`inline text-xl -ml-1 transition-all  ${isMenuShow ? 'rotate-180' : 'rotate-0'}`} /> </li>
+
+
+
+
+
+
+
+
+
+
                 <Link href="/faqs" className="cursor-pointer hover:text-gray-700" > FAQs </Link>
               </ul>
 
               <ul className=" flex  items-center gap-3 ">
                 <Link href="/" className="cursor-pointer hover:text-gray-700"> Blog </Link>
                 <Link href="/contact-us" className="cursor-pointer hover:text-gray-700"> Contact Us </Link>
-                <Link href="/login" className="cursor-pointer hover:text-gray-700" > <span className="flex justify-center items-center gap-1 "> <MdOutlineLock /> <p className="">Login</p> </span> </Link>
+                <Link href="/client-login" className="cursor-pointer hover:text-gray-700" > <span className="flex justify-center items-center gap-1 "> <MdOutlineLock /> <p className="">Login</p> </span> </Link>
               </ul>
             </nav>
           </div>
         </div>
+                  <ServicesMenu  className={isMenuShow ? servicesMenuClasses.join(' ') : servicesMenuClasses2.join(' ')}/>
       </section>
 
 
