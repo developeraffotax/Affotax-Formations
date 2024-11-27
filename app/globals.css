@@ -86,7 +86,11 @@ background-image: radial-gradient(at 56% 78%, #401f71 0%, transparent 60%), radi
   }
 
 
-
+.mesh8 {
+  
+  background: radial-gradient(at 74% 57%, #fffcef 0px, transparent 50%), radial-gradient(at 8% 93%, #d2ebcd 0px, transparent 50%), radial-gradient(at 30.11853448275862% 11.458333333333332%, #ff7f5b 0px, transparent 50%), radial-gradient(at 82% 68%, #393939 0px, transparent 50%), #fffcef;
+    
+}
 
 
 

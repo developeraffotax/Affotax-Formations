@@ -17,32 +17,32 @@ import Footer from "@/components/footer/Footer";
 
 export default function RootLayout({ children }) {
 
-  useEffect(() => {
-    const navbar = document.getElementById("main-header");
-    const navbarMobile = document.getElementById("main-header-mobile");
-    window.onscroll = function (e) {
+  // useEffect(() => {
+  //   const navbar = document.getElementById("main-header");
+  //   const navbarMobile = document.getElementById("main-header-mobile");
+  //   window.onscroll = function (e) {
       
-      if (
-        document.body.scrollTop >= 100 ||
-        document.documentElement.scrollTop >= 100
-      ) {
-        navbar.classList.add("bg-slate-100/50",);
-        navbar.classList.remove("bg-slate-100", );
+  //     if (
+  //       document.body.scrollTop >= 100 ||
+  //       document.documentElement.scrollTop >= 100
+  //     ) {
+  //       navbar.classList.add("bg-slate-100/50",);
+  //       navbar.classList.remove("bg-slate-100", );
 
-        navbarMobile.classList.add("bg-slate-100/50",);
-        navbarMobile.classList.remove("bg-slate-100", );
-      } else {
+  //       navbarMobile.classList.add("bg-slate-100/50",);
+  //       navbarMobile.classList.remove("bg-slate-100", );
+  //     } else {
 
-        navbar.classList.add("bg-slate-100",);
-        navbar.classList.remove("bg-slate-100/50",);
+  //       navbar.classList.add("bg-slate-100",);
+  //       navbar.classList.remove("bg-slate-100/50",);
 
-        navbarMobile.classList.add("bg-slate-100",);
-        navbarMobile.classList.remove("bg-slate-100/50",);
+  //       navbarMobile.classList.add("bg-slate-100",);
+  //       navbarMobile.classList.remove("bg-slate-100/50",);
 
         
-      }
-    };
-  }, [])
+  //     }
+  //   };
+  // }, [])
 
 
   return (

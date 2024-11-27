@@ -5,11 +5,11 @@ import UnderHero from "./UnderHero";
 const Hero = () => {
   return (
     <section className="w-full  mesh  font-Inter relative max-xl:px-12 ">
-      <div className="w-full overflow-hidden relative">
+      <div className="w-full overflow-hidden relative ">
 
 
       <span className="w-[50%] max-xl:hidden   absolute -right-16 bottom-0"> <svg viewBox="0 0 827 498" fill="none" xmlns="http://www.w3.org/2000/svg" > {" "} <path d="M366.37 361.625C648.83 419.253 803.815 144.553 846 0V526H0C4.43117 447.197 83.9087 303.997 366.37 361.625Z" fill="#FC6600" />{" "} </svg> </span>
-      <div className="container mx-auto w-full">
+      <div className="container mx-auto w-full px-40 max-xl:px-8">
             <div className=" flex flex-row max-xl:flex-col  justify-between items-start">
 
             <div className="text-white pt-20 pb-20">

@@ -20,7 +20,7 @@ const LIST = [
 const UnderHero = () => {
   return (
     <section className="w-full bg-transparent font-Inter">
-        <div className="w-full mx-auto container">
+        <div className="w-full mx-auto container  ">
             <ul className="w-full flex justify-center gap-4 items-center p-12  max-xl:h-56 h-48   ">
                 {
                     LIST.map((el) => {

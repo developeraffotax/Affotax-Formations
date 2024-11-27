@@ -64,7 +64,7 @@ const Pricing = () => {
 
   return (
     <section className="w-full pt-20 pb-20 max-xl:pt-0 max-xl:pb-20 mesh7 font-Inter ">
-      <div className="w-full container mx-auto">
+      <div className="w-full container mx-auto ">
 
         <div className=" w-full flex flex-col items-center  justify-center pt-12 pb-12 max-xl:pt-0 max-xl:pb-12">
         <h2 className="w-full text-center text-5xl text-white font-semibold mb-6 font-poppins">Choose a UK Company Formation Package </h2>

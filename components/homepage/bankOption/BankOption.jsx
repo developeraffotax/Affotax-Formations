@@ -26,7 +26,7 @@ const BankOption = () => {
 
        
 
-        <div className="w-full mx-auto container">
+        <div className="w-full mx-auto container px-40 max-xl:px-8">
 
 
             <h2 className="w-full text-center text-4xl font-semibold mb-8 text-black">Open a business bank account Online with one of our Partners</h2>
@@ -39,7 +39,7 @@ const BankOption = () => {
                 {
                     LIST.map((el) => {
                         return (
-                            <li key={el.name} className="p-8 w-full flex flex-col justify-center items-center gap-4 bg-white/40 shadow-md   rounded-2xl backdrop-blur-md">
+                            <li key={el.name} className="p-4 w-full flex flex-col justify-center items-center gap-4 bg-white/40 shadow-md   rounded-2xl backdrop-blur-md">
                                     <div className="w-full flex  justify-center items-center gap-2 ">
                                     <span className=" "><Image src={el.img} className="w-[40px] rounded-full overflow-hidden"  /></span>
                                     <h3 className="text-2xl font-semibold font-poppins  ">{el.name}</h3>

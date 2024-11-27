@@ -32,7 +32,7 @@ const WhyUs = () => {
 
   return (
     <section className="w-full  bg-gradient-to-bl from-gray-100 to-orange-50  pt-0 pb-20 font-Inter">
-      <div className="w-full container mx-auto">
+      <div className="w-full container mx-auto px-40 max-xl:px-8">
 
 
 

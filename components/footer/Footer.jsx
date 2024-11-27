@@ -3,8 +3,8 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <section className="w-full bg-[#62899A80] p-16 max-xl:p-8 font-Inter">
-        <div className="w-full mx-auto container ">
+    <section className="w-full bg-[#62899A80] p-16 max-xl:p-8 font-Inter  ">
+        <div className="w-full mx-auto container px-40 max-xl:px-8 ">
 
 
 

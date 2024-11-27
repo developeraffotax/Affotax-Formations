@@ -12,6 +12,8 @@ import { IoMdMail } from "react-icons/io";
 import Image from "next/image";
 import ServicesMenu from "./ServicesMenu";
 import { MdKeyboardArrowDown } from "react-icons/md";
+import ServicesMenuMobile from "./ServicesMenuMobile";
+import { RiArrowRightSLine } from "react-icons/ri";
 
 
 
@@ -38,13 +40,21 @@ const Header = () => {
 
   const [isMenuShow, setIsMenuShow] = useState(false);
 
+  const [isMblMenuShow, setIsMblMenuShow] = useState(false);
+
+
+
 
   //const [classList, setClassList] = useState(['absolute', 'w-full', 'top-28', 'bg-gray-200',  'scale-100', 'transition-all'])
 
 
 
-  const servicesMenuClasses = ['absolute', 'w-full', 'top-28', 'bg-white', 'shadow-md',  'scale-100', 'transition-all'];
+  const servicesMenuClasses = ['absolute', 'w-full', 'top-28', 'bg-white', 'shadow-md',  'scale-100', 'transition-all', ];
   const servicesMenuClasses2 = ['absolute', 'w-full', 'top-28', 'bg-white', 'scale-0', 'transition-all'];
+
+
+  const servicesMenuClassesMbl = ['fixed',  'bg-white',  'transition-all', 'w-[70%]',  'z-[9999]', '-translate-x-0', 'top-0', 'left-0', 'h-[100vh]', 'overflow-y-auto'];
+  const servicesMenuClasses2Mbl = ['fixed',  'bg-white',  'transition-all', 'w-[70%]',  'z-[9999]', '-translate-x-[9999px]', 'top-0', 'left-0', 'h-[100vh]', 'overflow-y-auto'];
 
 
   const onClickHandler = () => {
@@ -72,11 +82,11 @@ const Header = () => {
 
 
   return (
-    <> <section id="main-header" className=" max-xl:hidden w-full fixed bg-slate-100 backdrop-blur-sm py-4  top-0 left-0 z-[9999] transition-all duration-500 h-28 shadow-[0px_6px_6px_0px_rgba(0,_0,_0,_0.1)]" >
-        <div className="w-full container mx-auto ">
+    <> <section id="main-header" className=" max-xl:hidden w-full  fixed bg-slate-100 backdrop-blur-sm py-4  top-0 left-0 z-[9999] transition-all duration-500 h-28 shadow-[0px_6px_6px_0px_rgba(0,_0,_0,_0.1)]" >
+        <div className="w-full container mx-auto px-40 max-xl:px-8">
           <div className="w-full">
             <div className="w-full flex flex-row justify-between items-center mb-4">
-              <div className="cursor-pointer "> <Logo /> </div>
+              <div className="cursor-pointer "> <Link href="/"><Logo /></Link> </div>
 
               <div className="flex justify-center items-center gap-3  ">
                 <Link href="mailto:support@affotaxformations.com"> <MdOutlineMarkEmailRead className="text-xl cursor-pointer hover:scale-125 transition-all" /> </Link>
@@ -100,18 +110,18 @@ const Header = () => {
 
 
 
-                <Link href="/faqs" className="cursor-pointer hover:text-gray-700" > FAQs </Link>
+                <Link href="/faqs" className="cursor-pointer   hover:text-orange-500" > FAQs </Link>
               </ul>
 
               <ul className=" flex  items-center gap-3 ">
-                <Link href="/" className="cursor-pointer hover:text-gray-700"> Blog </Link>
-                <Link href="/contact-us" className="cursor-pointer hover:text-gray-700"> Contact Us </Link>
-                <Link href="/client-login" className="cursor-pointer hover:text-gray-700" > <span className="flex justify-center items-center gap-1 "> <MdOutlineLock /> <p className="">Login</p> </span> </Link>
+                <Link href="/" className="cursor-pointer   hover:text-orange-500"> Blog </Link>
+                <Link href="/contact-us" className="cursor-pointer hover:text-orange-500 "> Contact Us </Link>
+                <Link href="/client-login" className="cursor-pointer hover:text-green-500" > <span className="flex justify-center items-center gap-1 "> <MdOutlineLock /> <p className="">Login</p> </span> </Link>
               </ul>
             </nav>
           </div>
         </div>
-                  <ServicesMenu  className={isMenuShow ? servicesMenuClasses.join(' ') : servicesMenuClasses2.join(' ')}/>
+                  <ServicesMenu onClick={() => setIsMenuShow(false)}  className={isMenuShow ? servicesMenuClasses.join(' ') : servicesMenuClasses2.join(' ')}/>
       </section>
 
 
@@ -141,14 +151,14 @@ const Header = () => {
           </div>
         </div>
 
-        <div ref={mobileNavRef} className="w-[60%] h-[100vh] py-8 -translate-x-[999px] fixed z-[9999] bg-purple-50 top-0 left-0 transition-all " >
+        <div ref={mobileNavRef} className="w-[70%] h-[100vh] py-8 -translate-x-[999px] fixed z-[9998] bg-purple-50 top-0 left-0 transition-all " >
           <nav className="w-full flex flex-col justify-between items-start h-full ">
             <ul className="w-full flex flex-col justify-center items-start gap-2 font-Inter relative  ">
               <button onClick={hamBurgerHandlerClose} className={`hover:text-primary  w-full   pl-10  py-1`} > {" "} <MdOutlineKeyboardBackspace className="text-2xl" /> </button>
               <Link onClick={hamBurgerHandlerClose} href={"/"} className={`hover:text-primary  w-full   pl-10  py-1`} > {" "} Home{" "} </Link>
 
               <Link onClick={hamBurgerHandlerClose} href={"/company-formation"} className={`hover:text-primary w-full   pl-10 py-1`} > {" "} Company Formation{" "} </Link>
-              <Link onClick={hamBurgerHandlerClose} href={"/services"} className={`hover:text-primary w-full   pl-10 py-1`} > {" "} Business Services{" "} </Link>
+              <li onClick={() => setIsMblMenuShow(true)}  className={`hover:text-primary w-full   pl-10 py-1 cursor-pointer flex justify-start items-center gap-1  `} > {" "} Business Services <RiArrowRightSLine className=" text-xl  "/>{" "} </li>
 
               <Link onClick={hamBurgerHandlerClose} href={"/blogs"} className={`hover:text-primary w-full  pl-10  py-1`} > {" "} Blogs{" "} </Link>
               <Link onClick={hamBurgerHandlerClose} href={"/faqs"} className={`hover:text-primary w-full  pl-10  py-1`} > {" "} FAQs{" "} </Link>
@@ -199,7 +209,10 @@ const Header = () => {
           </nav>
         </div>
 
-        <div onClick={hamBurgerHandlerClose} ref={backdropRef} className="fixed w-[100vw] h-[100vh] bg-black/25 backdrop-blur-sm z-[7777] hidden top-0 left-0" ></div>
+        <div onClick={() => {hamBurgerHandlerClose(); setIsMblMenuShow(false);}} ref={backdropRef} className="fixed w-[100vw]  h-[100vh] bg-black/25 backdrop-blur-sm z-[7777] hidden top-0 left-0" ></div>
+
+        <ServicesMenuMobile onClick={() => {setIsMblMenuShow(false); hamBurgerHandlerClose()} } onCancel={() => setIsMblMenuShow(false)}  className={isMblMenuShow ? servicesMenuClassesMbl.join(' ') : servicesMenuClasses2Mbl.join(' ')}/>
+
       </section>
     </>
   );
