@@ -36,7 +36,7 @@ const WhyUs = () => {
 
 
 
-            <h2 className="w-full text-4xl font-semibold font-poppins text-center mb-12 max-w-2xl mx-auto">Why Choose Your Company with Affotax Formation</h2>
+            <h2 className="w-full text-4xl max-xl:text-3xl  font-semibold font-poppins text-center max-xl:text-start mb-12 max-w-2xl mx-auto">Why Choose Your Company with Affotax Formation</h2>
 
 
 

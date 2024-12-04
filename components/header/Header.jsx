@@ -147,7 +147,7 @@ const Header = () => {
           </div>
 
           <div>
-            <Link href={"/contact-us"}> {" "} <button className="bg-primary px-4 py-2 rounded-lg text-white hover:bg-primary/90 transition-all ">  <span className="flex justify-start items-center gap-1 "> <MdOutlineLock /> <p className="">Login</p> </span> </button>{" "} </Link>
+            <Link href={"/client-login"}> {" "} <button className="bg-primary px-4 py-2 rounded-lg text-white hover:bg-primary/90 transition-all ">  <span className="flex justify-start items-center gap-1 "> <MdOutlineLock /> <p className="">Login</p> </span> </button>{" "} </Link>
           </div>
         </div>
 

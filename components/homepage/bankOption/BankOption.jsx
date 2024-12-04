@@ -29,13 +29,13 @@ const BankOption = () => {
         <div className="w-full mx-auto container px-40 max-xl:px-8">
 
 
-            <h2 className="w-full text-center text-4xl font-semibold mb-8 text-black">Open a business bank account Online with one of our Partners</h2>
+            <h2 className="w-full max-xl:text-start text-center text-4xl font-semibold mb-8 text-black">Open a business bank account Online with one of our Partners</h2>
             <div className="w-full flex justify-center ">
-            <p className="w-full text-center  mb-8 max-w-3xl text-black">Benefit from a free business bank account when you use our services. There are great options to choose from and you’ll also get your application fast-tracked. No more long wait times for appointments so you can get  back to the important stuff - running your new business.</p>
+            <p className="w-full  max-xl:text-start text-center  mb-4 max-w-3xl text-black ">Benefit from a free business bank account when you use our services. There are great options to choose from and you’ll also get your application fast-tracked. No more long wait times for appointments so you can get  back to the important stuff - running your new business.</p>
             </div>
 
 
-            <ul className="w-full p-8 flex flex-row justify-end items-center gap-8 ">
+            <ul className="w-full p-8 flex flex-row max-xl:flex-col  justify-end items-center gap-8 ">
                 {
                     LIST.map((el) => {
                         return (
@@ -44,7 +44,7 @@ const BankOption = () => {
                                     <span className=" "><Image src={el.img} className="w-[40px] rounded-full overflow-hidden"  /></span>
                                     <h3 className="text-2xl font-semibold font-poppins  ">{el.name}</h3>
                                     </div>
-                                    <p className="text-lg text-gray-700  ">{el.info}</p>
+                                    <p className="text-lg text-gray-700  max-xl:text-center max-xl:text-sm  ">{el.info}</p>
                             </li>
                         )
                     })

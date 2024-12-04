@@ -19,7 +19,7 @@ const ServicesMenuMobile = ({className, onClick, onCancel}) => {
     <section className={className}>
 
 
-<div className="w-full py-8 px-10 grid grid-cols-1  container mx-auto font-Inter    bg-cyan-50 text-cyan-700    ">
+<div className="w-full py-8 px-10 grid grid-cols-1  container mx-auto font-Inter    bg-white text-cyan-700    ">
 
 <button onClick={onCancel} className={`hover:text-primary  w-full    mb-4  py-1`} > {" "} <MdOutlineKeyboardBackspace className="text-2xl" /> </button>
 
