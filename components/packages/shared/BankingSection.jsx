@@ -29,9 +29,9 @@ const LIST = [
 
 const BankingSection = () => {
   return (
-    <section className="w-full bg-[#183823] ">
+    <section className="w-full bg-cyan-800 ">
 
-        <div className="w-full container mx-auto  px-40 max-xl:px-8 py-16">
+        <div className="w-full container mx-auto  px-40 max-xl:px-8 py-24">
 
 
 
@@ -47,7 +47,7 @@ const BankingSection = () => {
                     LIST.map((el) => {
                         return (
                             <li key={el.name} className={`p-8 max-w-[250px] mx-auto  w-full flex flex-col  justify-center items-center gap-5  shadow-md  aspect-square rounded-[30px]  cursor-pointer group relative overflow-hidden `}>
-                                    <div className={`w-full h-full absolute    bg-[#A6FFB6]  z-[30] group-hover:bg-black/30  transition-all duration-500`}></div>
+                                    <div className={`w-full h-full absolute   bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-[#00a388]   to-cyan-600  z-[30] group-hover:from-black/30 group-hover:via-black/30 group-hover:to-black/30 transition-all duration-500`}></div>
                                     <div className={`w-full h-full absolute   bg-center bg-cover  ${el.bgUrl} z-[10] scale-125 group-hover:scale-100  transition-all duration-1000`}></div>
                                     <div className="w-full h-full absolute backdrop-blur-[2px] z-[20] "></div>
                                     <div className="w-full flex flex-col justify-center items-center gap-1 z-[50]">

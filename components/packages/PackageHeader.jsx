@@ -12,7 +12,7 @@ const PackageHeader = () => {
     <section className="w-full grid   grid-cols-[2fr_1fr_2fr_1fr_2fr_1fr_2fr] py-12    ">
 
 
-      <div className=" flex flex-col justify-center items-center gap-4 text-green-600   border-b-2 pb-2 border-green-600    "> 
+      <div className=" flex flex-col justify-center items-center gap-4 text-cyan-500   border-b-2 pb-2 border-cyan-500    "> 
 
         <span className="text-4xl "><BiSearchAlt /></span>
 
@@ -21,7 +21,7 @@ const PackageHeader = () => {
       </div>
 
 
-      <div className=" flex flex-col justify-center items-center gap-4 text-green-600"> 
+      <div className=" flex flex-col justify-center items-center gap-4 text-cyan-500"> 
 
         <span className="text-4xl "><MdKeyboardArrowRight /></span>
 
@@ -31,7 +31,7 @@ const PackageHeader = () => {
 
 
 
-      <div className=" flex flex-col justify-center items-center gap-4 text-green-600  border-b-2 pb-2 border-green-600 "> 
+      <div className=" flex flex-col justify-center items-center gap-4 text-cyan-500  border-b-2 pb-2 border-cyan-500 "> 
 
         <span className="text-4xl "><LuListChecks /></span>
 

@@ -93,7 +93,10 @@ background-image: radial-gradient(at 56% 78%, #401f71 0%, transparent 60%), radi
 }
 
 
-
+.mesh9 {
+  background-color: #80bcbd;
+background-image: radial-gradient(at 2% 79%, #80bcbd 0%, transparent 60%), radial-gradient(at 89% 82%, #aad9bb 0%, transparent 50%), radial-gradient(at 9% 99%, #d5f0c1 0%, transparent 40%), radial-gradient(at 73% 92%, #f9f7c9 0%, transparent 30%);
+}
 
 
 
