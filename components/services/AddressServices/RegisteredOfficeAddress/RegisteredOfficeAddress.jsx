@@ -1,22 +1,25 @@
 import React from "react";
 import { MdChevronRight } from "react-icons/md";
-import PriceBox from "./shared/PriceBox";
+import PriceBox from "../../shared/PriceBox";
 import { IoHomeOutline } from "react-icons/io5";
 import { PiHandshakeDuotone } from "react-icons/pi";
 import { BsBuildingCheck } from "react-icons/bs";
 import { BsPeople } from "react-icons/bs";
-import ServiceCTA from "./shared/ServiceCTA";
+import ServiceCTA from "../../shared/ServiceCTA";
+import Faqs from "../../shared/Faqs";
+
+import { data } from "./data";
 
 const RegisteredOfficeAddress = () => {
   return (
     <>
-      <section className="w-full container mx-auto font-Inter px-40 max-xl:px-8 pb-16">
+      <section className="w-full container mx-auto font-Inter px-40 max-xl:px-8 pb-0">
         <div className="  max-xl:px-8 w-full flex justify-between items-center gap-8 border-b-2 border-gray-300  mb-6 pt-12 pb-2">
           <h2 className="w-full text-4xl  py-2">
-            Confirmation Statement Service
+          Registered Office Address - £35/yr
           </h2>
 
-          <div className="  flex justify-end items-center gap-8">
+          {/* <div className="  flex justify-end items-center gap-8">
             <h2 className="text-3xl max-xl:text-2xl text-black w-full text-start font-poppins font-semibold ">
               £59.99
             </h2>
@@ -24,7 +27,7 @@ const RegisteredOfficeAddress = () => {
               {" "}
               BUY NOW{" "}
             </button>
-          </div>
+          </div> */}
         </div>
 
 
@@ -110,8 +113,8 @@ const RegisteredOfficeAddress = () => {
           <div>
            
             <ul className="text-gray-700 space-y-8  ">
-                <PriceBox title="Registered Office Address" content="Use our UK London office as your Registered Office Address. Includes FREE forwarding of all statutory government letters addressed to your company." includesList={['Using a London address as your official registered address UK.', 'All official government mail scanned and emailed to you, free of charge. ' ]} />
-                <PriceBox title="Registered Office + Director Service Address" content="It offers everything in the basic package + director address within the UK for your company's official communications." includesList={['Using a London address as your company registered address.', 'All official government mail scanned and emailed to you, free of charge.', "Using a London address as your director Service address." ]} />
+                <PriceBox title="Registered Office Address" price={"35.00"} content="Use our UK London office as your Registered Office Address. Includes FREE forwarding of all statutory government letters addressed to your company." includesList={['Using a London address as your official registered address UK.', 'All official government mail scanned and emailed to you, free of charge. ' ]} />
+                <PriceBox title="Registered Office + Director Service Address" price={"49.00"} content="It offers everything in the basic package + director address within the UK for your company's official communications." includesList={['Using a London address as your company registered address.', 'All official government mail scanned and emailed to you, free of charge.', "Using a London address as your director Service address." ]} />
             </ul>
           </div>
 
@@ -162,7 +165,7 @@ const RegisteredOfficeAddress = () => {
     <ServiceCTA />
 
 
-
+    <Faqs items={data}/>
 
 
 

@@ -107,3 +107,133 @@ background-image: radial-gradient(at 2% 79%, #80bcbd 0%, transparent 60%), radia
   .custom td {
     text-align: center ;
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.custom-list ol {
+    counter-reset: list-counter; /* Initialize the counter */
+    padding-left: 0; /* Remove default padding */
+    margin: 20px 0; /* Add some margin */
+    list-style: none; /* Remove default list styling */
+}
+
+.custom-list ol li {
+    counter-increment: list-counter; /* Increment the counter */
+    position: relative; /* Position for the pseudo-element */
+    padding: 10px 20px; /* Add padding to list items */
+    margin: 10px 0; /* Add margin between items */
+    background: linear-gradient(135deg, #f0f4f8, #c9e2f3); /* Gradient background */
+    border-radius: 8px; /* Rounded corners */
+    font-family: 'Arial', sans-serif; /* Font family */
+    font-size: 16px; /* Font size */
+    color: #333; /* Text color */
+    transition: transform 0.3s; /* Smooth hover effect */
+}
+
+.custom-list ol li:hover {
+    transform: translateY(-3px); /* Lift effect on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+}
+
+.custom-list ol li::before {
+    content: counter(list-counter) ". "; /* Add counter before each item */
+    position: absolute; /* Position for the number */
+    left: -25px; /* Adjust the position */
+    font-weight: bold; /* Bold for emphasis */
+    color: #333333; /* Color of the counter */
+    font-size: 18px; /* Size of the counter */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Style for the unordered list */
+.custom-list ul {
+    list-style-type: none; 
+    padding: 0;
+    margin:   0;
+    max-width: 800px;
+    background-color: #ffffff; 
+    border-radius: 8px; 
+    /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); */
+    
+}
+
+/* Style for the list items */
+.custom-list ul li {
+    padding: 10px 10px; 
+    border-bottom: 1px solid #eaeaea; 
+   
+    align-items: center; 
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    
+}
+
+/* Remove bottom border for the last item */
+.custom-list ul li:last-child {
+    border-bottom: none; 
+}
+
+/* Before pseudo-element for the checkmark */
+.custom-list ul li::before {
+    content: '✔'; 
+    color: #ff9900; 
+    font-size: 1.5rem; 
+    margin-right: 10px; 
+}
+
+/* Hover effect for list items */
+.custom-list ul li:hover {
+    border-radius: 8px; 
+    background-color: rgba(229, 231, 235, 0.247);
+    cursor: pointer;
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+
+

@@ -29,13 +29,14 @@ const ServicesMenu = ({className, onClick}) => {
     <h3 className="text-2xl font-poppins font-semibold text-orange-500 mb-3 border-b-2 border-orange-500 py-1 w-full ">Address Services</h3>
     <Link onClick={onClick} href="/service/registered-office-address" className="flex justify-start items-center hover:text-orange-500 "><MdKeyboardArrowRight className="text-xl"/> Registered Office Address - £35/yr</Link>
     <Link onClick={onClick} href="/service/director-service-address" className="flex justify-start items-center hover:text-orange-500 "><MdKeyboardArrowRight className="text-xl"/> Director Service Address - £24/yr</Link>
-    <Link onClick={onClick} href="/service/london-virtual-office-address" className="flex justify-start items-center hover:text-orange-500 "><MdKeyboardArrowRight className="text-xl"/> London Virtual Office Address - £99/yr</Link>
+    {/* <Link onClick={onClick} href="/service/london-virtual-office-address" className="flex justify-start items-center hover:text-orange-500 "><MdKeyboardArrowRight className="text-xl"/> London Virtual Office Address - £99/yr</Link> */}
     <Link onClick={onClick} href="/service/non-uk-resident-business-address" className="flex justify-start items-center hover:text-orange-500 "><MdKeyboardArrowRight className="text-xl"/> Non-UK Resident Business Address - £99/yr</Link>
+    <Link onClick={onClick} href="/service/annual-renewals" className="flex justify-start items-center hover:text-orange-500 "><MdKeyboardArrowRight className="text-xl "/> Annual Renewals</Link>
     
 </ul>
 
 <ul className="flex flex-col justify-start items-start gap-2"> 
-    <h3 className="text-2xl font-poppins font-semibold text-orange-500 mb-3 border-b-2 border-orange-500 py-1 w-full ">Address Services</h3>
+    <h3 className="text-2xl font-poppins font-semibold text-orange-500 mb-3 border-b-2 border-orange-500 py-1 w-full ">Legal Services</h3>
     <Link onClick={onClick} href="/service/vat-registration" className="flex justify-start items-center hover:text-orange-500 "><MdKeyboardArrowRight className="text-xl"/> VAT Registration - £29</Link>
     <Link onClick={onClick} href="/service/paye-registration" className="flex justify-start items-center hover:text-orange-500 "><MdKeyboardArrowRight className="text-xl"/> PAYE Registration - £29</Link>
     <Link onClick={onClick} href="/service/business-phone-number" className="flex justify-start items-center hover:text-orange-500 "><MdKeyboardArrowRight className="text-xl"/> Business Phone Number - £99/yr</Link>

@@ -1,6 +1,6 @@
 import React from "react";
 
-const PriceBox = ({title, content, includesList}) => {
+const PriceBox = ({title, content, includesList, price}) => {
   return (
     <li className="w-full p-8 border border-orange-500 space-y-4 shadow-sm  shadow-black/10  ">
 
@@ -24,7 +24,8 @@ const PriceBox = ({title, content, includesList}) => {
 
         </ul>
 
-        <div className="w-full text-end ">
+        <div className="w-full text-end flex justify-between gap-4  items-center px-2">
+            <h3 className="font-semibold font-poppins text-gray-600  text-3xl ">£{price?.toString()}</h3>
             <button className=" bg-orange-500 text-white font-semibold font-poppins rounded-lg py-2 px-8 transition-all hover:shadow-lg  active:scale-95 ">Buy Now</button>
         </div>
 
