@@ -1,10 +1,7 @@
 import React from "react";
 import { MdChevronRight } from "react-icons/md";
 import PriceBox from "../shared/PriceBox";
-import { IoHomeOutline } from "react-icons/io5";
-import { PiHandshakeDuotone } from "react-icons/pi";
-import { BsBuildingCheck } from "react-icons/bs";
-import { BsPeople } from "react-icons/bs";
+
 import ServiceCTA from "../shared/ServiceCTA";
 import Faqs from "../shared/Faqs";
 import Checkmark from '@/public/checkmark2.png'
