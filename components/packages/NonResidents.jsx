@@ -15,23 +15,8 @@ import WhyUsSection2 from "./shared/WhyUsSection2";
 const NonResidents = () => {
   return (
     <>
-      <section className="w-full  font-Inter  ">
-        <div className="w-full container mx-auto  px-40 max-xl:px-8 ">
-          <PackageHeader />
-
-          <div className="w-full    max-w-2xl text-center mx-auto ">
-            {" "}
-            <h3 className="w-full text-center font-Inter text-3xl ">
-              {" "}
-              Select the perfect package for you & register your new company
-              online today.{" "}
-            </h3>
-            <h2 className="w-full text-6xl text-center font-bold font-Montserrat drop-shadow-lg bg-gradient-to-r from-yellow-500 via-red-500 to-pink-500 text-transparent bg-clip-text mt-12">
-              Choose a Plan
-            </h2>{" "}
-          </div>
-
-          <div className="w-full grid grid-cols-1  py-20  ">
+      
+      <div className="w-full grid grid-cols-1  py-20  ">
             <ul className="w-[50%] grid grid-cols-3 gap-0  border  shadow-md">
               <Link
                 href="/packages/limited-company"
@@ -280,12 +265,6 @@ const NonResidents = () => {
               </li>
             </ul>
           </div>
-        </div>
-      </section>
-
-      <BankingSection />
-
-      <WhyUsSection2 />
     </>
   );
 };

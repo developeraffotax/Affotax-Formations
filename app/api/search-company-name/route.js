@@ -10,9 +10,9 @@ const API_KEY = process.env.COMPANIES_HOUSE_API_KEY;
 
 export async function POST(req) {
 
-    const { company_name} = await req.json();
+    const { companyName} = await req.json();
 
-    const url = `${API_URL}/search/companies?q=${company_name}`
+    const url = `${API_URL}/search/companies?q=${companyName}`
    
     try {
         const {data} = await axios.get(url, {
