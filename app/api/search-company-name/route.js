@@ -12,7 +12,7 @@ export async function POST(req) {
 
     const { companyName} = await req.json();
 
-    const url = `${API_URL}/search/companies?q=${companyName}`
+    const url = `${API_URL}/search/companies?q=${companyName}&restrictions=active-companies legally-equivalent-company-name`
    
     try {
         const {data} = await axios.get(url, {
@@ -23,7 +23,8 @@ export async function POST(req) {
 
         let isCompanyNameAvailable;
         let message;
-        
+
+        console.log(data)
 
         if(data.items.length > 0) {
             isCompanyNameAvailable=false;
@@ -33,7 +34,7 @@ export async function POST(req) {
             message="Congrats! This company name is available";
         }
 
-        return new Response(JSON.stringify({ message: message, isCompanyNameAvailable:isCompanyNameAvailable }), {
+        return new Response(JSON.stringify({ message: message, isCompanyNameAvailable:isCompanyNameAvailable, data:data }), {
             status: 200,
             headers: {
                 'Content-Type': 'application/json',

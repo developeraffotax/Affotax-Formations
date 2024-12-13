@@ -42,8 +42,8 @@ const Hero = () => {
     try {
       
       const res =  await axios.post('/api/search-company-name', {companyName} );
-      console.log(res)
-
+    
+        console.log(res.data)
       if (res?.status === 200) {
         setIsCompanyNameAvailable(res.data?.isCompanyNameAvailable)
       }
