@@ -8,6 +8,7 @@ import { data, SELECTED_PACKAGE_NAME, SELECTED_PACKAGE_PRICE } from "./data";
 import { v4 as uuidv4 } from 'uuid';
 import PackageHeader from "./PackageHeader";
 import { IoCheckmarkCircleOutline } from "react-icons/io5";
+import { RiInformation2Line } from "react-icons/ri";
 
 
 
@@ -198,12 +199,16 @@ const fromBasketToRecHandler = (id) => {
    <PackageHeader />
    </div>
     
-    <section className="w-full container mx-auto px-40 max-xl:px-8 flex flex-row justify-between items-start gap-12 py-8 " >
+    <section className="w-full container mx-auto px-40 max-xl:px-8 flex flex-row justify-between items-start gap-12 pt-2 pb-16 " >
 
 
 
       <div className="w-[60%] flex flex-col justify-start items-start gap-2 " >
-        <h2 className="w-full text-xl font-poppins border-b py-1  ">Customers also bought: </h2>
+        <h2 className="w-full text-2xl font-poppins border-b py-1  ">Customers also bought: </h2>
+        <div className="p-4 bg-orange-100 text-orange-700 flex justify-start items-start gap-2 font-poppins">
+          <span className="text-3xl  mt-1 "> <RiInformation2Line /></span>
+          <h3 className="text-base ">After you checkout on this page, you will be able to enter your companydetails and select a business bank account (optional).</h3>
+        </div>
             <Recommendations data={recommendations}  fromRecToBasketHandler={fromRecToBasketHandler}  />
       </div>
 
@@ -211,7 +216,7 @@ const fromBasketToRecHandler = (id) => {
 
 
 
-      <div className="w-[40%] flex flex-col justify-start items-start gap-4  ">
+      <div className="w-[40%] flex flex-col justify-start items-start gap-2  ">
 
           {
 
@@ -219,7 +224,7 @@ const fromBasketToRecHandler = (id) => {
 storedValue &&
 
           <div className="w-full flex flex-row justify-start items-center gap-4 ">
-          <h2 className="font-poppins text-xl ">Your Company Name</h2>
+          <h2 className="font-poppins text-xl py-1 ">Your Company Name:</h2>
           <h3 className="font-poppins text-xl flex gap-1 justify-start items-center text-cyan-500"><span className=" text-3xl  "><IoCheckmarkCircleOutline /></span>{storedValue}</h3>
           </div>
           }

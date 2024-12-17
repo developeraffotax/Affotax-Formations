@@ -26,11 +26,11 @@ const TableRow = ({ pkgName, pkgPrice, fromBasketToRecHandler, id }) => {
 
 
 
-const Basket = ({ selectedPackages, setSelectedPackages, fromBasketToRecHandler, selectedPkgName, selectedPkgPrice}) => {
+const Basket = ({ selectedPackages, fromBasketToRecHandler, selectedPkgName, selectedPkgPrice}) => {
 
 
   const [netPrice, setNetPrice] = useState('')
-  const [totalPrice, setTotalPrice] = useState('')
+
 
 
 
@@ -65,7 +65,7 @@ const Basket = ({ selectedPackages, setSelectedPackages, fromBasketToRecHandler,
 
 
 
-    })
+    }, [selectedPackages.length])
 
 
 
