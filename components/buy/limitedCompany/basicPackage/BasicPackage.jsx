@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Recommendations from "./Recommendations";
 import Basket from "./Basket";
 import { data, SELECTED_PACKAGE_NAME, SELECTED_PACKAGE_PRICE } from "./data";
@@ -34,6 +34,23 @@ const BasicPackage = () => {
       isBorder: false
       
   },]);
+
+
+  const [storedValue, setStoredValue] = useState(null);
+
+  // This effect will only run on the client side
+  useEffect(() => {
+    // Check if window is available (meaning we're in the browser)
+    if (typeof window !== "undefined") {
+      // Retrieve the value from localStorage
+      const value = localStorage.getItem('company_name');
+      if (value) {
+        setStoredValue(value);
+      }
+    }
+  }, []);
+
+
 
 
 
@@ -199,11 +216,11 @@ const fromBasketToRecHandler = (id) => {
           {
 
 
-          localStorage.getItem('company_name') &&
+storedValue &&
 
           <div className="w-full flex flex-row justify-start items-center gap-4 ">
           <h2 className="font-poppins text-xl ">Your Company Name</h2>
-          <h3 className="font-poppins text-xl flex gap-1 justify-start items-center text-cyan-500"><span className=" text-3xl  "><IoCheckmarkCircleOutline /></span>{localStorage.getItem('company_name')}</h3>
+          <h3 className="font-poppins text-xl flex gap-1 justify-start items-center text-cyan-500"><span className=" text-3xl  "><IoCheckmarkCircleOutline /></span>{storedValue}</h3>
           </div>
           }
 
