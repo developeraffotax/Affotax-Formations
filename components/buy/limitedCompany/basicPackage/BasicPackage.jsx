@@ -10,9 +10,9 @@ import PackageHeader from "./PackageHeader";
 import { IoCheckmarkCircleOutline } from "react-icons/io5";
 import { RiInformation2Line } from "react-icons/ri";
 
-
-
-
+import { MdOutlineWhatsapp } from "react-icons/md";
+import { MdOutlineEmail } from "react-icons/md";
+import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 
 
 
@@ -219,10 +219,7 @@ const fromBasketToRecHandler = (id) => {
       <div className="w-[40%] flex flex-col justify-start items-start gap-2  ">
 
           {
-
-
-storedValue &&
-
+          storedValue &&
           <div className="w-full flex flex-row justify-start items-center gap-4 ">
           <h2 className="font-poppins text-xl py-1 ">Your Company Name:</h2>
           <h3 className="font-poppins text-xl flex gap-1 justify-start items-center text-cyan-500"><span className=" text-3xl  "><IoCheckmarkCircleOutline /></span>{storedValue}</h3>
@@ -230,6 +227,80 @@ storedValue &&
           }
 
           <Basket selectedPackages={selectedPackages} setSelectedPackages={setSelectedPackages}  fromBasketToRecHandler={fromBasketToRecHandler} selectedPkgName={SELECTED_PACKAGE_NAME} selectedPkgPrice={SELECTED_PACKAGE_PRICE}/>
+
+
+
+
+
+
+          <div className="border p-4 mt-4 ">
+
+              <h3 className="text-lg font-poppins mb-2 ">Check your country is eligible</h3>
+
+              <p className="text-base font-Inter ">
+              We can register companies for customers who are resident in most countries in the world. Check if your country is eligible.
+              </p>
+
+
+
+          </div>
+
+
+
+          <div className="border p-4 mt-4 ">
+
+              <h3 className="text-lg font-poppins mb-2 ">Money Back Guarantee</h3>
+
+              <p className="text-base font-Inter ">
+              If you pay for your order and then decide you do not want to proceed, we will return your money in full, in accordance with our Terms and Conditions.
+              </p>
+
+
+
+          </div>
+
+
+
+
+          <div className="border p-4 mt-4 w-full">
+
+          <h3 className="text-xl font-poppins mb-2 ">Need Help?</h3>
+
+          <div className="flex justify-start items-center gap-2 "><span className="text-xl text-orange-400"><MdOutlineWhatsapp /></span> <h4 className="font-poppins ">020 8144 6811</h4></div>
+          <div className="flex justify-start items-center gap-2 "><span className="text-xl text-orange-400"><MdOutlineEmail /></span> <h4 className="font-poppins ">info@affotax.com</h4></div>
+
+
+          </div>
+
+
+
+
+
+          <div className="border p-4 mt-4 w-full ">
+
+          <h3 className="text-lg font-poppins mb-2 ">What happens next? </h3>
+
+          <ul className="text-sm font-Inter list-none pl-0">
+
+            <li className="mb-2 flex justify-start items-start gap-1"><span className="text-xl text-gray-700 "><MdKeyboardDoubleArrowRight /></span>After checkout, you will be asked to enter your new company details and you can select a business bank account (optional). </li>
+            <li className="mb-2 flex justify-start items-start gap-1"><span className="text-xl text-gray-700 "><MdKeyboardDoubleArrowRight /></span> Our staff will then send your new company application to Companies House for approval. </li>
+            <li className="mb-2 flex justify-start items-start gap-1"><span className="text-xl text-gray-700 "><MdKeyboardDoubleArrowRight /></span> Most companies are registered within 24 hours. </li>
+
+
+
+
+
+
+          </ul>
+
+
+
+          </div>
+
+
+
+
+
       </div>
 
 

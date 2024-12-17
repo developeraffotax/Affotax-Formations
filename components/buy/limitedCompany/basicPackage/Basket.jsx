@@ -8,7 +8,7 @@ const TableRow = ({ pkgName, pkgPrice, fromBasketToRecHandler, id }) => {
     <tr>
       <td className="py-2  ">{pkgName}</td>
 
-      <td className="py-2 px-8 max-2xl:px-5 ">
+      <td className="py-2 px-8 max-2xl:px-4   ">
         <button
           onClick={() => fromBasketToRecHandler(id)}
           className="text-xl bg-gray-300 rounded-md text-white p-1 hover:bg-gray-400 active:scale-95 transition-all "
