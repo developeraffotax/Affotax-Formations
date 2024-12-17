@@ -3,10 +3,11 @@
 import React, { useState } from "react";
 import Recommendations from "./Recommendations";
 import Basket from "./Basket";
-import { data } from "./data";
+import { data, SELECTED_PACKAGE_NAME, SELECTED_PACKAGE_PRICE } from "./data";
 
 import { v4 as uuidv4 } from 'uuid';
-
+import PackageHeader from "./PackageHeader";
+import { IoCheckmarkCircleOutline } from "react-icons/io5";
 
 
 
@@ -172,7 +173,14 @@ const fromBasketToRecHandler = (id) => {
 
 
 
-  return <section className="w-full container mx-auto px-40 max-xl:px-8 flex flex-row justify-between items-start gap-12 py-16 " >
+  return (
+    <>
+    
+   <div className="w-full container mx-auto px-40 max-xl:px-8">
+   <PackageHeader />
+   </div>
+    
+    <section className="w-full container mx-auto px-40 max-xl:px-8 flex flex-row justify-between items-start gap-12 py-8 " >
 
 
 
@@ -185,15 +193,28 @@ const fromBasketToRecHandler = (id) => {
 
 
 
-      <div className="w-[40%] ">
-          <Basket selectedPackages={selectedPackages} setSelectedPackages={setSelectedPackages}  fromBasketToRecHandler={fromBasketToRecHandler} />
+      <div className="w-[40%] flex flex-col justify-start items-start gap-4  ">
+
+          {
+
+
+          localStorage.getItem('company_name') &&
+
+          <div className="w-full flex flex-row justify-start items-center gap-4 ">
+          <h2 className="font-poppins text-xl ">Your Company Name</h2>
+          <h3 className="font-poppins text-xl flex gap-1 justify-start items-center text-cyan-500"><span className=" text-3xl  "><IoCheckmarkCircleOutline /></span>{localStorage.getItem('company_name')}</h3>
+          </div>
+          }
+
+          <Basket selectedPackages={selectedPackages} setSelectedPackages={setSelectedPackages}  fromBasketToRecHandler={fromBasketToRecHandler} selectedPkgName={SELECTED_PACKAGE_NAME} selectedPkgPrice={SELECTED_PACKAGE_PRICE}/>
       </div>
 
 
 
 
 
-  </section>
+  </section></>
+  )
 };
 
 export default BasicPackage;

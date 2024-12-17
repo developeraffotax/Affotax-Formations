@@ -254,9 +254,12 @@ const LimitedCompany = () => {
               <li className="w-full flex justify-between items-center gap-4 px-4 py-4 border-x  "></li>
               <li className="flex flex-col justify-center items-center gap-2  py-4 border-r     ">
                 {" "}
+                <Link href={'/buy/packages/limited-company/basic-package'}>
+                
                 <button className="bg-orange-500 shadow-sm shadow-black/30 text-white px-4 py-2 rounded-lg hover:bg-cyan-500 hover:scale-105 active:scale-95 transition-all  ">
                   BUY NOW
-                </button>{" "}
+                </button>
+                </Link>{" "}
                 <Link href="/" className="text-sm text-orange-500 underline  ">
                   Read More
                 </Link>

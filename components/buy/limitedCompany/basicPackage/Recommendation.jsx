@@ -24,7 +24,7 @@ const Recommendation = ({name, desc, price, info, onAdd, id, isBorder}) => {
 
             <h3 className=" font-poppins text-lg mt-2 ">£{price}</h3>
 
-            <button className=" px-3 p-1 bg-orange-400 shadow-sm  text-white font-poppins rounded-md mt-1 " onClick={() => onAdd(id)}>Add</button>
+            <button className=" px-3 p-1 bg-orange-400 shadow-sm  text-white font-poppins rounded-md mt-1 hover:bg-orange-500 active:scale-95 transition-all " onClick={() => onAdd(id)}>Add</button>
 
 
         </li>

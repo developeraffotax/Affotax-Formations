@@ -1,5 +1,10 @@
 import { v4 as uuidv4 } from 'uuid';
 
+
+export const SELECTED_PACKAGE_NAME = "Digital Package";
+export const SELECTED_PACKAGE_PRICE = "52.99";
+
+
 export const data = [
 
     {
@@ -10,7 +15,7 @@ export const data = [
         price: `35`,
         category: 'address',
         listIndex: 1,
-        isBorder: false
+        
         
     },
 
@@ -22,7 +27,7 @@ export const data = [
         price: `24`,
         category: 'address',
         listIndex: 2,
-        isBorder: false
+        
         
     },
 
@@ -34,7 +39,7 @@ export const data = [
         price: `29`,
         category: 'address',
         listIndex: 3,
-        isBorder: true
+        
         
     },
 
@@ -49,7 +54,7 @@ export const data = [
         price: `29`,
         category: 'legal',
         listIndex: 4,
-        isBorder: false
+        
         
     },
 
@@ -61,7 +66,7 @@ export const data = [
         price: `15`,
         category: 'legal',
         listIndex: 5,
-        isBorder: true
+        
         
     },
 
@@ -73,7 +78,7 @@ export const data = [
         price: `149`,
         category: 'accounting',
         listIndex: 6,
-        isBorder: false
+        
         
     },
 
@@ -86,7 +91,7 @@ export const data = [
         price: `59`,
         category: 'accounting',
         listIndex: 7,
-        isBorder: false
+        
         
     },
 
