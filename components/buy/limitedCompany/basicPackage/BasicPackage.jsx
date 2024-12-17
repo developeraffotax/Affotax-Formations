@@ -8,7 +8,7 @@ import { data, SELECTED_PACKAGE_NAME, SELECTED_PACKAGE_PRICE } from "./data";
 import { v4 as uuidv4 } from 'uuid';
 import PackageHeader from "./PackageHeader";
 import { IoCheckmarkCircleOutline } from "react-icons/io5";
-import { Alert, Button } from "@nextui-org/react";
+
 
 
 

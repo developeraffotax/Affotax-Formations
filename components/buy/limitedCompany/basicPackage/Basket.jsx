@@ -65,7 +65,7 @@ const Basket = ({ selectedPackages, setSelectedPackages, fromBasketToRecHandler,
 
 
 
-    }, [selectedPackages.length])
+    })
 
 
 
