@@ -1,13 +1,13 @@
-import React from "react";
-import { MdChevronRight } from "react-icons/md";
-import PriceBox from "../shared/PriceBox";
 
-import ServiceCTA from "../shared/ServiceCTA";
-import Faqs from "../shared/Faqs";
+
+
 import Checkmark from '@/public/checkmark2.png'
 
 import { data } from "../RegisteredOfficeAddress/data";
 import Image from "next/image";
+import PriceBox from "../../shared/PriceBox";
+import ServiceCTA from '../../shared/ServiceCTA';
+import Faqs from '../../shared/Faqs';
 
 const DirectorServiceAddress = () => {
   return (

@@ -1,0 +1,159 @@
+import React from "react";
+import { RxCross2 } from "react-icons/rx";
+
+
+
+
+const TableRow = ({pkgName, pkgPrice, fromBasketToRecHandler, id}) => {
+
+  return (
+    
+    <tr>
+
+
+    <td className="py-2  ">
+    {pkgName}
+      </td>
+    
+    
+      <td className="py-2 px-8 max-2xl:px-5 ">
+        <button onClick={()=>fromBasketToRecHandler(id)} className="text-xl bg-gray-300 rounded-md text-white p-1 hover:bg-gray-400 active:scale-95 transition-all"><RxCross2 /></button>
+        </td>
+    
+    
+      <td className="py-2 text-end ">
+        {pkgPrice}
+        </td>
+    
+    
+    
+    </tr>
+  )
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const Basket = ({selectedPackages, setSelectedPackages, fromBasketToRecHandler}) => {
+  return (
+    <div className="w-full p-4 font-poppins border-4  border-orange-400  ">
+
+
+
+<h3 className="text-xl ">Your Basket</h3>
+
+
+<table className="w-full " >
+
+    <thead>
+      <tr className="   border-b ">
+
+
+        <td className="py-2">
+          Item
+        </td>
+
+
+        <td className="py-2 text-end "> </td>
+
+
+        <td className="py-2 px-3 ">
+          Price
+        </td>
+
+
+      </tr>
+    </thead>
+
+
+    <tbody className="" >
+
+
+        <tr>
+
+
+        <td className="py-2" >
+          Digital Package
+          </td>
+
+
+          <td className="py-2  px-4"> </td>
+
+
+          <td className="py-2 text-end ">
+            52.99
+            </td>
+
+
+
+        </tr>
+
+
+
+        {
+
+            selectedPackages?.map((el) => {
+              return <TableRow key={el.id}  pkgName={el.name} pkgPrice={el.price} id={el.id} fromBasketToRecHandler={fromBasketToRecHandler}/>
+            })
+
+        }
+
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </tbody>
+
+
+
+
+
+
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  )
+};
+
+export default Basket;

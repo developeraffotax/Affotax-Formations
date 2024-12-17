@@ -98,7 +98,7 @@ const Header = () => {
             <nav className="w-full flex flex-row justify-between items-center font-Inter ">
               <ul className=" flex  items-center gap-4 ">
                 <Link href="/" className="cursor-pointer hover:text-orange-500"> Home </Link>
-                <Link href="/company-formation" className="cursor-pointer hover:text-orange-500" > Company Formation </Link>
+                <Link href="/packages/limited-company" className="cursor-pointer hover:text-orange-500" > Company Formation </Link>
                 <li onClick={onClickHandler}  className={`cursor-pointer hover:text-orange-500 ${isMenuShow ? 'text-orange-500' : ''}`} > Business Services <MdKeyboardArrowDown className={`inline text-xl -ml-1 transition-all  ${isMenuShow ? 'rotate-180' : 'rotate-0'}`} /> </li>
 
 
