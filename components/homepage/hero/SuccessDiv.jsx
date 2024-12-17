@@ -1,7 +1,6 @@
 "use client"
 
 import React from "react";
-import { IoCheckmarkCircle } from "react-icons/io5";
 import { FaCheck } from "react-icons/fa6";
 import { FaAnglesRight } from "react-icons/fa6";
 import Link from "next/link";

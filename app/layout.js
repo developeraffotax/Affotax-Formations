@@ -4,6 +4,7 @@ import Header from "@/components/header/Header";
 import "./globals.css";
 import { useEffect } from "react";
 import Footer from "@/components/footer/Footer";
+import { Providers } from "./Providers";
 
 // export const metadata = {
 //   title: "Create Next App",
@@ -48,13 +49,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
+      <Providers>
         <Header />
         <div className="mt-[112px] max-xl:mt-20">
         {children}
 
         </div>
         <Footer />
-        
+        </Providers>
         </body>
     </html>
   );

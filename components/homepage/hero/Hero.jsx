@@ -1,14 +1,12 @@
 "use client"
 
 
-import { LuSearchCheck } from "react-icons/lu";
+
 import Timeline from "./Timeline";
 import UnderHero from "./UnderHero";
 import { useState } from "react";
 import axios from "axios";
 import SuccessDiv from "./SuccessDiv";
-import LoadingSpinner from "@/utils/LoadingSpinner/LoadingSpinner";
-import { ClipLoader, ClockLoader } from "react-spinners";
 import FailDiv from "./FailDiv";
 import Form from "./Form";
 

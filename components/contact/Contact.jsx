@@ -3,7 +3,6 @@
 import axios from "axios";
 import { useState } from "react";
 import { PulseLoader } from "react-spinners";
-import { IoIosCheckmarkCircle } from "react-icons/io";
 import Header from "./Header";
 
 const Contact = () => {
