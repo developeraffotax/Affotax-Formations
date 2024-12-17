@@ -2,9 +2,10 @@
 
 import Header from "@/components/header/Header";
 import "./globals.css";
-import { useEffect } from "react";
+
 import Footer from "@/components/footer/Footer";
-import { Providers } from "./Providers";
+import Providers from "@/app/providers.js";
+
 
 // export const metadata = {
 //   title: "Create Next App",
