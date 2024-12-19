@@ -26,7 +26,7 @@ const Header = () => {
     backdropRef.current.classList.remove("hidden");
 
     mobileNavRef.current.classList.add("translate-x-0");
-    console.log(mobileNavRef.current.classList);
+  
   };
 
   const hamBurgerHandlerClose = () => {
@@ -82,7 +82,7 @@ const Header = () => {
 
 
   return (
-    <> <section id="main-header" className=" max-xl:hidden w-full  fixed bg-slate-100 backdrop-blur-sm py-4  top-0 left-0 z-[9999] transition-all duration-500 h-28 shadow-[0px_6px_6px_0px_rgba(0,_0,_0,_0.1)]" >
+    <> <section id="main-header" className=" max-xl:hidden w-full  fixed bg-slate-100 backdrop-blur-sm py-4  top-0 left-0 z-[999] transition-all duration-500 h-28 shadow-[0px_6px_6px_0px_rgba(0,_0,_0,_0.1)]" >
         <div className="w-full container mx-auto px-40 max-xl:px-8">
           <div className="w-full">
             <div className="w-full flex flex-row justify-between items-center mb-4">

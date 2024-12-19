@@ -1,23 +1,25 @@
 "use client"
 
 import { Alert, Button, Checkbox } from "@nextui-org/react";
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { RxCross2 } from "react-icons/rx";
+import TrustPaymentsImg from "@/public/trustPayments.png"
 
-const TableRow = ({ pkgName, pkgPrice, fromBasketToRecHandler, id }) => {
+const TableRow = ({ pkgName, pkgPrice,  id }) => {
   return (
     <tr>
       <td className="py-2  ">{pkgName}</td>
 
       <td className="py-2 px-8 max-2xl:px-4   ">
-        <button
+        {/* <button
           onClick={() => fromBasketToRecHandler(id)}
           className="text-xl bg-gray-300 rounded-md text-white p-1 hover:bg-gray-400 active:scale-95 transition-all "
         >
           <RxCross2 />
-        </button>
+        </button> */}
       </td>
 
       <td className="py-2 text-end ">£{pkgPrice}</td>
@@ -29,7 +31,7 @@ const TableRow = ({ pkgName, pkgPrice, fromBasketToRecHandler, id }) => {
 
 
 
-const Basket = ({ selectedPackages, fromBasketToRecHandler, selectedPkgName, selectedPkgPrice}) => {
+const Basket = ({ selectedPackages, selectedPkgName, selectedPkgPrice}) => {
 
 
   const [netPrice, setNetPrice] = useState('')
@@ -73,76 +75,10 @@ const Basket = ({ selectedPackages, fromBasketToRecHandler, selectedPkgName, sel
 
 
 
-    }, [selectedPackages.length])
+    }, [selectedPackages])
 
 
 
-
-
-
-
-
-    const checkoutBtnHandler  = (e) => {
-       
-          if (!isSelected) {
-            setIsAlertVisible(true);
-           
-            return;
-
-          } else {
-
-
-
-            localStorage.setItem('selected_packages', JSON.stringify(selectedPackages))
-            localStorage.setItem('selected_pkg_name', JSON.stringify(selectedPkgName))
-            localStorage.setItem('selected_pkg_price', JSON.stringify(selectedPkgPrice))
-
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            router.push('/checkout');
-
-
-
-
-          }
-
-
-
-
-    }
-
-
-
-
-
-    const checkBoxHandler = () => {
-
-
-      setIsSelected(prev => !prev);
-      setIsAlertVisible(false)
-      
-
-
-
-
-
-    }
 
 
 
@@ -151,7 +87,9 @@ const Basket = ({ selectedPackages, fromBasketToRecHandler, selectedPkgName, sel
 
 
   return (
-    <div className="w-full p-4 font-poppins border-4  border-orange-400  ">
+    <div className="w-full  font-poppins border-4  border-orange-400  ">
+
+      <div className="w-full p-4">
       <h3 className="text-xl ">Your Basket</h3>
 
       <table className="w-full ">
@@ -176,7 +114,7 @@ const Basket = ({ selectedPackages, fromBasketToRecHandler, selectedPkgName, sel
 
           {selectedPackages?.map((el) => {
             return (
-              <TableRow key={el.id} pkgName={el.name} pkgPrice={el.price} id={el.id} fromBasketToRecHandler={fromBasketToRecHandler} />
+              <TableRow key={el.id} pkgName={el.name} pkgPrice={el.price} id={el.id} />
             );
           })}
 
@@ -206,11 +144,11 @@ const Basket = ({ selectedPackages, fromBasketToRecHandler, selectedPkgName, sel
 
 
           <tr className="border-t">
-            <td className="py-2  "></td>
+            <td className="pb-2 pt-4  "></td>
 
-            <td className="py-2  px-2 text-nowrap text-end font-semibold text-xl text-orange-500 " >Order Total: </td>
+            <td className="pb-2 pt-4  px-2 text-nowrap text-end font-semibold text-xl text-orange-500 " >Order Total: </td>
 
-            <td className="py-2 text-end font-semibold  text-xl text-orange-500 ">£{(((20/100) * +netPrice) + +netPrice).toFixed(2).toString() }</td>
+            <td className="pb-2 pt-4 text-end font-semibold  text-xl text-orange-500 ">£{(((20/100) * +netPrice) + +netPrice).toFixed(2).toString() }</td>
           </tr>
 
 
@@ -218,34 +156,46 @@ const Basket = ({ selectedPackages, fromBasketToRecHandler, selectedPkgName, sel
       </table>
 
 
-      <div className="w-full flex flex-row justify-start items-start gap-0 cursor-pointer my-3">
-      <Checkbox isSelected={isSelected} onValueChange={checkBoxHandler} className=" ">
-     
-     </Checkbox>
+      </div>
 
-     <span className="text-sm " onClick={checkBoxHandler}>
-     I agree to the Terms and Conditions & Privacy Policy
-     </span>
+
+      <div className="w-full flex flex-col justify-center items-center gap-2    bg-gray-200 border-t    p-4">
+      
+
+
+      <div className="w-full flex flex-col justify-center items-center gap-1 text-sm">
+            <h5>Order reference: #4872677</h5>
+            <h5>Merchant name: Affotax Formations </h5>
+            </div>
+
+
+
+            <div className="w-full flex flex-col justify-center items-center gap-1 ">
+                <span>Powered by:</span>
+              <Image src={TrustPaymentsImg} alt="Trust Payments Icon" width={200} cover/>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
 
       </div>
 
 
 
-     <div className="w-full flex justify-end items-center mb-4">
      
-    
 
-     <Button color="secondary" className="px-6  " onPress={checkoutBtnHandler}>Checkout</Button>
+
+
      
-     
-   
-     </div>
-
-
-
-     {
-      isAlertVisible && ( <Alert className="" color="warning"   isVisible={isAlertVisible} title={"You must agree to the terms and conditions."} variant="faded" onClose={() => setIsAlertVisible(false)} />)
-     }
 
     </div>
   );

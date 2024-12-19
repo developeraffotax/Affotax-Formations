@@ -7,7 +7,7 @@ import { RiInformation2Line } from "react-icons/ri";
 const Recommendation = ({name, desc, price, info, onAdd, id, isBorder}) => {
 
 
-  console.log(isBorder)
+ 
 
   return (
 

@@ -2,7 +2,7 @@ import React from "react";
 import { v4 as uuidv4 } from 'uuid';
 
 const OnePrice = ({ name, description, badge, price, List }) => {
-    console.log(List)
+  
   return (
     <div className="bg-white flex flex-col justify-between  bg-opacity-10 rounded-lg shadow-lg p-6 max-xl:p-8 relative ">
       <div className="">
