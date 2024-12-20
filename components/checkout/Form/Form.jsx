@@ -9,7 +9,7 @@ import { useForm } from "react-hook-form";
 const Form = () => {
 
 
-  const { register, handleSubmit, formState: { errors },  clearErrors, setValue } = useForm();
+  const { register, handleSubmit, formState: { errors },  clearErrors, setValue, trigger } = useForm();
 
 
   const formSubmitHandler = (data) => {
@@ -26,10 +26,9 @@ const Form = () => {
       <div className="w-full flex flex-col justify-start items-start   ">
 
         {
-        
         }
 
-        <form onSubmit={handleSubmit(formSubmitHandler)} className="w-full flex flex-col justify-start items-start gap-5  ">
+        <form   onSubmit={handleSubmit(formSubmitHandler)} className="w-full flex flex-col justify-start items-start gap-5  ">
           <div className="w-full   ">
             <AccountDetails register={register} errors={errors} />
           </div>
@@ -39,11 +38,11 @@ const Form = () => {
           </div>
 
           <div className="w-full   ">
-            <CardDetails register={register} errors={errors}  />
+            <CardDetails register={register} errors={errors} handleSubmit={handleSubmit} trigger={trigger}/>
           </div>
 
 
-          <button>SUBMT</button>
+          {/* <button>SUBMT</button> */}
         </form>
       </div>
     </section>

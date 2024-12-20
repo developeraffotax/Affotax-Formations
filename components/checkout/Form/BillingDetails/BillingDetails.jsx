@@ -189,7 +189,7 @@ const BillingDetails = ({register, errors, clearErrors, setValue} ) => {
 
             
 
-        <div className="w-full flex flex-col justify-start items-start gap-3 font-poppins mt-3 ">
+        <div className="w-full flex flex-col justify-start items-start gap-2 font-poppins mt-3 ">
           <input ref={(e) => {
           // Register the input with React Hook Form
           

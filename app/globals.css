@@ -11,6 +11,15 @@
 @tailwind components;
 @tailwind utilities;
 
+
+input[type="radio"]{
+  visibility: hidden;
+  height: 0;
+  width: 0;
+}
+
+
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
