@@ -5,14 +5,15 @@ import axios from "axios";
 import { useEffect, useRef, useState } from "react";
 import { CreditCard, PaymentForm, } from "react-square-web-payments-sdk";
 
-export default function SquareForm({errors, trigger }) {
+export default function SquareForm({errors, outerFormSubmitHandler }) {
 
 
 	const appId = "sandbox-sq0idb-gASJb-Nb95rkIZVJwrmdzQ";						
 	const locationId = "L3BCKHG9DGWDX";
 
 
-	
+
+
 
 	return (
 		<PaymentForm
@@ -20,53 +21,19 @@ export default function SquareForm({errors, trigger }) {
 			
 			applicationId={appId}
 			locationId={locationId}
+			
  			cardTokenizeResponseReceived={async (token) => {
 				
 				try {
-					//setIsError(false)
-
-                    // create a customer here first
-
-                    // craete a order then
-
 					
-                    //then payemtn
-				const result = await axios.post('/api/payments/create-payment', {
-                    token: token.token,
+					console.log(token)
 
-                })
-
-
-
-
-
-
-
-
-
-
-
-				// our orders api will run here
-				
-				// if (result.payment.status !== 'COMPLETED') {
-				// 	setIsError(true)
-				// } else {
-					
-
-				// 	const res = await createOrder(customerData, orderData, result.payment.id);
-
-				// 	localStorage.removeItem('price_id')
-
-				// 	if (!res) {
-				// 		setIsError(true);
-				// 	}
-
-					
+					outerFormSubmitHandler()
 
 				// }
 				} catch (error) {
-					
-					setIsError(true);
+					console.log(error.message)
+					//setIsError(true);
 
 				}
 
@@ -76,22 +43,10 @@ export default function SquareForm({errors, trigger }) {
 			}}
 		>	
 
-		
+		 
 			
-			<CreditCard>
-
-					<button>
-							SUBMIT
-
-					</button>
-
-					<button>
-						ss
-					</button>
-
-			</CreditCard>
+		 <CreditCard  />
 			
-					
 
 		</PaymentForm>
 	);

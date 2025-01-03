@@ -78,7 +78,7 @@ const LOGOS = [
 
 
 
-const CardDetails = ({ register, errors, trigger }) => {
+const CardDetails = ({ register, errors, outerFormSubmitHandler}) => {
   //   const [isVisible, setIsVisible] = useState(false);
 
   // const toggleVisibility = () => setIsVisible(!isVisible);
@@ -119,7 +119,7 @@ const CardDetails = ({ register, errors, trigger }) => {
 
 
       <div className="w-full ">
-          <SquareForm errors={errors} trigger={trigger}/>
+          <SquareForm errors={errors} outerFormSubmitHandler={outerFormSubmitHandler}/>
       </div>
 
 

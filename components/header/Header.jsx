@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import Logo from "./Logo";
 import { MdOutlineKeyboardBackspace, MdOutlineMarkEmailRead } from "react-icons/md";
 import { IoLogoWhatsapp, IoMenu } from "react-icons/io5";
@@ -14,6 +14,9 @@ import ServicesMenu from "./ServicesMenu";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import ServicesMenuMobile from "./ServicesMenuMobile";
 import { RiArrowRightSLine } from "react-icons/ri";
+import UserDropdown from "./UserDropdown";
+import { UserContext } from "@/app/layout";
+
 
 
 
@@ -70,10 +73,10 @@ const Header = () => {
 
 
 
+  const {user, setUser} = useContext(UserContext);
 
 
-
-
+console.log()
 
 
 
@@ -116,7 +119,8 @@ const Header = () => {
               <ul className=" flex  items-center gap-3 ">
                 <Link href="/" className="cursor-pointer   hover:text-orange-500"> Blog </Link>
                 <Link href="/contact-us" className="cursor-pointer hover:text-orange-500 "> Contact Us </Link>
-                <Link href="/client-login" className="cursor-pointer hover:text-green-500" > <span className="flex justify-center items-center gap-1 "> <MdOutlineLock /> <p className="">Login</p> </span> </Link>
+                {!user && <Link href="/client-login" className="cursor-pointer hover:text-green-500" > <span className="flex justify-center items-center gap-1 "> <MdOutlineLock /> <p className="">Login</p> </span> </Link>}
+                 {user && <span className="flex justify-center items-center gap-1 "> <UserDropdown  user={user}/> </span> }
               </ul>
             </nav>
           </div>
@@ -147,7 +151,8 @@ const Header = () => {
           </div>
 
           <div>
-            <Link href={"/client-login"}> {" "} <button className="bg-primary px-4 py-2 rounded-lg text-white hover:bg-primary/90 transition-all ">  <span className="flex justify-start items-center gap-1 "> <MdOutlineLock /> <p className="">Login</p> </span> </button>{" "} </Link>
+            {!user && <Link href={"/client-login"}> {" "} <button className="bg-primary px-4 py-2 rounded-lg text-white hover:bg-primary/90 transition-all ">  <span className="flex justify-start items-center gap-1 "> <MdOutlineLock /> <p className="">Login</p> </span> </button>{" "} </Link>}
+              {user && <div className="bg-primary px-4 py-2 rounded-lg text-white hover:bg-primary/90 transition-all ">  <span className="flex justify-start items-center gap-1 "> <UserDropdown /> </span> </div> }
           </div>
         </div>
 

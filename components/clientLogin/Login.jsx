@@ -1,63 +1,220 @@
-import React from "react";
+"use client";
+
+import { Button, Input, Spinner } from "@nextui-org/react";
+import React, { useContext, useState } from "react";
+import { EyeFilledIcon, EyeSlashFilledIcon, MailIcon } from "./Icons";
+import { useForm } from "react-hook-form";
+import { LuUserCheck } from "react-icons/lu";
+import { CiLogin } from "react-icons/ci";
+import { FaUser } from "react-icons/fa";
+import { MdLogin } from "react-icons/md";
+import { createClient } from "@/lib/supabase/client";
+import Logo from "./Logo";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { UserContext } from "@/app/layout";
 
 const Login = () => {
+
+  
+
+  const [isVisible, setIsVisible] = useState(false);
+
+  const toggleVisibility = () => setIsVisible(!isVisible);
+  const { register, handleSubmit, formState: { errors }, } = useForm();
+
+  const [errorMsg, setErrorMsg] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+
+
+    const router = useRouter()
+
+
+
+  const userContext = useContext(UserContext)
+
+
+
+
+
+
+  const formSubmitHandler = async (creds) => {
+    console.log("LOGIN FORM DATA: ", creds);
+
+    const supabase = createClient();
+
+    try {
+      setIsLoading(true);
+      const { data, error } = await supabase.auth.signInWithPassword(creds);
+
+      console.log(data);
+
+      if (error) {
+        return setErrorMsg(error.message);
+      }
+
+      userContext.setUser(data?.session?.user)
+      return router.push('/')
+
+      
+    } catch (error) {
+      console.log(error);
+      setErrorMsg(
+        error?.message || "Something went wrong! Please try again later"
+      );
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+
   return (
-    <div className="bg-no-repeat bg-cover bg-center relative " style={{backgroundImage: "url(https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1951&amp;q=80)"}}><div className="absolute  bg-gradient-to-b backdrop-blur-lg from-gray-900/60 to-slate-800/70   inset-0 z-0"></div>
-  <div className="min-h-screen sm:flex sm:flex-row mx-0 justify-center relative  z-50 ">
-      <div className="flex-col flex  self-center p-10 sm:max-w-5xl xl:max-w-2xl  z-10">
-        <div className="self-start hidden lg:flex flex-col  text-white">
-          <img src={null} className="mb-3" />
-          <h1 className="mb-3 font-bold text-5xl">Hi ? Welcome Back! </h1>
-          <p className="pr-3">Lorem ipsum is placeholder text commonly used in the graphic, print,
-            and publishing industries for previewing layouts and visual mockups</p>
-        </div>
-      </div>
-      <div className="flex justify-center self-center  z-10">
-        <div className="p-12 bg-white mx-auto rounded-2xl w-100 ">
-            <div className="mb-4">
-              <h3 className="font-semibold text-2xl text-gray-800">Sign In </h3>
-              <p className="text-gray-500">Please sign in to your account.</p>
-            </div>
-            <div className="space-y-5">
-                        <div className="space-y-2">
-                              <label className="text-sm font-medium text-gray-700 tracking-wide">Email</label>
-              <input className=" w-full text-base px-4 py-2 border  border-gray-300 rounded-lg focus:outline-none focus:border-green-400" type="" placeholder="mail@gmail.com" />
-              </div>
-                          <div className="space-y-2">
-              <label className="mb-5 text-sm font-medium text-gray-700 tracking-wide">
-                Password
-              </label>
-              <input className="w-full content-center text-base px-4 py-2 border  border-gray-300 rounded-lg focus:outline-none focus:border-green-400" type="" placeholder="Enter your password" />
-            </div>
-              <div className="flex items-center justify-between">
-              <div className="flex items-center">
-                <input id="remember_me" name="remember_me" type="checkbox" className="h-4 w-4 bg-blue-500 focus:ring-blue-400 border-gray-300 rounded" />
-                <label htmlFor="remember_me" className="ml-2 block text-sm text-gray-800">
-                  Remember me
-                </label>
-              </div>
-              <div className="text-sm">
-                <a href="#" className="text-green-400 hover:text-green-500">
-                  Forgot your password?
-                </a>
-              </div>
-            </div>
+    <>
+      <div className="min-h-screen bg-gray-100 text-gray-900 flex justify-center font-poppins ">
+        <div className="max-w-screen-xl m-0 sm:m-10 bg-white shadow sm:rounded-lg flex justify-center flex-1">
+          <div className="lg:w-1/2 xl:w-5/12 p-6 sm:p-12">
             <div>
-              <button type="submit" className="w-full flex justify-center bg-green-400  hover:bg-green-500 text-gray-100 p-3  rounded-full tracking-wide font-semibold  shadow-lg cursor-pointer transition ease-in duration-500">
-                Sign in
-              </button>
+              <Logo />
             </div>
+            <div className="mt-6 flex flex-col items-center">
+              <div className="w-full flex-1 mt-8">
+                <div className="flex flex-col items-center">
+                  <button className="w-full max-w-xs font-bold shadow-sm rounded-lg py-3 bg-cyan-100 text-gray-800 flex items-center justify-center transition-all duration-300 ease-in-out focus:outline-none hover:shadow focus:shadow-sm focus:shadow-outline">
+                    <span className="ml-4">Sign In with Google</span>
+                  </button>
+                </div>
+
+                <div className="my-12 border-b text-center">
+                  <div className="leading-none px-2 inline-block text-sm text-gray-600 tracking-wide font-medium bg-white transform translate-y-1/2">
+                    Or sign In with E-mail
+                  </div>
+                </div>
+
+                <div className="mx-auto max-w-md  ">
+                  <div className="w-full flex flex-col justify-start items-start gap-4 shadow-md rounded-xl    p-6 border-2 border-cyan-400  ">
+                    <div className="w-full bg-gray-100 px-4 py-3   ">
+                      <h2 className="w-full text-2xl font-poppins text-cyan-500  ">
+                        Login
+                      </h2>
+                    </div>
+
+                    <form
+                      onSubmit={handleSubmit(formSubmitHandler)}
+                      className="w-full flex flex-col justify-start items-start gap-5 font-poppins "
+                    >
+                      <div className="w-full ">
+                        <Input
+                          className="max-w-sm font-poppins "
+                          endContent={
+                            <MailIcon className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
+                          }
+                          label="Email"
+                          isInvalid={false}
+                          labelPlacement="outside"
+                          placeholder="you@example.com"
+                          type="email"
+                          {...register("email", {
+                            required: {
+                              value: true,
+                              message: "Email is required!",
+                            },
+                            pattern: {
+                              value:
+                                /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+                              message: "Please enter a valid email address!",
+                            },
+                          })}
+                        />
+
+                        {errors?.email && (
+                          <p className="text-red-500 text-sm mt-1 font-poppins  px-2 py-2  ">
+                            {errors.email.message}
+                          </p>
+                        )}
+                      </div>
+
+                      <div className="w-full ">
+                        <Input
+                          className="max-w-sm font-poppins"
+                          endContent={
+                            <button
+                              aria-label="toggle password visibility"
+                              className="focus:outline-none"
+                              type="button"
+                              onClick={toggleVisibility}
+                            >
+                              {" "}
+                              {isVisible ? (
+                                <EyeSlashFilledIcon className="text-2xl text-default-400 pointer-events-none" />
+                              ) : (
+                                <EyeFilledIcon className="text-2xl text-default-400 pointer-events-none" />
+                              )}{" "}
+                            </button>
+                          }
+                          label="Password"
+                          labelPlacement="outside"
+                          placeholder="Enter your password"
+                          type={isVisible ? "text" : "password"}
+                          {...register("password", {
+                            required: {
+                              value: true,
+                              message: "Password is required!",
+                            },
+                          })}
+                        />
+
+                        {errors?.password && (
+                          <p className="text-red-500 text-sm mt-1 font-poppins  px-2 py-2  ">
+                            {errors.password.message}
+                          </p>
+                        )}
+                      </div>
+
+                      <div className="w-full ">
+                        <p>Forgotten Password?</p>
+                      </div>
+
+                      <div className="w-full flex flex-col justify-center items-center gap-4  ">
+                        <Button
+                          type="submit"
+                          className="text-white w-[100%] bg-cyan-500 "
+                          color="success"
+                          endContent={
+                            isLoading ? null : (
+                              <MdLogin className="text-xl -ml-1" />
+                            )
+                          }
+                        >
+                          {" "}
+                          {isLoading ? (
+                            <Spinner size="sm" color="white" />
+                          ) : (
+                            "Login"
+                          )}{" "}
+                        </Button>
+                        <Link className=" text-sm   " href="/client-signup">
+                          Or Sign-up
+                        </Link>
+                        {errorMsg && (
+                          <p className="w-full text-center font-poppins text-red-500 mt-2">
+                            {errorMsg}
+                          </p>
+                        )}
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="pt-5 text-center text-gray-400 text-xs">
-              <span>
-                Copyright © 2021-2022
-                <a href="https://codepen.io/uidesignhub" rel="" target="_blank" title="Ajimon" className="text-green hover:text-green-500 ">AJI</a></span>
-            </div>
+          </div>
+
+          <div className="flex-1 bg-cyan-100 text-center hidden lg:flex">
+            <div className="m-12 xl:m-16 w-full bg-contain bg-center bg-no-repeat bg-[url('/login2.png')]"></div>
+          </div>
         </div>
       </div>
-  </div>
-</div>
-  )
+    </>
+  );
 };
 
 export default Login;
