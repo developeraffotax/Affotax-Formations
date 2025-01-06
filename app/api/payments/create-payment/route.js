@@ -6,8 +6,8 @@ import { randomUUID } from 'crypto';
 };
 
 const { paymentsApi } = new Client({
-  accessToken: process.env.SQUARE_ACCESS_TOKEN__SERVER,
-  environment: (process.env.NODE_ENV === 'production') ? 'production' : 'sanbox'
+  accessToken: process.env.SQUARE_ACCESS_TOKEN_SERVER,
+  environment: (process.env.NODE_ENV === 'production') ? 'production' : 'sandbox'
 });
 
 
