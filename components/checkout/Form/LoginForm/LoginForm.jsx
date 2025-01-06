@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, Input, Spinner } from "@nextui-org/react";
+import { Button, Input, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, Spinner } from "@nextui-org/react";
 import React, { useState } from "react";
 import { EyeFilledIcon, EyeSlashFilledIcon, MailIcon } from "../Icons";
 import { useForm } from "react-hook-form";
@@ -9,14 +9,22 @@ import { CiLogin } from "react-icons/ci";
 import { FaUser } from "react-icons/fa";
 import { MdLogin } from "react-icons/md";
 import { createClient } from "@/lib/supabase/client";
+import ResetPasswordReq from "./ResetPasswordReq";
 
 const LoginForm = ({ setSelected, setUser }) => {
+
+  const [isFpModal, setIsFpModal] = useState(false);
+
   const [isVisible, setIsVisible] = useState(false);
 
   const toggleVisibility = () => setIsVisible(!isVisible);
 const { register, handleSubmit, formState: { errors }, } = useForm();
   const [errorMsg, setErrorMsg] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+
+
+
+
 
   const formSubmitHandler = async (creds) => {
     console.log("LOGIN FORM DATA: ", creds);
@@ -26,6 +34,9 @@ const { register, handleSubmit, formState: { errors }, } = useForm();
     try {
       setIsLoading(true)
       const { data, error } = await supabase.auth.signInWithPassword(creds);
+
+
+      
 
       console.log(data);
 
@@ -57,7 +68,9 @@ const { register, handleSubmit, formState: { errors }, } = useForm();
   };
 
   return (
-    <div className="w-full flex flex-col justify-start items-start gap-4 p-4 border ">
+    <>
+
+<div className="w-full flex flex-col justify-start items-start gap-4 p-4 border ">
       <div className="w-full bg-gray-100 px-4 py-3   ">
         <h2 className="w-full text-2xl font-poppins text-cyan-500  ">Login</h2>
       </div>
@@ -134,7 +147,7 @@ const { register, handleSubmit, formState: { errors }, } = useForm();
         </div>
 
         <div className="w-full ">
-          <p>Forgotten Password?</p>
+          <p  onClick={() => setIsFpModal(true)} className="cursor-pointer ">Forgotten Password?</p>
         </div>
 
         <div className="w-full ">
@@ -154,7 +167,19 @@ const { register, handleSubmit, formState: { errors }, } = useForm();
         </div>
       </form>
     </div>
+
+
+
+          <ResetPasswordReq isFpModal={isFpModal} setIsFpModal={setIsFpModal}/>
+
+
+
+    </>
   );
 };
 
 export default LoginForm;
+
+
+
+

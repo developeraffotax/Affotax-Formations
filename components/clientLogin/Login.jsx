@@ -12,11 +12,13 @@ import { createClient } from "@/lib/supabase/client";
 import Logo from "./Logo";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { UserContext } from "@/app/layout";
+import { UserContext } from "@/app/(user)/layout";
+import ResetPasswordReq from "./ResetPasswordReq";
 
 const Login = () => {
 
-  
+      const [isFpModal, setIsFpModal] = useState(false);
+    
 
   const [isVisible, setIsVisible] = useState(false);
 
@@ -171,7 +173,7 @@ const Login = () => {
                       </div>
 
                       <div className="w-full ">
-                        <p>Forgotten Password?</p>
+                        <p onClick={() => setIsFpModal(true)} className="cursor-pointer ">Forgotten Password?</p>
                       </div>
 
                       <div className="w-full flex flex-col justify-center items-center gap-4  ">
@@ -213,6 +215,11 @@ const Login = () => {
           </div>
         </div>
       </div>
+
+
+      <ResetPasswordReq isFpModal={isFpModal} setIsFpModal={setIsFpModal}/>
+
+
     </>
   );
 };

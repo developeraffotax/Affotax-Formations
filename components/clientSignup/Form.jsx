@@ -7,7 +7,7 @@ import { EyeFilledIcon, EyeSlashFilledIcon, MailIcon } from "./Icons";
 import { createClient } from "@/lib/supabase/client";
 import CountrySelect from "./CountrySelect";
 import { useRouter } from "next/navigation";
-import { UserContext } from "@/app/layout";
+import { UserContext } from "@/app/(user)/layout";
 
 const Form = () => {
   const [errorMsg, setErrorMsg] = useState("");

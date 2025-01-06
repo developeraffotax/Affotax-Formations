@@ -10,6 +10,7 @@ import { CreditCard, PaymentForm } from "react-square-web-payments-sdk";
 import { createClient } from "@/lib/supabase/client";
 import { Tab, Tabs } from "@nextui-org/react";
 import LoginForm from "./LoginForm/LoginForm";
+import { UserContext } from "@/app/(user)/layout";
 
 
 
@@ -17,9 +18,9 @@ const Form = () => {
 
 
   const [selected, setSelected] = useState("signup");
-  const [user, setUser] = useState(null)
+ // const [user, setUser] = useState(null)
 
- 
+ const {user, setUser} = useContext(UserContext)
 
 
 const formRef = useRef()
@@ -44,29 +45,49 @@ const formRef = useRef()
 
   
 
+  // useEffect(() => {
+
+  //   console.log(userContext)
+
+  //   if (userContext?.user) {
+  //     setUser(userContext?.user)
+  //   }
 
 
-  useEffect(() => {
 
-    const getUser = (async () => {
-      const supabase = createClient();
 
-       const {data, error} = await supabase.auth.getSession();
 
-        console.log(data.session)
 
-        if (!data.session) {
-          return;
 
-        }
-        console.log(data.session)
-        setUser(data.session.user)
+
+
+
+
+  // })
+
+
+
+  // useEffect(() => {
+
+  //   const getUser = (async () => {
+  //     const supabase = createClient();
+
+  //      const {data, error} = await supabase.auth.getSession();
+
+  //       console.log(data.session)
+
+  //       if (!data.session) {
+  //         return;
+
+  //       }
+  //       console.log(data.session)
+  //       setUser(data.session.user)
          
-    })()
+  //   })()
 
 
 
-  }, [])
+  // }, [])
 
 
 
