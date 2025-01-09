@@ -7,11 +7,23 @@ import Form from "./Form/Form";
 
 const Checkout = () => {
 
+  const [orderRef, setOrderRef] = useState("")
+
     const [selectedPackages, setSelectedPackages] = useState([])
     const [mainPkg, setMainPkg] = useState("")
     const [mainPkgPrice, setMainPkgPrice] = useState("")
     
+    const [tPriceWithoutTax, setTPriceWithoutTaxPrice] = useState('');
 
+    const [addressObj, setAddressObj] = useState({
+      "name_or_number": '',
+      "street": '',
+      "locality": '',
+      "town": '',
+      "county": '',
+      "postcode": '',
+      "country": ''
+    })
 
     useEffect(() => {
 
@@ -32,8 +44,41 @@ const Checkout = () => {
     }, [])
 
 
+    useEffect(() => {
+
+      function generateRandomNumber() {
+        // Get current time in milliseconds
+        const timestamp = new Date().getTime();
+        
+        // Use modulus to ensure the number is 6 digits
+        const randomNum = timestamp % 10000000;
+        
+        // If the result is less than 6 digits, pad with leading zeros
+        const sevenDigitNumber = randomNum.toString().padStart(7, '0');
 
 
+        
+        return sevenDigitNumber;
+    }
+
+
+
+    if(localStorage.getItem("order_ref")) {
+      setOrderRef(localStorage.getItem("order_ref"));
+    } else {
+      const sevenDigitNumber = generateRandomNumber();
+
+      localStorage.setItem("order_ref", sevenDigitNumber)
+      setOrderRef(sevenDigitNumber);
+    }
+
+
+
+   
+
+
+
+    }, [])
 
 
 
@@ -54,14 +99,14 @@ const Checkout = () => {
 
 
    <div className="w-[60%] flex flex-col justify-start items-start gap-2 " >
-        <Form />
+        <Form selectedPackages={selectedPackages} mainPkg={mainPkg} mainPkgPrice={mainPkgPrice} tPriceWithoutTax={tPriceWithoutTax} addressObj={addressObj} setAddressObj={setAddressObj} orderRef={orderRef}/>
       </div>
 
 
 
 
       <div className="w-[40%] flex flex-col justify-start items-start gap-2 " >
-      <Basket selectedPackages={selectedPackages}   selectedPkgName={mainPkg} selectedPkgPrice={mainPkgPrice}/>
+      <Basket selectedPackages={selectedPackages}   selectedPkgName={mainPkg} selectedPkgPrice={mainPkgPrice} tPriceWithoutTax={tPriceWithoutTax} setTPriceWithoutTaxPrice={setTPriceWithoutTaxPrice} orderRef={orderRef} />
       </div>
 
 

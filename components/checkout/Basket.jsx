@@ -8,7 +8,7 @@ import React, { useEffect, useState } from "react";
 import { RxCross2 } from "react-icons/rx";
 import TrustPaymentsImg from "@/public/trustPayments.png"
 
-const TableRow = ({ pkgName, pkgPrice,  id }) => {
+const TableRow = ({ pkgName, pkgPrice,  id,  }) => {
   return (
     <tr>
       <td className="py-2  ">{pkgName}</td>
@@ -31,10 +31,10 @@ const TableRow = ({ pkgName, pkgPrice,  id }) => {
 
 
 
-const Basket = ({ selectedPackages, selectedPkgName, selectedPkgPrice}) => {
+const Basket = ({ selectedPackages, selectedPkgName, selectedPkgPrice, tPriceWithoutTax, setTPriceWithoutTaxPrice, orderRef}) => {
 
 
-  const [netPrice, setNetPrice] = useState('')
+ // const [netPrice, setNetPrice] = useState('')
 
 
 
@@ -54,7 +54,7 @@ const Basket = ({ selectedPackages, selectedPkgName, selectedPkgPrice}) => {
 
       
 
-        setNetPrice((prev) => {
+      setTPriceWithoutTaxPrice((prev) => {
           return selectedPackages.reduce((accumulator, currentValue) => {
 
 
@@ -129,7 +129,7 @@ const Basket = ({ selectedPackages, selectedPkgName, selectedPkgPrice}) => {
 
             <td className="pt-2 pb-1  px-4 text-end ">Net: </td>
 
-            <td className="pt-2 pb-1 text-end ">£{netPrice}</td>
+            <td className="pt-2 pb-1 text-end ">£{tPriceWithoutTax}</td>
           </tr>
 
           <tr>
@@ -137,7 +137,7 @@ const Basket = ({ selectedPackages, selectedPkgName, selectedPkgPrice}) => {
 
             <td className="pt-1 pb-2  px-4 text-end ">VAT: </td>
 
-            <td className="pt-1 pb-2 text-end ">£{((20/100) * +netPrice).toFixed(2).toString()}</td>
+            <td className="pt-1 pb-2 text-end ">£{((20/100) * +tPriceWithoutTax).toFixed(2).toString()}</td>
           </tr>
 
 
@@ -148,7 +148,7 @@ const Basket = ({ selectedPackages, selectedPkgName, selectedPkgPrice}) => {
 
             <td className="pb-2 pt-4  px-2 text-nowrap text-end font-semibold text-xl text-orange-500 " >Order Total: </td>
 
-            <td className="pb-2 pt-4 text-end font-semibold  text-xl text-orange-500 ">£{(((20/100) * +netPrice) + +netPrice).toFixed(2).toString() }</td>
+            <td className="pb-2 pt-4 text-end font-semibold  text-xl text-orange-500 ">£{(((20/100) * +tPriceWithoutTax) + +tPriceWithoutTax).toFixed(2).toString() }</td>
           </tr>
 
 
@@ -164,7 +164,7 @@ const Basket = ({ selectedPackages, selectedPkgName, selectedPkgPrice}) => {
 
 
       <div className="w-full flex flex-col justify-center items-center gap-1 text-sm">
-            <h5>Order reference: #4872677</h5>
+            <h5>Order reference: #{orderRef}</h5>
             <h5>Merchant name: Affotax Formations </h5>
             </div>
 

@@ -32,7 +32,7 @@ const Form = () => {
     const { post_code, house_name_or_number, street, locality, town, county, country } = data;
 
     const account_holder = {
-      organization, forename, surname, phone_number, email, confirm_email, password
+      organization, forename, surname, phone_number, email
     }
 
     const primary_address = {

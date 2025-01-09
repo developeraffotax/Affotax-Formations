@@ -11,7 +11,7 @@ import CountrySelect from "./CountrySelect";
 
 
 
-const BillingDetails = ({register, errors, clearErrors, setValue} ) => {
+const BillingDetails = ({register, errors, clearErrors, setValue, setAddressObj} ) => {
 
 
 
@@ -63,7 +63,8 @@ const BillingDetails = ({register, errors, clearErrors, setValue} ) => {
     
     const _address = `${modalForm.name_or_number}, ${modalForm.street}, ${modalForm.locality ? modalForm.locality + ", " : ""} ${modalForm.town}, ${modalForm.county ? modalForm.county + ", " : "" } ${modalForm.postcode ?  modalForm.postcode + ", " : ""} ${modalForm.country}.`
 
-
+    setAddressObj(modalForm);
+    
     clearErrors("address")
     setValue('address', _address )
     //addressInputRef.current.value = _address;
