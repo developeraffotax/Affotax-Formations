@@ -17,7 +17,7 @@ const AccountDetails = ({register, errors, user}) => {
 
   const toggleVisibility = () => setIsVisible(!isVisible);
 
-console.log(user)
+
 
 
 if (user) {

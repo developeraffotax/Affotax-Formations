@@ -2,6 +2,7 @@ import { Client } from "square";
 import { randomUUID } from "crypto";
 import { createClient } from "@/lib/supabase/server";
 import { redirect } from "next/navigation";
+import next from "next";
 
 BigInt.prototype.toJSON = function () {
   return this.toString();
@@ -37,7 +38,13 @@ export async function POST(request) {
       customerId: userId,
       
     });
-    console.log(result);
+    
+    return new Response(null, {
+      status: 302,
+      headers: {
+        Location: `/success-page?orderId=${orderId.toString()}`,
+      },
+    });
 
 
   } catch (error) {
@@ -53,5 +60,5 @@ export async function POST(request) {
     );
   }
 
-  redirect("/success-page");
+  redirect(`/success-page?orderId=${orderId.toString()}`);
 }

@@ -27,7 +27,7 @@ const UnderHero = () => {
                         return (
                             <li key={el} className="w-full  h-full   px-4 py-4 bg-white/75 backdrop-blur-md shadow-black/50 shadow-md  rounded-md flex gap-2 justify-start items-start  ">
                                 <div className="w-[20%]">
-                                <Image src={Img} width={50} />
+                                <Image src={Img} width={50} alt={el} />
                                 </div>
                                 <h3 className="text-xl max-2xl:text-base w-[80%]">
                                     {el}

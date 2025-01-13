@@ -9,6 +9,7 @@ import Link from "next/link";
 import PackageHeader from "./PackageHeader";
 import BankingSection from "./shared/BankingSection";
 import WhyUsSection2 from "./shared/WhyUsSection2";
+import BuyNowBtn from "./BuyNowBtn";
 
 
 
@@ -238,30 +239,30 @@ const NonResidents = () => {
 
               <li className="flex flex-col justify-center items-center gap-2  py-4 border-r     ">
                 {" "}
-                <button className="bg-orange-500 shadow-sm shadow-black/30 text-white px-4 py-2 rounded-lg hover:bg-cyan-500 hover:scale-105 active:scale-95 transition-all  ">
-                  BUY NOW
-                </button>{" "}
-                <Link href="/" className="text-sm text-orange-500 underline  ">
-                  Read More
-                </Link>
+
+                <BuyNowBtn href={"/buy/packages/non-residents/standard-package"}  pkg={"standard-package"} company={"non-residents"}/>
+
+
+               
               </li>
               <li className="flex flex-col justify-center items-center gap-2  py-4 border-r     ">
                 {" "}
-                <button className="bg-orange-500 shadow-sm shadow-black/30 text-white px-4 py-2 rounded-lg hover:bg-cyan-500 hover:scale-105 active:scale-95 transition-all  ">
-                  BUY NOW
-                </button>{" "}
-                <Link href="/" className="text-sm text-orange-500 underline  ">
-                  Read More
-                </Link>
+
+
+
+
+
+                <BuyNowBtn href={"/buy/packages/non-residents/premium-package"}  pkg={"premium-package"} company={"non-residents"}/>
+               
               </li>
               <li className="flex flex-col justify-center items-center gap-2  py-4 border-r     ">
                 {" "}
-                <button className="bg-orange-500 shadow-sm shadow-black/30 text-white px-4 py-2 rounded-lg hover:bg-cyan-500 hover:scale-105 active:scale-95 transition-all  ">
-                  BUY NOW
-                </button>{" "}
-                <Link href="/" className="text-sm text-orange-500 underline  ">
-                  Read More
-                </Link>
+
+
+                <BuyNowBtn href={"/buy/packages/non-residents/all-inclusive-package"}  pkg={"all-inclusive-package"}company={"non-residents"} />
+
+
+             
               </li>
             </ul>
           </div>

@@ -41,7 +41,7 @@ const BankOption = () => {
                         return (
                             <li key={el.name} className="p-4 w-full flex flex-col justify-center items-center gap-4 bg-white/40 shadow-md   rounded-2xl backdrop-blur-md">
                                     <div className="w-full flex  justify-center items-center gap-2 ">
-                                    <span className=" "><Image src={el.img} className="w-[40px] rounded-full overflow-hidden"  /></span>
+                                    <span className=" "><Image src={el.img} className="w-[40px] rounded-full overflow-hidden" alt={el.name}  /></span>
                                     <h3 className="text-2xl font-semibold font-poppins  ">{el.name}</h3>
                                     </div>
                                     <p className="text-lg text-gray-700  max-xl:text-center max-xl:text-sm  ">{el.info}</p>

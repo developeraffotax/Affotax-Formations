@@ -14,6 +14,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { UserContext } from "@/app/(user)/layout";
 import ResetPasswordReq from "./ResetPasswordReq";
+import { FcGoogle } from "react-icons/fc";
 
 const Login = () => {
 
@@ -70,6 +71,26 @@ const Login = () => {
   };
 
 
+
+  const googleBtnHandler = async () => {
+
+    const supabase = createClient();
+
+    const {data, error} = await supabase.auth.signInWithOAuth({
+      provider: 'google',
+     
+    })
+
+
+    console.log(data)
+    console.log(error)
+
+  }
+
+
+
+
+
   return (
     <>
       <div className="min-h-screen bg-gray-100 text-gray-900 flex justify-center font-poppins ">
@@ -81,8 +102,8 @@ const Login = () => {
             <div className="mt-6 flex flex-col items-center">
               <div className="w-full flex-1 mt-8">
                 <div className="flex flex-col items-center">
-                  <button className="w-full max-w-xs font-bold shadow-sm rounded-lg py-3 bg-cyan-100 text-gray-800 flex items-center justify-center transition-all duration-300 ease-in-out focus:outline-none hover:shadow focus:shadow-sm focus:shadow-outline">
-                    <span className="ml-4">Sign In with Google</span>
+                  <button onClick={googleBtnHandler} className="w-full max-w-xs   font-semibold  shadow-sm rounded-full py-3 bg-cyan-50 border-1 border-cyan-200 hover:bg-cyan-200 hover:border-transparent active:scale-95  text-gray-800 flex items-center justify-center gap-2  transition-all duration-300 ease-in-out focus:outline-none hover:shadow focus:shadow-sm focus:shadow-outline">
+                    <span className="ml-4 text-2xl "><FcGoogle /></span><h3>Sign In with Google</h3>
                   </button>
                 </div>
 

@@ -5,6 +5,7 @@ import OriginalPrice from "./shared/OriginalPrice";
 import { IoCheckmark } from "react-icons/io5";
 import { RxCross2 } from "react-icons/rx";
 import Link from "next/link";
+import BuyNowBtn from "./BuyNowBtn";
 
 
 
@@ -253,43 +254,31 @@ const LimitedCompany = () => {
             <ul className="w-full grid grid-cols-[4fr_1fr_1fr_1fr_1fr] gap-0 border-b      ">
               <li className="w-full flex justify-between items-center gap-4 px-4 py-4 border-x  "></li>
               <li className="flex flex-col justify-center items-center gap-2  py-4 border-r     ">
+                <BuyNowBtn href={"/buy/packages/limited-company/basic-package"} pkg={"basic-package"} company={"limited-company"}/>
+              </li>
+              <li className="flex flex-col justify-center items-center gap-2  py-4 border-r     ">
                 {" "}
-                <Link href={'/buy/packages/limited-company/basic-package'}>
+
+                <BuyNowBtn href={"/buy/packages/limited-company/standard-package"} pkg={"standard-package"} company={"limited-company"}/>
+
+
                 
-                <button className="bg-orange-500 shadow-sm shadow-black/30 text-white px-4 py-2 rounded-lg hover:bg-cyan-500 hover:scale-105 active:scale-95 transition-all  ">
-                  BUY NOW
-                </button>
-                </Link>{" "}
-                <Link href="/" className="text-sm text-orange-500 underline  ">
-                  Read More
-                </Link>
+              </li>
+              <li className="flex flex-col justify-center items-center gap-2  py-4 border-r     ">
+                
+
+              <BuyNowBtn href={"/buy/packages/limited-company/premium-package"} pkg={"premium-package"} company={"limited-company"}/>
+
+
+              
               </li>
               <li className="flex flex-col justify-center items-center gap-2  py-4 border-r     ">
                 {" "}
-                <button className="bg-orange-500 shadow-sm shadow-black/30 text-white px-4 py-2 rounded-lg hover:bg-cyan-500 hover:scale-105 active:scale-95 transition-all  ">
-                  BUY NOW
-                </button>{" "}
-                <Link href="/" className="text-sm text-orange-500 underline  ">
-                  Read More
-                </Link>
-              </li>
-              <li className="flex flex-col justify-center items-center gap-2  py-4 border-r     ">
-                {" "}
-                <button className="bg-orange-500 shadow-sm shadow-black/30 text-white px-4 py-2 rounded-lg hover:bg-cyan-500 hover:scale-105 active:scale-95 transition-all  ">
-                  BUY NOW
-                </button>{" "}
-                <Link href="/" className="text-sm text-orange-500 underline  ">
-                  Read More
-                </Link>
-              </li>
-              <li className="flex flex-col justify-center items-center gap-2  py-4 border-r     ">
-                {" "}
-                <button className="bg-orange-500 shadow-sm shadow-black/30 text-white px-4 py-2 rounded-lg hover:bg-cyan-500 hover:scale-105 active:scale-95 transition-all  ">
-                  BUY NOW
-                </button>{" "}
-                <Link href="/" className="text-sm text-orange-500 underline  ">
-                  Read More
-                </Link>
+
+                <BuyNowBtn href={"/buy/packages/limited-company/all-inclusive-package"} pkg={"all-inclusive-package"} company={"limited-company"}/>
+
+
+
               </li>
             </ul>
           </div>

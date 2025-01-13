@@ -5,6 +5,7 @@ import OriginalPrice from "./shared/OriginalPrice";
 import { IoCheckmark } from "react-icons/io5";
 import { RxCross2 } from "react-icons/rx";
 import Link from "next/link";
+import BuyNowBtn from "./BuyNowBtn";
 
 
 
@@ -242,30 +243,21 @@ const Llp = () => {
 
               <li className="flex flex-col justify-center items-center gap-2  py-4 border-r     ">
                 {" "}
-                <button className="bg-orange-500 shadow-sm shadow-black/30 text-white px-4 py-2 rounded-lg hover:bg-cyan-500 hover:scale-105 active:scale-95 transition-all  ">
-                  BUY NOW
-                </button>{" "}
-                <Link href="/" className="text-sm text-orange-500 underline  ">
-                  Read More
-                </Link>
+
+                <BuyNowBtn href={"/buy/packages/llp/standard-package"}  pkg={"standard-package"} company={"llp"}/>
+
               </li>
               <li className="flex flex-col justify-center items-center gap-2  py-4 border-r     ">
                 {" "}
-                <button className="bg-orange-500 shadow-sm shadow-black/30 text-white px-4 py-2 rounded-lg hover:bg-cyan-500 hover:scale-105 active:scale-95 transition-all  ">
-                  BUY NOW
-                </button>{" "}
-                <Link href="/" className="text-sm text-orange-500 underline  ">
-                  Read More
-                </Link>
+
+
+                <BuyNowBtn href={"/buy/packages/llp/premium-package"}  pkg={"premium-package"} company={"llp"}/>
+             
               </li>
               <li className="flex flex-col justify-center items-center gap-2  py-4 border-r     ">
                 {" "}
-                <button className="bg-orange-500 shadow-sm shadow-black/30 text-white px-4 py-2 rounded-lg hover:bg-cyan-500 hover:scale-105 active:scale-95 transition-all  ">
-                  BUY NOW
-                </button>{" "}
-                <Link href="/" className="text-sm text-orange-500 underline  ">
-                  Read More
-                </Link>
+                <BuyNowBtn href={"/buy/packages/llp/all-inclusive-package"}  pkg={"all-inclusive-package"}  company={"llp"}/>
+                
               </li>
             </ul>
           </div>

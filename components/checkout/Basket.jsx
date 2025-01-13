@@ -3,7 +3,7 @@
 import { Alert, Button, Checkbox } from "@nextui-org/react";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { notFound, useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { RxCross2 } from "react-icons/rx";
 import TrustPaymentsImg from "@/public/trustPayments.png"
@@ -50,12 +50,15 @@ const Basket = ({ selectedPackages, selectedPkgName, selectedPkgPrice, tPriceWit
 
     useEffect(() => {
 
-      
+        // if(selectedPackages?.length === 0) {
+        //   return notFound();
+          
+        // }
 
       
 
       setTPriceWithoutTaxPrice((prev) => {
-          return selectedPackages.reduce((accumulator, currentValue) => {
+          return selectedPackages?.reduce((accumulator, currentValue) => {
 
 
             const sum = +accumulator + +currentValue.price;
@@ -172,7 +175,7 @@ const Basket = ({ selectedPackages, selectedPkgName, selectedPkgPrice, tPriceWit
 
             <div className="w-full flex flex-col justify-center items-center gap-1 ">
                 <span>Powered by:</span>
-              <Image src={TrustPaymentsImg} alt="Trust Payments Icon" width={200} cover/>
+              <Image src={TrustPaymentsImg} alt="Trust Payments Icon" width={200}/>
             </div>
 
 

@@ -147,12 +147,12 @@ const DirectorServiceAddress = () => {
               <ul className=" list-disc space-y-2 text-sm   ">
            
            
-                <li className="flex justify-start items-start gap-2 "><Image src={Checkmark} width={20} height={20} alt="checkmark"/>UK company directors </li>
-                <li className="flex justify-start items-start gap-2 "><Image src={Checkmark} width={20} height={20} alt="checkmark"/>Company secretaries </li>
-                <li className="flex justify-start items-start gap-2 "><Image src={Checkmark} width={20} height={20} alt="checkmark"/>LLP members </li>
-                <li className="flex justify-start items-start gap-2 "><Image src={Checkmark} width={20} height={20} alt="checkmark"/>Shareholders </li>
-                <li className="flex justify-start items-start gap-2 "><Image src={Checkmark} width={20} height={20} alt="checkmark"/>Subscribers (shareholders or guarantors at the time of the company's incorporation) </li>
-                <li className="flex justify-start items-start gap-2 "><Image src={Checkmark} width={20} height={20} alt="checkmark"/>Persons with Significant Control (PSCs — shareholders who own more than 25% of all shares) </li>
+                <li className="flex justify-start items-start gap-2 "><Image src={Checkmark} width={20} height={20} alt="checkmark1"/>UK company directors </li>
+                <li className="flex justify-start items-start gap-2 "><Image src={Checkmark} width={20} height={20} alt="checkmark2"/>Company secretaries </li>
+                <li className="flex justify-start items-start gap-2 "><Image src={Checkmark} width={20} height={20} alt="checkmark3"/>LLP members </li>
+                <li className="flex justify-start items-start gap-2 "><Image src={Checkmark} width={20} height={20} alt="checkmark4"/>Shareholders </li>
+                <li className="flex justify-start items-start gap-2 "><Image src={Checkmark} width={20} height={20} alt="checkmark5"/>Subscribers (shareholders or guarantors at the time of the company's incorporation) </li>
+                <li className="flex justify-start items-start gap-2 "><Image src={Checkmark} width={20} height={20} alt="checkmark6"/>Persons with Significant Control (PSCs — shareholders who own more than 25% of all shares) </li>
                
                 
                 
