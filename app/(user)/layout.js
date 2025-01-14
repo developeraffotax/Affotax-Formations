@@ -8,6 +8,7 @@ import Providers from "@/app/(user)/providers.js";
 import { createClient } from "@/lib/supabase/client";
 import { redirect } from "next/navigation";
 import { createContext, useEffect, useState } from "react";
+import { Bounce, ToastContainer, toast } from 'react-toastify';
 
  
 
@@ -49,6 +50,58 @@ export default function RootLayout({ children }) {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
+
+
+
+    if (typeof window !== "undefined") {
+      window.addEventListener('offline', () => {
+        console.log('Network is now offline');
+        toast.error('Network Error! ', {
+          position: "top-left",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+          transition: Bounce,
+          });
+      });
+      
+      window.addEventListener('online', () => {
+        console.log('Network is online');
+        toast.success("You're online!", {
+          position: "top-left",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+          transition: Bounce,
+          });
+      });
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     const supabase = createClient();
 
     const { data } = supabase.auth.onAuthStateChange( (event, session) => {
@@ -92,6 +145,7 @@ export default function RootLayout({ children }) {
   return (
     
       <div>
+         <ToastContainer />
         <Providers>
           <UserContext.Provider value={{user, setUser}}>
           <Header />

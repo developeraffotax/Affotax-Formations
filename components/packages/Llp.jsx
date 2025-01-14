@@ -5,7 +5,12 @@ import OriginalPrice from "./shared/OriginalPrice";
 import { IoCheckmark } from "react-icons/io5";
 import { RxCross2 } from "react-icons/rx";
 import Link from "next/link";
-import BuyNowBtn from "./BuyNowBtn";
+import dynamic from 'next/dynamic'
+ 
+const BuyNowBtn = dynamic(
+  () => import('./BuyNowBtn'),
+  { ssr: false }
+)
 
 
 

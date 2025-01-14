@@ -9,8 +9,13 @@ import Link from "next/link";
 import PackageHeader from "./PackageHeader";
 import BankingSection from "./shared/BankingSection";
 import WhyUsSection2 from "./shared/WhyUsSection2";
-import BuyNowBtn from "./BuyNowBtn";
-
+ 
+import dynamic from 'next/dynamic'
+ 
+const BuyNowBtn = dynamic(
+  () => import('./BuyNowBtn'),
+  { ssr: false }
+)
 
 
 const NonResidents = () => {

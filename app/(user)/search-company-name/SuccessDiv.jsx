@@ -1,30 +1,21 @@
-"use client"
+"use client";
 
 import React from "react";
 import { FaCheck } from "react-icons/fa6";
 import { FaAnglesRight } from "react-icons/fa6";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 
+const SuccessDiv = ({ searchAgainBtnHandler, companyNameToShow }) => {
 
-const SuccessDiv = ({ searchAgainBtnHandler, companyNameToShow, continueUrl }) => {
-
-
+  
+  const searchParams = useSearchParams();
 
 
 
   const localStorageHandler = () => {
-
-      localStorage.setItem('company_name', companyNameToShow)
-
-
-
-
-
-
-  }
-
-
-
+    localStorage.setItem("company_name", companyNameToShow);
+  };
 
 
 
@@ -36,20 +27,31 @@ const SuccessDiv = ({ searchAgainBtnHandler, companyNameToShow, continueUrl }) =
           <FaCheck />
         </span>
 
-        <h2 className="text-3xl text-green-500  font-semibold ">{companyNameToShow}</h2>
+        <h2 className="text-3xl text-green-500  font-semibold ">
+          {companyNameToShow}
+        </h2>
         <h3 className="text-lg  text-gray-800 font-poppins max-w-xl text-center">
           Congratulations! This company name is available.
         </h3>
       </div>
 
       <div className="w-full flex flex-col justify-center items-center gap-1 ">
-        <Link href={continueUrl} onClick={localStorageHandler} className="text-xl px-5 py-3 rounded-md text-white font-poppins bg-green-500 hover:bg-green-600 transition-all active:scale-95 cursor-pointer  flex justify-center items-center gap-1 ">
+        <Link
+          href={`/buy/packages/${searchParams.get(
+            "company"
+          )}/${searchParams.get("package")}`}
+          onClick={localStorageHandler}
+          className="text-xl px-5 py-3 rounded-md text-white font-poppins bg-green-500 hover:bg-green-600 transition-all active:scale-95 cursor-pointer  flex justify-center items-center gap-1 "
+        >
           Continue{" "}
           <span>
             <FaAnglesRight />
           </span>
         </Link>
-        <button onClick={searchAgainBtnHandler} className="text-lg   py-2 rounded-md text-black font-poppins cursor-pointer active:scale-95 hover:text-green-500 transition-all">
+        <button
+          onClick={searchAgainBtnHandler}
+          className="text-lg   py-2 rounded-md text-black font-poppins cursor-pointer active:scale-95 hover:text-green-500 transition-all"
+        >
           Or Search Again
         </button>
       </div>

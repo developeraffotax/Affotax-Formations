@@ -14,10 +14,13 @@ import { UserContext } from "@/app/(user)/layout";
 import { toast, ToastContainer } from "react-toastify";
 import ReactDOM from "react-dom";
 import axios from "axios";
+import { useRouter } from "next/navigation";
 
 const Form = ({ selectedPackages, mainPkg, mainPkgPrice, tPriceWithoutTax, addressObj, setAddressObj, orderRef}) => {
   const [selected, setSelected] = useState("signup");
   // const [user, setUser] = useState(null)
+
+  const router = useRouter()
 
   const [isLoading, setIsLoading] = useState(false);
 
@@ -142,6 +145,12 @@ const Form = ({ selectedPackages, mainPkg, mainPkgPrice, tPriceWithoutTax, addre
         });
 
         console.log(res);
+
+        if(res.status === 200 && res.data?.success) {
+          router.replace(`/success-page?orderId=${orderData[0].id}`)
+        }
+
+
       } catch (error) {
         console.log(error);
         toast.error(
@@ -215,6 +224,11 @@ const Form = ({ selectedPackages, mainPkg, mainPkgPrice, tPriceWithoutTax, addre
           userId: user.id,
           orderId: orderData[0].id,
         });
+        console.log(res)
+        if(res.status === 200 && res.data?.success) {
+          router.replace(`/success-page?orderId=${orderData[0].id}`)
+        }
+
       } catch (error) {
         console.log(error);
         toast.error(
@@ -224,6 +238,26 @@ const Form = ({ selectedPackages, mainPkg, mainPkgPrice, tPriceWithoutTax, addre
         setIsLoading(false);
       }
     }
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
   };
 
 

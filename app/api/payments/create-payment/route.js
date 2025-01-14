@@ -10,7 +10,7 @@ BigInt.prototype.toJSON = function () {
 
 const { paymentsApi } = new Client({
   accessToken: process.env.SQUARE_ACCESS_TOKEN_SERVER,
-  environment: process.env.NODE_ENV === "production" ? "production" : "sandbox",
+  environment:"sandbox",
 });
 
 
@@ -39,12 +39,15 @@ export async function POST(request) {
       
     });
     
-    return new Response(null, {
-      status: 302,
-      headers: {
-        Location: `/success-page?orderId=${orderId.toString()}`,
-      },
-    });
+    return new Response(
+      JSON.stringify({ success: true }),
+      {
+        status: 200,
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
 
 
   } catch (error) {
@@ -60,5 +63,5 @@ export async function POST(request) {
     );
   }
 
-  redirect(`/success-page?orderId=${orderId.toString()}`);
+ // redirect(`/success-page?orderId=${orderId.toString()}`);
 }

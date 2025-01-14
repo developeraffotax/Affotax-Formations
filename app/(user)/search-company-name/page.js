@@ -7,21 +7,17 @@ import SuccessDiv from "./SuccessDiv";
 import FailDiv from "./FailDiv";
 import Form from "./Form";
 import PackageHeader from "./PackageHeader";
-import { useSearchParams } from "next/navigation";
+ 
+import { Suspense } from 'react'
+import CompanyName from "./CompanyName";
+import { Bounce, toast } from "react-toastify";
 
 
 const Hero = () => {
 
 
-
-  const searchParams = useSearchParams()
  
-  const pkg = searchParams.get('package')
-
-
-
-
-
+ 
 
     const [companyName, setCompanyName] = useState('');
     const [isCompanyNameAvailable, setIsCompanyNameAvailable] = useState(false);
@@ -49,15 +45,42 @@ const Hero = () => {
 
     try {
       
+      if(!navigator.onLine) {
+        console.log('network error');
+        return toast.error("Network Errorssssss", {
+          position: "top-left",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+          transition: Bounce,
+        })
+      }
+
       const res =  await axios.post('/api/search-company-name', {companyName} );
-    
+      console.log(res)
      
       if (res?.status === 200) {
         setIsCompanyNameAvailable(res.data?.isCompanyNameAvailable)
       }
 
     } catch (error) {
-        console.log(error)
+        console.log(error.code)
+        toast.error(error?.message, {
+              position: "top-left",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: false,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "colored",
+              transition: Bounce,
+            })
+         
     } finally {
       setIsLoading(false);
       setIsTouched(true);
@@ -104,10 +127,10 @@ const Hero = () => {
 
           <div className="w-full flex flex-row max-xl:flex-col gap-8  justify-center items-center bg-gray-100 rounded-xl   ">
             {
-              (isCompanyNameAvailable && isTouched) ? <SuccessDiv continueUrl = {`/buy/packages/${searchParams.get('company')}/${searchParams.get('package')}`}  searchAgainBtnHandler={searchAgainBtnHandler} companyNameToShow={companyNameToShow}/> : (!isCompanyNameAvailable && isTouched) ? <FailDiv companyName={companyName} onSubmitHandler={onSubmitHandler} setCompanyName={setCompanyName} isLoading={isLoading} isInputEmpty={isInputEmpty} companyNameToShow={companyNameToShow}/> : 
+              (isCompanyNameAvailable && isTouched) ?  <Suspense fallback={<p>Loading...</p>}><SuccessDiv  searchAgainBtnHandler={searchAgainBtnHandler} companyNameToShow={companyNameToShow}/></Suspense> : (!isCompanyNameAvailable && isTouched) ? <FailDiv companyName={companyName} onSubmitHandler={onSubmitHandler} setCompanyName={setCompanyName} isLoading={isLoading} isInputEmpty={isInputEmpty} companyNameToShow={companyNameToShow}/>  : 
               <div className="text-black pt-20 pb-20 max-xl:pb-12 w-[60%] max-w-2xl">
               <div className="flex flex-col items-start justify-start gap-8 mb-16 max-xl:mb-8  ">
-                <h1 className="text-5xl font-semibold font-poppins">You have chosen the <span className="text-orange-500 ">{ searchParams.get('package') .split('-') .map(word => word.charAt(0).toUpperCase() + word.slice(1)) .join(' ') }</span> </h1>
+                <h1 className="text-5xl font-semibold font-poppins">You have chosen the <Suspense><CompanyName /></Suspense>  </h1>
 
                 {/* <h2 className="text-xl text-gray-100 "> {" "} You have chosen the Privacy Package.{" "} </h2> */}
                 <h3 className="text-xl  text-black"> {" "} Now choose your company name.{" "} </h3>
