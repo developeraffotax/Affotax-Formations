@@ -10,7 +10,7 @@ import PackageHeader from "./PackageHeader";
  
 import { Suspense } from 'react'
 import CompanyName from "./CompanyName";
-import { Bounce, toast } from "react-toastify";
+import { Bounce, Flip, toast, ToastContainer } from "react-toastify";
 
 
 const Hero = () => {
@@ -62,7 +62,21 @@ const Hero = () => {
 
       const res =  await axios.post('/api/search-company-name', {companyName} );
       console.log(res)
-     
+      
+      
+      if (res?.status === 429) {
+        return toast.warn("Too many Requests! Please try again later", {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+          transition: Flip,
+          });
+      }
       if (res?.status === 200) {
         setIsCompanyNameAvailable(res.data?.isCompanyNameAvailable)
       }
@@ -119,6 +133,7 @@ const Hero = () => {
 
   return (
     <section className="w-full     font-Inter relative max-xl:px-0 ">
+      <ToastContainer />
       <div className="w-full overflow-hidden relative ">
         {/* <span className="w-[50%] max-xl:hidden   absolute -right-16 bottom-0"> {" "} <svg viewBox="0 0 827 498" fill="none" xmlns="http://www.w3.org/2000/svg" > {" "} <path d="M366.37 361.625C648.83 419.253 803.815 144.553 846 0V526H0C4.43117 447.197 83.9087 303.997 366.37 361.625Z" fill="#FC6600" />{" "} </svg>{" "} </span> */}
         <div className="container mx-auto w-full px-40 max-xl:px-8 pb-16  ">

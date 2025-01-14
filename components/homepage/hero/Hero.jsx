@@ -9,7 +9,7 @@ import axios from "axios";
 import SuccessDiv from "./SuccessDiv";
 import FailDiv from "./FailDiv";
 import Form from "./Form";
-import { Bounce, Flip, toast } from "react-toastify";
+import {  Flip, toast, ToastContainer } from "react-toastify";
 
 
 const Hero = () => {
@@ -39,6 +39,20 @@ const Hero = () => {
     
 
     try {
+      if(!navigator.onLine) {
+        console.log('network error');
+        return toast.error("Network Errorssssss", {
+          position: "top-left",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+          transition: Bounce,
+        })
+      }
       
       const res =  await axios.post('/api/search-company-name', {companyName} );
       
@@ -100,6 +114,7 @@ const Hero = () => {
 
   return (
     <section className="w-full  mesh  font-Inter relative max-xl:px-0 ">
+      <ToastContainer />
       <div className="w-full overflow-hidden relative ">
         <span className="w-[50%] max-xl:hidden   absolute -right-16 bottom-0"> {" "} <svg viewBox="0 0 827 498" fill="none" xmlns="http://www.w3.org/2000/svg" > {" "} <path d="M366.37 361.625C648.83 419.253 803.815 144.553 846 0V526H0C4.43117 447.197 83.9087 303.997 366.37 361.625Z" fill="#FC6600" />{" "} </svg>{" "} </span>
         <div className="container mx-auto w-full px-40 max-xl:px-8  ">
