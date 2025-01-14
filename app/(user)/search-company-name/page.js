@@ -64,24 +64,30 @@ const Hero = () => {
       console.log(res)
       
       
-      if (res?.status === 429) {
-        return toast.warn("Too many Requests! Please try again later", {
-          position: "top-center",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: false,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "dark",
-          transition: Flip,
-          });
-      }
+      
       if (res?.status === 200) {
         setIsCompanyNameAvailable(res.data?.isCompanyNameAvailable)
       }
 
     } catch (error) {
+
+
+
+      if (error?.response?.status === 429) {
+                return toast.warn("Too many Requests! Please try again later", {
+                  position: "top-center",
+                  autoClose: 5000,
+                  hideProgressBar: false,
+                  closeOnClick: false,
+                  pauseOnHover: true,
+                  draggable: true,
+                  progress: undefined,
+                  theme: "dark",
+                  transition: Flip,
+                  });
+              }
+
+
         console.log(error.code)
         toast.error(error?.message, {
               position: "top-left",

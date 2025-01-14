@@ -56,19 +56,7 @@ const Hero = () => {
       
       const res =  await axios.post('/api/search-company-name', {companyName} );
       
-      if (res?.status === 429) {
-        return toast.warn("Too many Requests! Please try again later", {
-          position: "top-center",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: false,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "dark",
-          transition: Flip,
-          });
-      }
+      
       
       if (res?.status === 200) {
         setIsCompanyNameAvailable(res.data?.isCompanyNameAvailable)
@@ -76,6 +64,20 @@ const Hero = () => {
 
     } catch (error) {
         console.log(error)
+
+        if (error?.response?.status === 429) {
+          return toast.warn("Too many Requests! Please try again later", {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+            transition: Flip,
+            });
+        }
     } finally {
       setIsLoading(false);
       setIsTouched(true);
