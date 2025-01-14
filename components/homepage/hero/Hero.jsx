@@ -9,6 +9,7 @@ import axios from "axios";
 import SuccessDiv from "./SuccessDiv";
 import FailDiv from "./FailDiv";
 import Form from "./Form";
+import { Bounce, Flip, toast } from "react-toastify";
 
 
 const Hero = () => {
@@ -40,8 +41,21 @@ const Hero = () => {
     try {
       
       const res =  await axios.post('/api/search-company-name', {companyName} );
-    
-     
+      
+      if (res?.status === 429) {
+        return toast.warn("Too many Requests! Please try again later", {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+          transition: Flip,
+          });
+      }
+      
       if (res?.status === 200) {
         setIsCompanyNameAvailable(res.data?.isCompanyNameAvailable)
       }
