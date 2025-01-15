@@ -6,7 +6,14 @@ import { NextResponse } from 'next/server';
 
 export async function POST(req) {
 
-    const { recipientName, amount, orderRef,  ordersArr, email } = await req.json();
+
+    const { data : {object: {payment: {  orderId, userId, amount, buyerEmailAddress}}} } = await request.json();
+
+
+   // const { recipientName, amount, orderRef,  ordersArr, email } = await req.json();
+
+
+
 
     console.log(req)
 
@@ -24,7 +31,7 @@ export async function POST(req) {
 
 
     try {
-        const emailHtml = await render(<CustomerEmail recipientName={recipientName} amount={amount} orderRef={orderRef} ordersArr={ordersArr} />);
+        const emailHtml = await render(<CustomerEmail recipientName={"recipientName"} amount={amount} orderRef={orderId} ordersArr={[{name: 'asd', price: '22'}]} />);
       
         const options = {
           from: process.env.GMAIL_USER,

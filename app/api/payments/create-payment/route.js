@@ -16,12 +16,7 @@ const { paymentsApi } = new Client({
 
 
 export async function POST(request) {
-
-  const body = await req.json();
-
-  console.log(body)
-
-  const { data : {object: {payment: {sourceId, orderId, userId, amount, buyerEmailAddress}}} } = await request.json();
+  const { sourceId, orderId, userId, amount, buyerEmailAddress } = await request.json();
 
   try {
     const supabase = await createClient();
