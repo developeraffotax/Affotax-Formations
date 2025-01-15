@@ -11,7 +11,7 @@ import { createClient } from "@supabase/supabase-js";
 export async function POST(req) {
 
 
-  const text = await request.text()
+  const text = await req.text()
 
 
   console.log(text);
