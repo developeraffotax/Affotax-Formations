@@ -16,7 +16,7 @@ const { paymentsApi } = new Client({
 
 
 export async function POST(request) {
-  const { sourceId, orderId, userId } = await request.json();
+  const { sourceId, orderId, userId, amount, buyerEmailAddress } = await request.json();
 
   try {
     const supabase = await createClient();
@@ -27,18 +27,22 @@ export async function POST(request) {
       throw new Error("Failed to authenticate");
     }
 
+    const totalAmout = (+amount) * 100;
     const { result } = await paymentsApi.createPayment({
       idempotencyKey: randomUUID(),
       sourceId: sourceId,
       amountMoney: {
         currency: "GBP",
-        amount: 500,
+        amount: totalAmout,
       },
       referenceId: orderId.toString(),  // actual order_id in the db
       customerId: userId,
+
+      buyerEmailAddress: buyerEmailAddress
       
     });
     
+    console.log(result)
     return new Response(
       JSON.stringify({ success: true }),
       {

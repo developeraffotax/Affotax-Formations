@@ -142,11 +142,15 @@ const Form = ({ selectedPackages, mainPkg, mainPkgPrice, tPriceWithoutTax, addre
           sourceId: token,
           userId: userData.user.id,
           orderId: orderData[0].id,
+
+          amount:  ((20 / 100) * +tPriceWithoutTax + +tPriceWithoutTax) .toFixed(2) .toString(),
+          buyerEmailAddress: userData.user.email
         });
 
         console.log(res);
 
         if(res.status === 200 && res.data?.success) {
+ 
           router.replace(`/success-page?orderId=${orderData[0].id}`)
         }
 
@@ -218,11 +222,16 @@ const Form = ({ selectedPackages, mainPkg, mainPkgPrice, tPriceWithoutTax, addre
           );
         }
 
+        console.log(user)
         const token = localStorage.getItem("payment_id");
         const res = await axios.post("/api/payments/create-payment", {
           sourceId: token,
           userId: user.id,
           orderId: orderData[0].id,
+
+          amount:  ((20 / 100) * +tPriceWithoutTax + +tPriceWithoutTax) .toFixed(2) .toString(),
+          buyerEmailAddress: user?.email
+
         });
         console.log(res)
         if(res.status === 200 && res.data?.success) {
