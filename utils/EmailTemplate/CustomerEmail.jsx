@@ -135,9 +135,8 @@ const footer = {
 
 
 
-export const CustomerEmail = ({recipientName, amount, orderRef, date, ordersArr }) => {
-
-  console.log(ordersArr)
+export const CustomerEmail = ({recipientName, amount, orderRef, date, ordersArr  }) => {
+ 
 
   return (
     <Html>
@@ -162,8 +161,8 @@ export const CustomerEmail = ({recipientName, amount, orderRef, date, ordersArr 
             <Text style={{ fontSize: "16px", color: "#333" }}> We are pleased to inform you that your payment has been successfully processed. </Text>
             <Text style={{ fontSize: "16px", color: "#333", marginTop: "10px", marginBottom: '4px' }} > <strong>Transaction Details:</strong> </Text>
             <ul key={'ul-1'} style={{ paddingLeft: "20px", fontSize: "16px", color: "#333", margin: "0",  }} >
-              <li key={'li-11'}> <strong>Amount Paid:</strong> ${amount} </li>
-              <li key={'li-12'}> <strong>Order Ref ID:</strong> {orderRef} </li>
+              <li key={'li-11'}> <strong>Amount Paid:</strong> £{amount} </li>
+              <li key={'li-12'}> <strong>Order Ref ID:</strong>  #{orderRef} </li>
               <li key={'li-13'}> <strong>Date:</strong> {date} </li>
             </ul>
 
@@ -216,7 +215,7 @@ export const CustomerEmail = ({recipientName, amount, orderRef, date, ordersArr 
                     margin: '0'
                     
                   }}>
-                    <h4 style={h4}>{el.name}</h4> <h4 style={h4Copy}>{el.price}</h4>
+                    <h4 style={h4}>{el.product_name}</h4> <h4 style={h4Copy}>£{el.price}</h4>
                   </li>
                 )
                })
@@ -225,7 +224,7 @@ export const CustomerEmail = ({recipientName, amount, orderRef, date, ordersArr 
 
 
 
-<li key={'li-2'} style={{ width: "100%", color: 'black', backgroundColor: "#F3F3F3",   display: "flex",  margin: "0", padding: "0px" }}> <strong style={h4}>Total Price</strong> <strong style={h4Copy}>{amount}</strong> </li>
+<li key={'li-2'} style={{ width: "100%", color: 'black', backgroundColor: "#F3F3F3",   display: "flex",  margin: "0", padding: "0px" }}> <strong style={h4}>Total Price</strong> <strong style={h4Copy}>£{amount}</strong> </li>
               
             </ul>
 

@@ -148,9 +148,20 @@ const Form = ({ selectedPackages, mainPkg, mainPkgPrice, tPriceWithoutTax, addre
         });
 
         console.log(res);
-
+// can be replaced with the webhook form the square
         if(res.status === 200 && res.data?.success) {
  
+          // const emailRes = await axios.post('/api/email/send-email-to-customer', {
+          //   recipientName: '',
+          //   amount: ((20 / 100) * +tPriceWithoutTax + +tPriceWithoutTax) .toFixed(2) .toString(),
+          //   orderRef: orderRef,
+          //   ordersArr: '',
+          //   recipientEmail: userData.user.email,
+
+
+
+          // })
+
           router.replace(`/success-page?orderId=${orderData[0].id}`)
         }
 
