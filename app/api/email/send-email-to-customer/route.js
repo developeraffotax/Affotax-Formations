@@ -11,15 +11,15 @@ import { createClient } from "@supabase/supabase-js";
 export async function POST(req) {
 
 
-  const text = await req.text()
+  // const text = await req.text()
 
 
-  console.log(text);
+  // console.log(text);
 
 
-// const  body = await req.json();
+const  body = await req.json();
 
-//   console.log(body)
+  console.log(body)
 
   // const { data: { object: { payment: { reference_id: order_id, customer_id } } } } = await req.json();
 
