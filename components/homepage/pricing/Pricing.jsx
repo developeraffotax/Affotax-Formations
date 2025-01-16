@@ -5,21 +5,28 @@ import OnePrice from "./OnePrice";
 import { v4 as uuidv4 } from 'uuid';
 
 
+ 
+
+
+
 const PRICING_ARRAY = [
-  {
-    name: 'Digital',
-    description: 'Perfect for individuals and small teams.',
-    badge: '',
-    price: '£59',
-    List: ['LTD Company', 'Digital Company Documents', '£50 Companies House Fee Included'],
+  // {
+  //   name: 'Digital',
+  //   description: 'Perfect for individuals and small teams.',
+  //   badge: '',
+  //   price: '£59',
+  //   List: ['LTD Company', 'Digital Company Documents', '£50 Companies House Fee Included'],
     
-  },
+  // },
 
   {
     name: 'Basic',
     description: 'Perfect for individuals and small teams.',
     badge: 'Best-Selling',
-    price: '£69',
+    price: '£59',
+    href: '/buy/packages/limited-company/basic-package',
+    pkg: 'basic-package',
+    company: 'limited-company',
     List: ['LTD Company', 'Digital Company Documents', '£50 Companies House Fee Included', 'Confirmation Statement Service' ,'London Service Address','Confirmation Statement Service'],
     
   },
@@ -28,7 +35,10 @@ const PRICING_ARRAY = [
     name: 'Standard',
     description: 'Perfect for individuals and small teams.',
     badge: 'Most-popular',
-    price: '£79',
+    price: '£69',
+    href: '/buy/packages/limited-company/standard-package',
+    pkg: 'standard-package',
+    company: 'limited-company',
     List: ['LTD Company', 'Digital Company Documents', '£50 Companies House Fee Included', 'Confirmation Statement Service' ,'London Service Address','Confirmation Statement Service', 'UK Accountant Consultation- (30min)'],
     
   },
@@ -38,6 +48,9 @@ const PRICING_ARRAY = [
     description: 'Perfect for individuals and small teams.',
     badge: '',
     price: '£89',
+    href: '/buy/packages/limited-company/premium-package',
+    pkg: 'premium-package',
+    company: 'limited-company',
     List: ['LTD Company', 'Digital Company Documents', '£50 Companies House Fee Included', 'Confirmation Statement Service' ,'London Service Address','Confirmation Statement Service', 'UK Accountant Consultation- (30min)', 'London Business Address'],
     
   },
@@ -46,7 +59,10 @@ const PRICING_ARRAY = [
     name: 'All-Inclusive',
     description: 'Perfect for individuals and small teams.',
     badge: '',
-    price: '£149',
+    price: '£100',
+    href: '/buy/packages/limited-company/all-inclusive-package',
+    pkg: 'all-inclusive-package',
+    company: 'limited-company',
     List: ['LTD Company', 'Digital Company Documents', '£50 Companies House Fee Included', 'Confirmation Statement Service' ,'London Service Address','Confirmation Statement Service', 'UK Accountant Consultation- (30min)', 'London Business Address', ' Annual Tax filing Worth (£249)'],
     
   },
@@ -76,7 +92,7 @@ const Pricing = () => {
 
 
 
-        <div className="grid grid-cols-5 max-xl:grid-cols-1 gap-8 max-xl:px-12 ">
+        <div className="grid grid-cols-4 max-xl:grid-cols-1 gap-8 max-xl:px-12 ">
 
           {
               PRICING_ARRAY.map((price) => {

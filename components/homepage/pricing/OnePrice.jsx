@@ -1,7 +1,16 @@
+import dynamic from "next/dynamic";
 import React from "react";
 import { v4 as uuidv4 } from 'uuid';
 
-const OnePrice = ({ name, description, badge, price, List }) => {
+
+const BuyNowBtn = dynamic(
+  () => import('./BuyNowBtn'),
+  { ssr: false }
+)
+
+
+
+const OnePrice = ({ name, description, badge, price, List, href, pkg, company }) => {
   
   return (
     <div className="bg-white flex flex-col justify-between  bg-opacity-10 rounded-lg shadow-lg p-6 max-xl:p-8 relative ">
@@ -34,18 +43,17 @@ const OnePrice = ({ name, description, badge, price, List }) => {
       </ul>
       </div>
 
+      
       {/* <a
-        href="#"
-        className="block w-full py-3 px-6 text-center rounded-md text-white font-medium bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700"
-      >
-        Buy Now
-      </a> */}
-      <a
         href="#"
         className="block w-full py-3 px-6 text-center rounded-md text-white font-medium bg-gradient-to-r from-yellow-600 to-orange-600 hover:from-yellow-700 hover:to-orange-700"
       >
         Buy Now
-      </a>
+      </a> */}
+
+<BuyNowBtn href={href} pkg={pkg} company={company}/>
+
+
     </div>
   );
 };
