@@ -39,7 +39,7 @@ export async function POST(req) {
   });
 
   try {
-    const emailHtml = await render( <AdminEmail recipientName={user.user_metadata.account_holder.forename} amount={orders[0].total} orderRef={orders[0].order_ref} ordersArr={order_items} recipientEmail={user.email} date={new Date().toDateString()} /> );
+    const emailHtml = await render( <AdminEmail customerEmail={user?.email} recipientName={user?.user_metadata?.account_holder?.forename} amount={orders[0]?.total} orderRef={orders[0]?.order_ref} ordersArr={order_items}   date={new Date().toDateString()} /> );
 
     const options = {
       from: process.env.GMAIL_USER,

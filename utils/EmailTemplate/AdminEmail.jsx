@@ -135,7 +135,7 @@ const footer = {
 
 
 
-export const AdminEmail = ({ recipientName, amount, orderRef, date, ordersArr  }) => {
+export const AdminEmail = ({ recipientName, amount, orderRef, date, ordersArr, customerEmail  }) => {
  
 
   return (
@@ -161,7 +161,8 @@ export const AdminEmail = ({ recipientName, amount, orderRef, date, ordersArr  }
             <Text style={{ fontSize: "16px", color: "#333" }}> Affotax Formations have received a new order from {recipientName} </Text>
             <Text style={{ fontSize: "16px", color: "#333", marginTop: "10px", marginBottom: '4px' }} > <strong>Transaction Details:</strong> </Text>
             <ul key={'ul-1'} style={{ paddingLeft: "20px", fontSize: "16px", color: "#333", margin: "0",  }} >
-              <li key={'li-15'}> <strong>Customer Name:</strong> £{recipientName} </li>
+              <li key={'li-15'}> <strong>Customer Name:</strong> {recipientName} </li>
+              <li key={'li-15'}> <strong>Customer Email:</strong> {customerEmail} </li>
               <li key={'li-11'}> <strong>Amount Paid:</strong> £{amount} </li>
               <li key={'li-12'}> <strong>Order Ref ID:</strong>  #{orderRef} </li>
               <li key={'li-13'}> <strong>Date:</strong> {date} </li>
