@@ -5,6 +5,7 @@ import { CustomerEmail } from "@/utils/EmailTemplate/CustomerEmail";
 import { NextResponse } from "next/server";
 
 import { createClient } from "@supabase/supabase-js";
+import sendMail from "@/lib/sendMail";
 
 
 
@@ -35,13 +36,13 @@ export async function POST(req) {
 
 
 
-  const transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-      user: process.env.GMAIL_USER,
-      pass: process.env.GMAIL_PASS,
-    },
-  });
+  // const transporter = nodemailer.createTransport({
+  //   service: "gmail",
+  //   auth: {
+  //     user: process.env.GMAIL_USER,
+  //     pass: process.env.GMAIL_PASS,
+  //   },
+  // });
 
   try {
     const emailHtml = await render( <CustomerEmail recipientName={user?.user_metadata?.account_holder?.forename} amount={orders[0]?.total} orderRef={orders[0]?.order_ref} ordersArr={order_items}   date={new Date().toDateString()} /> );
@@ -53,11 +54,11 @@ export async function POST(req) {
       html: emailHtml,
     };
 
-    const {accepted, response } = await transporter.sendMail(options)
+    const res = await sendMail(options)
 
-    console.log(accepted, response)
+     
 
-    return NextResponse.json({ message: "EMAIL SENT" }, { status: 200 });
+    return NextResponse.json({ message: "EMAIL SENT", success: res }, { status: 200 });
   } catch (error) {
     console.log(error);
 
