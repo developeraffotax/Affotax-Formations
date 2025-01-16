@@ -2,6 +2,7 @@
 
 import { Suspense, useEffect, useState } from "react";
 import UserAndOrder from "./UserAndOrder";
+import PackageHeader from "./PackageHeader";
 
 export default function SuccessPage() {
   const [user, setUser] = useState(null);
@@ -24,11 +25,18 @@ export default function SuccessPage() {
 
   return (
     <>
-      {isLoading && !error ? (
+
+      
+
+
+
+      {(isLoading && !error) ? (
         <p className="w-full py-24 text-center text-orange-500 font-poppins">
           Loading....
         </p>
-      ) : (
+      ) : (!isLoading && !error) ? (
+        <div className="w-full bg-gradient-to-b from-gray-50 to-gray-100 ">
+         <div className="  max-lg:hidden w-full  container mx-auto    px-40 max-xl:px-8   "><PackageHeader /> </div>
         <Suspense fallback={<p>Loading....!! Please wait</p>}>
           <UserAndOrder
             user={user}
@@ -40,7 +48,8 @@ export default function SuccessPage() {
             setIsLoading={setIsLoading}
           />
         </Suspense>
-      )}
+        </div>
+      ) : null } 
 
       {error && (
         <p className="w-full py-24 text-center text-red-500 font-poppins">

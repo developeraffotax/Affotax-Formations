@@ -31,7 +31,11 @@ const UserAndOrder = ({user, setUser, error, setError, orderRef, setOrderRef, se
             .from('orders')
             .select("order_ref")
             .eq('id', orderId)
-  
+        
+            if(orderError) {
+              
+              throw new Error("Failed to fetch order")
+            }
   
             if(!data[0]) {
               
@@ -70,7 +74,7 @@ const UserAndOrder = ({user, setUser, error, setError, orderRef, setOrderRef, se
 
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gradient-to-b from-gray-50 to-gray-100">
+    <div className="flex items-center justify-center pt-16 pb-20 bg-gradient-to-b from-gray-50 to-gray-100 border-t   ">
           <div className="w-full max-w-2xl p-12 mx-4 text-center transition-all transform bg-white shadow-lg rounded-xl hover:shadow-xl">
             <div className="flex items-center justify-center w-24 h-24 mx-auto mb-8 bg-cyan-100 rounded-full">
               <svg
@@ -124,10 +128,10 @@ const UserAndOrder = ({user, setUser, error, setError, orderRef, setOrderRef, se
   
             <div className="mt-8">
               <Link
-                href="/"
-                className="inline-block px-8 py-4 text-lg font-semibold text-white transition-colors duration-200 bg-cyan-600 rounded-lg hover:bg-cyan-700"
+                href="/submit-company-form"
+                className="animate-pulse   font-poppins inline-block px-8 py-4 text-lg font-semibold text-white transition-colors duration-200 bg-cyan-600 rounded-lg hover:bg-cyan-700"
               >
-                Return to Homepage
+                Submit Company Submission Form
               </Link>
             </div>
           </div>
