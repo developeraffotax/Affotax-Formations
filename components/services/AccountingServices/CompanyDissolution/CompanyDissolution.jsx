@@ -190,8 +190,8 @@ const CompanyDissolution = () => {
 
           <div>
             <ul className="text-gray-700 space-y-8 mb-8 ">
-              <PriceBox title="Company Dissolution" price={"59.00"} content="In this package, we will complete all of the necessary documentation, including accurate filing & compliance with the UK government." includesList={[ "Completion and filing of dissolution form", "Board Resolution to approve the dissolution", "The Govt fee £33 is paid by Affotax", ]} />
-              <PriceBox title="Company Dissolution + Annual filing" price={"69.00"} content="In this package, Affotax will complete all the necessary documentation and submit the final set of accounts before closing the LTD." includesList={[ "Completion and filing of dissolution form", "Board Resolution to approve the dissolution", "The Govt fee £33 is paid by Affotax", ]} />
+              <PriceBox serviceName={"Company Dissolution"} title="Company Dissolution" price={"59.00"} content="In this package, we will complete all of the necessary documentation, including accurate filing & compliance with the UK government." includesList={[ "Completion and filing of dissolution form", "Board Resolution to approve the dissolution", "The Govt fee £33 is paid by Affotax", ]} />
+              <PriceBox serviceName={"Company Dissolution"} title="Company Dissolution + Annual filing" price={"69.00"} content="In this package, Affotax will complete all the necessary documentation and submit the final set of accounts before closing the LTD." includesList={[ "Completion and filing of dissolution form", "Board Resolution to approve the dissolution", "The Govt fee £33 is paid by Affotax", ]} />
             </ul>
 
 

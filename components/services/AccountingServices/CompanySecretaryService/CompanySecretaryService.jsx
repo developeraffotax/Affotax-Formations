@@ -80,6 +80,7 @@ const CompanySecretaryService = () => {
           <div>
             <ul className="text-gray-700 space-y-8 mb-8 ">
               <PriceBox
+                serviceName={"Company Secretary Service"}
                 title="Company secretary assignment"
                 price={"149.99"}
                 content="Appointing a company secretary can be a great way to ensure compliance and boost trust in your company. We’ll assign a dedicated personal manager to your company, ensuring all legal requirements are met."

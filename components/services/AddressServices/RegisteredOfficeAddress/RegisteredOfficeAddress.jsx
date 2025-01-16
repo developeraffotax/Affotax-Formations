@@ -113,8 +113,8 @@ const RegisteredOfficeAddress = () => {
           <div>
            
             <ul className="text-gray-700 space-y-8  ">
-                <PriceBox title="Registered Office Address" price={"35.00"} content="Use our UK London office as your Registered Office Address. Includes FREE forwarding of all statutory government letters addressed to your company." includesList={['Using a London address as your official registered address UK.', 'All official government mail scanned and emailed to you, free of charge. ' ]} />
-                <PriceBox title="Registered Office + Director Service Address" price={"49.00"} content="It offers everything in the basic package + director address within the UK for your company's official communications." includesList={['Using a London address as your company registered address.', 'All official government mail scanned and emailed to you, free of charge.', "Using a London address as your director Service address." ]} />
+                <PriceBox serviceName={"Registered Office Address"} title="Registered Office Address" price={"35.00"} content="Use our UK London office as your Registered Office Address. Includes FREE forwarding of all statutory government letters addressed to your company." includesList={['Using a London address as your official registered address UK.', 'All official government mail scanned and emailed to you, free of charge. ' ]} />
+                <PriceBox serviceName={"Registered Office Address"} title="Registered Office + Director Service Address" price={"49.00"} content="It offers everything in the basic package + director address within the UK for your company's official communications." includesList={['Using a London address as your company registered address.', 'All official government mail scanned and emailed to you, free of charge.', "Using a London address as your director Service address." ]} />
             </ul>
           </div>
 

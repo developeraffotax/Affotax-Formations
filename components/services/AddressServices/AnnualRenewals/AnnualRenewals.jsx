@@ -3,8 +3,9 @@ import Checkmark from '@/public/checkmark2.png'
 
 
 import Image from "next/image";
-import PriceBox from "./PriceBox";
+ 
 import ServiceCTA from '../../shared/ServiceCTA';
+import PriceBox from '../../shared/PriceBox';
 
 const AnnualRenewals = () => {
   return (
@@ -126,12 +127,12 @@ const AnnualRenewals = () => {
           <div className="flex flex-col items-start justify-between gap-8 ">
            
             <ul className="text-gray-700 space-y-8  ">
-                <PriceBox title="Registered Office Address" price={'39.00'} content="Renew your Registered Office Address and continue to protect the privacy of your home address for another 12 months." />
-                <PriceBox title="Service Address" price={'26.00'} content="Maintain the privacy provided with our Service Address for another year." />
-                <PriceBox title="Business Address Service" price={'96.00'} content="Renew your Registered Office Address and continue to protect the privacy of your home address for another 12 months." />
-                <PriceBox title="Confirmation Statement Service" price={'59.99'} content="Extend your Confirmation Statement Service and make sure you stay compliant with Companies House." />
-                <PriceBox title="Dormant Company Accounts Service" price={'49.99'} content="You can renew our Dormant Company Accounts Service here, and we will prepare and file your accounts for another year." />
-                <PriceBox title="Full Company Secretary Service" price={'149.99'} content="Renew your service and have the peace of mind that your company secretarial work is being taken care of for another year." />
+                <PriceBox serviceName={"Annual Renewals"}  title="Registered Office Address" price={'39.00'} content="Renew your Registered Office Address and continue to protect the privacy of your home address for another 12 months." />
+                <PriceBox serviceName={"Annual Renewals"}  title="Service Address" price={'26.00'} content="Maintain the privacy provided with our Service Address for another year." />
+                <PriceBox serviceName={"Annual Renewals"}  title="Business Address Service" price={'96.00'} content="Renew your Registered Office Address and continue to protect the privacy of your home address for another 12 months." />
+                <PriceBox serviceName={"Annual Renewals"}  title="Confirmation Statement Service" price={'59.99'} content="Extend your Confirmation Statement Service and make sure you stay compliant with Companies House." />
+                <PriceBox serviceName={"Annual Renewals"}  title="Dormant Company Accounts Service" price={'49.99'} content="You can renew our Dormant Company Accounts Service here, and we will prepare and file your accounts for another year." />
+                <PriceBox serviceName={"Annual Renewals"}  title="Full Company Secretary Service" price={'149.99'} content="Renew your service and have the peace of mind that your company secretarial work is being taken care of for another year." />
                 
 
 

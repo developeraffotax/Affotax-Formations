@@ -131,8 +131,8 @@ const VatRegistration = () => {
           <div>
            
             <ul className="text-gray-700 space-y-8  ">
-                <PriceBox title="Basic Package" price={"29.00"} content="It covers the essentials, guiding your business through the process to ensure you get the VAT number." includesList={['The registration process.', 'Submit required ID documents to HMRC.', 'We act as your VAT agent in the UK.' ]} />
-                <PriceBox title="Premium Package + Director Service Address" price={"49.00"} content="It covers everything in the basic package + we setup gateway login and activate the whole scheme for you." includesList={['The registration process.', 'Submit required ID documents to HMRC.', 'We act as your VAT agent in the UK.', 'Guide you on filing UK MTD VAT return' ]} />
+                <PriceBox serviceName={"Vat Registration"} title="Basic Package" price={"29.00"} content="It covers the essentials, guiding your business through the process to ensure you get the VAT number." includesList={['The registration process.', 'Submit required ID documents to HMRC.', 'We act as your VAT agent in the UK.' ]} />
+                <PriceBox serviceName={"Vat Registration"} title="Premium Package + Director Service Address" price={"49.00"} content="It covers everything in the basic package + we setup gateway login and activate the whole scheme for you." includesList={['The registration process.', 'Submit required ID documents to HMRC.', 'We act as your VAT agent in the UK.', 'Guide you on filing UK MTD VAT return' ]} />
             </ul>
           </div>
 

@@ -98,7 +98,7 @@ const CompanyNameChange = () => {
 
           <div>
             <ul className="text-gray-700 space-y-8 mb-8 ">
-              <PriceBox title="Company name change (UK)" price={"69.00"} content="Our company name change service handles everything for you, from drafting the resolution to filing it with Companies House. We take care of all the necessary paperwork to ensure the company's new name is updated smoothly on the Companies House register." includesList={[ "Certificate of Name Change issued after the name change approved.", "Completion of Change of Name by Resolution.", "Board meeting minutes confirming all directors agree to the name change.", ]} />
+              <PriceBox serviceName={"Company Name Change"} title="Company name change (UK)" price={"69.00"} content="Our company name change service handles everything for you, from drafting the resolution to filing it with Companies House. We take care of all the necessary paperwork to ensure the company's new name is updated smoothly on the Companies House register." includesList={[ "Certificate of Name Change issued after the name change approved.", "Completion of Change of Name by Resolution.", "Board meeting minutes confirming all directors agree to the name change.", ]} />
               
             </ul>
 

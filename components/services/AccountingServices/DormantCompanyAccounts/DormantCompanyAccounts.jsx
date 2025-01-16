@@ -97,6 +97,7 @@ const DormantCompanyAccounts = () => {
           <div>
             <ul className="text-gray-700 space-y-8 mb-8 ">
               <PriceBox
+                serviceName={"Dormant Company Accounts"}
                 title="Dormant Accounts Standard"
                 price={"59.00"}
                 content="This exclusive package will help you prepare your UK company Dormant accounts and submit them to Companies House within 3 working days."
@@ -106,6 +107,7 @@ const DormantCompanyAccounts = () => {
                 ]}
               />
               <PriceBox
+                serviceName={"Dormant Company Accounts"}
                 title="Dormant Accounts Express"
                 price={"69.00"}
                 content="This exclusive package will help you prepare your UK company Dormant accounts and submit them to Companies House within 1 working day."
@@ -115,6 +117,7 @@ const DormantCompanyAccounts = () => {
                 ]}
               />
               <PriceBox
+                serviceName={"Dormant Company Accounts"}
                 title="Dormant Accounts Bundle Service"
                 price={"69.00"}
                 content="The Premium delivery package helps you prepare and file as UK limited companies, and submitting them to Companies House within one working day."

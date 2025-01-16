@@ -135,7 +135,7 @@ const DirectorServiceAddress = () => {
           <div className="flex flex-col items-start justify-between gap-8 ">
            
             <ul className="text-gray-700 space-y-8  ">
-                <PriceBox title="Director's Service Address" price={'24.00'} content="You can now protect the privacy of your residential address and prevent it from appearing online through the use of our “directors Service address” service." includesList={['Exclusive London director Service Address.', 'All mail scanned free of charge.', 'Guidence on all mail notices what action is required.' ]} />
+                <PriceBox serviceName={"Director Service Address"} title="Director's Service Address" price={'24.00'} content="You can now protect the privacy of your residential address and prevent it from appearing online through the use of our “directors Service address” service." includesList={['Exclusive London director Service Address.', 'All mail scanned free of charge.', 'Guidence on all mail notices what action is required.' ]} />
                 
 
 

@@ -94,6 +94,7 @@ const ConfirmationStatement = () => {
           <div>
             <ul className="text-gray-700 space-y-8  ">
               <PriceBox
+                serviceName={"Confirmation Statement"}
                 title="Standard Service"
                 price={"59.00"}
                 content="Your confirmation statement will be filed within 3 working days of receiving the required information"
@@ -104,6 +105,7 @@ const ConfirmationStatement = () => {
                 ]}
               />
               <PriceBox
+                serviceName={"Confirmation Statement"}
                 title="Express Service"
                 price={"69.00"}
                 content="Your confirmation statement will be filed within 3 working days of receiving the required information"

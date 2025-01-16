@@ -151,6 +151,7 @@ const CertificateOfGoodStanding = () => {
           <div>
             <ul className="text-gray-700 space-y-8  ">
               <PriceBox
+                serviceName={"Certificate of Good Standing"}
                 title="For UK Residents"
                 price={"69.00"}
                 content="We offer seamless PAYE registration services with HMRC, ensuring your business is set up to handle employee payroll and tax obligations smoothly. Our expert team manages the process for a hassle-free experience."

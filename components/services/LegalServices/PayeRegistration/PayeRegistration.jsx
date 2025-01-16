@@ -120,8 +120,8 @@ const PayeRegistration = () => {
           <div>
            
             <ul className="text-gray-700 space-y-8  ">
-                <PriceBox title="For UK Residents" price={"29.00"} content="We offer seamless PAYE registration services with HMRC, ensuring your business is set up to handle employee payroll and tax obligations smoothly. Our expert team manages the process for a hassle-free experience." includesList={['PAYE registration', 'Preparation and submission to HMRC', 'Get Paye Registration Letter showing Payroll Number.' ]} />
-                <PriceBox title="For Non-UK Residents" price={"49.00"} content="We offer seamless PAYE registration services with HMRC, ensuring your business is set up to handle employee payroll and tax obligations smoothly. Our expert team manages the process for a hassle-free experience." includesList={['PAYE registration', 'Preparation and submission to HMRC', 'Get Paye Registration Letter showing Payroll Number.' ]} />
+                <PriceBox serviceName={"Paye Registration"} title="For UK Residents" price={"29.00"} content="We offer seamless PAYE registration services with HMRC, ensuring your business is set up to handle employee payroll and tax obligations smoothly. Our expert team manages the process for a hassle-free experience." includesList={['PAYE registration', 'Preparation and submission to HMRC', 'Get Paye Registration Letter showing Payroll Number.' ]} />
+                <PriceBox serviceName={"Paye Registration"} title="For Non-UK Residents" price={"49.00"} content="We offer seamless PAYE registration services with HMRC, ensuring your business is set up to handle employee payroll and tax obligations smoothly. Our expert team manages the process for a hassle-free experience." includesList={['PAYE registration', 'Preparation and submission to HMRC', 'Get Paye Registration Letter showing Payroll Number.' ]} />
             </ul>
           </div>
 

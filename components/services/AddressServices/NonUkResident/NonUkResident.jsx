@@ -146,7 +146,7 @@ const NonUkResident = () => {
           <div className="flex flex-col items-start justify-between gap-8 ">
            
             <ul className="text-gray-700 space-y-8  ">
-                <PriceBox title="For Non-UK Residents"price={"99.00"} content="We handle the paperwork so you can focus on what you do best – running your business" includesList={['UK limited company formation', 'Registered office address', 'Directors Address, London E61', 'HMRC UTR number', 'Incorporation fee £50 included.', 'Digital Incorporation Certificate', 'Digital Articles of Association', 'Free accounting consultation', 'VAT registration (if needed)' ]} />
+                <PriceBox serviceName={"Address for Non-Uk Resident "} title="For Non-UK Residents"price={"99.00"} content="We handle the paperwork so you can focus on what you do best – running your business" includesList={['UK limited company formation', 'Registered office address', 'Directors Address, London E61', 'HMRC UTR number', 'Incorporation fee £50 included.', 'Digital Incorporation Certificate', 'Digital Articles of Association', 'Free accounting consultation', 'VAT registration (if needed)' ]} />
                 
 
 
