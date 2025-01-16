@@ -1,9 +1,10 @@
 
-import BasicPackage from "@/components/buy/limitedCompany/basicPackage/BasicPackage";
+
+import AllInclusivePackage from "@/components/buy/limitedCompany/allInclusivePackage/AllInclusivePackage";
 import React from "react";
 
 const page = () => {
-  return <BasicPackage />
+  return <AllInclusivePackage />
 };
 
 export default page;

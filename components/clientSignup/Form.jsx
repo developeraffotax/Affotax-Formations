@@ -138,24 +138,7 @@ const Form = () => {
       </div>
 
       <div className="w-full">
-        <Input
-          errorMessage={errors?.surname?.message}
-          isInvalid={errors?.surname ? true : false}
-          {...register("surname", {
-            required: {
-              value: true,
-              message: "Surname is required!",
-            },
-          })}
-          key="surname"
-          classNames={{
-            mainWrapper: "w-full ",
-            label: "w-[40%]",
-          }}
-          label="Surname: *	"
-          labelPlacement="outside-left"
-          type="text"
-        />
+        <Input errorMessage={errors?.surname?.message} isInvalid={errors?.surname ? true : false} {...register("surname", { required: { value: true, message: "Surname is required!", }, })} key="surname" classNames={{ mainWrapper: "w-full ", label: "w-[40%]", }} label="Surname: *	" labelPlacement="outside-left" type="text" />
       </div>
 
       <div className="w-full">

@@ -48,13 +48,25 @@ export async function POST(req) {
       html: emailHtml,
     };
 
-    await transporter.sendMail(options);
+     transporter.sendMail(options, (err, info) => {
 
-    return NextResponse.json({ message: "EMAIL SENT" }, { status: 200 });
+        if (err) {
+          return NextResponse.json({ message: "error occured while sending mail" }, { status: 500 });
+        } else {
+          return NextResponse.json({ message: "EMAIL SENT" }, { status: 200 });
+        }
+
+
+
+
+
+     });
+
+   
   } catch (error) {
     console.log(error);
-
     return NextResponse.json({ message: "error occured" }, { status: 500 });
+    
   }
 }
 

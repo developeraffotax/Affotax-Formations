@@ -53,7 +53,9 @@ export async function POST(req) {
       html: emailHtml,
     };
 
-    await transporter.sendMail(options);
+    const {accepted, response } = await transporter.sendMail(options)
+
+    console.log(accepted, response)
 
     return NextResponse.json({ message: "EMAIL SENT" }, { status: 200 });
   } catch (error) {
