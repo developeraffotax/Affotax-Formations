@@ -8,7 +8,7 @@ import {
   useDisclosure,
   useDraggable,
   Input,
-} from "@nextui-org/react";
+} from "@heroui/react";
 import React, { forwardRef, useRef } from "react";
 import CountrySelect from "./CountrySelect";
 import { useForm, useFormContext } from "react-hook-form";

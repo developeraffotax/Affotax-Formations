@@ -1,4 +1,4 @@
-import { Alert, Button, Input, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, Spinner, } from "@nextui-org/react";
+import { Alert, Button, Input, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, Spinner, } from "@heroui/react";
 import React, { useEffect, useState } from "react";
 
 import { useForm } from "react-hook-form";
@@ -47,7 +47,7 @@ const ResetPasswordReq = ({ isFpModal, setIsFpModal }) => {
 
 
   return (
-    <Modal
+    (<Modal
       backdrop="blur"
       isOpen={isFpModal}
       onClose={() => setIsFpModal(false)}
@@ -138,7 +138,7 @@ const ResetPasswordReq = ({ isFpModal, setIsFpModal }) => {
           </>
         )}
       </ModalContent>
-    </Modal>
+    </Modal>)
   );
 };
 

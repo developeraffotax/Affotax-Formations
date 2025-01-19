@@ -8,7 +8,7 @@ import { useForm } from "react-hook-form";
 import SquareForm from "./CardDetails/SquareFrom/SquareForm";
 import { CreditCard, PaymentForm } from "react-square-web-payments-sdk";
 import { createClient } from "@/lib/supabase/client";
-import { Spinner, Tab, Tabs } from "@nextui-org/react";
+import { Spinner, Tab, Tabs } from "@heroui/react";
 import LoginForm from "./LoginForm/LoginForm";
 import { UserContext } from "@/app/(user)/layout";
 import { toast, ToastContainer } from "react-toastify";

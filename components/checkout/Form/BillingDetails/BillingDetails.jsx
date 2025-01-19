@@ -1,6 +1,6 @@
 "use client"
 
-import { Button, Input, Select, SelectItem } from "@nextui-org/react";
+import { Button, Input, Select, SelectItem } from "@heroui/react";
 import { useRef, useState } from "react";
 import AddressModal from "./AddressModal";
 import CountrySelect from "./CountrySelect";
@@ -121,20 +121,18 @@ const BillingDetails = ({register, errors, clearErrors, setValue, setAddressObj}
 
 
   return (
-    <div className="w-full flex flex-col justify-start items-start gap-3 p-4 border ">
+    (<div className="w-full flex flex-col justify-start items-start gap-3 p-4 border ">
       <div className="w-full bg-gray-100 px-4 py-3  ">
         <h2 className="w-full text-2xl font-poppins text-cyan-500  ">
           Billing Details
         </h2>
       </div>
-
       <div className="w-full mt-2 ">
         <Select className="max-w-sm  rounded-xl  font-poppins" radius="lg"  label="Select a title" size="sm">
           <SelectItem className="  font-poppins">MR.</SelectItem>
           <SelectItem className="  font-poppins">MS.</SelectItem>
         </Select>
       </div>
-
       <div className="w-full flex flex-row justify-between items-center gap-8">
         <div className="w-full ">
           <Input
@@ -170,9 +168,6 @@ const BillingDetails = ({register, errors, clearErrors, setValue, setAddressObj}
 
 
       </div>
-
-
-
       <div className="w-full ">
           <Input
             className="max-w-sm font-poppins "
@@ -187,30 +182,24 @@ const BillingDetails = ({register, errors, clearErrors, setValue, setAddressObj}
 
           {errors?.phone && <p  className="text-red-500 text-sm mt-1 font-poppins  px-2 py-2  ">{errors.phone.message}</p>}
         </div>
-
-            
-
-        <div className="w-full flex flex-col justify-start items-start gap-2 font-poppins mt-3 ">
-          <input ref={(e) => {
-          // Register the input with React Hook Form
-          
-          register("address", { required: { value: true, message: "Address is required! Please select an address by clicking below!" } })
-          addressInputRef.current = e; // Assign to the ref for direct DOM access
-        }}  type="text" name="address"  hidden /> 
+      <div className="w-full flex flex-col justify-start items-start gap-2 font-poppins mt-3 ">
+        <input ref={(e) => {
+        // Register the input with React Hook Form
+        
+        register("address", { required: { value: true, message: "Address is required! Please select an address by clicking below!" } })
+        addressInputRef.current = e; // Assign to the ref for direct DOM access
+      }}  type="text" name="address"  hidden /> 
 
 
-          <p>Billing Address (where card is registered) </p>
-          {errors?.address && <p  className="text-red-500 text-sm mt-1 font-poppins  px-2 py-2  ">{errors.address.message}</p>}
-          {address && <p className="text-sm bg-cyan-100 rounded-md p-2 text-cyan-600 font-poppins   ">{address}</p>}
-
-          
-
-          <AddressModal    modalForm={modalForm} modalFormHandler={modalFormHandler}  setAddressBtnHandler={setAddressBtnHandler} inValidArr={inValidArr}  />
-        </div>
+        <p>Billing Address (where card is registered) </p>
+        {errors?.address && <p  className="text-red-500 text-sm mt-1 font-poppins  px-2 py-2  ">{errors.address.message}</p>}
+        {address && <p className="text-sm bg-cyan-100 rounded-md p-2 text-cyan-600 font-poppins   ">{address}</p>}
 
         
 
-    </div>
+        <AddressModal    modalForm={modalForm} modalFormHandler={modalFormHandler}  setAddressBtnHandler={setAddressBtnHandler} inValidArr={inValidArr}  />
+      </div>
+    </div>)
   );
 };
 

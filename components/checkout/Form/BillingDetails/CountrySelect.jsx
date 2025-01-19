@@ -1,6 +1,6 @@
 "use client";
 
-import { Select, SelectItem, Avatar } from "@nextui-org/react";
+import { Select, SelectItem, Avatar } from "@heroui/react";
 import Flag from "@/public/flag.png";
 
 const COUNTRY_CODES = JSON.parse(

@@ -3,7 +3,7 @@
 import { useContext, useState } from "react";
 import { UserContext } from "../layout";
 import { useForm } from "react-hook-form";
-import { Button, Input } from "@nextui-org/react";
+import { Button, Input } from "@heroui/react";
 import { EyeFilledIcon, EyeSlashFilledIcon, } from "@/components/clientLogin/Icons";
 import { createClient } from "@/lib/supabase/client";
 import { useRouter } from "next/navigation";

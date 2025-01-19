@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, Input, Spinner } from "@nextui-org/react";
+import { Button, Input, Spinner } from "@heroui/react";
 import React, { useState } from "react";
 import { EyeFilledIcon, EyeSlashFilledIcon, MailIcon } from "./Icons";
 import { useForm } from "react-hook-form";

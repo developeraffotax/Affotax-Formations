@@ -1,4 +1,4 @@
-import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Avatar, User, } from "@nextui-org/react";
+import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Avatar, User, } from "@heroui/react";
 import { HiMiniUserCircle } from "react-icons/hi2";
 import { FaRegUser } from "react-icons/fa6";
 import { SlUserFollowing } from "react-icons/sl";

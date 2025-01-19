@@ -1,6 +1,6 @@
 "use client"
 
-import { Input, RadioGroup, Select, SelectItem } from "@nextui-org/react";
+import { Input, RadioGroup, Select, SelectItem } from "@heroui/react";
 import React, { useState } from "react";
 import { EyeFilledIcon, EyeSlashFilledIcon, MailIcon } from "../Icons";
 import { CustomRadio } from "./CustomRadio";

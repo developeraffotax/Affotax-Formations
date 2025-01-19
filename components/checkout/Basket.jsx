@@ -1,6 +1,6 @@
 "use client"
 
-import { Alert, Button, Checkbox } from "@nextui-org/react";
+import { Alert, Button, Checkbox } from "@heroui/react";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound, useRouter } from "next/navigation";
