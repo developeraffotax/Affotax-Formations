@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import PackageHeader from "./PackageHeader";
 import Basket from "./Basket";
 import Form from "./Form/Form";
+import { IoCheckmarkCircleOutline } from "react-icons/io5";
 
 const Checkout = () => {
 
@@ -83,7 +84,19 @@ const Checkout = () => {
 
 
 
+  const [storedValue, setStoredValue] = useState(null);
 
+  // This effect will only run on the client side
+  useEffect(() => {
+    // Check if window is available (meaning we're in the browser)
+    if (typeof window !== "undefined") {
+      // Retrieve the value from localStorage
+      const value = localStorage.getItem('company_name');
+      if (value) {
+        setStoredValue(value);
+      }
+    }
+  }, []);
 
 
 
@@ -99,14 +112,21 @@ const Checkout = () => {
 
 
    <div className="w-[60%] flex flex-col justify-start items-start gap-2 " >
-        <Form selectedPackages={selectedPackages} mainPkg={mainPkg} mainPkgPrice={mainPkgPrice} tPriceWithoutTax={tPriceWithoutTax} addressObj={addressObj} setAddressObj={setAddressObj} orderRef={orderRef}/>
+        <Form company_name={storedValue} selectedPackages={selectedPackages} mainPkg={mainPkg} mainPkgPrice={mainPkgPrice} tPriceWithoutTax={tPriceWithoutTax} addressObj={addressObj} setAddressObj={setAddressObj} orderRef={orderRef}/>
       </div>
 
 
 
 
       <div className="w-[40%] flex flex-col justify-start items-start gap-2 " >
-      <Basket selectedPackages={selectedPackages}   selectedPkgName={mainPkg} selectedPkgPrice={mainPkgPrice} tPriceWithoutTax={tPriceWithoutTax} setTPriceWithoutTaxPrice={setTPriceWithoutTaxPrice} orderRef={orderRef} />
+        {
+                  storedValue &&
+                  <div className="w-full flex flex-row justify-start items-center gap-4 ">
+                  <h2 className="font-poppins text-xl py-1 ">Your Company Name:</h2>
+                  <h3 className="font-poppins text-xl flex gap-1 justify-start items-center text-cyan-500"><span className=" text-3xl  "><IoCheckmarkCircleOutline /></span>{storedValue}</h3>
+                  </div>
+                  }
+      <Basket  selectedPackages={selectedPackages}   selectedPkgName={mainPkg} selectedPkgPrice={mainPkgPrice} tPriceWithoutTax={tPriceWithoutTax} setTPriceWithoutTaxPrice={setTPriceWithoutTaxPrice} orderRef={orderRef} />
       </div>
 
 

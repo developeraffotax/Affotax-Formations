@@ -13,6 +13,17 @@ const CompanyForm = () => {
   const [currentStep, setCurrentStep] = useState(0)
   const [activePage, setActivePage] = useState('address')
 
+  const [companyInfo, setCompanyInfo] = useState({
+    company_name: '',
+    company_suffix: 'LTD',
+
+    sic_codes: [],
+    registered_in: 'England & Wales',
+     
+  })
+
+
+
   const [address, setAddress] = useState({
     name_or_number: '',
     street: '',
@@ -26,39 +37,52 @@ const CompanyForm = () => {
 
 
 
-
+console.log(address, )
+console.log(companyInfo, )
 
 
 
 
   const [directors, setDirectors] = useState({
-    person: {
-
-        title: '',
-        first_Name: '',
-        middle_name: '',
-        last_Name: '',
-        date_of_birth: '',
-        nationality: '',
-        occupation: '',
-        country_of_residence: '',
 
 
+    person_title: '',
+    person_first_name: '',
+    person_middle_name: '',
+    person_last_name: '',
+    person_dob: '',
+    person_nationality: '',
+    person_occupation: '',
+    person_country_of_residence: '',
 
 
-    },
 
-    serviceAddress: {
-      name_or_number: '',
-      street: '',
-      locality: '',
-      town: '',
-      county: '',
-      postcode: '',
-      country: '',
+    service_address_name_or_number: '',
+    service_address_street: '',
+    service_address_locality: '',
+    service_address_town: '',
+    service_address_county: '',
+    service_address_postcode: '',
+    service_address_country: '',
+     
 
 
-    }
+
+    residential_address_isSameAsService: false,
+    residential_address_name_or_number: '',
+    residential_address_street: '',
+    residential_address_locality: '',
+    residential_address_town: '',
+    residential_address_county: '',
+    residential_address_postcode: '',
+    residential_address_country: '',
+
+
+
+
+
+
+
   })
 
 
@@ -69,11 +93,11 @@ const CompanyForm = () => {
   // })
 
 
-  const continueBtnHandler = (nextStep, nextActive) => {
+  const gotoBtnHandler = (step, active) => {
 
     return () => {
-      setCurrentStep(nextStep)
-      setActivePage(nextActive)
+      setCurrentStep(step)
+      setActivePage(active)
     }
 
   }
@@ -129,8 +153,8 @@ const CompanyForm = () => {
         
 
 
-       {(activePage === 'address') &&  <CompanyAddress address={address} setAddress={setAddress} continueBtnHandler={continueBtnHandler(1,'directors') } />}
-       {(activePage === 'directors') &&  <Directors directors={directors} setDirectors={setDirectors} continueBtnHandler={continueBtnHandler(2,'directors') }/>}
+       {(activePage === 'address') &&  <CompanyAddress companyInfo={companyInfo} setCompanyInfo={setCompanyInfo} address={address} setAddress={setAddress} continueBtnHandler={gotoBtnHandler(1,'directors') }   />}
+       {(activePage === 'directors') &&  <Directors directors={directors} setDirectors={setDirectors} continueBtnHandler={gotoBtnHandler(2,'directors') }  goBackBtnHandler={gotoBtnHandler(1,'address')} />}
 
 
 

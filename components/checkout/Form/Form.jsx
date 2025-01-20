@@ -16,7 +16,7 @@ import ReactDOM from "react-dom";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 
-const Form = ({ selectedPackages, mainPkg, mainPkgPrice, tPriceWithoutTax, addressObj, setAddressObj, orderRef}) => {
+const Form = ({ selectedPackages, mainPkg, mainPkgPrice, tPriceWithoutTax, addressObj, setAddressObj, orderRef, company_name}) => {
   const [selected, setSelected] = useState("signup");
   // const [user, setUser] = useState(null)
 
@@ -94,6 +94,7 @@ const Form = ({ selectedPackages, mainPkg, mainPkgPrice, tPriceWithoutTax, addre
             order_ref: orderRef,
             payment_status: "pending",
             shipping_address: form?.address,
+            company_name: company_name || ''
           })
           .select("id");
 
@@ -193,6 +194,7 @@ const Form = ({ selectedPackages, mainPkg, mainPkgPrice, tPriceWithoutTax, addre
             order_ref: orderRef,
             payment_status: "pending",
             shipping_address: form?.address,
+            company_name: company_name || ''
           })
           .select("id");
 

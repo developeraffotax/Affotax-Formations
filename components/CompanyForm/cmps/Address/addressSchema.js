@@ -8,7 +8,9 @@ export const addressSchema = z.object({
     town: z.string().min(3, 'Must Required'),
     county: z.string(),
     postcode: z.string().min(3, 'Must Required'),
-    country: z.string(),
+    country: z.string().min(1, 'Must Required'),
+
+    company_suffix: z.string(),
 
     
  
