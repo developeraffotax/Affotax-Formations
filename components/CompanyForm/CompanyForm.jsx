@@ -7,10 +7,12 @@ import { useForm } from 'react-hook-form';
 import CompanyAddress from "./cmps/Address/Address";
 import RowSteps from "./RowSteps";
 import Directors from "./cmps/Directors/Directors";
+import Shareholders from "./cmps/Shareholders/Shareholders";
+import Summary from "./cmps/Summary/Summary";
 
 const CompanyForm = () => {
 
-  const [currentStep, setCurrentStep] = useState(0)
+  const [currentStep, setCurrentStep] = useState(1)
   const [activePage, setActivePage] = useState('address')
 
   const [companyInfo, setCompanyInfo] = useState({
@@ -56,7 +58,6 @@ console.log(companyInfo, )
     person_country_of_residence: '',
 
 
-
     service_address_name_or_number: '',
     service_address_street: '',
     service_address_locality: '',
@@ -64,9 +65,7 @@ console.log(companyInfo, )
     service_address_county: '',
     service_address_postcode: '',
     service_address_country: '',
-     
-
-
+    
 
     residential_address_isSameAsService: false,
     residential_address_name_or_number: '',
@@ -77,13 +76,45 @@ console.log(companyInfo, )
     residential_address_postcode: '',
     residential_address_country: '',
 
-
-
-
-
-
-
   })
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  const [shareholders, setShareholders] = useState({
+
+
+    shareholders: [],
+
+    share_currency: 'GBP',
+
+    num_of_shares: 1,
+    value_per_share: 1,
+    total_shares: 1,
+     
+
+ 
+  })
+
+
+
+
+
+
+
+
+
 
 
 
@@ -105,7 +136,15 @@ console.log(companyInfo, )
   
   
 
+  const submitHandler = () => {
 
+    console.log(address)
+    console.log(companyInfo)
+    console.log(directors)
+    console.log(shareholders)
+
+
+  }
 
 
 
@@ -121,8 +160,8 @@ console.log(companyInfo, )
    <div className="w-full container mx-auto px-40 max-xl:px-20 max-lg:px-8 ">
    <section>
    <RowSteps
-      currentStep={currentStep}  
-      defaultStep={0}
+      currentStep={(currentStep - 1)}  
+      
       steps={[
         {
           title: "Registered Office",
@@ -135,10 +174,7 @@ console.log(companyInfo, )
           title: "Share Holders",
         },
 
-        {
-          title: "Secretaries",
-        },
-
+      
         {
           title: "Summary",
         },
@@ -153,8 +189,11 @@ console.log(companyInfo, )
         
 
 
-       {(activePage === 'address') &&  <CompanyAddress companyInfo={companyInfo} setCompanyInfo={setCompanyInfo} address={address} setAddress={setAddress} continueBtnHandler={gotoBtnHandler(1,'directors') }   />}
-       {(activePage === 'directors') &&  <Directors directors={directors} setDirectors={setDirectors} continueBtnHandler={gotoBtnHandler(2,'directors') }  goBackBtnHandler={gotoBtnHandler(1,'address')} />}
+       {(activePage === 'address') &&  <CompanyAddress companyInfo={companyInfo} setCompanyInfo={setCompanyInfo} address={address} setAddress={setAddress} continueBtnHandler={gotoBtnHandler(2,'directors') }   />} 
+       {(activePage === 'directors') &&  <Directors directors={directors} setDirectors={setDirectors} continueBtnHandler={gotoBtnHandler(3,'shareholders') }  goBackBtnHandler={gotoBtnHandler(1,'address')} />}
+       {(activePage === 'shareholders') &&  <Shareholders shareholders={shareholders} setShareholders={setShareholders} directors={directors}  continueBtnHandler={gotoBtnHandler(4,'summary') }  goBackBtnHandler={gotoBtnHandler(2,'directors')}   />}
+       {(activePage === 'summary') &&  <Summary companyInfo={companyInfo} address={address} directors={directors} shareholders={shareholders}  goBackBtnHandler={gotoBtnHandler(3,'shareholders')} submitHandler={submitHandler}   />}
+
 
 
 

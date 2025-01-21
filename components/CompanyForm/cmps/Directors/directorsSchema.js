@@ -8,7 +8,7 @@ export const directorsSchema = z.object({
     person_first_name: z.string().min(1, "Required"),
     person_middle_name: z.string(),
     person_last_name: z.string().min(1, "Required"),
-    person_dob: z.string().min(1, "Required"),
+    // person_dob: z.string().min(1, "Required"),
     person_nationality: z.string().min(1, "Required"),
     person_occupation: z.string().min(1, "Required"),
     person_country_of_residence: z.string().min(1, "Required"),

@@ -68,7 +68,7 @@ const Directors = ({ directors, setDirectors, continueBtnHandler, goBackBtnHandl
   const onSubmit = (data) => {
     console.log(data);
     setDirectors(data);
-    //continueBtnHandler();
+    continueBtnHandler();
   };
 
 
@@ -94,7 +94,9 @@ const Directors = ({ directors, setDirectors, continueBtnHandler, goBackBtnHandl
     if (prefill) {
       for (const [key, value] of Object.entries(prefill)) {
         console.log(key, value);
-        setValue(key, value);
+        setValue(key, value, {
+          shouldValidate: true
+        });
       }
     }
   }, [selectedOption]);
@@ -200,7 +202,7 @@ const Directors = ({ directors, setDirectors, continueBtnHandler, goBackBtnHandl
           <div className="w-full"> {" "} <Controller control={control} name="person_first_name" render={({ field }) => ( <Input {...field} size="sm" errorMessage={errors?.person_first_name?.message} isInvalid={errors?.person_first_name ? true : false} key="person_first_name" classNames={{ mainWrapper: "w-full ", label: "w-[40%] text-base ", }} label="First Name*	" labelPlacement="outside-left" type="text" /> )} />{" "} </div>
           <div className="w-full"> {" "} <Controller control={control} name="person_middle_name" render={({ field }) => ( <Input {...field} size="sm" errorMessage={errors?.person_middle_name?.message} isInvalid={errors?.person_middle_name ? true : false} key="person_middle_name" classNames={{ mainWrapper: "w-full ", label: "w-[40%] text-base ", }} label="Middle Name" labelPlacement="outside-left" type="text" /> )} />{" "} </div>
           <div className="w-full"> {" "} <Controller control={control} name="person_last_name" render={({ field }) => ( <Input {...field} size="sm" errorMessage={errors?.person_last_name?.message} isInvalid={errors?.person_last_name ? true : false} key="person_last_name" classNames={{ mainWrapper: "w-full ", label: "w-[40%] text-base ", }} label="Last Name*	" labelPlacement="outside-left" type="text" /> )} />{" "} </div>
-          <div className="w-full"> {" "} <Controller control={control} name="person_dob" render={({ field }) => ( <Input {...field} size="sm" errorMessage={errors?.person_dob?.message} isInvalid={errors?.person_dob ? true : false} key="person_dob" classNames={{ mainWrapper: "w-full ", label: "w-[40%] text-base ", }} label="Date of birth*		" labelPlacement="outside-left" type="text" /> )} />{" "} </div>
+          {/* <div className="w-full"> {" "} <Controller control={control} name="person_dob" render={({ field }) => ( <Input {...field} size="sm" errorMessage={errors?.person_dob?.message} isInvalid={errors?.person_dob ? true : false} key="person_dob" classNames={{ mainWrapper: "w-full ", label: "w-[40%] text-base ", }} label="Date of birth*		" labelPlacement="outside-left" type="text" /> )} />{" "} </div> */}
           <div className="w-full"> {" "} <Controller control={control} name="person_nationality" render={({ field }) => ( <Input {...field} size="sm" errorMessage={errors?.person_nationality?.message} isInvalid={errors?.person_nationality ? true : false} key="person_nationality" classNames={{ mainWrapper: "w-full ", label: "w-[40%] text-base ", }} label="Nationality*	" labelPlacement="outside-left" type="text" /> )} />{" "} </div>
           <div className="w-full"> {" "} <Controller control={control} name="person_occupation" render={({ field }) => ( <Input {...field} size="sm" errorMessage={errors?.person_occupation?.message} isInvalid={errors?.person_occupation ? true : false} key="person_occupation" classNames={{ mainWrapper: "w-full ", label: "w-[40%] text-base ", }} label="Occupation*	" labelPlacement="outside-left" type="text" /> )} />{" "} </div>
 
