@@ -183,7 +183,7 @@ const Address = ({ address, setAddress, continueBtnHandler, companyInfo, setComp
 <div className=" w-full  ">
       {/* <label className={`text-base ${errors?.name ? "text-rose-500" : ""}`}>{label} </label> */}
 
-      <Controller defaultValue={companyInfo?.company_suffix}  control={control} name={"company_suffix"} render={({ field }) => ( <Select isRequired variant="bordered"  {...field} classNames={{ base: "" }} size="sm" onChange={(e) => field.onChange(e)} selectedKeys={[field.value]} > {" "} {['LTD', 'LIMITED COMPANY'].map((el, index) => ( <SelectItem key={el} >{el}</SelectItem> ))}{" "} </Select> )} />
+      <Controller defaultValue={companyInfo?.company_suffix}  control={control} name={"company_suffix"} render={({ field }) => ( <Select isRequired variant="bordered"  {...field} classNames={{ base: "" }} size="sm" onChange={(e) => field.onChange(e)} selectedKeys={[field.value]} > {" "} {['LTD', 'LIMITED'].map((el, index) => ( <SelectItem   key={el} >{el}</SelectItem> ))}{" "} </Select> )} />
     </div>
 
 
@@ -210,11 +210,21 @@ const Address = ({ address, setAddress, continueBtnHandler, companyInfo, setComp
 
       <TagsInput
         
-        classNames={{input: "w-full  flex ",  }}
+        classNames={{input: "w-full  flex ",   }}
         value={sicCodesSelected}
         onChange={setSicCodesSelected}
         name="sic codes"
         placeHolder="Enter SIC codes "
+        beforeAddValidate={(value, existingTags) => {
+            
+            if(existingTags.length >= 4 ) {
+              return false;
+            } 
+            
+            return !isNaN(Number(value))
+
+        }}  
+        
          
 
       />

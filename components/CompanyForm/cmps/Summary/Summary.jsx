@@ -112,7 +112,7 @@ const Summary = ({
 
 
         {/* Directors */}
-        {/* <div className="w-full mb-8">
+        <div className="w-full mb-8">
           <h2 className="w-full text-start text-2xl font-poppins bg-cyan-500 text-white py-2 px-4   ">
           Directors
           </h2>
@@ -169,7 +169,7 @@ const Summary = ({
               </tbody>
             </table>
           </div>
-        </div> */}
+        </div>
 
 
 
@@ -185,7 +185,7 @@ const Summary = ({
 
 
             {/* Shareholders */}
-        {/* <div className="w-full mb-8">
+        <div className="w-full mb-8">
           <h2 className="w-full text-start text-2xl font-poppins bg-cyan-500 text-white py-2 px-4   ">
           Shareholders
           </h2>
@@ -215,7 +215,7 @@ const Summary = ({
           }
           
 
-          </div> */}
+          </div>
 
 
 

@@ -10,8 +10,8 @@ export const directorsSchema = z.object({
     person_last_name: z.string().min(1, "Required"),
     // person_dob: z.string().min(1, "Required"),
     person_nationality: z.string().min(1, "Required"),
-    person_occupation: z.string().min(1, "Required"),
     person_country_of_residence: z.string().min(1, "Required"),
+    person_occupation: z.string().min(1, "Required"),
 
 
 
@@ -23,7 +23,7 @@ export const directorsSchema = z.object({
     service_address_town: z.string().min(1, 'Must Required'),
     service_address_county: z.string(),
     service_address_postcode: z.string().min(1, 'Must Required'),
-    service_address_country: z.string(),
+    service_address_country: z.string().min(1, "Required"),
 
 
 
@@ -35,7 +35,7 @@ export const directorsSchema = z.object({
     residential_address_town: z.string().min(1, 'Must Required'),
     residential_address_county: z.string(),
     residential_address_postcode: z.string().min(1, 'Must Required'),
-    residential_address_country: z.string(),
+    residential_address_country: z.string().min(1, "Required"),
 
     
  

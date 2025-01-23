@@ -83,7 +83,23 @@ console.log(companyInfo, )
 
 
 
+  const SHAREHOLDER_SCHEMA = {
+    shareholder_title: "",
+    shareholder_first_name: "",
+    shareholder_middle_name: "",
+    shareholder_last_name: "",
+    shareholder_nationality: "",
+    shareholder_country_of_residence: "",
+    shareholder_num_of_shares: 1,
 
+    shareholder_address_name_or_number: '',
+    shareholder_address_street: '',
+    shareholder_address_locality: '',
+    shareholder_address_town: '',
+    shareholder_address_county: '',
+    shareholder_address_postcode: '',
+    shareholder_address_country: '',
+  }
 
 
 
@@ -95,10 +111,12 @@ console.log(companyInfo, )
   const [shareholders, setShareholders] = useState({
 
 
-    shareholders: [],
+    shareholders: [SHAREHOLDER_SCHEMA],
 
     share_currency: 'GBP',
 
+    num_of_share_holders: 1,
+    
     num_of_shares: 1,
     value_per_share: 1,
     total_shares: 1,
