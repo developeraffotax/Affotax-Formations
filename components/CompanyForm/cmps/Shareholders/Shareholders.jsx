@@ -31,7 +31,7 @@ const SHAREHOLDER_SCHEMA = {
   shareholder_first_name: "",
   shareholder_middle_name: "",
   shareholder_last_name: "",
-  shareholder_person_dob: parseDate((new Date()).toISOString().split('T')[0]),
+  shareholder_person_dob: (new Date()).toISOString().split('T')[0],
   shareholder_nationality: "",
   shareholder_country_of_residence: "",
   shareholder_num_of_shares: 1,
@@ -141,6 +141,7 @@ const Shareholders = ({ shareholders, setShareholders, directors, continueBtnHan
       shareholder_last_name :directors.person_last_name,
       shareholder_nationality :directors.person_nationality,
       shareholder_country_of_residence :directors.person_country_of_residence,
+      shareholder_person_dob :directors.person_dob,
       //  shareholder_num_of_shares : 1,
 
 
@@ -363,7 +364,7 @@ const Shareholders = ({ shareholders, setShareholders, directors, continueBtnHan
 
                         <div className="w-full"> <Controller name={`shareholders.${index}.shareholder_last_name`} control={control} render={({ field }) => ( <Input {...field} size="sm" errorMessage={ errors?.shareholders?.length > 0 && errors?.shareholders[index] ?.shareholder_last_name?.message } isInvalid={ errors?.shareholders?.length > 0 && errors?.shareholders[index] ?.shareholder_last_name ? true : false } classNames={{ mainWrapper: "w-full ", label: "w-[40%] text-base p-0", }} label="Last Name*	" labelPlacement="outside-left" type="text" /> )} /> </div>
 
-                        <div className="w-full flex justify-between items-center "> {" "} <label className={` ${errors?.shareholders?.length > 0 && errors?.shareholders[index]?.shareholder_person_dob && 'text-red-500'}`}>Date of Birth*</label> <div className="w-[60%]"><Controller control={control} name={`shareholders.${index}.shareholder_person_dob`} render={({ field }) => ( <DatePicker   showMonthAndYearPickers     {...field} onChange={(e) => field.onChange(e)}    size="sm" errorMessage={errors?.shareholders?.length > 0 && errors?.shareholders[index]?.shareholder_person_dob?.message} isInvalid={errors?.shareholders?.length > 0 && errors?.shareholders[index]?.shareholder_person_dob ? true : false}  classNames={{    base:"   " }}    /> )} />{" "}</div> </div>
+                        <div className="w-full flex justify-between items-center "> {" "} <label className={` ${errors?.shareholders?.length > 0 && errors?.shareholders[index]?.shareholder_person_dob && 'text-red-500'}`}>Date of Birth*</label> <div className="w-[60%]"><Controller control={control} name={`shareholders.${index}.shareholder_person_dob`} render={({ field }) => ( <DatePicker   showMonthAndYearPickers     {...field} onChange={e => field.onChange(e?.toString())} value={parseDate(field.value)}    size="sm" errorMessage={errors?.shareholders?.length > 0 && errors?.shareholders[index]?.shareholder_person_dob?.message} isInvalid={errors?.shareholders?.length > 0 && errors?.shareholders[index]?.shareholder_person_dob ? true : false}  classNames={{    base:"   " }}    /> )} />{" "}</div> </div>
 
 
                         <div className="w-full"> <Controller name={`shareholders.${index}.shareholder_nationality`} control={control} render={({ field }) => ( <Input {...field} size="sm" errorMessage={ errors?.shareholders?.length > 0 && errors?.shareholders[index] ?.shareholder_nationality?.message } isInvalid={ errors?.shareholders?.length > 0 && errors?.shareholders[index] ?.shareholder_nationality ? true : false } classNames={{ mainWrapper: "w-full ", label: "w-[40%] text-base p-0", }} label="Nationality*		" labelPlacement="outside-left" type="text" /> )} /> </div>

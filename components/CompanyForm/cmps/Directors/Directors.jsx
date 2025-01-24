@@ -39,7 +39,7 @@ const Directors = ({ directors, setDirectors, continueBtnHandler, goBackBtnHandl
     watch,
     getValues,
     control,
-  } = useForm({ resolver: zodResolver(directorsSchema) });
+  } = useForm({ resolver: zodResolver(directorsSchema), defaultValues: {...directors} });
 
   const residential_address_isSameAsService = watch( "residential_address_isSameAsService" );
   const watchAll = watch();
@@ -193,7 +193,7 @@ const Directors = ({ directors, setDirectors, continueBtnHandler, goBackBtnHandl
   }, []);
 
 
-// console.log(getValues('person_dob'))
+  console.log(getValues('person_dob'))
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="font-poppins w-full flex flex-col justify-start items-start gap-6 " >
@@ -212,8 +212,8 @@ const Directors = ({ directors, setDirectors, continueBtnHandler, goBackBtnHandl
           <div className="w-full"> {" "} <Controller control={control} name="person_last_name" render={({ field }) => ( <Input {...field} size="sm" errorMessage={errors?.person_last_name?.message} isInvalid={errors?.person_last_name ? true : false} key="person_last_name" classNames={{ mainWrapper: "w-full ", label: "w-[40%] text-base ", }} label="Last Name*	" labelPlacement="outside-left" type="text" /> )} />{" "} </div>
 
 
-
-          <div className="w-full flex justify-between items-center "> {" "} <label className={`ml-2 ${errors.person_dob && 'text-red-500'}`}>Date of Birth*</label> <div className="w-[60%]"><Controller control={control} name="person_dob" render={({ field }) => ( <DatePicker   showMonthAndYearPickers     {...field} onChange={(e) => field.onChange(e)}    size="sm" errorMessage={errors?.person_dob?.message} isInvalid={errors?.person_dob ? true : false} key="person_dob" classNames={{    base:"   " }}    /> )} />{" "}</div> </div>
+          {/* onChange={e => setValue('person_dob', parseDate(e.toString()))} value={parseDate(getValues('person_dob'))} */}
+          <div className="w-full flex justify-between items-center "> {" "} <label className={`ml-2 ${errors.person_dob && 'text-red-500'}`}>Date of Birth*</label> <div className="w-[60%]"><Controller control={control} name="person_dob" render={({ field }) => ( <DatePicker   showMonthAndYearPickers     {...field} onChange={e => field.onChange(e?.toString())} value={parseDate(field.value)}  size="sm" errorMessage={errors?.person_dob?.message} isInvalid={errors?.person_dob ? true : false} key="person_dob" classNames={{    base:"   " }}    /> )} />{" "}</div> </div>
           
           
           
