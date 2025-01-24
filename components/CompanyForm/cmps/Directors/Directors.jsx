@@ -4,13 +4,18 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { v4 as uuidv4 } from "uuid";
+import {parseDate, getLocalTimeZone} from "@internationalized/date";
+
 
 import { MdLogin } from "react-icons/md";
 import {
   Autocomplete,
   AutocompleteItem,
   Button,
+  Calendar,
   Checkbox,
+  DateInput,
+  DatePicker,
   Input,
   Select,
   SelectItem,
@@ -68,7 +73,7 @@ const Directors = ({ directors, setDirectors, continueBtnHandler, goBackBtnHandl
   const onSubmit = (data) => {
     console.log(data);
     setDirectors(data);
-    continueBtnHandler();
+    //continueBtnHandler();
   };
 
 
@@ -187,6 +192,9 @@ const Directors = ({ directors, setDirectors, continueBtnHandler, goBackBtnHandl
     ];
   }, []);
 
+
+console.log(getValues('person_dob'))
+
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="font-poppins w-full flex flex-col justify-start items-start gap-6 " >
 
@@ -198,11 +206,17 @@ const Directors = ({ directors, setDirectors, continueBtnHandler, goBackBtnHandl
         </div>
 
         <div className="w-full  flex flex-col justify-start items-start gap-2  px-8 py-4">
-          <div className="w-full"> {" "} <Controller control={control} name="person_title" render={({ field }) => ( <Input {...field} size="sm" errorMessage={errors?.person_title?.message} isInvalid={errors?.person_title ? true : false} key="person_title" classNames={{ mainWrapper: "w-full ", label: "w-[40%] text-base ", }} label="Title" labelPlacement="outside-left" type="text" /> )} />{" "} </div>
+          <div className="w-full"> {" "} <Controller control={control} name="person_title" render={({ field }) => ( <Input {...field} size="sm" errorMessage={errors?.person_title?.message} isInvalid={errors?.person_title ? true : false} key="person_title" classNames={{ mainWrapper: "w-full ", label: "w-[40%] text-base ", }} label="Title*" labelPlacement="outside-left" type="text" /> )} />{" "} </div>
           <div className="w-full"> {" "} <Controller control={control} name="person_first_name" render={({ field }) => ( <Input {...field} size="sm" errorMessage={errors?.person_first_name?.message} isInvalid={errors?.person_first_name ? true : false} key="person_first_name" classNames={{ mainWrapper: "w-full ", label: "w-[40%] text-base ", }} label="First Name*	" labelPlacement="outside-left" type="text" /> )} />{" "} </div>
           <div className="w-full"> {" "} <Controller control={control} name="person_middle_name" render={({ field }) => ( <Input {...field} size="sm" errorMessage={errors?.person_middle_name?.message} isInvalid={errors?.person_middle_name ? true : false} key="person_middle_name" classNames={{ mainWrapper: "w-full ", label: "w-[40%] text-base ", }} label="Middle Name" labelPlacement="outside-left" type="text" /> )} />{" "} </div>
           <div className="w-full"> {" "} <Controller control={control} name="person_last_name" render={({ field }) => ( <Input {...field} size="sm" errorMessage={errors?.person_last_name?.message} isInvalid={errors?.person_last_name ? true : false} key="person_last_name" classNames={{ mainWrapper: "w-full ", label: "w-[40%] text-base ", }} label="Last Name*	" labelPlacement="outside-left" type="text" /> )} />{" "} </div>
-          {/* <div className="w-full"> {" "} <Controller control={control} name="person_dob" render={({ field }) => ( <Input {...field} size="sm" errorMessage={errors?.person_dob?.message} isInvalid={errors?.person_dob ? true : false} key="person_dob" classNames={{ mainWrapper: "w-full ", label: "w-[40%] text-base ", }} label="Date of birth*		" labelPlacement="outside-left" type="text" /> )} />{" "} </div> */}
+
+
+
+          <div className="w-full flex justify-between items-center "> {" "} <label className={`ml-2 ${errors.person_dob && 'text-red-500'}`}>Date of Birth*</label> <div className="w-[60%]"><Controller control={control} name="person_dob" render={({ field }) => ( <DatePicker   showMonthAndYearPickers     {...field} onChange={(e) => field.onChange(e)}    size="sm" errorMessage={errors?.person_dob?.message} isInvalid={errors?.person_dob ? true : false} key="person_dob" classNames={{    base:"   " }}    /> )} />{" "}</div> </div>
+          
+          
+          
           <div className="w-full"> {" "} <Controller control={control} name="person_nationality" render={({ field }) => ( <Input {...field} size="sm" errorMessage={errors?.person_nationality?.message} isInvalid={errors?.person_nationality ? true : false} key="person_nationality" classNames={{ mainWrapper: "w-full ", label: "w-[40%] text-base ", }} label="Nationality*	" labelPlacement="outside-left" type="text" /> )} />{" "} </div>
           <div className="w-full"> {" "} <Controller control={control} name="person_occupation" render={({ field }) => ( <Input {...field} size="sm" errorMessage={errors?.person_occupation?.message} isInvalid={errors?.person_occupation ? true : false} key="person_occupation" classNames={{ mainWrapper: "w-full ", label: "w-[40%] text-base ", }} label="Occupation*	" labelPlacement="outside-left" type="text" /> )} />{" "} </div>
 

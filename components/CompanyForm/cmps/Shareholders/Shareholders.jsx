@@ -9,6 +9,7 @@ import {
   Autocomplete,
   AutocompleteItem,
   Button,
+  DatePicker,
   Divider,
   Input,
   Select,
@@ -21,6 +22,7 @@ import { v4 as uuidv4 } from "uuid";
 import SelectCmp from "./SelectCmp";
 import { TagsInput } from "react-tag-input-component";
 import Link from "next/link";
+import { parseDate } from "@internationalized/date";
 
 
 
@@ -29,6 +31,7 @@ const SHAREHOLDER_SCHEMA = {
   shareholder_first_name: "",
   shareholder_middle_name: "",
   shareholder_last_name: "",
+  shareholder_person_dob: parseDate((new Date()).toISOString().split('T')[0]),
   shareholder_nationality: "",
   shareholder_country_of_residence: "",
   shareholder_num_of_shares: 1,
@@ -352,13 +355,16 @@ const Shareholders = ({ shareholders, setShareholders, directors, continueBtnHan
                       </div>
 
                       <div className="w-full flex flex-col justify-start items-start gap-2   p-5     ">
-                        <div className="w-full"> <Controller  name={`shareholders.${index}.shareholder_title`} control={control} render={({ field }) => ( <Input {...field}    size="sm" errorMessage={ errors?.shareholders?.length > 0 && errors?.shareholders[index]?.shareholder_title ?.message } isInvalid={ errors?.shareholders?.length > 0 && errors?.shareholders[index]?.shareholder_title ? true : false } classNames={{ mainWrapper: "w-full ", label: "w-[40%] text-base p-0", }} key={"shareholders.${index}.shareholder_title"} label="Title	" labelPlacement="outside-left" type="text" /> )} /> </div>
+                        <div className="w-full"> <Controller  name={`shareholders.${index}.shareholder_title`} control={control} render={({ field }) => ( <Input {...field}    size="sm" errorMessage={ errors?.shareholders?.length > 0 && errors?.shareholders[index]?.shareholder_title ?.message } isInvalid={ errors?.shareholders?.length > 0 && errors?.shareholders[index]?.shareholder_title ? true : false } classNames={{ mainWrapper: "w-full ", label: "w-[40%] text-base p-0", }} key={"shareholders.${index}.shareholder_title"} label="Title*	" labelPlacement="outside-left" type="text" /> )} /> </div>
 
                         <div className="w-full"> <Controller name={`shareholders.${index}.shareholder_first_name`} control={control} render={({ field }) => ( <Input {...field} size="sm" errorMessage={ errors?.shareholders?.length > 0 && errors?.shareholders[index] ?.shareholder_first_name?.message } isInvalid={ errors?.shareholders?.length > 0 && errors?.shareholders[index] ?.shareholder_first_name ? true : false } classNames={{ mainWrapper: "w-full ", label: "w-[40%] text-base p-0 ", }} label="First Name*	" labelPlacement="outside-left" type="text" /> )} /> </div>
 
                         <div className="w-full"> <Controller name={`shareholders.${index}.shareholder_middle_name`} control={control} render={({ field }) => ( <Input {...field} size="sm" errorMessage={ errors?.shareholders?.length > 0 && errors?.shareholders[index] ?.shareholder_middle_name?.message } isInvalid={ errors?.shareholders?.length > 0 && errors?.shareholders[index] ?.shareholder_middle_name ? true : false } classNames={{ mainWrapper: "w-full ", label: "w-[40%] text-base p-0", }} label="Middle Name	" labelPlacement="outside-left" type="text" /> )} /> </div>
 
                         <div className="w-full"> <Controller name={`shareholders.${index}.shareholder_last_name`} control={control} render={({ field }) => ( <Input {...field} size="sm" errorMessage={ errors?.shareholders?.length > 0 && errors?.shareholders[index] ?.shareholder_last_name?.message } isInvalid={ errors?.shareholders?.length > 0 && errors?.shareholders[index] ?.shareholder_last_name ? true : false } classNames={{ mainWrapper: "w-full ", label: "w-[40%] text-base p-0", }} label="Last Name*	" labelPlacement="outside-left" type="text" /> )} /> </div>
+
+                        <div className="w-full flex justify-between items-center "> {" "} <label className={` ${errors?.shareholders?.length > 0 && errors?.shareholders[index]?.shareholder_person_dob && 'text-red-500'}`}>Date of Birth*</label> <div className="w-[60%]"><Controller control={control} name={`shareholders.${index}.shareholder_person_dob`} render={({ field }) => ( <DatePicker   showMonthAndYearPickers     {...field} onChange={(e) => field.onChange(e)}    size="sm" errorMessage={errors?.shareholders?.length > 0 && errors?.shareholders[index]?.shareholder_person_dob?.message} isInvalid={errors?.shareholders?.length > 0 && errors?.shareholders[index]?.shareholder_person_dob ? true : false}  classNames={{    base:"   " }}    /> )} />{" "}</div> </div>
+
 
                         <div className="w-full"> <Controller name={`shareholders.${index}.shareholder_nationality`} control={control} render={({ field }) => ( <Input {...field} size="sm" errorMessage={ errors?.shareholders?.length > 0 && errors?.shareholders[index] ?.shareholder_nationality?.message } isInvalid={ errors?.shareholders?.length > 0 && errors?.shareholders[index] ?.shareholder_nationality ? true : false } classNames={{ mainWrapper: "w-full ", label: "w-[40%] text-base p-0", }} label="Nationality*		" labelPlacement="outside-left" type="text" /> )} /> </div>
 

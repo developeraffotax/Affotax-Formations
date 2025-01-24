@@ -11,6 +11,8 @@
   "dependencies": {
     "@heroui/react": "2.6.13",
     "@hookform/resolvers": "^3.10.0",
+    "@internationalized/date": "^3.6.0",
+    "@react-aria/i18n": "^3.12.4",
     "@react-email/components": "^0.0.32",
     "@supabase/ssr": "^0.5.2",
     "@supabase/supabase-js": "^2.47.10",

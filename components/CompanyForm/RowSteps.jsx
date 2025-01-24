@@ -110,7 +110,7 @@ const RowSteps = React.forwardRef(
     }, [color, className]);
 
     return (
-      <nav aria-label="Progress" className="-my-4 max-w-fit overflow-x-auto py-4">
+      <nav aria-label="Progress" className="-my-4 w-full overflow-x-auto pt-16 font-poppins">
         <ol className={cn("flex flex-row flex-nowrap gap-x-3", colors, className)}>
           {steps?.map((step, stepIdx) => {
             let status =

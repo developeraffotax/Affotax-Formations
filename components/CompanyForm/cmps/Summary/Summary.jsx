@@ -197,14 +197,29 @@ const Summary = ({
                     <div key={index + '_shareholder'} className="w-full flex flex-col justify-start items-start gap-2       ">
                       <table className="w-full  table-auto border-collapse font-Inter">
                         <tbody>
-                          <tr className=" border  "> {" "} <td className=" px-3 py-1   w-[40%] border-r text-gray-900  bg-gray-100 text-center" colSpan={2}> Shareholder {index + 1} </td>{" "}  </tr>
+                          <tr className=" border  "> {" "} <td className=" px-3 py-1   w-[40%] border-r text-gray-900  bg-gray-200 text-center" colSpan={2}> Shareholder {index + 1} </td>{" "}  </tr>
                           <tr className=" border  "> {" "} <td className=" px-3 py-1   w-[40%] border-r  "> Title </td>{" "} <td className=" px-3 py-1 flex justify-start items-center gap-2  "> {" "} {`${el.shareholder_title}`}{" "} </td>{" "} </tr>
                           <tr className=" border  "> {" "} <td className=" px-3 py-1   w-[40%]  border-r ">First Name</td>{" "} <td className=" px-3 py-1 flex justify-start items-center gap-2  "> {`${el.shareholder_first_name}`} </td>{" "} </tr>
                           <tr className="border  "> {" "} <td className=" px-3 py-1   w-[40%] border-r  "> Middle Name </td>{" "} <td className=" px-3 py-1 flex justify-start items-center gap-2  "> {" "} {`${el.shareholder_middle_name}`}{" "} </td>{" "} </tr>
                           <tr className="border  "> {" "} <td className=" px-3 py-1   w-[40%] border-r  "> Last Name </td>{" "} <td className=" px-3 py-1 flex justify-start items-center gap-2  "> {" "} {`${el.shareholder_last_name}`}{" "} </td>{" "} </tr>
+                          <tr className="border  "> {" "} <td className=" px-3 py-1   w-[40%] border-r  "> Date of Birth </td>{" "} <td className=" px-3 py-1 flex justify-start items-center gap-2  "> {" "} {`${el.shareholder_person_dob}`}{" "} </td>{" "} </tr>
                           <tr className="border  "> {" "} <td className=" px-3 py-1   w-[40%] border-r  "> Nationality </td>{" "} <td className=" px-3 py-1 flex justify-start items-center gap-2  "> {" "} {`${el.shareholder_nationality}`}{" "} </td>{" "} </tr>
                           <tr className="border  "> {" "} <td className=" px-3 py-1   w-[40%] border-r  ">Country of Residence </td>{" "} <td className=" px-3 py-1 flex justify-start items-center gap-2  "> {" "} {`${el.shareholder_country_of_residence}`}{" "} </td>{" "} </tr>
                           <tr className="border  "> {" "} <td className=" px-3 py-1   w-[40%] border-r  "> Number of Shares </td>{" "} <td className=" px-3 py-1 flex justify-start items-center gap-2  "> {" "} {`${el.shareholder_num_of_shares}`}{" "} </td>{" "} </tr>
+
+                          <tr className=" border  "> {" "} <td className=" px-3 py-1   w-[40%] border-r text-gray-900  bg-gray-200 text-center" colSpan={2}> Address </td>{" "}  </tr>
+                          <tr className=" border  "> {" "} <td className=" px-3 py-1   w-[40%] border-r  "> Title </td>{" "} <td className=" px-3 py-1 flex justify-start items-center gap-2  "> {" "} {`${el.shareholder_title}`}{" "} </td>{" "} </tr>
+
+                          <tr className="border  "> {" "} <td className=" px-3 py-1   w-[40%] border-r  "> Building Name/Number </td>{" "} <td className=" px-3 py-1 flex justify-start items-center gap-2  "> {" "} {`${el.shareholder_address_name_or_number}`}{" "} </td>{" "} </tr>
+                          <tr className="border  "> {" "} <td className=" px-3 py-1   w-[40%] border-r  "> Street </td>{" "} <td className=" px-3 py-1 flex justify-start items-center gap-2  "> {" "} {`${el.shareholder_address_street}`}{" "} </td>{" "} </tr>
+                          <tr className="border  "> {" "} <td className=" px-3 py-1   w-[40%] border-r  "> Locality </td>{" "} <td className=" px-3 py-1 flex justify-start items-center gap-2  "> {" "} {`${el.shareholder_address_locality}`}{" "} </td>{" "} </tr>
+                          <tr className="border  "> {" "} <td className=" px-3 py-1   w-[40%] border-r  "> Town </td>{" "} <td className=" px-3 py-1 flex justify-start items-center gap-2  "> {" "} {`${el.shareholder_address_town}`}{" "} </td>{" "} </tr>
+                          <tr className="border  "> {" "} <td className=" px-3 py-1   w-[40%] border-r  "> County </td>{" "} <td className=" px-3 py-1 flex justify-start items-center gap-2  "> {" "} {`${el.shareholder_address_county}`}{" "} </td>{" "} </tr>
+                          <tr className="border  "> {" "} <td className=" px-3 py-1   w-[40%] border-r  "> Post Code </td>{" "} <td className=" px-3 py-1 flex justify-start items-center gap-2  "> {" "} {`${el.shareholder_address_postcode}`}{" "} </td>{" "} </tr>
+                          <tr className="border  "> {" "} <td className=" px-3 py-1   w-[40%] border-r  "> Country </td>{" "} <td className=" px-3 py-1 flex justify-start items-center gap-2  "> {" "} {`${el.shareholder_address_country}`}{" "} </td>{" "} </tr>
+
+
+
                         </tbody>
                       </table>
                     </div>

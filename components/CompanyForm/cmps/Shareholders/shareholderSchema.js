@@ -5,10 +5,24 @@ export const shareholderSchema = z.object({
 
   shareholders: z.array(
     z.object({
-      shareholder_title: z.string(),
+      shareholder_title: z.string().min(1, "Required"),
       shareholder_first_name: z.string().min(1, "Required"),
       shareholder_middle_name: z.string(),
       shareholder_last_name: z.string().min(1, "Required"),
+
+      shareholder_person_dob: z.date({coerce:true}).refine(date => date instanceof Date && !isNaN(date),  {
+        message: "Please select a valid date",
+      }).refine((date) => {
+          const tenYearsAgo = new Date();
+          tenYearsAgo.setFullYear(( new Date()).getFullYear() - 10);
+  
+          // Compare if the given date is greater than 10 years ago
+          return (new Date(date)) < tenYearsAgo ? true : false
+        
+      }, {
+        message: "You must be older than 10 years! 😥",
+      }),
+      
       shareholder_nationality: z.string().min(1, "Required"),
       shareholder_country_of_residence: z.string().min(1, "Required"),
       shareholder_num_of_shares: z.number().min(1).max(100000),

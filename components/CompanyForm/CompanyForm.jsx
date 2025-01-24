@@ -9,6 +9,7 @@ import RowSteps from "./RowSteps";
 import Directors from "./cmps/Directors/Directors";
 import Shareholders from "./cmps/Shareholders/Shareholders";
 import Summary from "./cmps/Summary/Summary";
+import { parseDate } from "@internationalized/date";
 
 const CompanyForm = () => {
 
@@ -52,7 +53,7 @@ console.log(companyInfo, )
     person_first_name: '',
     person_middle_name: '',
     person_last_name: '',
-    person_dob: '',
+    person_dob: parseDate((new Date()).toISOString().split('T')[0]),
     person_nationality: '',
     person_occupation: '',
     person_country_of_residence: '',
@@ -88,6 +89,7 @@ console.log(companyInfo, )
     shareholder_first_name: "",
     shareholder_middle_name: "",
     shareholder_last_name: "",
+    shareholder_person_dob: parseDate((new Date()).toISOString().split('T')[0]),
     shareholder_nationality: "",
     shareholder_country_of_residence: "",
     shareholder_num_of_shares: 1,
