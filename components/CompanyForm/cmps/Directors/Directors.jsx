@@ -73,7 +73,7 @@ const Directors = ({ directors, setDirectors, continueBtnHandler, goBackBtnHandl
   const onSubmit = (data) => {
     console.log(data);
     setDirectors(data);
-    //continueBtnHandler();
+    continueBtnHandler();
   };
 
 
@@ -171,29 +171,29 @@ const Directors = ({ directors, setDirectors, continueBtnHandler, goBackBtnHandl
     return [
       {
         id: uuidv4(),
-        service_address_name_or_number: " 9D ",
-        service_address_street: "   Atherton Road ",
+        service_address_name_or_number: "9D ",
+        service_address_street: "Atherton Road",
         service_address_locality: "",
         service_address_town: "London",
         service_address_county: "",
         service_address_postcode: " E7 9AJ",
         service_address_country: "United Kingdom",
       },
-      {
-        id: uuidv4(),
-        service_address_name_or_number: " Lexuuu ",
-        service_address_street: "   Atherton Road ",
-        service_address_locality: "",
-        service_address_town: "London",
-        service_address_county: "",
-        service_address_postcode: " E7 9AJ",
-        service_address_country: "Canada",
-      },
+      // {
+      //   id: uuidv4(),
+      //   service_address_name_or_number: " Lexuuu ",
+      //   service_address_street: "   Atherton Road ",
+      //   service_address_locality: "",
+      //   service_address_town: "London",
+      //   service_address_county: "",
+      //   service_address_postcode: " E7 9AJ",
+      //   service_address_country: "Canada",
+      // },
     ];
   }, []);
 
 
-console.log(getValues('person_dob'))
+// console.log(getValues('person_dob'))
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="font-poppins w-full flex flex-col justify-start items-start gap-6 " >

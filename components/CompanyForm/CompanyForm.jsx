@@ -178,8 +178,9 @@ console.log(companyInfo, )
 
   return <>
    <div className="w-full container mx-auto px-40 max-xl:px-20 max-lg:px-8 ">
-   <section>
+   <section className="    w-[60%]   ">
    <RowSteps
+        color="secondary"
       currentStep={(currentStep - 1)}  
       
       steps={[

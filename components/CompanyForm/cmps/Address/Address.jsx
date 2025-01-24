@@ -133,24 +133,24 @@ const Address = ({ address, setAddress, continueBtnHandler, companyInfo, setComp
     () => [
       {
         id: uuidv4(),
-        name_or_number: " 9D ",
+        name_or_number: "9D",
         street: "Atherton Road ",
         locality: "",
         town: "London",
         county: "",
-        postcode: " E7 9AJ",
+        postcode: "E7 9AJ",
         country: "United Kingdom",
       },
-      {
-        id: uuidv4(),
-        name_or_number: " Lexuuu ",
-        street: "   Atherton Road ",
-        locality: "",
-        town: "London",
-        county: "",
-        postcode: " E7 9AJ",
-        country: "Canada",
-      },
+      // {
+      //   id: uuidv4(),
+      //   name_or_number: " Lexuuu ",
+      //   street: "   Atherton Road ",
+      //   locality: "",
+      //   town: "London",
+      //   county: "",
+      //   postcode: " E7 9AJ",
+      //   country: "Canada",
+      // },
     ],
     []
   );

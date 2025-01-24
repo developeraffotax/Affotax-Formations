@@ -4,6 +4,7 @@ import React, { useEffect } from "react";
 import {useControlledState} from "@react-stately/utils";
 import {m, LazyMotion, domAnimation} from "framer-motion";
 import {cn} from "@heroui/react";
+import { GrFormNext } from "react-icons/gr";
 
 
 function CheckIcon(props) {
@@ -110,7 +111,7 @@ const RowSteps = React.forwardRef(
     }, [color, className]);
 
     return (
-      <nav aria-label="Progress" className="-my-4 w-full overflow-x-auto pt-16 font-poppins">
+      <nav aria-label="Progress" className="-my-4 w-full overflow-x-auto pt-16 font-poppins  ">
         <ol className={cn("flex flex-row flex-nowrap gap-x-3", colors, className)}>
           {steps?.map((step, stepIdx) => {
             let status =
@@ -169,7 +170,7 @@ const RowSteps = React.forwardRef(
                       </m.div>
                     </LazyMotion>
                   </div>
-                  <div className="max-w-full flex-1 text-start">
+                  <div className="max-w-full flex-1 text-start  ">
                     <div
                       className={cn(
                         "text-small font-medium text-default-foreground transition-[color,opacity] duration-300 group-active:opacity-80 lg:text-medium",
@@ -179,6 +180,8 @@ const RowSteps = React.forwardRef(
                       )}
                     >
                       {step.title}
+
+                     {/* <span className="text-2xl"> <GrFormNext className="w-full "/> </span> */}
                     </div>
                   </div>
                   {stepIdx < steps.length - 1 && !hideProgressBars && (
