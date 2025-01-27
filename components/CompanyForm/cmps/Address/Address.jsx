@@ -21,8 +21,10 @@ import { v4 as uuidv4 } from "uuid";
 import SelectCmp from "./SelectCmp";
 import { TagsInput } from "react-tag-input-component";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
+import { createClient } from "@/lib/supabase/client";
 
-const Address = ({ address, setAddress, continueBtnHandler, companyInfo, setCompanyInfo }) => {
+const Address = ({setAccessDenied, address, setAddress, continueBtnHandler, companyInfo, setCompanyInfo }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [errorMsg, setIsErrorMsg] = useState("");
 
@@ -154,6 +156,54 @@ const Address = ({ address, setAddress, continueBtnHandler, companyInfo, setComp
     ],
     []
   );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   const searchParams = useSearchParams()
+    const orderId = +searchParams.get('orderId');
+  
+    useEffect(() => {
+  
+      (async function getCompanyName() {
+        const supabase = createClient();
+  
+      const {data, error} = await supabase.from('orders').select('company_name').eq('id', orderId)
+        console.log(data)
+      if(!error && data?.length !== 0) {
+        setCompanyInfo((prev) => {
+          return {
+            ...prev,
+          company_name: data[0].company_name
+          }
+        })
+      } else {
+         setAccessDenied(true)
+        console.log('in the else block')
+      }
+  
+      }())
+  
+  
+    }, [])
+
+
+
+
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="font-poppins w-full flex flex-col justify-start items-start gap-6 " >

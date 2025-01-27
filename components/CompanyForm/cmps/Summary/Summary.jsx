@@ -29,8 +29,9 @@ const Summary = ({
   shareholders,
   submitHandler,
   goBackBtnHandler,
+  isLoading
 }) => {
-  const [isLoading, setIsLoading] = useState(false);
+  // const [isLoading, setIsLoading] = useState(false);
   const [errorMsg, setIsErrorMsg] = useState("");
 
  
@@ -266,10 +267,10 @@ const Summary = ({
 
 
 
-        <div className="w-full flex flex-col justify-center items-center gap-4  ">
+        <div className="w-full flex flex-col justify-center items-center gap-4 font-poppins ">
           <div className="w-full flex flex-row justify-center items-center gap-4 ">
-            <Button onPress={goBackBtnHandler} className="text-white w-[50%] bg-gray-500  " > {" "} {isLoading ? <Spinner size="sm" color="white" /> : "Go Back"}{" "} </Button>
-            <Button onPress={submitHandler} className="text-white w-[50%] bg-cyan-500 " color="success" endContent={ isLoading ? null : <MdLogin className="text-xl -ml-1" /> } > {" "} {isLoading ? ( <Spinner size="sm" color="white" /> ) : ( "Continue" )}{" "} </Button>
+            <Button onPress={goBackBtnHandler} className="text-white w-[50%] bg-gray-500  " >  Go Back </Button>
+            <Button onPress={submitHandler}  isLoading={isLoading}     className="text-white w-[50%] bg-teal-500  " color="success" endContent={ isLoading ? null : <MdLogin className="text-xl -ml-1" /> } >  {isLoading ? 'Submitting...' : "Submit"}   </Button>
           </div>
 
           {errorMsg && ( <p className="w-full text-center   text-red-500 mt-2"> {" "} {errorMsg}{" "} </p> )}

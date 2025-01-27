@@ -398,7 +398,7 @@ const Shareholders = ({ shareholders, setShareholders, directors, continueBtnHan
       <div className="w-full flex flex-col justify-center items-center gap-4  ">
         <div className="w-full flex flex-row justify-center items-center gap-4 ">
           <Button onPress={onBack} className="text-white w-[50%] bg-gray-500  "> {" "} {isLoading ? <Spinner size="sm" color="white" /> : "Go Back"}{" "} </Button>
-          <Button type="submit" className="text-white w-[50%] bg-teal-500 " color="success" endContent={ isLoading ? null : <MdLogin className="text-xl -ml-1" /> } > {" "} {isLoading ? <Spinner size="sm" color="white" /> : "Continue"}{" "} </Button>
+          <Button type="submit" className="text-white w-[50%] bg-cyan-500 " color="success" endContent={ isLoading ? null : <MdLogin className="text-xl -ml-1" /> } > {" "} {isLoading ? <Spinner size="sm" color="white" /> : "Continue"}{" "} </Button>
         </div>
 
         {errorMsg && ( <p className="w-full text-center   text-red-500 mt-2"> {errorMsg} </p> )}
