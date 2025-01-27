@@ -10,15 +10,19 @@ import Directors from "./cmps/Directors/Directors";
 import Shareholders from "./cmps/Shareholders/Shareholders";
 import Summary from "./cmps/Summary/Summary";
 import { parseDate } from "@internationalized/date";
-import { useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 import { UserContext } from "@/app/(user)/layout";
+import { Bounce, toast, ToastContainer } from "react-toastify";
+ 
 
 const CompanyForm = () => {
 
   
   const [accessDenied, setAccessDenied] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
+
+  const router = useRouter()
 
  
 
@@ -216,7 +220,10 @@ const { user, setUser } = useContext(UserContext);
       })
       .select('company_name')
 
-      console.log(data[0])
+      
+      if(error) {
+        throw error
+      }
 
       const company_name = data[0].company_name;
 
@@ -225,7 +232,10 @@ const { user, setUser } = useContext(UserContext);
           .insert({ ...address, for_company: company_name, user_id: user.id, })
            
 
-
+          if(error2) {
+            throw error2
+          }
+    
 
           // ---------------------------------------------------------------------directors------------------------------------------------------------------------
           const director = {
@@ -248,7 +258,9 @@ const { user, setUser } = useContext(UserContext);
           .from('directors')
           .insert(director)
           .select("id")
-
+          if(error3) {
+            throw error3
+          }
 
 
 
@@ -270,7 +282,9 @@ const { user, setUser } = useContext(UserContext);
           const { data: data4, error: error4 } = await supabase
           .from('service_address')
           .insert(service_address)
-           
+          if(error4) {
+            throw error4
+          }
 
 
 
@@ -291,7 +305,9 @@ const { user, setUser } = useContext(UserContext);
           const { data: data5, error: error5 } = await supabase
           .from('residential_address')
           .insert(residential_address)
-           
+          if(error5) {
+            throw error5
+          }
 
 
 
@@ -319,7 +335,9 @@ const { user, setUser } = useContext(UserContext);
         .from('shareholders_stats')
         .insert(shareholders_stats)
         .select("id")
-
+        if(error6) {
+          throw error6
+        }
 
         
 
@@ -338,13 +356,17 @@ const { user, setUser } = useContext(UserContext);
           })
 
 
-          const { error7 } = await supabase
+          const { data7, error7, status7 } = await supabase
             .from('shareholders')
             .insert(mappedShareholdersArr)
+            if(error7) {
+              throw error7
+            }
 
+            if(status7 === 201) {
 
-
-
+              return router.push('/')
+            } 
 
 
 
@@ -356,28 +378,12 @@ const { user, setUser } = useContext(UserContext);
 
     } catch (error) {
 
-      console.log(error)
-
+      //console.log(error?.message)
+      
+      toast.error(  'Failed to submit your form! Please try agin later' , { position: "top-left", autoClose: 5000, hideProgressBar: false, closeOnClick: false, pauseOnHover: true, draggable: true, progress: undefined, theme: "colored", transition: Bounce, });
     } finally {
       setIsLoading(false)
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -438,6 +444,7 @@ const { user, setUser } = useContext(UserContext);
       {
         accessDenied ? <p className="w-full mx-auto py-16 text-red-500  text-center text-2xl font-poppins ">Access Denied😥</p> : 
         <>
+        <ToastContainer />
          <section className="    w-[60%]   ">
       <RowSteps color="secondary" currentStep={(currentStep - 1)} steps={[ { title: "Registered Office", }, { title: "Directors", }, { title: "Share Holders", }, { title: "Summary", }, ]} />
     </section>
