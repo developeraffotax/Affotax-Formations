@@ -10,8 +10,40 @@ import Directors from "./cmps/Directors/Directors";
 import Shareholders from "./cmps/Shareholders/Shareholders";
 import Summary from "./cmps/Summary/Summary";
 import { parseDate } from "@internationalized/date";
+import { useSearchParams } from "next/navigation";
+import { createClient } from "@/lib/supabase/client";
 
 const CompanyForm = () => {
+
+  
+  const [accessDenied, setAccessDenied] = useState(false)
+
+  const searchParams = useSearchParams()
+  const orderId = +searchParams.get('orderId');
+
+  useEffect(() => {
+
+    (async function getCompanyName() {
+      const supabase = createClient();
+
+    const {data, error} = await supabase.from('orders').select('company_name').eq('id', orderId)
+      console.log(data)
+    if(!error && data?.length !== 0) {
+      setCompanyInfo((prev) => {
+        return {
+          ...prev,
+        company_name: data[0].company_name
+        }
+      })
+    } else {
+       setAccessDenied(true)
+      console.log('in the else block')
+    }
+
+    }())
+
+
+  }, [])
 
   const [currentStep, setCurrentStep] = useState(1)
   const [activePage, setActivePage] = useState('address')
@@ -27,7 +59,7 @@ const CompanyForm = () => {
 
 
 
-  const [address, setAddress] = useState({
+  const [address, setAddress] = useState({                  
     name_or_number: '',
     street: '',
     locality: '',
@@ -157,6 +189,23 @@ console.log(companyInfo, )
   
   
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // ------------------------------------------------------------------------------Submit Handler--------------------------------------------------------------------
   const submitHandler = () => {
 
     console.log(address)
@@ -165,12 +214,58 @@ console.log(companyInfo, )
     console.log(shareholders)
 
 
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
   }
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -179,37 +274,15 @@ console.log(companyInfo, )
 
   return <>
    <div className="w-full container mx-auto px-40 max-xl:px-20 max-lg:px-8 ">
-   <section className="    w-[60%]   ">
-   <RowSteps
-        color="secondary"
-      currentStep={(currentStep - 1)}  
-      
-      steps={[
-        {
-          title: "Registered Office",
-
-        },
-        {
-          title: "Directors",
-        },
-        {
-          title: "Share Holders",
-        },
-
-      
-        {
-          title: "Summary",
-        },
-      ]}
-    />
+      {
+        accessDenied ? <p className="w-full mx-auto py-16 text-red-500  text-center text-2xl font-poppins ">Access Denied😥</p> : 
+        <>
+         <section className="    w-[60%]   ">
+      <RowSteps color="secondary" currentStep={(currentStep - 1)} steps={[ { title: "Registered Office", }, { title: "Directors", }, { title: "Share Holders", }, { title: "Summary", }, ]} />
     </section>
   
   
     <section className="    w-[60%] py-20  ">
-
-
-        
-
 
        {(activePage === 'address') &&  <CompanyAddress companyInfo={companyInfo} setCompanyInfo={setCompanyInfo} address={address} setAddress={setAddress} continueBtnHandler={gotoBtnHandler(2,'directors') }   />} 
        {(activePage === 'directors') &&  <Directors directors={directors} setDirectors={setDirectors} continueBtnHandler={gotoBtnHandler(3,'shareholders') }  goBackBtnHandler={gotoBtnHandler(1,'address')} />}
@@ -218,18 +291,8 @@ console.log(companyInfo, )
 
 
 
-
-
-
-
-
-
-       
-
-
-
-       
-    </section>
+    </section></>
+      }
    </div>
   
   

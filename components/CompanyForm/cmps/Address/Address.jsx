@@ -178,7 +178,7 @@ const Address = ({ address, setAddress, continueBtnHandler, companyInfo, setComp
                     <td className="border px-5 py-2   w-[40%]  " >Company Name</td>
                     <td className="border px-5 py-2 flex justify-start items-center gap-2 " >
 
-                      <h3>AffotaxHouse</h3>
+                      <h3>{companyInfo?.company_name}</h3>
 
 <div className=" w-full  ">
       {/* <label className={`text-base ${errors?.name ? "text-rose-500" : ""}`}>{label} </label> */}

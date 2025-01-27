@@ -18,7 +18,7 @@ export default function SuccessPage() {
       localStorage.removeItem("selected_pkg_price");
 
       localStorage.removeItem("order_ref");
-      localStorage.removeItem("token");
+      // localStorage.removeItem("token");
       localStorage.removeItem("company_name");
     }
   }, []);
