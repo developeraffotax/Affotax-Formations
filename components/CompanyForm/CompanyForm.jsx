@@ -14,11 +14,13 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 import { UserContext } from "@/app/(user)/layout";
 import { Bounce, toast, ToastContainer } from "react-toastify";
+import axios from "axios";
  
 
 const CompanyForm = () => {
 
-  
+  const [orderId, setOrderId] = useState('')
+
   const [accessDenied, setAccessDenied] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
 
@@ -356,7 +358,7 @@ const { user, setUser } = useContext(UserContext);
           })
 
 
-          const { data7, error7, status7 } = await supabase
+          const { data:data7, error: error7, status: status7 } = await supabase
             .from('shareholders')
             .insert(mappedShareholdersArr)
             if(error7) {
@@ -365,7 +367,29 @@ const { user, setUser } = useContext(UserContext);
 
             if(status7 === 201) {
 
-              return router.push('/')
+              console.log('IN THE 201 BLOCK')
+
+              const data = {
+                  companyInfo: companyInfo,
+                  address: address,
+                  directors: directors,
+                  shareholders: shareholders,
+                  orderId: orderId
+                   
+                  
+
+              }
+
+
+              const res = await axios.post('/api/send-email/company-submission/to-admin', JSON.stringify(data))
+
+
+              console.log(res)
+
+
+
+
+              return router.push('/');
             } 
 
 
@@ -378,7 +402,7 @@ const { user, setUser } = useContext(UserContext);
 
     } catch (error) {
 
-      //console.log(error?.message)
+      console.log(error)
       
       toast.error(  'Failed to submit your form! Please try agin later' , { position: "top-left", autoClose: 5000, hideProgressBar: false, closeOnClick: false, pauseOnHover: true, draggable: true, progress: undefined, theme: "colored", transition: Bounce, });
     } finally {
@@ -452,7 +476,7 @@ const { user, setUser } = useContext(UserContext);
   
     <section className="    w-[60%] py-20  ">
 
-       {(activePage === 'address') &&  <Suspense fallback={<p>Loading</p>}><CompanyAddress setAccessDenied={setAccessDenied} companyInfo={companyInfo} setCompanyInfo={setCompanyInfo} address={address} setAddress={setAddress} continueBtnHandler={gotoBtnHandler(2,'directors') }   /></Suspense>} 
+       {(activePage === 'address') &&  <Suspense fallback={<p>Loading</p>}><CompanyAddress setOrderId={setOrderId} setAccessDenied={setAccessDenied} companyInfo={companyInfo} setCompanyInfo={setCompanyInfo} address={address} setAddress={setAddress} continueBtnHandler={gotoBtnHandler(2,'directors') }   /></Suspense>} 
        {(activePage === 'directors') &&  <Directors directors={directors} setDirectors={setDirectors} continueBtnHandler={gotoBtnHandler(3,'shareholders') }  goBackBtnHandler={gotoBtnHandler(1,'address')} />}
        {(activePage === 'shareholders') &&  <Shareholders shareholders={shareholders} setShareholders={setShareholders} directors={directors}  continueBtnHandler={gotoBtnHandler(4,'summary') }  goBackBtnHandler={gotoBtnHandler(2,'directors')}   />}
        {(activePage === 'summary') &&  <Summary companyInfo={companyInfo} address={address} directors={directors} shareholders={shareholders}  goBackBtnHandler={gotoBtnHandler(3,'shareholders')} submitHandler={submitHandler} isLoading={isLoading}  />}

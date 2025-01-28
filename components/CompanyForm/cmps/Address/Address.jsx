@@ -24,7 +24,7 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 
-const Address = ({setAccessDenied, address, setAddress, continueBtnHandler, companyInfo, setCompanyInfo }) => {
+const Address = ({setOrderId, setAccessDenied, address, setAddress, continueBtnHandler, companyInfo, setCompanyInfo }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [errorMsg, setIsErrorMsg] = useState("");
 
@@ -183,6 +183,8 @@ const Address = ({setAccessDenied, address, setAddress, continueBtnHandler, comp
         const supabase = createClient();
   
       const {data, error} = await supabase.from('orders').select('company_name').eq('id', orderId)
+       
+
         console.log(data)
       if(!error && data?.length !== 0) {
         setCompanyInfo((prev) => {
@@ -191,6 +193,23 @@ const Address = ({setAccessDenied, address, setAddress, continueBtnHandler, comp
           company_name: data[0].company_name
           }
         })
+
+
+        setOrderId(orderId)
+        // setOrderDetails((prev) => {
+        //   return {
+        //     ...prev,
+        //     orderId:data[0].id,
+        //     orderRef:data[0].order_ref,
+        //     customerName:userData[0]?.raw_user_meta_data?.account_holder?.forename + ' ' + userData[0]?.raw_user_meta_data?.account_holder?.surname,
+        //     customerEmail:userData[0]?.raw_user_meta_data?.account_holder?.email
+            
+             
+        //   }
+        // })
+
+
+
       } else {
          setAccessDenied(true)
         console.log('in the else block')
