@@ -10,7 +10,7 @@ import Img from '@/public/tick3.png'
 
 
 const LIST = [
-    'HMRC Registered Tax Agent', 'Business bank accounts Opening for non-resident', '24/7 customer support Free tax consultation', 'Ltd London Address Registered Office'
+     'Business bank accounts Opening for non-resident', '24/7 customer support Free tax consultation', 'Ltd London Address Registered Office'
 ]
 
 
@@ -19,9 +19,9 @@ const LIST = [
 
 const UnderHero = () => {
   return (
-    <section className="w-full bg-transparent font-Inter">
+    <section className="w-full bg-transparent font-Inter ">
         <div className="w-full mx-auto container  ">
-            <ul className="w-full flex justify-center gap-4 items-center p-12  max-xl:h-56 h-48   ">
+            <ul className="w-full flex justify-center gap-4 items-center py-12  max-xl:h-56 h-48   ">
                 {
                     LIST.map((el) => {
                         return (

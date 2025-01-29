@@ -118,7 +118,7 @@ const Hero = () => {
     <section className="w-full  mesh  font-Inter relative max-xl:px-0 ">
       <ToastContainer />
       <div className="w-full overflow-hidden relative ">
-        <span className="w-[50%] max-xl:hidden   absolute -right-16 bottom-0"> {" "} <svg viewBox="0 0 827 498" fill="none" xmlns="http://www.w3.org/2000/svg" > {" "} <path d="M366.37 361.625C648.83 419.253 803.815 144.553 846 0V526H0C4.43117 447.197 83.9087 303.997 366.37 361.625Z" fill="#FC6600" />{" "} </svg>{" "} </span>
+        {/* <span className="w-[50%] max-xl:hidden   absolute -right-16 bottom-0"> {" "} <svg viewBox="0 0 827 498" fill="none" xmlns="http://www.w3.org/2000/svg" > {" "} <path d="M366.37 361.625C648.83 419.253 803.815 144.553 846 0V526H0C4.43117 447.197 83.9087 303.997 366.37 361.625Z" fill="#FC6600" />{" "} </svg>{" "} </span> */}
         <div className="container mx-auto w-full px-40 max-xl:px-8  ">
           <div className="w-full flex flex-row max-xl:flex-col gap-8  justify-between items-start">
             {
@@ -148,7 +148,7 @@ const Hero = () => {
       </div>
 
 
-      <div className="absolute -bottom-24 left-[50%]  -translate-x-[50%] z-50 w-full max-xl:hidden">
+      <div className="  container mx-auto  px-40 max-xl:px-8  absolute -bottom-24 left-[50%]  -translate-x-[50%] z-50 w-full max-xl:hidden">
         <UnderHero />
       </div>
     </section>

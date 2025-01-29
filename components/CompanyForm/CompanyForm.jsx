@@ -384,12 +384,14 @@ const { user, setUser } = useContext(UserContext);
               const res = await axios.post('/api/send-email/company-submission/to-admin', JSON.stringify(data))
 
 
-              console.log(res)
+              if (res.status === 200 ) {
+                
+                return router.push('/submit-company-form/success');
+              }
 
 
 
 
-              return router.push('/');
             } 
 
 

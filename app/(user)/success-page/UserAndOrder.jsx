@@ -3,10 +3,11 @@
 import { createClient } from "@/lib/supabase/client";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 const UserAndOrder = ({user, setUser, error, setError, orderRef, setOrderRef, setIsLoading}) => {
 
+ const [companyName, setCompanyName] = useState(null);
 
   const searchParams = useSearchParams()
  
@@ -29,7 +30,7 @@ const UserAndOrder = ({user, setUser, error, setError, orderRef, setOrderRef, se
   
         const { data, error: orderError } = await supabase
             .from('orders')
-            .select("order_ref")
+            .select("order_ref, company_name")
             .eq('id', orderId)
         
             if(orderError) {
@@ -41,6 +42,7 @@ const UserAndOrder = ({user, setUser, error, setError, orderRef, setOrderRef, se
               
               return setError("Failed to fetch")
             }
+            setCompanyName(data[0]?.company_name)
             setOrderRef(data[0]?.order_ref)
         
         
@@ -126,14 +128,12 @@ const UserAndOrder = ({user, setUser, error, setError, orderRef, setOrderRef, se
               </Link>
             </div>
   
-            <div className="mt-8">
-              <Link
-                href={`/submit-company-form?orderId=${orderId}`}
-                className="animate-pulse   font-poppins inline-block px-8 py-4 text-lg font-semibold text-white transition-colors duration-200 bg-cyan-600 rounded-lg hover:bg-cyan-700"
-              >
-                Submit Company Submission Form
-              </Link>
+            {
+              companyName && 
+              <div className="mt-8">
+              <Link href={`/submit-company-form?orderId=${orderId}`} className="animate-pulse   font-poppins inline-block px-8 py-4 text-lg font-semibold text-white transition-colors duration-200 bg-cyan-600 rounded-lg hover:bg-cyan-700" > Submit Company Submission Form </Link>
             </div>
+            }
           </div>
         </div>
   )
