@@ -92,9 +92,9 @@ const Checkout = () => {
     if (typeof window !== "undefined") {
       // Retrieve the value from localStorage
       const value = localStorage.getItem('company_name');
-      setStoredValue(value);
-      // if (value) {
-      // }
+      if (value) {
+        setStoredValue(value);
+      }
     }
   }, []);
 

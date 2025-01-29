@@ -94,7 +94,7 @@ const Form = ({ selectedPackages, mainPkg, mainPkgPrice, tPriceWithoutTax, addre
             order_ref: orderRef,
             payment_status: "pending",
             shipping_address: form?.address,
-            company_name: company_name || ''
+            company_name: company_name || null
           })
           .select("id");
 
@@ -194,7 +194,7 @@ const Form = ({ selectedPackages, mainPkg, mainPkgPrice, tPriceWithoutTax, addre
             order_ref: orderRef,
             payment_status: "pending",
             shipping_address: form?.address,
-            company_name: company_name || ''
+            company_name: company_name || null
           })
           .select("id");
 
