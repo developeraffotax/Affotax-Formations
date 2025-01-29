@@ -16,6 +16,8 @@ const PriceBox = ({title, content, includesList, price, serviceName}) => {
             localStorage.setItem('selected_pkg_name', JSON.stringify(title))
             localStorage.setItem('selected_pkg_price', JSON.stringify(price))
 
+            localStorage.removeItem('company_name')
+
             //router.push(`/buy/service?service_name=${serviceName}&package_name=${title}`)
             router.push(`/checkout`)
 

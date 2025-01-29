@@ -124,7 +124,8 @@ export default function RootLayout({ children }) {
       if (session) {
         
        
-
+        // console.log(event)
+        // console.log(session)
 
 
         setUser(session.user);

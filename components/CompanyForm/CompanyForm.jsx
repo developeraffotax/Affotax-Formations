@@ -386,7 +386,7 @@ const { user, setUser } = useContext(UserContext);
 
               if (res.status === 200 ) {
                 
-                return router.push('/submit-company-form/success');
+                return router.replace('/submit-company-form/success');
               }
 
 
