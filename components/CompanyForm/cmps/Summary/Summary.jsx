@@ -180,6 +180,47 @@ const Summary = ({
 
 
 
+    {/* Shareholder Capital */}
+        <div className="w-full mb-8">
+          <h2 className="w-full text-start text-2xl font-poppins bg-cyan-500 text-white py-2 px-4   ">
+          Share Capital
+          </h2>
+
+          <table className="w-full  table-auto border-collapse font-Inter">
+              <tbody>
+                <tr className=" border  "> {" "} <td className=" px-3 py-1   w-[40%]  border-r ">Share Currency</td>{" "} <td className=" px-3 py-1 flex justify-start items-center gap-2  "> {`${shareholders.share_currency}`} </td>{" "} </tr>
+                <tr className="border  "> {" "} <td className=" px-3 py-1   w-[40%] border-r  "> Share Class </td>{" "} <td className=" px-3 py-1 flex justify-start items-center gap-2  "> {" "} {`Ordinary`}{" "} </td>{" "} </tr>
+                <tr className="border  "> {" "} <td className=" px-3 py-1   w-[40%] border-r  "> Number of Shareholders </td>{" "} <td className=" px-3 py-1 flex justify-start items-center gap-2  "> {" "} {`${shareholders.num_of_share_holders}`}{" "} </td>{" "} </tr>
+                <tr className="border  "> {" "} <td className=" px-3 py-1   w-[40%] border-r  "> Number of Share </td>{" "} <td className=" px-3 py-1 flex justify-start items-center gap-2  "> {" "} {`${shareholders.num_of_shares}`}{" "} </td>{" "} </tr>
+                <tr className="border  "> {" "} <td className=" px-3 py-1   w-[40%] border-r  "> Value per Share </td>{" "} <td className=" px-3 py-1 flex justify-start items-center gap-2  "> {" "} {`${shareholders.value_per_share}`}{" "} </td>{" "} </tr>
+                <tr className="border  "> {" "} <td className=" px-3 py-1   w-[40%] border-r  "> Total Shares </td>{" "} <td className=" px-3 py-1 flex justify-start items-center gap-2  "> {" "} {`${shareholders.total_shares}`}{" "} </td>{" "} </tr>
+              </tbody>
+            </table>
+          
+
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

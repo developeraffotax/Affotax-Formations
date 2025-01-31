@@ -25,7 +25,8 @@ export default function ChangeCompanyName({ companyInfo, setCompanyInfo, isOpen,
 
     // Access the 'company_name' input value using FormData's get method
     const companyName = formData.get("company_name");
-    setIsLoading(true)
+    setIsLoading(true);
+    setError('')
     try {
             const res = await axios.post("/api/search-company-name", {
             companyName: companyName,
