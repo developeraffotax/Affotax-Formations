@@ -46,6 +46,7 @@ const Address = ({setOrderId, setAccessDenied, address, setAddress, continueBtnH
 
 
   const [sicCodesSelected, setSicCodesSelected] = useState([]);
+  const [isSicCodesValid, setIsSicCodesValid] = useState(true);
   console.log(sicCodesSelected)
 
 
@@ -62,6 +63,15 @@ const Address = ({setOrderId, setAccessDenied, address, setAddress, continueBtnH
 
   // FORM SUBMIT HANDLER
   const onSubmit = (data) => {
+
+    //Custom validator for the sic codes
+     
+    if(sicCodesSelected?.length === 0) {
+      return setIsSicCodesValid(false)
+    }
+
+
+
     console.log(data);
     setCompanyInfo({
       ...companyInfo,
@@ -239,6 +249,19 @@ const Address = ({setOrderId, setAccessDenied, address, setAddress, continueBtnH
 
 
 
+    const sicCodesHandler = (tagsArr) => {
+
+
+      setSicCodesSelected(tagsArr)
+
+      console.log(tagsArr)
+
+
+
+
+    }
+
+
 
   return (
     <>
@@ -264,7 +287,7 @@ const Address = ({setOrderId, setAccessDenied, address, setAddress, continueBtnH
 
                   <tr className="   " > 
                     
-                    <td className="border px-5 py-2  w-[40%]     " > Company Name <span> <Button onPress={(e) => onOpen()} className=" text-sm  " size="sm" variant="flat">Change</Button></span>  </td>
+                    <td className="border px-5 py-2  w-[40%]     " > Company Name <span> <Button onPress={(e) => onOpen()} className=" text-sm   text-cyan-500 " size="sm" variant="light">Change</Button></span>  </td>
                     <td className="border px-5 py-2 flex justify-start items-center gap-2 " >
 
                       <h3>{companyInfo?.company_name}</h3>
@@ -299,13 +322,16 @@ const Address = ({setOrderId, setAccessDenied, address, setAddress, continueBtnH
 
       <TagsInput
         
-        classNames={{input: "w-full  flex ",    }}
+        classNames={{input: "  w-0   ",    }}
         value={sicCodesSelected}
-        onChange={setSicCodesSelected}
+        onChange={sicCodesHandler}
+        
         name="sic codes"
         placeHolder="Type & Press Enter"
         beforeAddValidate={(value, existingTags) => {
-            
+          if(existingTags.length >= 0 ) {
+            setIsSicCodesValid(true)
+          } 
             if(existingTags.length >= 4 ) {
               return false;
             } 
@@ -317,6 +343,13 @@ const Address = ({setOrderId, setAccessDenied, address, setAddress, continueBtnH
         
 
       />
+
+        
+
+
+      {
+        !isSicCodesValid && <p className="text-sm text-red-500 ">Atleast 1 sic code is required! Type the code and Press Enter!</p> 
+      }
 
       {/* <input type="text" value={newTag} onChange={(e) => setNewTag(e.target.value)} placeholder="Enter SIC code" />
       <button onClick={handleAddTag}>Add SIC Code</button> */}
