@@ -320,11 +320,13 @@ export async function POST(req) {
     
   page.drawLine({ start: { x: 0, y: 300 }, end: { x: width,  y: 300 }, thickness: 1, color: rgb(0, 0, 0), opacity: 0.75, })
 
-  page.drawText(`Share Currency = ${shareholders?.share_currency} `, {x: 20, y: 280,   size: 12 });
-  page.drawText(`Number of Share Holders = ${shareholders?.num_of_share_holders}`, {x: 20, y: 260,   size: 12 });
-  page.drawText(`Number of Shares = ${shareholders?.num_of_shares}`, {x: 20, y: 240,   size: 12 });
-  page.drawText(`Value per Share = ${shareholders?.value_per_share}`, {x: 20, y: 220,   size: 12 });
-  page.drawText(`Total Shares = ${shareholders?.total_shares}`, {x: 20, y: 200,   size: 12 });
+  page.drawText(`SHAREHOLDERS`, {x: 20, y: 280,   size: 16, color: rgb(1, 0.647, 0) });
+
+  page.drawText(`Share Currency = ${shareholders?.share_currency} `, {x: 20, y: 260,   size: 12 });
+  page.drawText(`Number of Share Holders = ${shareholders?.num_of_share_holders}`, {x: 20, y: 240,   size: 12 });
+  page.drawText(`Number of Shares = ${shareholders?.num_of_shares}`, {x: 20, y: 220,   size: 12 });
+  page.drawText(`Value per Share = ${shareholders?.value_per_share}`, {x: 20, y: 200,   size: 12 });
+  page.drawText(`Total Shares = ${shareholders?.total_shares}`, {x: 20, y: 180,   size: 12 });
 
 
 

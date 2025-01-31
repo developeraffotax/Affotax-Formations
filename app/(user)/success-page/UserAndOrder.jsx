@@ -109,6 +109,15 @@ const UserAndOrder = ({user, setUser, error, setError, orderRef, setOrderRef, se
                 Order Reference Number: #{orderRef}
               </p>
             </div>
+
+            {
+              companyName && 
+              <div className="mb-12">
+              <Link href={`/submit-company-form?orderId=${orderId}`} className="animate-pulse   font-poppins inline-block px-8 py-4 text-lg font-semibold text-white transition-colors duration-200 bg-cyan-600 rounded-lg hover:bg-cyan-700" > Submit Company Submission Form </Link>
+            </div>
+            }
+
+
   
             <div className="flex flex-col justify-start items-center gap-2 pt-5 mt-8 border-t border-gray-100 font-poppins ">
               <p className="text-xl text-gray-700">
@@ -128,12 +137,7 @@ const UserAndOrder = ({user, setUser, error, setError, orderRef, setOrderRef, se
               </Link>
             </div>
   
-            {
-              companyName && 
-              <div className="mt-8">
-              <Link href={`/submit-company-form?orderId=${orderId}`} className="animate-pulse   font-poppins inline-block px-8 py-4 text-lg font-semibold text-white transition-colors duration-200 bg-cyan-600 rounded-lg hover:bg-cyan-700" > Submit Company Submission Form </Link>
-            </div>
-            }
+            
           </div>
         </div>
   )

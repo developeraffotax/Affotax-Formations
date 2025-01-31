@@ -14,6 +14,7 @@ import {
   Select,
   SelectItem,
   Spinner,
+  useDisclosure,
 } from "@heroui/react";
 import { addressSchema } from "./addressSchema";
 import { COUNTRIES } from "./countries";
@@ -23,14 +24,29 @@ import { TagsInput } from "react-tag-input-component";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
+import ChangeCompanyName from "./ChangeCompanyName";
 
 const Address = ({setOrderId, setAccessDenied, address, setAddress, continueBtnHandler, companyInfo, setCompanyInfo }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [errorMsg, setIsErrorMsg] = useState("");
 
 
-  const [sicCodesSelected, setSicCodesSelected] = useState([]);
+  const {isOpen, onOpen, onOpenChange, onClose } = useDisclosure();
 
+  // const [newTag, setNewTag] = useState('');
+
+  // const handleAddTag = () => {
+  //   // Validate the new tag before adding it
+  //   if (sicCodesSelected.length < 4 && !isNaN(Number(newTag))) {
+  //     setSicCodesSelected([...sicCodesSelected, newTag]);
+  //     setNewTag(''); // Reset the input field after adding the tag
+  //   }
+  // };
+
+
+
+  const [sicCodesSelected, setSicCodesSelected] = useState([]);
+  console.log(sicCodesSelected)
 
 
   const {
@@ -225,7 +241,10 @@ const Address = ({setOrderId, setAccessDenied, address, setAddress, continueBtnH
 
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="font-poppins w-full flex flex-col justify-start items-start gap-6 " >
+    <>
+      <ChangeCompanyName companyInfo={companyInfo} setCompanyInfo={setCompanyInfo} isOpen={isOpen} onOpen={onOpen} onClose={onClose} onOpenChange={onOpenChange} orderId={orderId}/>
+
+      <form onSubmit={handleSubmit(onSubmit)} className="font-poppins w-full flex flex-col justify-start items-start gap-6 " >
 
 
         <div className="w-full flex flex-col justify-start items-start gap-0 border  ">
@@ -243,8 +262,9 @@ const Address = ({setOrderId, setAccessDenied, address, setAddress, continueBtnH
                 <table   className="w-full  table-auto border-collapse ">
                   <tbody>
 
-                  <tr className="  " > 
-                    <td className="border px-5 py-2   w-[40%]  " >Company Name</td>
+                  <tr className="   " > 
+                    
+                    <td className="border px-5 py-2  w-[40%]     " > Company Name <span> <Button onPress={(e) => onOpen()} className=" text-sm  " size="sm" variant="flat">Change</Button></span>  </td>
                     <td className="border px-5 py-2 flex justify-start items-center gap-2 " >
 
                       <h3>{companyInfo?.company_name}</h3>
@@ -279,11 +299,11 @@ const Address = ({setOrderId, setAccessDenied, address, setAddress, continueBtnH
 
       <TagsInput
         
-        classNames={{input: "w-full  flex ",   }}
+        classNames={{input: "w-full  flex ",    }}
         value={sicCodesSelected}
         onChange={setSicCodesSelected}
         name="sic codes"
-        placeHolder="Enter SIC codes "
+        placeHolder="Type & Press Enter"
         beforeAddValidate={(value, existingTags) => {
             
             if(existingTags.length >= 4 ) {
@@ -294,9 +314,14 @@ const Address = ({setOrderId, setAccessDenied, address, setAddress, continueBtnH
 
         }}  
         
-         
+        
 
       />
+
+      {/* <input type="text" value={newTag} onChange={(e) => setNewTag(e.target.value)} placeholder="Enter SIC code" />
+      <button onClick={handleAddTag}>Add SIC Code</button> */}
+
+
       <em className="text-xs font-Montserrat"><Link target="_blank" className="text-blue-500" href={'http://resources.companieshouse.gov.uk/sic/'}  >Click here</Link> to search SIC codes for your business</em>
     </div>
 
@@ -401,6 +426,9 @@ const Address = ({setOrderId, setAccessDenied, address, setAddress, continueBtnH
         {errorMsg && ( <p className="w-full text-center   text-red-500 mt-2"> {errorMsg} </p> )}
       </div>
     </form>
+
+
+    </>
   );
 };
 
