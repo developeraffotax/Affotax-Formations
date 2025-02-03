@@ -10,7 +10,7 @@ import { Redis } from "@upstash/redis";
 // Create a new ratelimiter
 const ratelimit = new Ratelimit({
   redis: Redis.fromEnv(),
-  limiter: Ratelimit.slidingWindow(2, "60 s"),
+  limiter: Ratelimit.slidingWindow(10, "60 s"),
   prefix: "@upstash/ratelimit",
   analytics: true
 });

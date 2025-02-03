@@ -23,7 +23,7 @@ const PriceBox = ({title, content, includesList, price, serviceName}) => {
 
     }
 
-
+    // bg-[#002B5B]
 
   return (
     <li className="w-full p-8 border border-orange-500 space-y-4 shadow-sm  shadow-black/10  ">
@@ -34,7 +34,7 @@ const PriceBox = ({title, content, includesList, price, serviceName}) => {
 
 
         <div className="w-full ">
-        <span className="     bg-[#002B5B] text-white font-poppins text-sm   rounded-lg  py-1 px-4 ">Package Includes: </span>
+        <span className="     bg-gray-400 text-white font-poppins text-sm   rounded-lg  py-1 px-4 ">Package Includes: </span>
         </div>
         <ul className="w-full list-disc text-sm ml-5 pb-2">
 

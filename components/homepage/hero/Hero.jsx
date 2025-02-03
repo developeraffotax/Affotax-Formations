@@ -81,7 +81,7 @@ const Hero = () => {
     } finally {
       setIsLoading(false);
       setIsTouched(true);
-      setCompanyNameToShow(companyName)
+      setCompanyNameToShow(companyName.toUpperCase())
     }
 
 

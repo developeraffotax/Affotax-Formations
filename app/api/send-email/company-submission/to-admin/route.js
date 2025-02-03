@@ -374,7 +374,7 @@ export async function POST(req) {
     const options = {
       from: process.env.GMAIL_USER,
       to: process.env.GMAIL_USER, //admin email
-      subject: `${companyInfo?.company_name} | COMPANY SUBMISSION FORM | AFFOTAX FORMATIONS`,
+      subject: `${companyInfo?.company_name} | COMPANY REGISTRATION FORM | AFFOTAX FORMATIONS`,
       text: `
         Order Id : ${orderId}
         Order Ref : ${orders[0].order_ref}

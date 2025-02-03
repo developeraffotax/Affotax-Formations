@@ -66,7 +66,7 @@ import { useRouter } from "next/navigation";
                
               }}
               className="transition-transform  "
-              description={user?.email}
+              // description={user?.email}
               name={"My Account"}
             />
           </DropdownTrigger>
