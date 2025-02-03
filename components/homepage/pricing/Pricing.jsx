@@ -22,7 +22,7 @@ const PRICING_ARRAY = [
   {
     name: 'Basic',
     description: 'Perfect for individuals and small teams.',
-    badge: 'Best-Selling',
+    badge: '',
     price: '£59',
     href: '/buy/packages/limited-company/basic-package',
     pkg: 'basic-package',
@@ -34,7 +34,7 @@ const PRICING_ARRAY = [
   {
     name: 'Standard',
     description: 'Perfect for individuals and small teams.',
-    badge: 'Most-popular',
+    badge: 'Best-Selling',
     price: '£69',
     href: '/buy/packages/limited-company/standard-package',
     pkg: 'standard-package',
@@ -58,7 +58,7 @@ const PRICING_ARRAY = [
   {
     name: 'All-Inclusive',
     description: 'Perfect for individuals and small teams.',
-    badge: '',
+    badge: 'Most-popular',
     price: '£100',
     href: '/buy/packages/limited-company/all-inclusive-package',
     pkg: 'all-inclusive-package',

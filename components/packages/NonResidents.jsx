@@ -65,7 +65,7 @@ const NonResidents = () => {
               <li className="flex flex-col justify-center items-center py-2 border-r text-lg  relative    ">
                 {" "}
                 <OriginalPrice title={"30% OFF"} price={"130"} />{" "}
-                <h3>All-Iclusive</h3>{" "}
+                <h3>All-Inclusive</h3>{" "}
                 <span className="font-semibold">£100</span>
               </li>
             </ul>
