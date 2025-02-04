@@ -162,6 +162,14 @@ const { user, setUser } = useContext(UserContext);
 
   const gotoBtnHandler = (step, active) => {
 
+
+    if(typeof window !== "undefined") {
+      window?.scrollTo({
+        top: 0,
+        behavior: 'smooth', // Smooth scrolling
+      });
+    }
+
     return () => {
       setCurrentStep(step)
       setActivePage(active)
