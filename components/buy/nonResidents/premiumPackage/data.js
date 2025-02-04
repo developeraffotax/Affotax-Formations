@@ -2,7 +2,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 
 export const SELECTED_PACKAGE_NAME = "Premium Package";
-export const SELECTED_PACKAGE_PRICE = "89.00";
+export const SELECTED_PACKAGE_PRICE = "199";
 
 
 export const data = [

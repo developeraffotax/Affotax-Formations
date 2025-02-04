@@ -50,7 +50,7 @@ const Llp = () => {
               </Link>
             </ul>
 
-            <ul className="w-full grid grid-cols-[4fr_1fr_1fr_1fr] gap-0 border-b   bg-[#E7F4FF] shadow-sm">
+            <ul className="w-full grid grid-cols-[4fr_1fr_1fr] gap-0 border-b   bg-[#E7F4FF] shadow-sm">
               <li className="w-full flex justify-between items-center gap-4 px-4 py-2 border-x        ">
                 <h3 className="flex justify-start gap-2 items-center ">
                   {" "}
@@ -58,29 +58,29 @@ const Llp = () => {
                 </h3>{" "}
               </li>
 
-              <li className="flex flex-col justify-center items-center py-2 border-r text-lg  relative    ">
-                <h3>Standard</h3> <span className="font-semibold">£69</span>
+              <li className="flex flex-col justify-center items-center py-2 px-2 border-r text-lg  relative    ">
+                <h3>Standard</h3> <span className="font-semibold text-orange-500">£99</span><span className="text-sm text-center ">+ £50 Companies House Fee</span>
               </li>
-              <li className="flex flex-col justify-center items-center py-2 border-r text-lg relative">
+              <li className="flex flex-col justify-center items-center py-2 px-2  border-r text-lg relative">
                 {" "}
-                <OriginalPrice title={"30% OFF"} price={"110"} />{" "}
-                <h3>Premium</h3> <span className="font-semibold">£89</span>
+                <OriginalPrice title={"50% OFF"} price={"999"} />{" "}
+                <h3>Premium</h3> <span className="font-semibold text-orange-500">£499</span><span className="text-sm text-center ">+ £50 Companies House Fee</span>
               </li>
-              <li className="flex flex-col justify-center items-center py-2 border-r text-lg  relative    ">
+              {/* <li className="flex flex-col justify-center items-center py-2 border-r text-lg  relative    ">
                 {" "}
                 <OriginalPrice title={"30% OFF"} price={"130"} />{" "}
                 <h3>All-Inclusive</h3>{" "}
                 <span className="font-semibold">£100</span>
-              </li>
+              </li> */}
             </ul>
 
-            <ul className="w-full grid grid-cols-[4fr_1fr_1fr_1fr] gap-0 border-b    ">
+            <ul className="w-full grid grid-cols-[4fr_1fr_1fr] gap-0 border-b    ">
               <li className="w-full flex justify-between items-center gap-4 px-4 py-4 border-x        ">
                 <h3 className="flex justify-start gap-2 items-center ">
                   <span>
                     <RiShieldCheckFill className="text-orange-500 text-xl " />
                   </span>{" "}
-                  Limited Company
+                  Limited Liability Company
                 </h3>{" "}
                 <span>
                   <RiInformation2Line className="text-gray-500 text-xl hover:cursor-pointer " />
@@ -93,18 +93,18 @@ const Llp = () => {
               <li className="flex justify-center items-center py-4 border-r     ">
                 <IoCheckmark className="text-3xl text-cyan-500 " />
               </li>
-              <li className="flex justify-center items-center py-4 border-r     ">
+              {/* <li className="flex justify-center items-center py-4 border-r     ">
                 <IoCheckmark className="text-3xl text-cyan-500 " />
-              </li>
+              </li> */}
             </ul>
 
-            <ul className="w-full grid grid-cols-[4fr_1fr_1fr_1fr] gap-0 border-b      ">
+            <ul className="w-full grid grid-cols-[4fr_1fr_1fr] gap-0 border-b      ">
               <li className="w-full flex justify-between items-center gap-4 px-4 py-4 border-x  ">
                 <h3 className="flex justify-start gap-2 items-center ">
                   <span>
                     <RiShieldCheckFill className="text-orange-500 text-xl  " />
                   </span>
-                  Inclusive of companies’ house, all other government fees
+                  Digital Memorandum and Articles of Association
                 </h3>{" "}
                 <span>
                   <RiInformation2Line className="text-gray-500 text-xl hover:cursor-pointer " />
@@ -117,18 +117,18 @@ const Llp = () => {
               <li className="flex justify-center items-center py-4 border-r     ">
                 <IoCheckmark className="text-3xl text-cyan-500 " />
               </li>
-              <li className="flex justify-center items-center py-4 border-r     ">
+              {/* <li className="flex justify-center items-center py-4 border-r     ">
                 <IoCheckmark className="text-3xl text-cyan-500 " />
-              </li>
+              </li> */}
             </ul>
 
-            <ul className="w-full grid grid-cols-[4fr_1fr_1fr_1fr] gap-0 border-b      ">
+            <ul className="w-full grid grid-cols-[4fr_1fr_1fr] gap-0 border-b      ">
               <li className="w-full flex justify-between items-center gap-4 px-4 py-4 border-x  ">
                 <h3 className="flex justify-start gap-2 items-center ">
                   <span>
                     <RiShieldCheckFill className="text-orange-500 text-xl  " />
                   </span>
-                  Filing of the First Confirmation Statement
+                  Digital (Word) Draft LLP Agreement
                 </h3>{" "}
                 <span>
                   <RiInformation2Line className="text-gray-500 text-xl hover:cursor-pointer " />
@@ -141,18 +141,18 @@ const Llp = () => {
               <li className="flex justify-center items-center py-4 border-r     ">
                 <IoCheckmark className="text-3xl text-cyan-500 " />
               </li>
-              <li className="flex justify-center items-center py-4 border-r     ">
+              {/* <li className="flex justify-center items-center py-4 border-r     ">
                 <IoCheckmark className="text-3xl text-cyan-500 " />
-              </li>
+              </li> */}
             </ul>
 
-            <ul className="w-full grid grid-cols-[4fr_1fr_1fr_1fr] gap-0 border-b      ">
+            <ul className="w-full grid grid-cols-[4fr_1fr_1fr] gap-0 border-b      ">
               <li className="w-full flex justify-between items-center gap-4 px-4 py-4 border-x  ">
                 <h3 className="flex justify-start gap-2 items-center ">
                   <span>
                     <RiShieldCheckFill className="text-orange-500 text-xl  " />
                   </span>
-                  Registered OfficeServiceLondon WC2, for 12 months
+                  Tax Consultation (30min)
                 </h3>{" "}
                 <span>
                   <RiInformation2Line className="text-gray-500 text-xl hover:cursor-pointer " />
@@ -165,18 +165,115 @@ const Llp = () => {
               <li className="flex justify-center items-center py-4 border-r     ">
                 <IoCheckmark className="text-3xl text-cyan-500 " />
               </li>
-              <li className="flex justify-center items-center py-4 border-r     ">
+              {/* <li className="flex justify-center items-center py-4 border-r     ">
                 <IoCheckmark className="text-3xl text-cyan-500 " />
-              </li>
+              </li> */}
             </ul>
 
-            <ul className="w-full grid grid-cols-[4fr_1fr_1fr_1fr] gap-0 border-b      ">
+            <ul className="w-full grid grid-cols-[4fr_1fr_1fr] gap-0 border-b      ">
               <li className="w-full flex justify-between items-center gap-4 px-4 py-4 border-x  ">
                 <h3 className="flex justify-start gap-2 items-center ">
                   <span>
                     <RiShieldCheckFill className="text-orange-500 text-xl  " />
                   </span>
-                  VAT Registration (use at anytime)
+                  London Registered Address
+                </h3>{" "}
+                <span>
+                  <RiInformation2Line className="text-gray-500 text-xl hover:cursor-pointer " />
+                </span>
+              </li>
+
+              <li className="flex justify-center items-center py-4 border-r     ">
+                <IoCheckmark className="text-3xl text-cyan-500 " />
+              </li>
+              <li className="flex justify-center items-center py-4 border-r     ">
+                <IoCheckmark className="text-3xl text-cyan-500 " />
+              </li>
+              {/* <li className="flex justify-center items-center py-4 border-r     ">
+                <IoCheckmark className="text-3xl text-cyan-500 " />
+              </li> */}
+            </ul>
+
+            <ul className="w-full grid grid-cols-[4fr_1fr_1fr] gap-0 border-b      ">
+              <li className="w-full flex justify-between items-center gap-4 px-4 py-4 border-x  ">
+                <h3 className="flex justify-start gap-2 items-center ">
+                  <span>
+                    <RiShieldCheckFill className="text-orange-500 text-xl  " />
+                  </span>
+                  London Service Address
+                  
+                </h3>{" "}
+                <span>
+                  <RiInformation2Line className="text-gray-500 text-xl hover:cursor-pointer " />
+                </span>
+              </li>
+
+              <li className="flex justify-center items-center py-4 border-r     ">
+                <IoCheckmark className="text-3xl text-cyan-500 " />
+              </li>
+              <li className="flex justify-center items-center py-4 border-r     ">
+                <IoCheckmark className="text-3xl text-cyan-500 " />
+              </li>
+              {/* <li className="flex justify-center items-center py-4 border-r     ">
+                <IoCheckmark className="text-3xl text-cyan-500 " />
+              </li> */}
+            </ul>
+
+            <ul className="w-full grid grid-cols-[4fr_1fr_1fr] gap-0 border-b      ">
+              <li className="w-full flex justify-between items-center gap-4 px-4 py-4 border-x  ">
+                <h3 className="flex justify-start gap-2 items-center ">
+                  <span>
+                    <RiShieldCheckFill className="text-orange-500 text-xl  " />
+                  </span>
+                  London Trading Address
+                </h3>{" "}
+                <span>
+                  <RiInformation2Line className="text-gray-500 text-xl hover:cursor-pointer " />
+                </span>
+              </li>
+
+              <li className="flex justify-center items-center py-4 border-r     ">
+                <IoCheckmark className="text-3xl text-cyan-500 " />
+              </li>
+              <li className="flex justify-center items-center py-4 border-r     ">
+                <IoCheckmark className="text-3xl text-cyan-500 " />
+              </li>
+              {/* <li className="flex justify-center items-center py-4 border-r     ">
+                <IoCheckmark className="text-3xl text-cyan-500 " />
+              </li> */}
+            </ul>
+
+            <ul className="w-full grid grid-cols-[4fr_1fr_1fr] gap-0 border-b      ">
+              <li className="w-full flex justify-between items-center gap-4 px-4 py-4 border-x  ">
+                <h3 className="flex justify-start gap-2 items-center ">
+                  <span>
+                    <RiShieldCheckFill className="text-orange-500 text-xl  " />
+                  </span>
+                  Confirmation Statement Service
+                </h3>{" "}
+                <span>
+                  <RiInformation2Line className="text-gray-500 text-xl hover:cursor-pointer " />
+                </span>
+              </li>
+
+              <li className="flex justify-center items-center py-4 border-r     ">
+                <IoCheckmark className="text-3xl text-cyan-500 " />
+              </li>
+              <li className="flex justify-center items-center py-4 border-r     ">
+                <IoCheckmark className="text-3xl text-cyan-500 " />
+              </li>
+              {/* <li className="flex justify-center items-center py-4 border-r     ">
+                <IoCheckmark className="text-3xl text-cyan-500 " />
+              </li> */}
+            </ul>
+
+            <ul className="w-full grid grid-cols-[4fr_1fr_1fr] gap-0 border-b      ">
+              <li className="w-full flex justify-between items-center gap-4 px-4 py-4 border-x  ">
+                <h3 className="flex justify-start gap-2 items-center ">
+                  <span>
+                    <RiShieldCheckFill className="text-orange-500 text-xl  " />
+                  </span>
+                  Full LLP Secreterial Service (Worth £149)
                 </h3>{" "}
                 <span>
                   <RiInformation2Line className="text-gray-500 text-xl hover:cursor-pointer " />
@@ -189,19 +286,18 @@ const Llp = () => {
               <li className="flex justify-center items-center py-4 border-r     ">
                 <IoCheckmark className="text-3xl text-cyan-500 " />
               </li>
-              <li className="flex justify-center items-center py-4 border-r     ">
+              {/* <li className="flex justify-center items-center py-4 border-r     ">
                 <IoCheckmark className="text-3xl text-cyan-500 " />
-              </li>
+              </li> */}
             </ul>
 
-            <ul className="w-full grid grid-cols-[4fr_1fr_1fr_1fr] gap-0 border-b      ">
+            <ul className="w-full grid grid-cols-[4fr_1fr_1fr] gap-0 border-b      ">
               <li className="w-full flex justify-between items-center gap-4 px-4 py-4 border-x  ">
                 <h3 className="flex justify-start gap-2 items-center ">
                   <span>
                     <RiShieldCheckFill className="text-orange-500 text-xl  " />
                   </span>
-                  Full Company Secretary Service FREE for 12 months (worth
-                  £99.99)
+                  Annual LLP Accounts filing (Worth £399)
                 </h3>{" "}
                 <span>
                   <RiInformation2Line className="text-gray-500 text-xl hover:cursor-pointer " />
@@ -214,36 +310,19 @@ const Llp = () => {
               <li className="flex justify-center items-center py-4 border-r     ">
                 <IoCheckmark className="text-3xl text-cyan-500 " />
               </li>
-              <li className="flex justify-center items-center py-4 border-r     ">
+              {/* <li className="flex justify-center items-center py-4 border-r     ">
                 <IoCheckmark className="text-3xl text-cyan-500 " />
-              </li>
+              </li> */}
             </ul>
 
-            <ul className="w-full grid grid-cols-[4fr_1fr_1fr_1fr] gap-0 border-b      ">
-              <li className="w-full flex justify-between items-center gap-4 px-4 py-4 border-x  ">
-                <h3 className="flex justify-start gap-2 items-center ">
-                  <span>
-                    <RiShieldCheckFill className="text-orange-500 text-xl  " />
-                  </span>
-                  Annual Tax Filing Service FREE for 12 months (worth £249.99)
-                </h3>{" "}
-                <span>
-                  <RiInformation2Line className="text-gray-500 text-xl hover:cursor-pointer " />
-                </span>
-              </li>
 
-              <li className="flex justify-center items-center py-4 border-r     ">
-                <RxCross2 className="text-2xl text-red-400" />
-              </li>
-              <li className="flex justify-center items-center py-4 border-r     ">
-                <IoCheckmark className="text-3xl text-cyan-500 " />
-              </li>
-              <li className="flex justify-center items-center py-4 border-r     ">
-                <IoCheckmark className="text-3xl text-cyan-500 " />
-              </li>
-            </ul>
 
-            <ul className="w-full grid grid-cols-[4fr_1fr_1fr_1fr] gap-0 border-b      ">
+
+
+
+
+
+            <ul className="w-full grid grid-cols-[4fr_1fr_1fr] gap-0 border-b      ">
               <li className="w-full flex justify-between items-center gap-4 px-4 py-4 border-x  "></li>
 
               <li className="flex flex-col justify-center items-center gap-2  py-4 border-r     ">
@@ -259,11 +338,11 @@ const Llp = () => {
                 <BuyNowBtn href={"/buy/packages/llp/premium-package"}  pkg={"premium-package"} company={"llp"}/>
              
               </li>
-              <li className="flex flex-col justify-center items-center gap-2  py-4 border-r     ">
+              {/* <li className="flex flex-col justify-center items-center gap-2  py-4 border-r     ">
                 {" "}
                 <BuyNowBtn href={"/buy/packages/llp/all-inclusive-package"}  pkg={"all-inclusive-package"}  company={"llp"}/>
                 
-              </li>
+              </li> */}
             </ul>
           </div>
     </>

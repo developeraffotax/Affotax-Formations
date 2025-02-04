@@ -24,11 +24,12 @@ const OnePrice = ({ name, description, badge, price, List, href, pkg, company })
       }
       <div className="mb-8">
         <h3 className="text-2xl font-semibold text-white">{name}</h3>
-        <p className="mt-4 text-gray-100">{description}</p>
+        {/* <p className="mt-4 text-gray-100">{description}</p> */}
       </div>
-      <div className="mb-8">
+      <div className="mb-8 flex flex-col justify-start items-start gap-2 ">
         <span className="text-5xl font-extrabold text-transparent bg-clip-text  bg-gradient-to-r from-yellow-600 to-orange-600">{price}</span>
         {/* <span className="text-xl font-medium text-purple-100">/mo</span> */}
+        <span className="text-base  text-white">+ £50 Companies House Fee</span>
       </div>
 
       <ul className="mb-8 space-y-4 text-gray-100">

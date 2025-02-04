@@ -1,8 +1,8 @@
 import { v4 as uuidv4 } from 'uuid';
 
 
-export const SELECTED_PACKAGE_NAME = "Digital Package";
-export const SELECTED_PACKAGE_PRICE = "52.99";
+export const SELECTED_PACKAGE_NAME = "Basic Package";
+export const SELECTED_PACKAGE_PRICE = "49";
 
 
 export const data = [

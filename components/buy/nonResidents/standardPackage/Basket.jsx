@@ -6,18 +6,20 @@ import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { RxCross2 } from "react-icons/rx";
 
-const TableRow = ({ pkgName, pkgPrice, fromBasketToRecHandler, id }) => {
+const TableRow = ({ pkgName, pkgPrice, fromBasketToRecHandler, id, btnDisable }) => {
   return (
     <tr>
       <td className="py-2  ">{pkgName}</td>
 
       <td className="py-2 px-8 max-2xl:px-4   ">
-        <button
+        {
+          !btnDisable && <button
           onClick={() => fromBasketToRecHandler(id)}
           className="text-xl bg-gray-300 rounded-md text-white p-1 hover:bg-gray-400 active:scale-95 transition-all "
         >
           <RxCross2 />
         </button>
+        }
       </td>
 
       <td className="py-2 text-end ">£{pkgPrice}</td>
@@ -176,7 +178,7 @@ const Basket = ({ selectedPackages, fromBasketToRecHandler, selectedPkgName, sel
 
           {selectedPackages?.map((el) => {
             return (
-              <TableRow key={el.id} pkgName={el.name} pkgPrice={el.price} id={el.id} fromBasketToRecHandler={fromBasketToRecHandler} />
+              <TableRow key={el.id} pkgName={el.name} pkgPrice={el.price} id={el.id} fromBasketToRecHandler={fromBasketToRecHandler} btnDisable={el?.btnDisable}/>
             );
           })}
 

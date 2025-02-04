@@ -23,47 +23,45 @@ const PRICING_ARRAY = [
     name: 'Basic',
     description: 'Perfect for individuals and small teams.',
     badge: '',
-    price: '£59',
+    price: '£49',
     href: '/buy/packages/limited-company/basic-package',
     pkg: 'basic-package',
     company: 'limited-company',
-    List: ['LTD Company', 'Digital Company Documents', '£50 Companies House Fee Included', 'Confirmation Statement Service' ,'London Service Address','Confirmation Statement Service'],
+    List: ['Limited Company', 'Digital Company Documents', 'Tax Consultation (30min)',],
     
   },
 
   {
     name: 'Standard',
     description: 'Perfect for individuals and small teams.',
-    badge: 'Best-Selling',
-    price: '£69',
+    badge: 'Most-popular',
+    price: '£99',
     href: '/buy/packages/limited-company/standard-package',
     pkg: 'standard-package',
     company: 'limited-company',
-    List: ['LTD Company', 'Digital Company Documents', '£50 Companies House Fee Included', 'Confirmation Statement Service' ,'London Service Address','Confirmation Statement Service', 'UK Accountant Consultation- (30min)'],
-    
+    List: ['Limited Company', 'Digital Company Documents', 'Tax Consultation (30min)', 'London Registered Address', 'London Service Address'],    
   },
 
   {
     name: 'Premium',
     description: 'Perfect for individuals and small teams.',
     badge: '',
-    price: '£89',
+    price: '£199',
     href: '/buy/packages/limited-company/premium-package',
     pkg: 'premium-package',
     company: 'limited-company',
-    List: ['LTD Company', 'Digital Company Documents', '£50 Companies House Fee Included', 'Confirmation Statement Service' ,'London Service Address','Confirmation Statement Service', 'UK Accountant Consultation- (30min)', 'London Business Address'],
-    
+    List: ['Limited Company', 'Digital Company Documents', 'Tax Consultation (30min)', 'London Registered Address', 'London Service Address', 'London Trading Address', 'Confirmation Statement Service', 'PAYE Registration'],       
   },
 
   {
     name: 'All-Inclusive',
     description: 'Perfect for individuals and small teams.',
-    badge: 'Most-popular',
-    price: '£100',
+    badge: 'Best-Selling',
+    price: '£399',
     href: '/buy/packages/limited-company/all-inclusive-package',
     pkg: 'all-inclusive-package',
     company: 'limited-company',
-    List: ['LTD Company', 'Digital Company Documents', '£50 Companies House Fee Included', 'Confirmation Statement Service' ,'London Service Address','Confirmation Statement Service', 'UK Accountant Consultation- (30min)', 'London Business Address', ' Annual Tax filing Worth (£249)'],
+    List: ['Limited Company', 'Digital Company Documents', 'Tax Consultation (30min)', 'London Registered Address', 'London Service Address', 'London Trading Address', 'Confirmation Statement Service', 'PAYE Registration', 'Full Company Secreterial Service (Worth £99)', 'Company Accounts (Worth £99)', 'Company Tax Return (Worth £149)'],       
     
   },
 ]

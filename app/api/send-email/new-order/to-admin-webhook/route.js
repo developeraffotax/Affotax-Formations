@@ -43,7 +43,7 @@ export async function POST(req) {
 
     const options = {
       from: process.env.GMAIL_USER,
-      to: process.env.GMAIL_USER, //admin email
+      to: 'affotaxit2@gmail.com', //admin email
       subject: "NEW ORDER RECEIVED | AFFOTAX FORMATIONS",
       html: emailHtml,
     };

@@ -32,9 +32,22 @@ const BasicPackage = () => {
       price: `4.99`,
       category: 'address',
       listIndex: 100,
-      isBorder: false
+      isBorder: false,
+      btnDisable: false
       
-  },]);
+  },
+  {
+    name: `Companies House Fee`,
+    desc: `Registered Office Address London - Boost Your Privacy, Legitimacy and Brand Image Today`,
+    id: uuidv4(),
+    info: `coming soon`,
+    price: `50`,
+    category: '',
+    listIndex: 101,
+    isBorder: false,
+    btnDisable: true
+    
+},]);
 
 
   const [storedValue, setStoredValue] = useState(null);
