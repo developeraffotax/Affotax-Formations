@@ -34,7 +34,7 @@ export default function ChangeCompanyName({ companyInfo, setCompanyInfo, isOpen,
           
           if (res.status === 200 && res?.data?.isCompanyNameAvailable) {
             setIsCompanyName(true);
-            setCompanyName(companyName);
+            setCompanyName(companyName.toUpperCase());
             formRef.current.reset();
           }
           
