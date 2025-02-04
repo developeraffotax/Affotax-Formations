@@ -121,7 +121,7 @@ const Summary = ({
           <div className="w-full flex flex-col justify-start items-start gap-2       ">
             <table className="w-full  table-auto border-collapse font-Inter">
               <tbody>
-                <tr className=" border  "> {" "} <td className=" px-3 py-1   w-[40%] border-r text-gray-900  bg-gray-100 text-center" colSpan={2}> Director 1 </td>{" "}  </tr>
+                <tr className=" border  "> {" "} <td className=" px-3 py-1   w-[40%] border-r text-gray-900  bg-gray-100 text-center" colSpan={2}> Director Details </td>{" "}  </tr>
                 <tr className=" border  "> {" "} <td className=" px-3 py-1   w-[40%] border-r  "> Title </td>{" "} <td className=" px-3 py-1 flex justify-start items-center gap-2  "> {" "} {`${directors.person_title}`}{" "} </td>{" "} </tr>
                 <tr className=" border  "> {" "} <td className=" px-3 py-1   w-[40%]  border-r ">First Name</td>{" "} <td className=" px-3 py-1 flex justify-start items-center gap-2  "> {`${directors.person_first_name}`} </td>{" "} </tr>
                 <tr className="border  "> {" "} <td className=" px-3 py-1   w-[40%] border-r  "> Middle Name </td>{" "} <td className=" px-3 py-1 flex justify-start items-center gap-2  "> {" "} {`${directors.person_middle_name}`}{" "} </td>{" "} </tr>

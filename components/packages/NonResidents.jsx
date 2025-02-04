@@ -55,19 +55,19 @@ const NonResidents = () => {
               </li>
 
               <li className="flex flex-col justify-center items-center py-2  px-2 border-r text-lg  relative    ">
-                <OriginalPrice title={"40% OFF"} price={"165"} />{" "}
-                <h3>Standard</h3> <span className="font-semibold text-orange-500">£99</span><span className="text-sm text-center ">+ £50 Companies House Fee</span>
+                {/* <OriginalPrice title={"40% OFF"} price={"165"} />{" "} */}
+                <h3>Standard</h3> <span className="font-semibold text-orange-500">£99</span><span className="text-sm text-center ">+ £50 Govt. Fee</span>
               </li>
               <li className="flex flex-col justify-center items-center py-2  px-2 border-r text-lg relative">
                 {" "}
-                {/* <OriginalPrice title={"30% OFF"} price={"110"} />{" "} */}
-                <h3>Premium</h3> <span className="font-semibold text-orange-500">£199</span><span className="text-sm text-center ">+ £50 Companies House Fee</span>
+                <OriginalPrice title={"40% OFF"} price={"332"} />{" "}
+                <h3>Premium</h3> <span className="font-semibold text-orange-500">£199</span><span className="text-sm text-center ">+ £50 Govt. Fee</span>
               </li>
               <li className="flex flex-col justify-center items-center py-2  px-2 border-r text-lg  relative    ">
                 {" "}
                 <OriginalPrice title={"50% OFF"} price={"799"} />{" "}
                 <h3>All-Inclusive</h3>{" "}
-                <span className="font-semibold text-orange-500">£399</span><span className="text-sm text-center ">+ £50 Companies House Fee</span>
+                <span className="font-semibold text-orange-500">£399</span><span className="text-sm text-center ">+ £50 Govt. Fee</span>
               </li>
             </ul>
 
@@ -269,7 +269,7 @@ const NonResidents = () => {
                   <span>
                     <RiShieldCheckFill className="text-orange-500 text-xl  " />
                   </span>
-                  Full Company Secreterial Service (Worth £99)
+                  Full Company Secreterial Service (Worth £149)
                 </h3>{" "}
                 <span>
                   <RiInformation2Line className="text-gray-500 text-xl hover:cursor-pointer " />

@@ -39,7 +39,7 @@ const EmailPhoneSection = () => {
                         <span className="text-white text-base bg-slate-600 rounded-full h-8 w-8 flex justify-center items-center "><MdOutlineEmail /></span>
                         <div className="flex flex-col justify-start items-start text-white font-Inter">
                             <h3 className="text-lg ">Email us at</h3>
-                            <Link href="mailto:support@affotaxformations.com"><h4 className="text-white  text-xl">support@affotaxformations.com</h4></Link>
+                            <Link href="mailto:info@affotax.com"><h4 className="text-white  text-xl">info@affotax.com</h4></Link>
                         </div>
                     </div>
 

@@ -61,7 +61,7 @@ const PRICING_ARRAY = [
     href: '/buy/packages/limited-company/all-inclusive-package',
     pkg: 'all-inclusive-package',
     company: 'limited-company',
-    List: ['Limited Company', 'Digital Company Documents', 'Tax Consultation (30min)', 'London Registered Address', 'London Service Address', 'London Trading Address', 'Confirmation Statement Service', 'PAYE Registration', 'Full Company Secreterial Service (Worth £99)', 'Company Accounts (Worth £99)', 'Company Tax Return (Worth £149)'],       
+    List: ['Limited Company', 'Digital Company Documents', 'Tax Consultation (30min)', 'London Registered Address', 'London Service Address', 'London Trading Address', 'Confirmation Statement Service', 'PAYE Registration', 'Full Company Secreterial Service (Worth £149)', 'Company Accounts (Worth £99)', 'Company Tax Return (Worth £149)'],       
     
   },
 ]

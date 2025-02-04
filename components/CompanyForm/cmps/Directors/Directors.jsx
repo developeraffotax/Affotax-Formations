@@ -202,7 +202,7 @@ const Directors = ({ directors, setDirectors, continueBtnHandler, goBackBtnHandl
       <div className="w-full flex flex-col justify-start items-start gap-2 border     ">
 
         <div className="w-full  ">
-          <div className="w-full text-start  bg-cyan-500   text-white py-2 px-8   shadow-md text-xl  "> {" "} Person Details{" "} </div>{" "}
+          <div className="w-full text-start  bg-cyan-500   text-white py-2 px-8   shadow-md text-xl  "> {" "} Director Details{" "} </div>{" "}
         </div>
 
         <div className="w-full  flex flex-col justify-start items-start gap-2  px-8 py-4">

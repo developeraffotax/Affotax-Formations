@@ -108,7 +108,7 @@ console.log()
               <div className="cursor-pointer "> <Link href="/"><Logo /></Link> </div>
 
               <div className="flex justify-center items-center gap-3  ">
-                <Link href="mailto:support@affotaxformations.com"> <MdOutlineMarkEmailRead className="text-xl cursor-pointer hover:scale-125 transition-all" /> </Link>
+                <Link href="mailto:info@affotax.com"> <MdOutlineMarkEmailRead className="text-xl cursor-pointer hover:scale-125 transition-all" /> </Link>
                 <Link href="https://wa.me/447723143223" target="_blank"> <IoLogoWhatsapp className="text-xl text-green-500 cursor-pointer hover:scale-125 transition-all" /> </Link>
                 <Link href="tel:02081294481"> <span className="flex justify-center items-center gap-1 cursor-pointer hover:scale-110 transition-all"> <MdOutlinePhoneInTalk className="text-xl " /> <p className="font-Inter ">020 8129 4481</p> </span> </Link>
               </div>
@@ -224,7 +224,7 @@ console.log()
                 <a href="tel:+0208 144 6811"> <FaPhone className="inline-block mr-2   " /> <span>0208 144 6811</span>{" "} </a>
               </li>
               <li className=" hover:text-primary text-sm">
-                <a href="mailto:support@affotaxformations.com" target="_blank" > <IoMdMail className="inline-block mr-2   " /> <span>support@affotaxformations.com</span> </a>
+                <a href="mailto:info@affotax.com" target="_blank" > <IoMdMail className="inline-block mr-2   " /> <span>info@affotax.com</span> </a>
               </li>
             </ul>
           </nav>
