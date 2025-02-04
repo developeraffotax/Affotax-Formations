@@ -25,16 +25,29 @@ const PremiumPackage = () => {
     const [recommendations, setRecommendations] = useState(data);
 
     const [selectedPackages, setSelectedPackages] = useState([{
-      name: `Pre-Submission Review (we check your company details to avoid mistakes) `,
-      desc: `Registered Office Address London - Boost Your Privacy, Legitimacy and Brand Image Today`,
-      id: uuidv4(),
-      info: `coming soon`,
-      price: `4.99`,
-      category: 'address',
-      listIndex: 100,
-      isBorder: false
-      
-  },]);
+          name: `Pre-Submission Review (we check your company details to avoid mistakes) `,
+          desc: `Registered Office Address London - Boost Your Privacy, Legitimacy and Brand Image Today`,
+          id: uuidv4(),
+          info: `coming soon`,
+          price: `4.99`,
+          category: 'address',
+          listIndex: 100,
+          isBorder: false,
+          btnDisable: false
+          
+      },
+      {
+        name: `Companies House Fee`,
+        desc: `Registered Office Address London - Boost Your Privacy, Legitimacy and Brand Image Today`,
+        id: uuidv4(),
+        info: `coming soon`,
+        price: `50`,
+        category: '',
+        listIndex: 101,
+        isBorder: false,
+        btnDisable: true
+        
+    }]);
 
 
   const [storedValue, setStoredValue] = useState(null);

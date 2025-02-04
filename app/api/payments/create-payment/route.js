@@ -33,7 +33,7 @@ export async function POST(request) {
       sourceId: sourceId,
       amountMoney: {
         currency: "GBP",
-        amount: totalAmout,
+        amount: +(totalAmout.toFixed(2)),
       },
       referenceId: orderId.toString(),  // actual order_id in the db
       customerId: userId,
