@@ -124,10 +124,10 @@ const UserAndOrder = ({user, setUser, error, setError, orderRef, setOrderRef, se
                 Have questions? Contact us at:
               </p>
               <Link
-                href="mailto:support@affotaxformations.com"
+                href="mailto:info@affotax.com"
                 className="inline-block  text-base font-medium text-cyan-600 transition-colors duration-200 hover:text-cyan-700"
               >
-                Email: support@affotaxformations.com
+                Email: info@affotax.com
               </Link>
               <Link
                 href="tel:02081294481"
