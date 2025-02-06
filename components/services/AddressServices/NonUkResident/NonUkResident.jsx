@@ -18,10 +18,10 @@ const NonUkResident = () => {
       <section className="w-full container mx-auto font-Inter px-40 max-xl:px-8 pb-16">
         <div className="  max-xl:px-8 w-full flex justify-between items-center gap-8 border-b-2 border-gray-300  mb-6 pt-12 pb-2">
           <h2 className="w-full text-4xl  py-2">
-          Non-UK Resident Business Address - £99/yr
+          Non-UK Resident Business Address
           </h2>
 
-          <div className="  flex justify-end items-center gap-8">
+          {/* <div className="  flex justify-end items-center gap-8">
             <h2 className="text-3xl max-xl:text-2xl text-black w-full text-start font-poppins font-semibold ">
               £99.00
             </h2>
@@ -29,7 +29,7 @@ const NonUkResident = () => {
               {" "}
               BUY NOW{" "}
             </button>
-          </div>
+          </div> */}
         </div>
 
 
@@ -146,7 +146,7 @@ const NonUkResident = () => {
           <div className="flex flex-col items-start justify-between gap-8 ">
            
             <ul className="text-gray-700 space-y-8  ">
-                <PriceBox serviceName={"Address for Non-Uk Resident "} title="For Non-UK Residents"price={"99.00"} content="We handle the paperwork so you can focus on what you do best – running your business" includesList={['UK limited company formation', 'Registered office address', 'Directors Address, London E61', 'HMRC UTR number', 'Incorporation fee £50 included.', 'Digital Incorporation Certificate', 'Digital Articles of Association', 'Free accounting consultation', 'VAT registration (if needed)' ]} />
+                <PriceBox serviceName={"Address for Non-Uk Resident "} title="For Non-UK Residents"price={"99"} content="We handle the paperwork so you can focus on what you do best – running your business" includesList={['UK limited company formation', 'Registered office address', 'Directors Address, London E61', 'HMRC UTR number', 'Incorporation fee £50 included.', 'Digital Incorporation Certificate', 'Digital Articles of Association', 'Free accounting consultation', 'VAT registration (if needed)' ]} />
                 
 
 

@@ -12,7 +12,7 @@ const ApostilledDocs = () => {
       <section className="w-full container mx-auto font-Inter px-40 max-xl:px-8 pb-16">
         <div className="  max-xl:px-8 w-full flex justify-between items-center gap-8 border-b-2 border-gray-300  mb-6 pt-12 pb-2">
           <h2 className="w-full text-4xl  py-2">
-          Apostilled Documents - from £99
+          Apostilled Documents
           </h2>
 
           {/* <div className="  flex justify-end items-center gap-8">
@@ -199,8 +199,8 @@ const ApostilledDocs = () => {
           <div>
            
             <ul className="text-gray-700 space-y-8  ">
-                <PriceBox serviceName={"Apostilled Docs"}  title="For UK Residents" price={"29.00"} content="We offer seamless PAYE registration services with HMRC, ensuring your business is set up to handle employee payroll and tax obligations smoothly. Our expert team manages the process for a hassle-free experience." includesList={['PAYE registration', 'Preparation and submission to HMRC', 'Get Paye Registration Letter showing Payroll Number.' ]} />
-                <PriceBox serviceName={"Apostilled Docs"}  title="For Non-UK Residents" price={"49.00"} content="We offer seamless PAYE registration services with HMRC, ensuring your business is set up to handle employee payroll and tax obligations smoothly. Our expert team manages the process for a hassle-free experience." includesList={['PAYE registration', 'Preparation and submission to HMRC', 'Get Paye Registration Letter showing Payroll Number.' ]} />
+                <PriceBox serviceName={"Apostilled Docs"}  title="For UK Residents" price={"29"} content="We offer seamless PAYE registration services with HMRC, ensuring your business is set up to handle employee payroll and tax obligations smoothly. Our expert team manages the process for a hassle-free experience." includesList={['PAYE registration', 'Preparation and submission to HMRC', 'Get Paye Registration Letter showing Payroll Number.' ]} />
+                <PriceBox serviceName={"Apostilled Docs"}  title="For Non-UK Residents" price={"49"} content="We offer seamless PAYE registration services with HMRC, ensuring your business is set up to handle employee payroll and tax obligations smoothly. Our expert team manages the process for a hassle-free experience." includesList={['PAYE registration', 'Preparation and submission to HMRC', 'Get Paye Registration Letter showing Payroll Number.' ]} />
             </ul>
           </div>
 

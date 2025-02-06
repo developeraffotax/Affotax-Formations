@@ -12,7 +12,7 @@ const VatRegistration = () => {
       <section className="w-full container mx-auto font-Inter px-40 max-xl:px-8 pb-16">
         <div className="  max-xl:px-8 w-full flex justify-between items-center gap-8 border-b-2 border-gray-300  mb-6 pt-12 pb-2">
           <h2 className="w-full text-4xl  py-2">
-          VAT Registration - £29
+          VAT Registration
           </h2>
 
           {/* <div className="  flex justify-end items-center gap-8">
@@ -131,8 +131,8 @@ const VatRegistration = () => {
           <div>
            
             <ul className="text-gray-700 space-y-8  ">
-                <PriceBox serviceName={"Vat Registration"} title="Basic Package" price={"29.00"} content="It covers the essentials, guiding your business through the process to ensure you get the VAT number." includesList={['The registration process.', 'Submit required ID documents to HMRC.', 'We act as your VAT agent in the UK.' ]} />
-                <PriceBox serviceName={"Vat Registration"} title="Premium Package + Director Service Address" price={"49.00"} content="It covers everything in the basic package + we setup gateway login and activate the whole scheme for you." includesList={['The registration process.', 'Submit required ID documents to HMRC.', 'We act as your VAT agent in the UK.', 'Guide you on filing UK MTD VAT return' ]} />
+                <PriceBox serviceName={"Vat Registration"} title="Basic Package" price={"29"} content="It covers the essentials, guiding your business through the process to ensure you get the VAT number." includesList={['The registration process.', 'Submit required ID documents to HMRC.', 'We act as your VAT agent in the UK.' ]} />
+                <PriceBox serviceName={"Vat Registration"} title="Premium Package + Director Service Address" price={"49"} content="It covers everything in the basic package + we setup gateway login and activate the whole scheme for you." includesList={['The registration process.', 'Submit required ID documents to HMRC.', 'We act as your VAT agent in the UK.', 'Guide you on filing UK MTD VAT return' ]} />
             </ul>
           </div>
 

@@ -9,7 +9,7 @@ const CompanyDissolution = () => {
       <section className="w-full container mx-auto font-Inter px-40 max-xl:px-8 pb-16">
         <div className="  max-xl:px-8 w-full flex justify-between items-center gap-8 border-b-2 border-gray-300  mb-6 pt-12 pb-2">
           <h2 className="w-full text-4xl  py-2">
-          Company Dissolution - £75
+          Company Dissolution
           </h2>
         </div>
 
@@ -190,8 +190,8 @@ const CompanyDissolution = () => {
 
           <div>
             <ul className="text-gray-700 space-y-8 mb-8 ">
-              <PriceBox serviceName={"Company Dissolution"} title="Company Dissolution" price={"59.00"} content="In this package, we will complete all of the necessary documentation, including accurate filing & compliance with the UK government." includesList={[ "Completion and filing of dissolution form", "Board Resolution to approve the dissolution", "The Govt fee £33 is paid by Affotax", ]} />
-              <PriceBox serviceName={"Company Dissolution"} title="Company Dissolution + Annual filing" price={"69.00"} content="In this package, Affotax will complete all the necessary documentation and submit the final set of accounts before closing the LTD." includesList={[ "Completion and filing of dissolution form", "Board Resolution to approve the dissolution", "The Govt fee £33 is paid by Affotax", ]} />
+              <PriceBox serviceName={"Company Dissolution"} title="Company Dissolution" price={"59"} content="In this package, we will complete all of the necessary documentation, including accurate filing & compliance with the UK government." includesList={[ "Completion and filing of dissolution form", "Board Resolution to approve the dissolution", "The Govt fee £33 is paid by Affotax", ]} />
+              <PriceBox serviceName={"Company Dissolution"} title="Company Dissolution + Annual filing" price={"69"} content="In this package, Affotax will complete all the necessary documentation and submit the final set of accounts before closing the LTD." includesList={[ "Completion and filing of dissolution form", "Board Resolution to approve the dissolution", "The Govt fee £33 is paid by Affotax", ]} />
             </ul>
 
 

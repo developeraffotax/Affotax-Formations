@@ -8,7 +8,7 @@ const CertificateOfGoodStanding = () => {
       <section className="w-full container mx-auto font-Inter px-40 max-xl:px-8 pb-16">
         <div className="  max-xl:px-8 w-full flex justify-between items-center gap-8 border-b-2 border-gray-300  mb-6 pt-12 pb-2">
           <h2 className="w-full text-4xl  py-2">
-            Certificate of Good Standing - £69
+            Certificate of Good Standing
           </h2>
         </div>
 
@@ -153,7 +153,7 @@ const CertificateOfGoodStanding = () => {
               <PriceBox
                 serviceName={"Certificate of Good Standing"}
                 title="For UK Residents"
-                price={"69.00"}
+                price={"69"}
                 content="We offer seamless PAYE registration services with HMRC, ensuring your business is set up to handle employee payroll and tax obligations smoothly. Our expert team manages the process for a hassle-free experience."
                 includesList={[
                   "PAYE registration",

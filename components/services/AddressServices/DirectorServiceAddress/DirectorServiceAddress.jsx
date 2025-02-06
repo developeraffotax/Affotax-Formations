@@ -15,10 +15,10 @@ const DirectorServiceAddress = () => {
       <section className="w-full container mx-auto font-Inter px-40 max-xl:px-8 pb-16">
         <div className="  max-xl:px-8 w-full flex justify-between items-center gap-8 border-b-2 border-gray-300  mb-6 pt-12 pb-2">
           <h2 className="w-full text-4xl  py-2">
-          Director's Service Address - £24/yr
+          Director's Service Address
           </h2>
 
-          <div className="  flex justify-end items-center gap-8">
+          {/* <div className="  flex justify-end items-center gap-8">
             <h2 className="text-3xl max-xl:text-2xl text-black w-full text-start font-poppins font-semibold ">
               £24.00
             </h2>
@@ -26,7 +26,7 @@ const DirectorServiceAddress = () => {
               {" "}
               BUY NOW{" "}
             </button>
-          </div>
+          </div> */}
         </div>
 
 
@@ -135,7 +135,7 @@ const DirectorServiceAddress = () => {
           <div className="flex flex-col items-start justify-between gap-8 ">
            
             <ul className="text-gray-700 space-y-8  ">
-                <PriceBox serviceName={"Director Service Address"} title="Director's Service Address" price={'24.00'} content="You can now protect the privacy of your residential address and prevent it from appearing online through the use of our “directors Service address” service." includesList={['Exclusive London director Service Address.', 'All mail scanned free of charge.', 'Guidence on all mail notices what action is required.' ]} />
+                <PriceBox serviceName={"Director Service Address"} title="Director's Service Address" price={'24'} content="You can now protect the privacy of your residential address and prevent it from appearing online through the use of our “directors Service address” service." includesList={['Exclusive London director Service Address.', 'All mail scanned free of charge.', 'Guidence on all mail notices what action is required.' ]} />
                 
 
 

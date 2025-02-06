@@ -17,7 +17,7 @@ const CompanyNameChange = () => {
         <div className="  max-xl:px-8 w-full flex justify-between items-center gap-8 border-b-2 border-gray-300  mb-6 pt-12 pb-2">
           <h2 className="w-full text-4xl  py-2">
           Change Your Company Name 
-          Today for £69 +VAT
+           
           </h2>
         </div>
 
@@ -26,7 +26,7 @@ const CompanyNameChange = () => {
             <div>
               <h4 className="text-lg mb-2 font-semibold  text-[#002B5B]">
               Companies House Name Change Service - 
-              Change Your Company Name Today for £69 +VAT
+              Change Your Company Name Today
               </h4>
               <p className="text-gray-800 mb-2  ">
               Are you looking to change your company’s name? Make sure you’re doing it the right way by letting Mint Formations handle it for you.
@@ -98,7 +98,7 @@ const CompanyNameChange = () => {
 
           <div>
             <ul className="text-gray-700 space-y-8 mb-8 ">
-              <PriceBox serviceName={"Company Name Change"} title="Company name change (UK)" price={"69.00"} content="Our company name change service handles everything for you, from drafting the resolution to filing it with Companies House. We take care of all the necessary paperwork to ensure the company's new name is updated smoothly on the Companies House register." includesList={[ "Certificate of Name Change issued after the name change approved.", "Completion of Change of Name by Resolution.", "Board meeting minutes confirming all directors agree to the name change.", ]} />
+              <PriceBox serviceName={"Company Name Change"} title="Company name change (UK)" price={"69"} content="Our company name change service handles everything for you, from drafting the resolution to filing it with Companies House. We take care of all the necessary paperwork to ensure the company's new name is updated smoothly on the Companies House register." includesList={[ "Certificate of Name Change issued after the name change approved.", "Completion of Change of Name by Resolution.", "Board meeting minutes confirming all directors agree to the name change.", ]} />
               
             </ul>
 

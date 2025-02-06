@@ -10,7 +10,7 @@ const CompanySecretaryService = () => {
       <section className="w-full container mx-auto font-Inter px-40 max-xl:px-8 pb-16">
         <div className="  max-xl:px-8 w-full flex justify-between items-center gap-8 border-b-2 border-gray-300  mb-6 pt-12 pb-2">
           <h2 className="w-full text-4xl  py-2">
-          Company Secretary Service - £149
+          Company Secretary Service
           </h2>
         </div>
 
@@ -82,7 +82,7 @@ const CompanySecretaryService = () => {
               <PriceBox
                 serviceName={"Company Secretary Service"}
                 title="Company secretary assignment"
-                price={"149.99"}
+                price={"149"}
                 content="Appointing a company secretary can be a great way to ensure compliance and boost trust in your company. We’ll assign a dedicated personal manager to your company, ensuring all legal requirements are met."
                 includesList={[
                   "Company register maintenance",

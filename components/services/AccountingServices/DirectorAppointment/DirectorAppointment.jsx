@@ -138,8 +138,8 @@ const DirectorAppointment = () => {
 
           <div>
             <ul className="text-gray-700 space-y-8 mb-8 ">
-              <PriceBox serviceName={"Director Appointment"} title="Director Appointment" price={"59.00"} content="Our package covers the essentials for a smooth director appointment process, ensuring compliance and accurate updates." includesList={[ "Guidance on legal requirements and documentation.", "Preparation of necessary director resignation forms.", "Submission to relevant authorities", ]} />
-              <PriceBox serviceName={"Director Appointment"} title="Director Resignation" price={"69.00"} content="Our package covers the essentials for a smooth director appointment process, ensuring compliance and accurate updates." includesList={[ "Guidance on legal requirements and documentation.", "Preparation of necessary director resignation forms.", "The government's filing fee is covered by Affotax with add-on.", ]} />
+              <PriceBox serviceName={"Director Appointment"} title="Director Appointment" price={"59"} content="Our package covers the essentials for a smooth director appointment process, ensuring compliance and accurate updates." includesList={[ "Guidance on legal requirements and documentation.", "Preparation of necessary director resignation forms.", "Submission to relevant authorities", ]} />
+              <PriceBox serviceName={"Director Appointment"} title="Director Resignation" price={"69"} content="Our package covers the essentials for a smooth director appointment process, ensuring compliance and accurate updates." includesList={[ "Guidance on legal requirements and documentation.", "Preparation of necessary director resignation forms.", "The government's filing fee is covered by Affotax with add-on.", ]} />
             </ul>
 
             <div>

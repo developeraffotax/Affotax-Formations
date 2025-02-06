@@ -4,10 +4,10 @@ export async function middleware(request) {
   return await updateSession(request)
 }
 
-// export const config = {
-//   matcher: [
+export const config = {
+  matcher: [
     
-//     // '/client/:path*'
+    // '/client/:path*'
     
-//   ],
-// }
+  ],
+}

@@ -101,8 +101,8 @@ const IssueAndTransferOfShares = () => {
 
           <div>
             <ul className="text-gray-700 space-y-8 mb-8 ">
-              <PriceBox serviceName={"Issue & Transfer of Shares"} title="Transfer" price={"59.00"} content="In this package, we will complete all of the necessary documentation, including accurate filing & compliance with the UK government." includesList={[ "Completion and filing of dissolution form", "Board Resolution to approve the dissolution", "The Govt fee £33 is paid by Affotax", ]} />
-              <PriceBox serviceName={"Issue & Transfer of Shares"} title="Issue" price={"69.00"} content="In this package, Affotax will complete all the necessary documentation and submit the final set of accounts before closing the LTD." includesList={[ "Company Dissolution Service", "Prepare the last year final accounts", "Submission of final accounts with companies house", ]} />
+              <PriceBox serviceName={"Issue & Transfer of Shares"} title="Transfer" price={"59"} content="In this package, we will complete all of the necessary documentation, including accurate filing & compliance with the UK government." includesList={[ "Completion and filing of dissolution form", "Board Resolution to approve the dissolution", "The Govt fee £33 is paid by Affotax", ]} />
+              <PriceBox serviceName={"Issue & Transfer of Shares"} title="Issue" price={"69"} content="In this package, Affotax will complete all the necessary documentation and submit the final set of accounts before closing the LTD." includesList={[ "Company Dissolution Service", "Prepare the last year final accounts", "Submission of final accounts with companies house", ]} />
             </ul>
 
 

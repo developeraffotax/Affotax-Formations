@@ -10,7 +10,7 @@ const ConfirmationStatement = () => {
       <section className="w-full container mx-auto font-Inter px-40 max-xl:px-8 pb-16">
         <div className="  max-xl:px-8 w-full flex justify-between items-center gap-8 border-b-2 border-gray-300  mb-6 pt-12 pb-2">
           <h2 className="w-full text-4xl  py-2">
-          Confirmation Statement Filing - £59
+          Confirmation Statement Filing
           </h2>
         </div>
 
@@ -18,7 +18,7 @@ const ConfirmationStatement = () => {
           <div className="space-y-10">
             <div>
               <h4 className="text-lg mb-2 font-semibold  text-[#002B5B]">
-              Filing Your Confirmation Statement Simple for £59+VAT
+              Filing Your Confirmation Statement Simple
               </h4>
               <p className="text-gray-800 mb-2  ">
               Has Companies House requested that you file your confirmation statement? If you don’t know where to start or simply don’t want the stress of filing your confirmation statement, Mint Formations can help.
@@ -96,7 +96,7 @@ const ConfirmationStatement = () => {
               <PriceBox
                 serviceName={"Confirmation Statement"}
                 title="Standard Service"
-                price={"59.00"}
+                price={"59"}
                 content="Your confirmation statement will be filed within 3 working days of receiving the required information"
                 includesList={[
                   "Completion and filing of the CS01 form",
@@ -107,7 +107,7 @@ const ConfirmationStatement = () => {
               <PriceBox
                 serviceName={"Confirmation Statement"}
                 title="Express Service"
-                price={"69.00"}
+                price={"69"}
                 content="Your confirmation statement will be filed within 3 working days of receiving the required information"
                 includesList={[
                   "Completion and filing of the CS01 form",
