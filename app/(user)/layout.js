@@ -9,7 +9,7 @@ import { createClient } from "@/lib/supabase/client";
 import { redirect } from "next/navigation";
 import { createContext, useEffect, useState } from "react";
 import { Bounce, ToastContainer, toast } from 'react-toastify';
-
+import Cookies from 'js-cookie';
  
 
 export const UserContext = createContext();
@@ -106,7 +106,26 @@ export default function RootLayout({ children }) {
 
     const { data } = supabase.auth.onAuthStateChange( (event, session) => {
       
-    
+
+
+      // if (event === 'SIGNED_OUT'  ) {
+       
+      //   Cookies.remove('my-access-token');
+      //   Cookies.remove('my-refresh-token' );
+      // } else if (event === 'SIGNED_IN' || event === 'TOKEN_REFRESHED') {
+
+
+      //   Cookies.set('my-access-token', session.access_token, { expires: 7, path: '' });
+      //   Cookies.set('my-refresh-token', session.refresh_token, { expires: 7, path: '' });
+
+
+         
+      // }
+
+
+
+
+
 
       // console.log(event)
 

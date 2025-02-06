@@ -48,7 +48,7 @@ const Login = () => {
 
     try {
       setIsLoading(true);
-      const { data, error } = await supabase.auth.signInWithPassword(creds);
+      const { data, error } = await supabase.auth.signInWithPassword(creds );
 
       console.log(data);
 
@@ -56,7 +56,62 @@ const Login = () => {
         return setErrorMsg(error.message);
       }
 
-      userContext.setUser(data?.session?.user)
+
+      
+      
+
+
+
+
+      // function setCustomCookie(name, value, days = 7) {
+      //   const expirationDate = new Date();
+      //   expirationDate.setTime(expirationDate.getTime() + (days * 24 * 60 * 60 * 1000));
+        
+      //   document.cookie = `${name}=${value}; expires=${expirationDate.toUTCString()}; path=/; SameSite=None; Secure;`;
+      // }
+
+      //   if(typeof window !== 'undefined') {
+
+      //     setCustomCookie('supabase_custom_auth', JSON.stringify(data.session));
+           
+
+
+      //   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      // const accessToken = data.session.access_token
+      // const refreshToken = data.session.refresh_token
+
+
+
+       userContext.setUser(data?.session?.user)
+
+      // const redirectUrl = `http://localhost:5173/set-session?accessToken=${accessToken}&refreshToken=${refreshToken}`;
+ 
+
+
       return router.push('/')
 
       

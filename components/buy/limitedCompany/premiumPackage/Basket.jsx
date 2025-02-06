@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { RxCross2 } from "react-icons/rx";
+import TotalPriceRow from "../../TotalPriceRow";
 
 const TableRow = ({ pkgName, pkgPrice, fromBasketToRecHandler, id, btnDisable }) => {
   return (
@@ -195,13 +196,13 @@ const Basket = ({ selectedPackages, fromBasketToRecHandler, selectedPkgName, sel
             <td className="pt-2 pb-1 text-end ">£{netPrice}</td>
           </tr>
 
-          <tr>
+          {/* <tr>
             <td className="pt-1 pb-2  "></td>
 
             <td className="pt-1 pb-2  px-4 text-end ">VAT: </td>
 
             <td className="pt-1 pb-2 text-end ">£{((20/100) * +netPrice).toFixed(2).toString()}</td>
-          </tr>
+          </tr> */}
 
 
 
@@ -211,7 +212,7 @@ const Basket = ({ selectedPackages, fromBasketToRecHandler, selectedPkgName, sel
 
             <td className="py-2  px-2 text-nowrap text-end font-semibold text-xl text-orange-500 " >Order Total: </td>
 
-            <td className="py-2 text-end font-semibold  text-xl text-orange-500 ">£{(((20/100) * +netPrice) + +netPrice).toFixed(2).toString() }</td>
+            <TotalPriceRow netPrice={netPrice} />
           </tr>
 
 

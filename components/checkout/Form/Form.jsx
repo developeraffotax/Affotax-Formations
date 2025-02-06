@@ -87,9 +87,8 @@ const Form = ({ selectedPackages, mainPkg, mainPkgPrice, tPriceWithoutTax, addre
           .from("orders")
           .insert({
             user_id: userData.user.id,
-            total: ((20 / 100) * +tPriceWithoutTax + +tPriceWithoutTax)
-              .toFixed(2)
-              .toString(),
+            total: (+tPriceWithoutTax).toFixed(2).toString(),
+            // total: ((20 / 100) * +tPriceWithoutTax + +tPriceWithoutTax) .toFixed(2) .toString(),
             status: "pending",
             order_ref: orderRef,
             payment_status: "pending",
@@ -144,7 +143,8 @@ const Form = ({ selectedPackages, mainPkg, mainPkgPrice, tPriceWithoutTax, addre
           userId: userData.user.id,
           orderId: orderData[0].id,
 
-          amount:  ((20 / 100) * +tPriceWithoutTax + +tPriceWithoutTax) .toFixed(2) .toString(),
+          amount:  (+tPriceWithoutTax) .toFixed(2) .toString(),
+          // amount:  ((20 / 100) * +tPriceWithoutTax + +tPriceWithoutTax) .toFixed(2) .toString(),
           buyerEmailAddress: userData.user.email
         });
 
@@ -187,9 +187,8 @@ const Form = ({ selectedPackages, mainPkg, mainPkgPrice, tPriceWithoutTax, addre
           .from("orders")
           .insert({
             user_id: user.id,
-            total: ((20 / 100) * +tPriceWithoutTax + +tPriceWithoutTax)
-              .toFixed(2)
-              .toString(),
+            total: (+tPriceWithoutTax) .toFixed(2) .toString(),
+            // total: ((20 / 100) * +tPriceWithoutTax + +tPriceWithoutTax) .toFixed(2) .toString(),
             status: "pending",
             order_ref: orderRef,
             payment_status: "pending",
@@ -242,7 +241,8 @@ const Form = ({ selectedPackages, mainPkg, mainPkgPrice, tPriceWithoutTax, addre
           userId: user.id,
           orderId: orderData[0].id,
 
-          amount:  ((20 / 100) * +tPriceWithoutTax + +tPriceWithoutTax) .toFixed(2) .toString(),
+          amount:  (+tPriceWithoutTax) .toFixed(2) .toString(),
+          // amount:  ((20 / 100) * +tPriceWithoutTax + +tPriceWithoutTax) .toFixed(2) .toString(),
           buyerEmailAddress: user?.email
 
         });

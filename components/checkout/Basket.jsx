@@ -135,13 +135,13 @@ const Basket = ({ selectedPackages, selectedPkgName, selectedPkgPrice, tPriceWit
             <td className="pt-2 pb-1 text-end ">£{tPriceWithoutTax}</td>
           </tr>
 
-          <tr>
+          {/* <tr>
             <td className="pt-1 pb-2  "></td>
 
             <td className="pt-1 pb-2  px-4 text-end ">VAT: </td>
 
             <td className="pt-1 pb-2 text-end ">£{((20/100) * +tPriceWithoutTax).toFixed(2).toString()}</td>
-          </tr>
+          </tr> */}
 
 
 
@@ -151,7 +151,8 @@ const Basket = ({ selectedPackages, selectedPkgName, selectedPkgPrice, tPriceWit
 
             <td className="pb-2 pt-4  px-2 text-nowrap text-end font-semibold text-xl text-orange-500 " >Order Total: </td>
 
-            <td className="pb-2 pt-4 text-end font-semibold  text-xl text-orange-500 ">£{(((20/100) * +tPriceWithoutTax) + +tPriceWithoutTax).toFixed(2).toString() }</td>
+            <td className="pb-2 pt-4 text-end font-semibold  text-xl text-orange-500 ">£{(+tPriceWithoutTax).toFixed(2).toString() }</td>
+            {/* <td className="pb-2 pt-4 text-end font-semibold  text-xl text-orange-500 ">£{(((20/100) * +tPriceWithoutTax) + +tPriceWithoutTax).toFixed(2).toString() }</td> */}
           </tr>
 
 

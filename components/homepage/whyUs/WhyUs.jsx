@@ -42,7 +42,7 @@ const WhyUs = () => {
 
 
 
-            <h2 className="w-full text-4xl max-xl:text-3xl  font-semibold font-poppins text-center max-xl:text-start mb-12 max-w-2xl mx-auto">Why Register Your Company with <span className="bg-gradient-to-l from-rose-500 via-orange-500 to-orange-500 text-transparent bg-clip-text  ">Affotax Formation</span></h2>
+            <h2 className="w-full text-4xl max-xl:text-3xl  font-semibold font-poppins text-center max-xl:text-start mb-12 max-w-2xl mx-auto">Why Register Your Company with <span className="bg-gradient-to-l from-rose-500 via-orange-500 to-orange-500 text-transparent bg-clip-text  ">Affotax Formation?</span></h2>
 
 
 
