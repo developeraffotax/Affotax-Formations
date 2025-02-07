@@ -29,8 +29,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        // background: "var(--background)",
+        // foreground: "var(--foreground)",
         primary: '#23314E',
         secondary: '#FC6600',
         c1: '#FC6600',

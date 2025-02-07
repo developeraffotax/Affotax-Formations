@@ -5,6 +5,7 @@ import { SlUserFollowing } from "react-icons/sl";
 import { LuCircleUserRound } from "react-icons/lu";
 import { logout } from "@/lib/supabase/logout";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 
   export default function UserDropdown({user}) {
@@ -54,7 +55,9 @@ import { useRouter } from "next/navigation";
 
 
 
-        <Dropdown placement="bottom-start" className="font-poppins ">
+        <Dropdown placement="bottom-start" className="font-poppins dark:bg-black dark:text-white" classNames={{
+          content: 'bg-blue-700 text-white'
+        }} >
           <DropdownTrigger>
             <User
               as="button"
@@ -77,13 +80,13 @@ import { useRouter } from "next/navigation";
               <p className="font-bold">Signed in as</p>
               <p className="font-bold">{user?.email}</p>
             </DropdownItem>
-            <DropdownItem key="dashboard">Dashboard</DropdownItem>
-            <DropdownItem key="partner-offers">Partner Offers</DropdownItem>
-            <DropdownItem key="finances">Finances</DropdownItem>
-            <DropdownItem key="services">Services</DropdownItem>
-            <DropdownItem key="companies">Companies</DropdownItem>
+            <DropdownItem  key="/client/dashboard" ><Link  href="/client/dashboard"><h3  >Dashboard</h3></Link></DropdownItem>
+            <DropdownItem key="/client/companies"><Link  href="/client/companies"><h3>My Companies</h3></Link></DropdownItem>
+            <DropdownItem key="/client/orders"><Link href="/client/orders"><h3>Orders</h3></Link></DropdownItem>
+            <DropdownItem key="/client/user-details"><Link href="/client/user-details"><h3>Personal Details</h3></Link></DropdownItem>
+            {/* <DropdownItem key="companies">Companies</DropdownItem>
             <DropdownItem key="orders">Orders</DropdownItem>
-            <DropdownItem key="mail">Mail</DropdownItem>
+            <DropdownItem key="mail">Mail</DropdownItem> */}
             <DropdownItem onPress={handleLogout} key="logout" color="danger"> Log Out </DropdownItem>
 
 

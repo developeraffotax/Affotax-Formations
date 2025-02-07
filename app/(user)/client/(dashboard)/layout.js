@@ -17,7 +17,7 @@ export default function DashboardPagesLayout(props) {
    
 
   return (
-    <DashboardLayout   slots={{toolbarAccount: () => <UserDropdown user={user.user}/> }}>
+    <DashboardLayout  sidebarExpandedWidth={250} slots={{toolbarAccount: () => <UserDropdown user={user.user}/> }}>
       <PageContainer  className='   min-w-full w-full  '>{props.children}</PageContainer>
     </DashboardLayout>
   );

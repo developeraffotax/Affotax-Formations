@@ -7,7 +7,7 @@ import Footer from "@/components/footer/Footer";
 import Providers from "@/app/(user)/(visitor)/providers.js";
 import { createClient } from "@/lib/supabase/client";
 import { redirect } from "next/navigation";
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useMemo, useState } from "react";
 import { Bounce, ToastContainer, toast } from 'react-toastify';
 import Cookies from 'js-cookie';
  
@@ -160,14 +160,16 @@ export default function RootLayout({ children }) {
     };
   }, []);
 
-
+  const contextValue = useMemo(() => {
+    return {user, setUser}
+  }, [user])
 
   return (
     
       <div>
          <ToastContainer />
         
-          <UserContext.Provider value={{user, setUser}}>
+          <UserContext.Provider value={contextValue}>
           
           <>{children}</>
           

@@ -1,9 +1,9 @@
 "use client"
 
 import  { useCallback, useContext, useEffect, useState } from "react";
-import { DataGrid } from '@mui/x-data-grid';
+import { DataGrid, GridToolbar } from '@mui/x-data-grid';
 import { createClient } from "@/lib/supabase/client";
-import { UserContext } from "@/app/(user)/(visitor)/layout";
+ 
  
  
  
@@ -29,8 +29,8 @@ import { UserContext } from "@/app/(user)/(visitor)/layout";
 
 
 const columns = [
-  { field: 'sr', headerName: 'Sr.', width: 100 },
-  { field: 'company_name', headerName: 'Company Name', width: 150 },
+  { field: 'sr', headerName: 'Sr.', width: 50 },
+  { field: 'company_name', headerName: 'Company Name', width: 200 },
   { field: 'sic_codes', headerName: 'SIC Codes', width: 150 },
   { field: 'registered_in', headerName: 'Registered In', width: 150 },
   { field: 'created_at', headerName: 'Created At', width: 150,  },
@@ -93,7 +93,26 @@ const Companies = () => {
 
 
   return  <div className="  w-full ">
-  <DataGrid className="w-full max-w-none " rows={rows} columns={columns} loading={isLoading}/>
+  <DataGrid
+        className="w-full max-w-none "
+        
+        rows={rows}
+        columns={columns}
+        loading={isLoading}
+        slots={{
+          toolbar: GridToolbar,
+        }}
+        slotProps={{
+          toolbar: {
+            showQuickFilter: true,
+          },
+        }}
+        density="compact"
+        disableColumnMenu
+        disableColumnFilter
+        disableColumnSelector
+        disableDensitySelector
+      />
 </div>
 };
 
