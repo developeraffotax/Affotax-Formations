@@ -1,9 +1,17 @@
+ 
 
+
+import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import "./globals.css";
-export const metadata = {
-  title: "Affotax Formations",
-  description: "Create your ltd company in minutes!",
-};
+import { ThemeProvider } from '@mui/material/styles';
+import theme from "./theme";
+
+// export const metadata = {
+//   title: "Affotax Formations",
+//   description: "Create your ltd company in minutes!",
+// };
+
+import InitColorSchemeScript from '@mui/material/InitColorSchemeScript';
 
 
 export default function RootLayout({ children }) {
@@ -13,12 +21,23 @@ export default function RootLayout({ children }) {
 
 
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning >
       <body>
+
+      <AppRouterCacheProvider  >
+      
+     
         <div>
           {children}
         </div>
+        
+        </AppRouterCacheProvider>
       </body>
     </html>
   );
 }
+
+
+// theme here too to prevent ssr flicker in <ThemeProvider theme={theme}     >   
+
+// add this below that <InitColorSchemeScript attribute="class"  />

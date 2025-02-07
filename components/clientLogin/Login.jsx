@@ -12,7 +12,7 @@ import { createClient } from "@/lib/supabase/client";
 import Logo from "./Logo";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { UserContext } from "@/app/(user)/layout";
+import { UserContext } from "@/app/(user)/(visitor)/layout";
 import ResetPasswordReq from "./ResetPasswordReq";
 import { FcGoogle } from "react-icons/fc";
 

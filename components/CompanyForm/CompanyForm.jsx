@@ -12,7 +12,7 @@ import Summary from "./cmps/Summary/Summary";
 import { parseDate } from "@internationalized/date";
 import { useRouter, useSearchParams } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
-import { UserContext } from "@/app/(user)/layout";
+import { UserContext } from "@/app/(user)/(visitor)/layout";
 import { Bounce, toast, ToastContainer } from "react-toastify";
 import axios from "axios";
  

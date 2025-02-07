@@ -4,7 +4,7 @@ import Header from "@/components/header/Header";
  
 
 import Footer from "@/components/footer/Footer";
-import Providers from "@/app/(user)/providers.js";
+import Providers from "@/app/(user)/(visitor)/providers.js";
 import { createClient } from "@/lib/supabase/client";
 import { redirect } from "next/navigation";
 import { createContext, useEffect, useState } from "react";
@@ -166,13 +166,13 @@ export default function RootLayout({ children }) {
     
       <div>
          <ToastContainer />
-        <Providers>
+        
           <UserContext.Provider value={{user, setUser}}>
-          <Header />
-          <div className="mt-[112px] max-xl:mt-20">{children}</div>
-          <Footer />
+          
+          <>{children}</>
+          
           </UserContext.Provider>
-        </Providers>
+         
       </div>
    
   );

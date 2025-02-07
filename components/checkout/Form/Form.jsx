@@ -10,7 +10,7 @@ import { CreditCard, PaymentForm } from "react-square-web-payments-sdk";
 import { createClient } from "@/lib/supabase/client";
 import { Spinner, Tab, Tabs } from "@heroui/react";
 import LoginForm from "./LoginForm/LoginForm";
-import { UserContext } from "@/app/(user)/layout";
+import { UserContext } from "@/app/(user)/(visitor)/layout";
 import { toast, ToastContainer } from "react-toastify";
 import ReactDOM from "react-dom";
 import axios from "axios";
