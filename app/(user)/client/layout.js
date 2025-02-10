@@ -31,9 +31,15 @@ const NAVIGATION = [
     segment: 'client/companies',
     title: 'My Companies',
     icon: <ApartmentIcon />,
-    
+    pattern: 'client/companies{/:orderId}*',
 
   },
+
+
+ 
+
+
+
 
   {
     segment: 'client/orders',

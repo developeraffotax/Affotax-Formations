@@ -3,34 +3,18 @@
 import  { useCallback, useContext, useEffect, useState } from "react";
 import { DataGrid, GridToolbar } from '@mui/x-data-grid';
 import { createClient } from "@/lib/supabase/client";
+import Link from "next/link";
+import { CircularProgress } from "@mui/material";
  
  
  
  
-
-// const rows2: GridRowsProp = [
-//   { id: 1, company_name: 'Hello', sic_codes: 'World', registered_in: 'England & Wales' },
-//   { id: 2, company_name: 'DataGridPro', sic_codes: 'is Awesome', registered_in: 'England & Wales' },
-//   { id: 3, company_name: 'MUI', sic_codes: 'is Amazing', registered_in: 'England & Wales' },
-// ];
-
-
-  
-  // Define a Row type for the data displayed in the DataGrid
-//   interface Row {
-//     sr: number;  // Serial number for display
-//     id: string;  // The id will not be displayed in the UI
-//     company_name: string;
-//     sic_codes: string;  // This will be a string after mapping from array
-//     registered_in: string;
-//     created_at: string;
-//   }
 
 
 
 const columns = [
   { field: 'sr', headerName: 'Sr.', width: 50 },
-  { field: 'company_name', headerName: 'Company Name', width: 200 },
+  { field: 'company_name', headerName: 'Company Name', width: 200, renderCell: params => <Link className="text-blue-500 " href={`/client/companies/${params?.row?.id}`}>{params?.value}</Link>},
   { field: 'sic_codes', headerName: 'SIC Codes', width: 150 },
   { field: 'registered_in', headerName: 'Registered In', width: 150 },
   { field: 'created_at', headerName: 'Created At', width: 150,  },
@@ -52,7 +36,11 @@ const Companies = () => {
     const getCompaniesData = useCallback(async() => {
         const supabase = createClient()
         setIsLoading(true)
-        const { data, error } = await supabase.from("company_info").select()
+
+        const {data: {user}, error: userError} = await supabase.auth.getUser();
+
+        const { data, error } = await supabase.from("company_info").select().eq('user_id', user.id )
+        //const { data, error } = await supabase.from("company_info").select().eq('user_id', user.id )
 
         
         console.log(error)
@@ -93,7 +81,8 @@ const Companies = () => {
 
 
   return  <div className="  w-full ">
-  <DataGrid
+    
+     <DataGrid
         className="w-full max-w-none "
         
         rows={rows}
