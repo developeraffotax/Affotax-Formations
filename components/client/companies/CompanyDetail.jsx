@@ -4,6 +4,7 @@ import { createClient } from "@/lib/supabase/client";
 import React, { useCallback, useEffect, useState } from "react";
 import Summary from "./Summary/Summary";
 import { CircularProgress } from "@mui/material";
+import { toast, ToastContainer } from "react-toastify";
 
 const CompanyDetail = ({id}) => {
   
@@ -111,42 +112,51 @@ const CompanyDetail = ({id}) => {
   
       
       const getCompanyData = useCallback(async() => {
+
+            
           const supabase = createClient()
           setIsLoading(true)
   
-          const {data: {user}, error: userError} = await supabase.auth.getUser();
+         try {
+            const {data: {user}, error: userError} = await supabase.auth.getUser();
   
-          const { data: CompanyData, error: CompanyDataError } = await supabase.from("company_info").select().eq('id', id );
+            const { data: CompanyData, error: CompanyDataError } = await supabase.from("company_info").select().eq('id', id );
+  
+  
+            const { data: OfficeAddressData, error: OfficeAddressDataError } = await supabase.from("office_address").select().eq('for_company', CompanyData[0].company_name );
+            const { data: DirectorsData, error: DirectorsDataError } = await supabase.from("directors").select().eq('for_company', CompanyData[0].company_name );
+  
+            const { data: ResidentialAddressData, error: ResidentialAddressDataError } = await supabase.from("residential_address").select().eq('for_company', CompanyData[0].company_name );
+            const { data: ServiceAddressData, error: ServiceAddressDataError } = await supabase.from("service_address").select().eq('for_company', CompanyData[0].company_name );
+  
+            const { data: ShareholdersStatsData, error: ShareholdersStatsDataError } = await supabase.from("shareholders_stats").select().eq('for_company', CompanyData[0].company_name );
+            const { data: ShareholdersData, error: ShareholdersDataError } = await supabase.from("shareholders").select().eq('for_company', CompanyData[0].company_name );
+           
+          
+            
+            setCompanyInfo(CompanyData[0]);
+            setAddress(OfficeAddressData[0]);
+            setDirectors({
+              ...DirectorsData[0],
+              ...ResidentialAddressData[0],
+              ...ServiceAddressData[0]
+            });
+  
+            setShareholders({
+              shareholders: ShareholdersData,
+  
+              ...ShareholdersStatsData[0]
+  
+            })
 
 
-          const { data: OfficeAddressData, error: OfficeAddressDataError } = await supabase.from("office_address").select().eq('for_company', CompanyData[0].company_name );
-          const { data: DirectorsData, error: DirectorsDataError } = await supabase.from("directors").select().eq('for_company', CompanyData[0].company_name );
+         } catch (error) {
+                console.log(error);
 
-          const { data: ResidentialAddressData, error: ResidentialAddressDataError } = await supabase.from("residential_address").select().eq('for_company', CompanyData[0].company_name );
-          const { data: ServiceAddressData, error: ServiceAddressDataError } = await supabase.from("service_address").select().eq('for_company', CompanyData[0].company_name );
-
-        console.log(OfficeAddressData)
-
-
-          const { data: ShareholdersStatsData, error: ShareholdersStatsDataError } = await supabase.from("shareholders_stats").select().eq('for_company', CompanyData[0].company_name );
-          const { data: ShareholdersData, error: ShareholdersDataError } = await supabase.from("shareholders").select().eq('for_company', CompanyData[0].company_name );
-         
-
-
-          setCompanyInfo(CompanyData[0]);
-          setAddress(OfficeAddressData[0]);
-          setDirectors({
-            ...DirectorsData[0],
-            ...ResidentialAddressData[0],
-            ...ServiceAddressData[0]
-          });
-
-          setShareholders({
-            shareholders: ShareholdersData,
-
-            ...ShareholdersStatsData[0]
-
-          })
+                toast.error(error?.message || 'Some error occured')
+         } finally {
+            setIsLoading(false)
+         }  
 
             
          
@@ -168,6 +178,7 @@ const CompanyDetail = ({id}) => {
   
   return (
 <div className="w-full flex justify-center items-center mt-12">
+    <ToastContainer />
 {isLoading && <CircularProgress  color="primary" className="" />}
     {
         !isLoading && <Summary companyInfo={companyInfo} address={address} directors={directors} shareholders={shareholders} />
