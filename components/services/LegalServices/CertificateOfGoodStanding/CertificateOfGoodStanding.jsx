@@ -152,15 +152,30 @@ const CertificateOfGoodStanding = () => {
             <ul className="text-gray-700 space-y-8  ">
               <PriceBox
                 serviceName={"Certificate of Good Standing"}
-                title="For UK Residents"
-                price={"69"}
-                content="We offer seamless PAYE registration services with HMRC, ensuring your business is set up to handle employee payroll and tax obligations smoothly. Our expert team manages the process for a hassle-free experience."
+                title="Standard Service
+"
+                price={"89"}
+                content="It can take up to 10 working days for your certificate to be issued using the Standard Service."
                 includesList={[
-                  "PAYE registration",
-                  "Preparation and submission to HMRC",
-                  "Get Paye Registration Letter showing Payroll Number.",
+                  "Certificate of Good Standing",
+                 
                 ]}
               />
+
+              <PriceBox
+                serviceName={"Certificate of Good Standing"}
+                title="Express Service
+"
+                price={"139"}
+                content="Your Certificate will be issued within 24 hours using the Express Service. Orders must be placed by 1pm (Monday - Friday).
+
+"
+                includesList={[
+                  "Certificate of Good Standing",
+                  
+                ]}
+              />
+
               {/* <PriceBox
                 title="For Non-UK Residents"
                 price={"49.00"}

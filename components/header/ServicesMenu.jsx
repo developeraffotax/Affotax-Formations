@@ -17,11 +17,11 @@ const ServicesMenu = ({className, onClick}) => {
     <h3 className="text-2xl font-poppins font-semibold text-orange-500 mb-3 border-b-2 border-orange-500 py-1 w-full ">Accounting Services</h3>
     {/* <Link onClick={onClick} href="/service/companies-house-registration" className="flex justify-start items-center hover:text-orange-500 "><MdKeyboardArrowRight className="text-xl"/> Companies House Registration - from £4.99</Link> */}
    <Link onClick={onClick} href="/service/confirmation-statement-filing" className="flex justify-start items-center hover:text-orange-500 "><MdKeyboardArrowRight className="text-xl"/> Confirmation Statement Filing - £59</Link>
-   <Link onClick={onClick} href="/service/director-appointment-and-resignation" className="flex justify-start items-center hover:text-orange-500 "><MdKeyboardArrowRight className="text-xl"/> Director Appointment & Resignation - £19</Link>
+   <Link onClick={onClick} href="/service/director-appointment-and-resignation" className="flex justify-start items-center hover:text-orange-500 "><MdKeyboardArrowRight className="text-xl"/> Director Appointment & Resignation - £59</Link>
    <Link onClick={onClick} href="/service/company-name-change" className="flex justify-start items-center hover:text-orange-500 "><MdKeyboardArrowRight className="text-xl"/> Company Name Change - £69</Link>
-   <Link onClick={onClick} href="/service/company-dissolution" className="flex justify-start items-center hover:text-orange-500 "><MdKeyboardArrowRight className="text-xl"/> Company Dissolution - £75</Link>
-   <Link onClick={onClick} href="/service/issue-and-transfer-of-shares" className="flex justify-start items-center hover:text-orange-500 "><MdKeyboardArrowRight className="text-xl"/> Issue & Transfer of Shares - £79</Link>
-   <Link onClick={onClick} href="/service/dormant-company-accounts" className="flex justify-start items-center hover:text-orange-500 "><MdKeyboardArrowRight className="text-xl"/> Dormant Company Accounts - £69.99</Link>
+   <Link onClick={onClick} href="/service/company-dissolution" className="flex justify-start items-center hover:text-orange-500 "><MdKeyboardArrowRight className="text-xl"/> Company Dissolution - £59</Link>
+   <Link onClick={onClick} href="/service/issue-and-transfer-of-shares" className="flex justify-start items-center hover:text-orange-500 "><MdKeyboardArrowRight className="text-xl"/> Issue & Transfer of Shares - £59</Link>
+   <Link onClick={onClick} href="/service/dormant-company-accounts" className="flex justify-start items-center hover:text-orange-500 "><MdKeyboardArrowRight className="text-xl"/> Dormant Company Accounts - £59</Link>
    <Link onClick={onClick} href="/service/company-secretary-service" className="flex justify-start items-center hover:text-orange-500 "><MdKeyboardArrowRight className="text-xl"/> Company Secretary Service - £149</Link>
 </ul>
 

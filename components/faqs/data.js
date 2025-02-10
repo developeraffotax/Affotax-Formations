@@ -30,7 +30,7 @@ export const items = [
 
   {
     header: `What types of company can be set up on our website?`,
-    content: `Rapid Formations specialises in the online formation (incorporation) of companies limited by shares, companies limited by guarantee, and LLPs. We are an authorised Companies House agent, offering professional, expert company formation help, advice, and services in the UK.`,
+    content: `Affotax Formation specialises in the online formation (incorporation) of companies limited by shares, companies limited by guarantee, and LLPs. We are an authorised Companies House agent, offering professional, expert company formation help, advice, and services in the UK.`,
   },
 
   {
