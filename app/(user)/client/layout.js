@@ -14,6 +14,10 @@ import { UserContext } from '../layout';
  
  
  
+ 
+ 
+ 
+ 
 
 
 
@@ -29,11 +33,13 @@ const NAVIGATION = [
   },
   {
     segment: 'client/companies',
+
     title: 'My Companies',
     icon: <ApartmentIcon />,
-    pattern: 'client/companies{/:orderId}*',
+    pattern: 'client/companies{/:slug}*',
 
   },
+  
 
 
  
@@ -67,18 +73,18 @@ const BRANDING = {
 
 //theme here in this
 export default function Layout({ children }) {
-
-
-
-  const user =  useContext(UserContext);
+  // const router = useDemoRouter('/dashboard');
+ 
+   const user =  useContext(UserContext);
   
     console.log(user)
 
+   
     
   return (
     
       <Suspense fallback={<LinearProgress />}>
-        <NextAppProvider navigation={NAVIGATION} branding={BRANDING}   >
+        <NextAppProvider  navigation={NAVIGATION} branding={BRANDING}  >
           {children}
         </NextAppProvider>
       </Suspense>

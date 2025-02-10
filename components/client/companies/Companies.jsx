@@ -10,11 +10,12 @@ import { CircularProgress } from "@mui/material";
  
  
 
+// const simpleSlug = inputString.replace(/\s+/g, '-').replace(/[^a-zA-Z0-9\-]/g, '').toLowerCase();
 
 
 const columns = [
   { field: 'sr', headerName: 'Sr.', width: 50 },
-  { field: 'company_name', headerName: 'Company Name', width: 200, renderCell: params => <Link className="text-blue-500 " href={`/client/companies/${params?.row?.id}`}>{params?.value}</Link>},
+  { field: 'company_name', headerName: 'Company Name', width: 200, renderCell: params => <Link className="text-blue-500 " href={`/client/companies/${params?.row?.id}?company_name=${params?.value}`}>{params?.value}</Link>},
   { field: 'sic_codes', headerName: 'SIC Codes', width: 150 },
   { field: 'registered_in', headerName: 'Registered In', width: 150 },
   { field: 'created_at', headerName: 'Created At', width: 150,  },
