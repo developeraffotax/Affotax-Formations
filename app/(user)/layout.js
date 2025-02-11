@@ -10,6 +10,8 @@ import { redirect } from "next/navigation";
 import { createContext, useEffect, useMemo, useState } from "react";
 import { Bounce, ToastContainer, toast } from 'react-toastify';
 import Cookies from 'js-cookie';
+import { LocalizationProvider } from "@mui/x-date-pickers";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
  
 
 export const UserContext = createContext();
@@ -170,8 +172,10 @@ export default function RootLayout({ children }) {
          <ToastContainer />
         
           <UserContext.Provider value={contextValue}>
-          
-          <>{children}</>
+          <LocalizationProvider dateAdapter={AdapterDayjs}>
+      {children}
+    </LocalizationProvider>
+           
           
           </UserContext.Provider>
          

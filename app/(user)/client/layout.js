@@ -51,6 +51,7 @@ const NAVIGATION = [
     segment: 'client/orders',
     title: 'Order History',
     icon: <ShoppingCartIcon />,
+    pattern: 'client/orders{/:slug}*',
     
 
   },

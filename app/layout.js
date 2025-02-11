@@ -5,6 +5,7 @@ import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import "./globals.css";
 import { ThemeProvider } from '@mui/material/styles';
 import theme from "./theme";
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 
 // export const metadata = {
 //   title: "Affotax Formations",
@@ -12,6 +13,7 @@ import theme from "./theme";
 // };
 
 import InitColorSchemeScript from '@mui/material/InitColorSchemeScript';
+import { LocalizationProvider } from "@mui/x-date-pickers";
 
 
 export default function RootLayout({ children }) {
@@ -28,7 +30,8 @@ export default function RootLayout({ children }) {
       
      
         <div>
-          {children}
+       {children}
+          
         </div>
         
         </AppRouterCacheProvider>

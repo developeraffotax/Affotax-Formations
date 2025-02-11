@@ -21,18 +21,33 @@ export default function DashboardPagesLayout(props) {
     const searchParams = useSearchParams();
     let company_name = decodeURIComponent( searchParams.get('company_name'));
 
-    if (company_name === "null") {
+    // if (company_name === "null") {
      
-      company_name = 'My Companies'
-    }
+    //   company_name = 'My Companies'
+    // }
      
     const activePage = useActivePage();
     // invariant(activePage, 'No navigation match');
 
-     
+    let title;
+    if(company_name === "null") {
+      if(slug) {
+        title = slug;
+      }else {
 
-    const title = `${company_name}`;
-    const path = `${activePage.path}/${slug}`;
+        title = activePage.title;
+      }
+      
+      
+
+
+
+
+    } else {
+       title = `${company_name}`;
+    }
+    
+    const path = `${activePage?.path}/${slug}`;
     
     let  breadcrumbs = [...activePage.breadcrumbs, { title, path }];
 
@@ -42,7 +57,7 @@ export default function DashboardPagesLayout(props) {
       console.log("INTO THE UDNDEF BLOCK")
 
       // breadcrumbs = [...activePage.breadcrumbs, { title, path }];
-      breadcrumbs = [{title: activePage.title, path: activePage.path}]
+      breadcrumbs = [{title: activePage?.title, path: activePage?.path}]
     }
 
 
@@ -51,7 +66,7 @@ export default function DashboardPagesLayout(props) {
 
   return (
     <DashboardLayout  sidebarExpandedWidth={250} slots={{toolbarAccount: () => <UserDropdown user={user.user}/>, }}>
-      <PageContainer title={company_name}  breadcrumbs={breadcrumbs}  className='   min-w-full w-full  ' >{props.children}</PageContainer>
+      <PageContainer title={title === slug ? `ORDER REF #${title}` : title}  breadcrumbs={breadcrumbs}  className='   min-w-full w-full  ' >{props.children}</PageContainer>
     </DashboardLayout>
   );
 }
