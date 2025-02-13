@@ -29,15 +29,15 @@ const Form = () => {
   const formSubmitHandler = async (data) => {
     console.log("LOGIN FORM DATA: ", data);
 
-    const { organization, forename, surname, phone_number, email, confirm_email, password } = data;
-    const { post_code, house_name_or_number, street, locality, town, county, country } = data;
+    const { organization, title,  first_name, middle_name, last_name, gender, phone_number, email, confirm_email, password } = data;
+    const { post_code, name_or_number, street, locality, town, county, country } = data;
 
     const account_holder = {
-      organization, forename, surname, phone_number, email
+      organization, title,  first_name, middle_name, last_name, gender,  phone_number, email
     }
 
     const primary_address = {
-      post_code, house_name_or_number, street, locality, town, county, country 
+      post_code, name_or_number, street, locality, town, county, country 
     }
 
 
@@ -115,31 +115,146 @@ const Form = () => {
       />
     </div>
 
+
     <div className="w-full">
       <Input
-        errorMessage={errors?.forename?.message}
-        isInvalid={errors?.forename ? true : false}
-        {...register("forename", {
+        errorMessage={errors?.title?.message}
+        isInvalid={errors?.title ? true : false}
+        {...register("title", {
           required: {
             value: true,
-            message: "Forename is required!",
+            message: "Title is required!",
           },
         })}
-        key="forename"
+        key="title"
         classNames={{
           mainWrapper:
             "w-full",
           label: "w-[40%] ",
         }}
-        label="Forename: *"
+        label="Title: *"
+        labelPlacement="outside-left"
+        type="text"
+      />
+    </div>
+
+
+
+
+    <div className="w-full">
+      <Input
+        errorMessage={errors?.first_name?.message}
+        isInvalid={errors?.first_name ? true : false}
+        {...register("first_name", {
+          required: {
+            value: true,
+            message: "First name is required!",
+          },
+        })}
+        key="first_name"
+        classNames={{
+          mainWrapper:
+            "w-full",
+          label: "w-[40%] ",
+        }}
+        label="First Name: *"
         labelPlacement="outside-left"
         type="text"
       />
     </div>
 
     <div className="w-full">
-      <Input errorMessage={errors?.surname?.message} isInvalid={errors?.surname ? true : false} {...register("surname", { required: { value: true, message: "Surname is required!", }, })} key="surname" classNames={{ mainWrapper: "w-full ", label: "w-[40%]", }} label="Surname: *	" labelPlacement="outside-left" type="text" />
+      <Input
+        
+        {...register("middle_name", {
+          
+        })}
+        key="middle_name"
+        classNames={{
+          mainWrapper:
+            "w-full",
+          label: "w-[40%] ",
+        }}
+        label="Middle Name: "
+        labelPlacement="outside-left"
+        type="text"
+      />
     </div>
+
+
+    <div className="w-full">
+    <Input
+        errorMessage={errors?.last_name?.message}
+        isInvalid={errors?.last_name ? true : false}
+        {...register("last_name", {
+          required: {
+            value: true,
+            message: "Last name is required!",
+          },
+        })}
+        key="last_name"
+        classNames={{
+          mainWrapper:
+            "w-full",
+          label: "w-[40%] ",
+        }}
+        label="Last Name: *"
+        labelPlacement="outside-left"
+        type="text"
+      />
+    </div>
+
+
+
+
+    <div className="w-full">
+      <Input
+        errorMessage={errors?.gender?.message}
+        isInvalid={errors?.gender ? true : false}
+        {...register("gender", {
+          required: {
+            value: true,
+            message: "Phone Number is required!",
+          },
+        })}
+        key="gender"
+        classNames={{
+          mainWrapper: "w-full ",
+          label: "w-[40%]",
+        }}
+        label="Gender: *	"
+        labelPlacement="outside-left"
+        type="text"
+      />
+    </div>
+
+
+    <div className="w-full">
+      <Input
+        errorMessage={errors?.dob?.message}
+        isInvalid={errors?.dob ? true : false}
+        {...register("dob", {
+          required: {
+            value: true,
+            message: "Phone Number is required!",
+          },
+        })}
+        key="dob"
+        classNames={{
+          mainWrapper: "w-full ",
+          label: "w-[40%]",
+        }}
+        label="Date of birth: *	"
+        labelPlacement="outside-left"
+        type="text"
+      />
+    </div>
+
+
+
+
+
+   
 
     <div className="w-full">
       <Input
@@ -287,15 +402,15 @@ const Form = () => {
 
   <div className="w-full">
     <Input
-      errorMessage={errors?.house_name_or_number?.message}
-      isInvalid={errors?.house_name_or_number ? true : false}
-      {...register("house_name_or_number", {
+      errorMessage={errors?.name_or_number?.message}
+      isInvalid={errors?.name_or_number ? true : false}
+      {...register("name_or_number", {
         required: {
           value: true,
           message: "House Name / Number is required!",
         },
       })}
-      key="house_name_or_number"
+      key="name_or_number"
       classNames={{
         mainWrapper:
           "w-full",

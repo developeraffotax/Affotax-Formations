@@ -9,6 +9,7 @@ import ApartmentIcon from '@mui/icons-material/Apartment';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import { UserContext } from '../layout';
+import PaymentIcon from '@mui/icons-material/Payment';
  
  
  
@@ -55,6 +56,17 @@ const NAVIGATION = [
     
 
   },
+
+  {
+    segment: 'client/payment-methods',
+    title: 'Payment Methods',
+    icon: <PaymentIcon />,
+     
+    
+
+  },
+
+
 
   {
     segment: 'client/user-details',
