@@ -55,22 +55,22 @@ const LimitedCompany = () => {
               </li>
               <li className="flex flex-col justify-center items-center py-2  px-2 border-r text-lg relative       ">
                 {" "}
-                <h3>Basic</h3> <span className="font-semibold text-2xl text-orange-500">£49</span><span className="text-sm text-gray-700 text-center ">+ £50 Govt. Fee</span>
+                <h3>Basic</h3> <span className="font-semibold text-2xl text-orange-500">£49</span><span className="text-xs text-gray-700 text-center ">+ £50 Govt. Fee</span>
               </li>
               <li className="flex flex-col justify-center items-center py-2  px-2 border-r text-lg  relative    ">
                 {/* <OriginalPrice title={"40% OFF"} price={"165"} />{" "} */}
-                <h3>Standard</h3> <span className="font-semibold text-2xl text-orange-500">£99</span><span className="text-sm text-gray-700 text-center ">+ £50 Govt. Fee</span>
+                <h3>Standard</h3> <span className="font-semibold text-2xl text-orange-500">£99</span><span className="text-xs text-gray-700 text-center ">+ £50 Govt. Fee</span>
               </li>
               <li className="flex flex-col justify-center items-center py-2  px-2 border-r text-lg relative">
                 {" "}
                 <OriginalPrice title={"40% OFF"} price={"332"} />{" "}
-                <h3>Premium</h3> <span className="font-semibold text-2xl text-orange-500">£199</span><span className="text-sm text-gray-700 text-center ">+ £50 Govt. Fee</span>
+                <h3>Premium</h3> <span className="font-semibold text-2xl text-orange-500">£199</span><span className="text-xs text-gray-700 text-center ">+ £50 Govt. Fee</span>
               </li>
               <li className="flex flex-col justify-center items-center py-2  px-2 border-r text-lg  relative    ">
                 {" "}
                 <OriginalPrice title={"50% OFF"} price={"799"} />{" "}
                 <h3>All-Inclusive</h3>{" "}
-                <span className="font-semibold text-2xl text-orange-500">£399</span><span className="text-sm text-gray-700 text-center ">+ £50 Govt. Fee</span>
+                <span className="font-semibold text-2xl text-orange-500">£399</span><span className="text-xs text-gray-700 text-center ">+ £50 Govt. Fee</span>
               </li>
             </ul>
 

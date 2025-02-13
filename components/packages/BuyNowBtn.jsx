@@ -16,9 +16,9 @@ const BuyNowBtn = ({ href, company,  pkg }) => {
           BUY NOW
         </button>
       </Link>
-      <Link href="/" className="text-sm text-orange-500 underline  ">
+      {/* <Link href="/" className="text-sm text-orange-500 underline  ">
         Read More
-      </Link>
+      </Link> */}
     </>
   );
 };

@@ -1,5 +1,7 @@
 // app/api/send-email/route.js
-import sendMail from '@/lib/sendMail';
+// import sendMail from '@/lib/sendMail';
+
+import sendMail from "@/lib/sendMail";
 
 
 
@@ -31,7 +33,8 @@ export async function POST(req) {
    
     try {
         // Send mail
-        const res = await sendMail(name, email,message);
+        const response = await sendMail(name, email,message);
+        console.log(response)
         return new Response(JSON.stringify({ message: "Email sent successfully! We'll get back to you within 12 hours!" }), {
             status: 200,
             headers: {
