@@ -343,7 +343,7 @@ const LimitedCompany = () => {
                   <span>
                     <RiShieldCheckFill className="text-orange-500 text-xl  " />
                   </span>
-                  Company Tax Return (Worth £149)
+                  Company Tax Return (Worth £249)
                 </h3>{" "}
                 <span>
                   <RiInformation2Line className="text-gray-500 text-xl hover:cursor-pointer " />

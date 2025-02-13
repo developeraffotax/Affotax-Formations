@@ -135,7 +135,7 @@ console.log()
               </ul>
 
               <ul className=" flex  items-center gap-3 ">
-                <Link href="/" className="cursor-pointer   hover:text-orange-500"> Blog </Link>
+                {/* <Link href="/" className="cursor-pointer   hover:text-orange-500"> Blog </Link> */}
                 <Link href="/contact-us" className="cursor-pointer hover:text-orange-500 "> Contact Us </Link>
                 {!user && <Link href="/client-login" className="cursor-pointer hover:text-green-500" > <span className="flex justify-center items-center gap-1 "> <MdOutlineLock /> <p className="">Login</p> </span> </Link>}
                  {user && <span className="flex justify-center items-center gap-1 "> <UserDropdown  user={user}/> </span> }
@@ -183,7 +183,7 @@ console.log()
               <Link onClick={hamBurgerHandlerClose} href={"/company-formation"} className={`hover:text-primary w-full   pl-10 py-1`} > {" "} Company Formation{" "} </Link>
               <li onClick={() => setIsMblMenuShow(true)}  className={`hover:text-primary w-full   pl-10 py-1 cursor-pointer flex justify-start items-center gap-1  `} > {" "} Business Services <RiArrowRightSLine className=" text-xl  "/>{" "} </li>
 
-              <Link onClick={hamBurgerHandlerClose} href={"/blogs"} className={`hover:text-primary w-full  pl-10  py-1`} > {" "} Blogs{" "} </Link>
+              {/* <Link onClick={hamBurgerHandlerClose} href={"/blogs"} className={`hover:text-primary w-full  pl-10  py-1`} > {" "} Blogs{" "} </Link> */}
               <Link onClick={hamBurgerHandlerClose} href={"/faqs"} className={`hover:text-primary w-full  pl-10  py-1`} > {" "} FAQs{" "} </Link>
 
 
