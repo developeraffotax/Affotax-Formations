@@ -1,4 +1,5 @@
 "use client";
+import { COUNTRIES } from "@/components/clientSignup/CountrySelect";
 import { createClient } from "@/lib/supabase/client";
 import {
   Button,
@@ -16,10 +17,12 @@ import { DatePicker } from "@mui/x-date-pickers";
 import dayjs from "dayjs";
 import React, { useEffect, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
+import { Bounce, toast, ToastContainer } from "react-toastify";
 const PersonalDetails = () => {
 
   const { register, handleSubmit, formState: { errors }, setValue, getValues, control, } = useForm();
 
+  const [isLoading, setIsLoading] = useState(false);
 
 
 // ---------------------------------------------------------------FETCH DATA ON MOUTING------------------------------------------------------------------------------
@@ -54,7 +57,7 @@ const PersonalDetails = () => {
     const { account_holder, primary_address } = formData;
 
     const supabase = createClient();
-
+    setIsLoading(true)
     const { data, error } = await supabase.auth.updateUser({
       data: {
         account_holder: account_holder,
@@ -63,11 +66,38 @@ const PersonalDetails = () => {
       },
     });
 
-    console.log(data);
+    setIsLoading(false)
+
+    if(error) {
+      return toast.error(error?.message || "Failed to update the user", {
+        containerId: 'update_user'
+      })
+    } 
+
+    return toast.success("User Updated Successfully!", {
+      containerId: 'update_user'
+    })
+
+
+     
   };
 
-  return (
+  return (  
     <section>
+      <ToastContainer position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+        transition={Bounce}
+        containerId={'update_user'}
+  
+/>
       <form onSubmit={handleSubmit(formSubmitHandler)}>
         <Typography variant="h5" color="#ffffff" sx={{ backgroundColor: "#1565C0", paddingX: 2, paddingY: 1 }} gutterBottom > {" "} Personal Details{" "} </Typography>
 
@@ -77,7 +107,7 @@ const PersonalDetails = () => {
 
           <Grid2 container spacing={2} size={12} direction={"row"} alignItems={"center"} justifyContent={"space-between"} > {" "}
             <InputLabel id="demo-select-small-label" sx={{ fontFamily: "poppins" }} > Organization </InputLabel>{" "}
-            <TextField {...register("account_holder.organization")} sx={{ width: "300px" }} variant="outlined" size="small" name="oraganization" />{" "}
+            <TextField {...register("account_holder.organization")} sx={{ width: "300px" }} variant="outlined" size="small"   />{" "}
           </Grid2>
 
           <Grid2 container spacing={2} size={12} direction={"row"} alignItems={"center"} justifyContent={"space-between"} > {" "}
@@ -129,7 +159,26 @@ const PersonalDetails = () => {
 
           <Grid2 container spacing={2} size={12} direction={"row"} alignItems={"center"} justifyContent={"space-between"} > {" "}
             <InputLabel id="demo-select-small-label" sx={{ fontFamily: "poppins" }} > Gender* </InputLabel>{" "}
-            <TextField {...register("account_holder.gender", { required: { value: true, message: "Required" } })} error={errors?.account_holder?.gender} helperText={errors?.account_holder?.gender?.message} sx={{ width: "300px" }} variant="outlined" size="small" />{" "}
+            {/* <TextField {...register("account_holder.gender", { required: { value: true, message: "Required" } })} error={errors?.account_holder?.gender} helperText={errors?.account_holder?.gender?.message} sx={{ width: "300px" }} variant="outlined" size="small" />{" "} */}
+              
+              <Controller
+              
+                            control={control}
+                            name="account_holder.gender"
+                            defaultValue={"Male"}
+                            // rules={ {required: { value: true, message: "Required" }}}
+                            render={({ field: { onChange, onBlur, value, ref, name } }) => (
+                              <>
+                              <Select   sx={{ width: "300px" }}  variant="outlined"  size="small" onChange={onChange} value={value}  >
+                                <MenuItem value={"Male"}>Male</MenuItem>
+                                <MenuItem value={"Female"}>Female</MenuItem>
+                                
+                              </Select>
+                                </>
+                            )}
+                          />
+          
+          
           </Grid2>
 
 
@@ -140,7 +189,10 @@ const PersonalDetails = () => {
 
           <Grid2 container spacing={2} size={12} direction={"row"} alignItems={"center"} justifyContent={"space-between"} > {" "}
             <InputLabel id="demo-select-small-label" sx={{ fontFamily: "poppins" }} > Date of Birth* </InputLabel>
-            <Controller rules={ {required: { value: true, message: "Required" }}} control={control} name="account_holder.dob"  render={({ field: { onChange, onBlur, value, ref } }) => ( <DatePicker   sx={{ width: "300px" }} size="small" value={dayjs(value)} onChange={(value) => onChange(value)} /> )} />
+            <Controller rules={ {required: { value: true, message: "Required" },}} control={control} name="account_holder.dob"   render={({ field: { onChange, onBlur, value, ref } }) => ( <DatePicker slotProps={{textField: {
+              error: errors?.account_holder?.dob,
+              helperText: errors?.account_holder?.dob?.message
+            }}}   sx={{ width: "300px" }} size="small" value={dayjs(value)} onChange={(value) => onChange(value)} /> )} />
           </Grid2>
           
         </Grid2>
@@ -156,15 +208,15 @@ const PersonalDetails = () => {
 
 
           <Grid2 container spacing={2} size={12} direction={"row"} alignItems={"center"} justifyContent={"space-between"} > {" "}
-            <InputLabel id="demo-select-small-label" sx={{ fontFamily: "poppins" }} > Building Name/Number </InputLabel>{" "}
-            <TextField {...register("primary_address.name_or_number", { required: true, })} sx={{ width: "300px" }} variant="outlined" size="small" />{" "}
+            <InputLabel id="demo-select-small-label" sx={{ fontFamily: "poppins" }} > Building Name/Number* </InputLabel>{" "}
+            <TextField {...register("primary_address.name_or_number", { required: { value: true, message: "Required" }, })} error={errors?.primary_address?.name_or_number} helperText={errors?.primary_address?.name_or_number?.message} sx={{ width: "300px" }} variant="outlined" size="small" />{" "}
           </Grid2>
 
 
 
           <Grid2 container spacing={2} size={12} direction={"row"} alignItems={"center"} justifyContent={"space-between"} > {" "}
-            <InputLabel id="demo-select-small-label" sx={{ fontFamily: "poppins" }} > Street </InputLabel>{" "}
-            <TextField {...register("primary_address.street", { required: true })} sx={{ width: "300px" }} variant="outlined" size="small" />{" "}
+            <InputLabel id="demo-select-small-label" sx={{ fontFamily: "poppins" }} > Street* </InputLabel>{" "}
+            <TextField {...register("primary_address.street", { required: { value: true, message: "Required" } })} error={errors?.primary_address?.street} helperText={errors?.primary_address?.street?.message} sx={{ width: "300px" }} variant="outlined" size="small" />{" "}
           </Grid2>
 
 
@@ -176,8 +228,8 @@ const PersonalDetails = () => {
 
 
           <Grid2 container spacing={2} size={12} direction={"row"} alignItems={"center"} justifyContent={"space-between"} > {" "}
-            <InputLabel id="demo-select-small-label" sx={{ fontFamily: "poppins" }} > Town </InputLabel>{" "}
-            <TextField {...register("primary_address.town", { required: true })} sx={{ width: "300px" }} variant="outlined" size="small" />{" "}
+            <InputLabel id="demo-select-small-label" sx={{ fontFamily: "poppins" }} > Town* </InputLabel>{" "}
+            <TextField {...register("primary_address.town", { required: { value: true, message: "Required" } })} error={errors?.primary_address?.town} helperText={errors?.primary_address?.town?.message} sx={{ width: "300px" }} variant="outlined" size="small" />{" "}
           </Grid2>
 
 
@@ -189,18 +241,48 @@ const PersonalDetails = () => {
 
 
           <Grid2 container spacing={2} size={12} direction={"row"} alignItems={"center"} justifyContent={"space-between"} > {" "}
-            <InputLabel id="demo-select-small-label" sx={{ fontFamily: "poppins" }} > Post Code </InputLabel>{" "}
-            <TextField {...register("primary_address.post_code", { required: true })} sx={{ width: "300px" }} variant="outlined" size="small" />{" "}
+            <InputLabel id="demo-select-small-label" sx={{ fontFamily: "poppins" }} > Post Code* </InputLabel>{" "}
+            <TextField {...register("primary_address.post_code", { required: { value: true, message: "Required" } })} error={errors?.primary_address?.post_code} helperText={errors?.primary_address?.post_code?.message} sx={{ width: "300px" }} variant="outlined" size="small" />{" "}
           </Grid2>
+
+
+          {/* <Grid2 container spacing={2} size={12} direction={"row"} alignItems={"center"} justifyContent={"space-between"} > {" "}
+            <InputLabel id="demo-select-small-label" sx={{ fontFamily: "poppins" }} > Country* </InputLabel>{" "}
+            <TextField {...register("primary_address.country", { required: { value: true, message: "Required" } })} sx={{ width: "300px" }} variant="outlined" size="small" />{" "}
+          </Grid2> */}
 
 
           <Grid2 container spacing={2} size={12} direction={"row"} alignItems={"center"} justifyContent={"space-between"} > {" "}
-            <InputLabel id="demo-select-small-label" sx={{ fontFamily: "poppins" }} > Country </InputLabel>{" "}
-            <TextField {...register("primary_address.country", { required: true })} sx={{ width: "300px" }} variant="outlined" size="small" />{" "}
+            <InputLabel id="demo-select-small-label" sx={{ fontFamily: "poppins" }} > Country* </InputLabel>{" "}
+            {/* <TextField {...register("primary_address.country", { required: { value: true, message: "Required" } })} sx={{ width: "300px" }} variant="outlined" size="small" />{" "} */}
+
+
+
+
+
+
+            <Controller
+              control={control}
+              name="primary_address.country"
+              defaultValue={"United Kingdom"}
+              rules={ {required: { value: true, message: "Required" }}}
+              render={({ field: { onChange, onBlur, value, ref, name } }) => (
+                <Select sx={{ width: "300px" }}  variant="outlined"  size="small" onChange={onChange} value={value}  >
+                    {
+                      COUNTRIES.map((country) => {
+                        return <MenuItem key={country} value={country}>{country}</MenuItem>
+                      })
+                    }
+                </Select>
+              )}
+            />
           </Grid2>
+
+
+
         </Grid2>
 
-        <Button type="submit" variant="contained" color="primary" sx={{ marginTop: 2 }} > Submit </Button>
+        <Button type="submit" variant="contained" color="primary" sx={{ marginTop: 2 }} loading={isLoading} > Update </Button>
       </form>
     </section>
   );

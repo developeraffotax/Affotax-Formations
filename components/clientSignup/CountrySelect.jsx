@@ -2,7 +2,7 @@
 
 import { Select, SelectItem } from "@heroui/react";
 
-const COUNTRIES = [
+export const COUNTRIES = [
   "Afghanistan",
   "Albania",
   "Algeria",
@@ -199,36 +199,36 @@ const COUNTRIES = [
   "Zimbabwe",
 ];
 
-export default function CountrySelect({ register, errors }) {
-  return (
-    <div className="w-full ">
-      <Select
-        errorMessage={errors?.country?.message}
-        isInvalid={errors?.country ? true : false}
-        {...register("country", {
-          required: {
-            value: true,
-            message: "Country is required!",
-          },
-        })}
-        classNames={{
-          mainWrapper: "w-[60%] ",
-          label: "w-[40%] pl-2",
-          base: "w-full "
-        }}
-        label="Select country"
-        labelPlacement="outside-left"
+// export default function CountrySelect({ register, errors }) {
+//   return (
+//     <div className="w-full ">
+//       <Select
+//         errorMessage={errors?.country?.message}
+//         isInvalid={errors?.country ? true : false}
+//         {...register("country", {
+//           required: {
+//             value: true,
+//             message: "Country is required!",
+//           },
+//         })}
+//         classNames={{
+//           mainWrapper: "w-[60%] ",
+//           label: "w-[40%] pl-2",
+//           base: "w-full "
+//         }}
+//         label="Select country"
+//         labelPlacement="outside-left"
          
-        key="country"
-      >
-        {COUNTRIES.map((country) => {
-          return (
-            <SelectItem className="font-poppins w-10" key={country}>
-              {country}
-            </SelectItem>
-          );
-        })}
-      </Select>
-    </div>
-  );
-}
+//         key="country"
+//       >
+//         {COUNTRIES.map((country) => {
+//           return (
+//             <SelectItem className="font-poppins w-10" key={country}>
+//               {country}
+//             </SelectItem>
+//           );
+//         })}
+//       </Select>
+//     </div>
+//   );
+// }
