@@ -135,13 +135,13 @@ const Contact = () => {
 
 
 
-        <section className="w-full py-24">
+        <section className="w-full py-12 ">
        
        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 ">
          <div className="grid lg:grid-cols-2 grid-cols-1  ">
              <div className="lg:mb-0 mb-10 ">
-                 <div className="group w-full h-full">
-                     <div className="relative h-full">
+                 <div className="group w-full h-full  ">
+                     <div className="relative h-full ">
                          <img src="https://pagedone.io/asset/uploads/1696488602.png" alt="ContactUs tailwind section" className="w-full h-full lg:rounded-l-2xl   bg-blend-multiply bg-secondary object-cover"/>
                          <h1 className="font-manrope text-white text-4xl font-bold leading-10 absolute top-11 left-11">Contact us</h1>
                          <div className="absolute bottom-0 w-full lg:p-11 p-5">
@@ -163,7 +163,7 @@ const Contact = () => {
                                          <path d="M25 12.9169C25 17.716 21.1939 21.5832 18.2779 24.9828C16.8385 26.6609 16.1188 27.5 15 27.5C13.8812 27.5 13.1615 26.6609 11.7221 24.9828C8.80612 21.5832 5 17.716 5 12.9169C5 10.1542 6.05357 7.5046 7.92893 5.55105C9.8043 3.59749 12.3478 2.5 15 2.5C17.6522 2.5 20.1957 3.59749 22.0711 5.55105C23.9464 7.5046 25 10.1542 25 12.9169Z" stroke="#FC6600" strokeWidth="2"/>
                                          <path d="M17.5 11.6148C17.5 13.0531 16.3807 14.219 15 14.219C13.6193 14.219 12.5 13.0531 12.5 11.6148C12.5 10.1765 13.6193 9.01058 15 9.01058C16.3807 9.01058 17.5 10.1765 17.5 11.6148Z" stroke="#FC6600" strokeWidth="2"/>
                                      </svg>
-                                     <h5 className="text-black text-base font-normal leading-6 ml-5">654 Sycamore Avenue, Meadowville, WA 76543</h5>
+                                     <h5 className="text-black text-base font-normal leading-6 ml-5">9 Bourne Road, Bexley, London, England, DA5 1LW</h5>
                                  </a>
                              </div>
                          </div>
