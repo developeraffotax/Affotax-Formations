@@ -3,6 +3,7 @@ import { randomUUID } from "crypto";
 import { createClient } from "@/lib/supabase/server";
 import { redirect } from "next/navigation";
 import next from "next";
+import { countryToAlpha2 } from "country-to-iso";
 
 BigInt.prototype.toJSON = function () {
   return this.toString();
@@ -16,7 +17,7 @@ const { cardsApi } = new Client({
 
 
 export async function POST(request) {
-  const { sourceId,  cardholderName, billingAddress} = await request.json();
+  const { sourceId,  cardholderName, billingAddress, card} = await request.json();
 
 
 
@@ -24,12 +25,14 @@ export async function POST(request) {
   try { 
     const supabase = await createClient();
 
-    const session = await supabase.auth.getSession();
-
-    if (!session) {
+    const {data: {session: {user}}, error} = await supabase.auth.getSession();
+    
+    if (!user) {
       throw new Error("Failed to authenticate");
     }
 
+    console.log(user)
+    const customerId = user.user_metadata?.account_holder?.square_customer_id;
     const {result: {card}} = await cardsApi.createCard({
         idempotencyKey: randomUUID(),
         sourceId: sourceId,
@@ -37,11 +40,11 @@ export async function POST(request) {
             billingAddress: billingAddress,
             cardholderName: cardholderName,
             customerId: customerId,
-            referenceId: referenceId,
+            // referenceId: referenceId,
         },
     })
     
-    console.log(result)
+    console.log(card)
     return new Response(
       JSON.stringify({ success: true, card: card }),
       {

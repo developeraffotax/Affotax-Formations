@@ -31,6 +31,7 @@
     "@vercel/functions": "^1.5.2",
     "axios": "^1.7.7",
     "chance": "^1.1.12",
+    "country-to-iso": "^1.6.0",
     "dayjs": "^1.11.13",
     "framer-motion": "^11.15.0",
     "js-cookie": "^3.0.5",

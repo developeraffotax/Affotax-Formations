@@ -12,10 +12,10 @@ const { cardsApi } = new Client({
   accessToken: process.env.SQUARE_ACCESS_TOKEN_SERVER,
   environment: "sandbox",
 });
-
-export async function GET() {
-  // const searchParams = request.nextUrl.searchParams;
-  // const referenceId = searchParams.get("referenceId");
+console.log(process.env.NODE_ENV)
+export async function GET(request) {
+  const searchParams = request.nextUrl.searchParams;
+  const cardId = searchParams.get("cardId");
 
   try {
     const supabase = await createClient();
@@ -26,13 +26,15 @@ export async function GET() {
       throw new Error("Failed to authenticate");
     }
 
-    const customerId = user.user_metadata?.account_holder?.square_customer_id;
+     
 
-    const { result: { cards }, } = await cardsApi.listCards("", customerId);
+     
 
 
-    console.log(cards)
-    return new Response(JSON.stringify({ cards: cards }), {
+    const {result: {card}} = await cardsApi.disableCard(cardId)
+
+    
+    return new Response(JSON.stringify({ success: true, message: 'Card disable successfully!' }), {
       status: 200,
       headers: {
         "Content-Type": "application/json",
@@ -44,7 +46,7 @@ export async function GET() {
   } catch (error) {
     console.log(error);
     return new Response(
-      JSON.stringify({ error: "Error occured while fetching cards" }),
+      JSON.stringify({ error: "Error occured while diabling card" }),
       {
         status: 500,
         headers: {

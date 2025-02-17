@@ -43,9 +43,9 @@ const Footer = () => {
                     <ul className="w-full flex flex-col justify-start items-start text-sm gap-2 ">
                     <li className="w-full  text-lg font-semibold border-b py-2 mb-3 ">Address Services</li>
                         
-                        <Link className="hover:text-orange-500" href='/service/registered-office-address'>Registered address </Link>
-                        <Link className="hover:text-orange-500" href='/service/director-service-address'>Service address </Link>
-                        <Link className="hover:text-orange-500" href='/service/non-uk-resident-business-address'>Trading address</Link>
+                        <Link className="hover:text-orange-500" href='/service/registered-office-address'>London Registered address </Link>
+                        <Link className="hover:text-orange-500" href='/service/director-service-address'> London Service address </Link>
+                        <Link className="hover:text-orange-500" href='/service/non-uk-resident-business-address'> London Business address</Link>
                         <Link className="hover:text-orange-500" href='/service/annual-renewals'>Address Renewals </Link>
                        
                         
@@ -56,9 +56,9 @@ const Footer = () => {
 
                     <li className="w-full  text-lg font-semibold border-b py-2 mb-3 ">Accounting Services</li>
                         
-                        <Link className="hover:text-orange-500"  href='/'>Company Accounts </Link>
+                        <Link className="hover:text-orange-500"  href='/service/vat-registration'>VAT Registration </Link>
                         <Link className="hover:text-orange-500"  href='/service/dormant-company-accounts'>Dormant Accounts </Link>
-                        <Link className="hover:text-orange-500"  href='/service/company-name-change'>Name Change </Link>
+                        <Link className="hover:text-orange-500"  href='/service/company-name-change'>Company Name Change </Link>
                         <Link className="hover:text-orange-500"  href='/service/issue-and-transfer-of-shares'>Shares Transfer </Link>
                         <Link className="hover:text-orange-500"  href='/service/confirmation-statement-filing'>Confirmation Statement </Link>
                         <Link className="hover:text-orange-500"  href='/service/company-secretary-service'>Company Secreterial </Link>
