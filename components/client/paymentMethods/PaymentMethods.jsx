@@ -86,8 +86,8 @@ const PaymentMethods = () => {
     try {
       const {data, status} = await axios.get('/api/cards/list');
 
-    if(status === 200) {
       console.log(data)
+    if(status === 200 && data.cards) {
       setCards(data.cards)
     }
     } catch (error) {
@@ -204,7 +204,7 @@ const PaymentMethods = () => {
       <Stack spacing={2} justifyContent={"start"} alignItems={"start"}>
         
 
-
+      {cards.length === 0 && !isFetching && <Alert severity="info" color="error">No Cards Saved!</Alert>}
         {
           isFetching ? <Box sx={{ width: 350, }}>
           <Skeleton height={170} />
@@ -212,7 +212,7 @@ const PaymentMethods = () => {
           <Skeleton height={170} />
            
         </Box> : 
-cards.map((card) => {
+cards?.map((card) => {
 
   return <CardComponent key={card.id} deletCardHandler={() => setDialogue({openStatus: true, deleteId: card.id})} last4={card.last4} cardholderName={card.cardholderName} expMonth={card.expMonth} expYear={card.expYear} cardBrand={card.cardBrand} />
 

@@ -21,9 +21,10 @@ export async function POST(req) {
 
   // Access auth admin api
 
-  const { data: { user }, error: userError, } = await adminAuthClient.auth.admin.getUserById(customer_id);
-
+  
   const { data: orders, error: orderError } = await adminAuthClient .from("orders") .select() .eq("id", order_id);
+  
+  const { data: { user }, error: userError, } = await adminAuthClient.auth.admin.getUserById(orders[0].user_id);
 
   const { data: order_items, error: orderItemsError } = await adminAuthClient .from("order_items") .select() .eq("order_id", order_id);
 

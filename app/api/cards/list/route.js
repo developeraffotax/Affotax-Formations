@@ -20,7 +20,7 @@ export async function GET() {
   try {
     const supabase = await createClient();
 
-    const {data: {session:{user}}} = await supabase.auth.getSession();
+    const {data: {user}} = await supabase.auth.getUser()
 
     if (!user) {
       throw new Error("Failed to authenticate");
@@ -28,10 +28,21 @@ export async function GET() {
 
     const customerId = user.user_metadata?.account_holder?.square_customer_id;
 
+
+    if(!customerId) {
+      return new Response(JSON.stringify({ cards: [] }), {
+        status: 200,
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+    }
+    
+    
     const { result: { cards }, } = await cardsApi.listCards("", customerId);
 
 
-    console.log(cards)
+    // console.log(cards)
     return new Response(JSON.stringify({ cards: cards }), {
       status: 200,
       headers: {

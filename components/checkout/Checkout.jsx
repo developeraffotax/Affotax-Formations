@@ -22,7 +22,7 @@ const Checkout = () => {
       "locality": '',
       "town": '',
       "county": '',
-      "postcode": '',
+      "post_code": '',
       "country": ''
     })
 

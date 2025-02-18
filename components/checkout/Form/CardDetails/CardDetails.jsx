@@ -1,6 +1,6 @@
 "use client"
 
-import { Input, RadioGroup, Select, SelectItem } from "@heroui/react";
+import { Input, Radio, RadioGroup, Select, SelectItem } from "@heroui/react";
 import React, { useState } from "react";
 import { EyeFilledIcon, EyeSlashFilledIcon, MailIcon } from "../Icons";
 import { CustomRadio } from "./CustomRadio";
@@ -17,6 +17,7 @@ import Img9 from "@/public/checkout/9.png"
 import Cvv from "@/public/checkout/cvv.png"
 import Image from "next/image";
 import SquareForm from "./SquareFrom/SquareForm";
+import SavedCards from "./SavedCards";
 
 
 
@@ -78,10 +79,17 @@ const LOGOS = [
 
 
 
-const CardDetails = ({ register, errors, outerFormSubmitHandler}) => {
+const CardDetails = ({ register, errors, outerFormSubmitHandler, user}) => {
   //   const [isVisible, setIsVisible] = useState(false);
 
   // const toggleVisibility = () => setIsVisible(!isVisible);
+
+  const [paymentMethod, setPaymentMethod] = useState('new');
+
+    
+
+
+
 
   return (
     <div className="w-full flex flex-col justify-start items-start gap-4 p-4 border ">
@@ -111,16 +119,28 @@ const CardDetails = ({ register, errors, outerFormSubmitHandler}) => {
         
       </div>
 
-      {/* <div className="w-full ">
-      <Input className="max-w-sm font-poppins " endContent={ <MailIcon className="text-2xl text-default-400 pointer-events-none flex-shrink-0" /> } label="Email" isInvalid={false} labelPlacement="outside" placeholder="you@example.com" type="email" {...register("email", { required: { value: true, message: "Email is required!" }, pattern: { value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, message: "Please enter a valid email address!", }, })} />
-      {errors?.email && ( <p className="text-red-500 text-sm mt-1 font-poppins  px-2 py-2  "> {errors.email.message} </p> )}
-      </div> */}
+      {
+        user && <RadioGroup label="Select Payment Method" value={paymentMethod} onValueChange={setPaymentMethod}>
+        <Radio value="old">Use existing card</Radio>
+        <Radio value="new">Use a new card</Radio>
+        
+      </RadioGroup>
+      }
 
 
 
-      <div className="w-full ">
-          <SquareForm errors={errors} outerFormSubmitHandler={outerFormSubmitHandler}/>
-      </div>
+      {
+        paymentMethod === 'old' && <div className="w-full ">
+        <SavedCards outerFormSubmitHandler={outerFormSubmitHandler}/>
+    </div>
+      }
+
+
+      {
+        paymentMethod === 'new' && <div className="w-full ">
+        <SquareForm errors={errors} outerFormSubmitHandler={outerFormSubmitHandler}/>
+    </div>
+      }
 
 
       

@@ -16,6 +16,7 @@ import ReactDOM from "react-dom";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { UserContext } from "@/app/(user)/layout";
+import { countryToAlpha2 } from "country-to-iso";
 
 const Form = ({ selectedPackages, mainPkg, mainPkgPrice, tPriceWithoutTax, addressObj, setAddressObj, orderRef, company_name}) => {
   const [selected, setSelected] = useState("signup");
@@ -52,17 +53,48 @@ const Form = ({ selectedPackages, mainPkg, mainPkgPrice, tPriceWithoutTax, addre
     // -----------------------------------------------------FOR NEW USERS-----------------------------------------------------------------------
     if (!user) {
       //SIGNUP
-      const account_holder = {
-        forename: form.f_name,
-        surname: form.l_name,
-        phone_number: form.phone,
-        email: form.email,
-      };
-
-      const primary_address = addressObj;
-
+      
+      
       try {
         setIsLoading(true);
+        const token = localStorage.getItem("payment_id");
+
+
+        const response = await axios.post('/api/customer/create', {
+          emailAddress: form.email,
+          givenName: form.f_name
+        })
+  
+        // if(response.status !== 201 || !response?.data?.success) {
+        //   return setErrorMsg("Failed to create sq. customer!")
+        // }
+
+
+
+
+        
+
+
+
+
+        const account_holder = {
+          first_name: form.f_name,
+          last_name: form.l_name,
+          phone_number: form.phone,
+          // email: form.email,
+          square_customer_id: response?.data?.customer?.id,
+
+          gender: 'Male',
+          title: 'Mr',
+          dob: '',
+          middle_name: '',
+        };
+  
+        const primary_address = addressObj;
+
+        
+
+
         const { data: userData, error: userError } = await supabase.auth.signUp(
           {
             email: form.email,
@@ -70,6 +102,7 @@ const Form = ({ selectedPackages, mainPkg, mainPkgPrice, tPriceWithoutTax, addre
             options: {
               data: {
                 account_holder,
+                
                 primary_address,
               },
             },
@@ -82,6 +115,29 @@ const Form = ({ selectedPackages, mainPkg, mainPkgPrice, tPriceWithoutTax, addre
             userError.message || "Some error occured in creating user"
           );
         }
+
+
+
+        const {data, status} = await axios.post('/api/cards/create', {
+
+          sourceId: token,
+          // card: token.details.card,
+          
+          cardholderName: `${form.f_name} ${form.l_name}`,
+          billingAddress:{
+            // ...cardHolder,
+            postalCode: addressObj?.post_code,
+            fullName: `${form.f_name} ${form.l_name}`,
+            address:  form?.address,
+            locality: addressObj?.locality,
+            country: countryToAlpha2(addressObj?.country) ,
+          },
+        })
+
+         
+
+
+
 
         //ORDER CREATION
         const { data: orderData, error: orderError } = await supabase
@@ -138,9 +194,9 @@ const Form = ({ selectedPackages, mainPkg, mainPkgPrice, tPriceWithoutTax, addre
 
         console.log(form);
 
-        const token = localStorage.getItem("payment_id");
+        
         const res = await axios.post("/api/payments/create-payment", {
-          sourceId: token,
+          sourceId: data.card.id,  // save card id from square
           userId: userData.user.id,
           orderId: orderData[0].id,
 
@@ -358,6 +414,7 @@ const Form = ({ selectedPackages, mainPkg, mainPkgPrice, tPriceWithoutTax, addre
 
                 <div className="w-full   ">
                   <CardDetails
+                  user={user}
                     register={register}
                     errors={errors}
                     outerFormSubmitHandler={outerFormSubmitHandler}
@@ -387,6 +444,13 @@ const Form = ({ selectedPackages, mainPkg, mainPkgPrice, tPriceWithoutTax, addre
           </div>
         </div>
       )}
+
+
+
+      
+
+
+
 
       <ToastContainer />
     </>

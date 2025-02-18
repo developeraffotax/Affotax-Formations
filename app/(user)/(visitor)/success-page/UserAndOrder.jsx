@@ -99,7 +99,7 @@ const UserAndOrder = ({user, setUser, error, setError, orderRef, setOrderRef, se
             </h1>
   
             <p className="mb-8 text-lg text-gray-700">
-              Your transaction has been completed successfully, <span className=" text-cyan-500">{`${user?.user_metadata?.account_holder?.forename} ${user?.user_metadata?.account_holder?.surname}`  }.</span>Thank you for your
+              Your transaction has been completed successfully, <span className=" text-cyan-500">{`${user?.user_metadata?.account_holder?.first_name} ${user?.user_metadata?.account_holder?.last_name}`  }.</span>Thank you for your
               purchase! We are processing your order and will send you a
               confirmation email shortly.
             </p>

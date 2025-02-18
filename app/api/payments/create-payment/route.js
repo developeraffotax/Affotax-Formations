@@ -21,11 +21,16 @@ export async function POST(request) {
   try {
     const supabase = await createClient();
 
-    const session = await supabase.auth.getSession();
+    const {data:{session:{user}}} = await supabase.auth.getSession();
 
-    if (!session) {
+    if (!user) {
       throw new Error("Failed to authenticate");
     }
+
+
+    const customerId = user.user_metadata?.account_holder?.square_customer_id;
+
+    
 
     const totalAmout = (+amount) * 100;
     const { result } = await paymentsApi.createPayment({
@@ -36,7 +41,7 @@ export async function POST(request) {
         amount: +(totalAmout.toFixed(2)),
       },
       referenceId: orderId.toString(),  // actual order_id in the db
-      customerId: userId,
+      customerId: customerId,
 
       buyerEmailAddress: buyerEmailAddress
       

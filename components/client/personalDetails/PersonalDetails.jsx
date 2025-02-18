@@ -36,7 +36,7 @@ const PersonalDetails = () => {
       setValue("account_holder", {
         ...account_holder,
       });
-
+      // console.log(getValues())
       setValue("primary_address", primary_address);
 
 
@@ -53,7 +53,7 @@ const PersonalDetails = () => {
 
  // ---------------------------------------------------------------------SUBMIT HANDLER---------------------------------------------------------------------
   const formSubmitHandler = async (formData) => {
-    console.log(formData);
+    console.log(formData, 'INSIDE THE FORM SUBMIT HANDLER');
     const { account_holder, primary_address } = formData;
 
     const supabase = createClient();
@@ -67,7 +67,7 @@ const PersonalDetails = () => {
     });
 
     setIsLoading(false)
-
+    console.log(data, error)
     if(error) {
       return toast.error(error?.message || "Failed to update the user", {
         containerId: 'update_user'
@@ -116,7 +116,8 @@ const PersonalDetails = () => {
               control={control}
               name="account_holder.title"
               defaultValue={"Mr"}
-              rules={ {required: { value: true, message: "Required" }}}
+              
+              // rules={ {required: { value: true, message: "Required" }}}
               render={({ field: { onChange, onBlur, value, ref, name } }) => (
                 <Select sx={{ width: "300px" }}  variant="outlined"  size="small" onChange={onChange} value={value}  >
                   <MenuItem value={"Mr"}>Mr</MenuItem>
@@ -165,12 +166,12 @@ const PersonalDetails = () => {
               
                             control={control}
                             name="account_holder.gender"
-                            defaultValue={"Male"}
+                              defaultValue={"Male"}
                             // rules={ {required: { value: true, message: "Required" }}}
                             render={({ field: { onChange, onBlur, value, ref, name } }) => (
                               <>
-                              <Select   sx={{ width: "300px" }}  variant="outlined"  size="small" onChange={onChange} value={value}  >
-                                <MenuItem value={"Male"}>Male</MenuItem>
+                              <Select   sx={{ width: "300px" }}  variant="outlined"  size="small" onChange={onChange} value={value} >
+                                <MenuItem   value={"Male"}>Male</MenuItem>
                                 <MenuItem value={"Female"}>Female</MenuItem>
                                 
                               </Select>
@@ -265,7 +266,7 @@ const PersonalDetails = () => {
               control={control}
               name="primary_address.country"
               defaultValue={"United Kingdom"}
-              rules={ {required: { value: true, message: "Required" }}}
+              // rules={ {required: { value: true, message: "Required" }}}
               render={({ field: { onChange, onBlur, value, ref, name } }) => (
                 <Select sx={{ width: "300px" }}  variant="outlined"  size="small" onChange={onChange} value={value}  >
                     {
