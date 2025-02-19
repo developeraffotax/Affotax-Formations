@@ -149,13 +149,13 @@ const Login = () => {
 
 
   return (<>
-    <div className="min-h-screen bg-gray-100 text-gray-900 flex justify-center font-poppins ">
+    <div className="  bg-gray-100 text-gray-900 flex justify-center font-poppins ">
       <div className="max-w-screen-xl m-0 sm:m-10 bg-white shadow sm:rounded-lg flex justify-center flex-1">
-        <div className="lg:w-1/2 xl:w-5/12 p-6 sm:p-12">
-          <div>
+        <div className=" max-lg:w-full  lg:w-1/2 xl:w-5/12 p-6 sm:p-12 pb-16">
+          {/* <div>
             <Logo />
-          </div>
-          <div className="mt-6 flex flex-col items-center">
+          </div> */}
+          <div className="  flex flex-col items-center">
             <div className="w-full flex-1 mt-8">
               <div className="flex flex-col items-center">
                 <button onClick={googleBtnHandler} className="w-full max-w-xs   font-semibold  shadow-sm rounded-full py-3 bg-cyan-50 border-1 border-cyan-200 hover:bg-cyan-200 hover:border-transparent active:scale-95  text-gray-800 flex items-center justify-center gap-2  transition-all duration-300 ease-in-out focus:outline-none hover:shadow focus:shadow-sm focus:shadow-outline">
@@ -163,14 +163,14 @@ const Login = () => {
                 </button>
               </div>
 
-              <div className="my-12 border-b text-center">
+              <div className="my-8 border-b text-center">
                 <div className="leading-none px-2 inline-block text-sm text-gray-600 tracking-wide font-medium bg-white transform translate-y-1/2">
                   Or sign In with E-mail
                 </div>
               </div>
 
               <div className="mx-auto max-w-md  ">
-                <div className="w-full flex flex-col justify-start items-start gap-4 shadow-md rounded-xl    p-6 border-2 border-cyan-400  ">
+                <div className="w-full flex flex-col justify-start items-start gap-4 shadow-md rounded-xl    p-6 max-lg:p-4 border-2 border-cyan-400  ">
                   <div className="w-full bg-gray-100 px-4 py-3   ">
                     <h2 className="w-full text-2xl font-poppins text-cyan-500  ">
                       Login

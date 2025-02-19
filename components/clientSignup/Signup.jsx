@@ -25,11 +25,11 @@ const SignUp = () => {
   return (
     <>
       <div className="    text-gray-900 flex  justify-center font-poppins ">
-        <div className="max-w-screen-2xl m-0 sm:m-10 bg-white   sm:rounded-lg flex flex-row-reverse  justify-center flex-1">
-          <div className="lg:w-3/4 xl:w-3/4 p-6 sm:p-8">
-            <div>
+        <div className="max-w-screen-2xl m-0   bg-white   sm:rounded-lg flex flex-row-reverse  justify-center flex-1">
+          <div className="lg:w-3/4 xl:w-3/4 p-6 max-lg:p-0  ">
+            {/* <div>
               <Logo />
-            </div>
+            </div> */}
             <div className="mt-0 flex flex-col items-center ">
               <div className="w-full   ">
                 {/* <div className="flex flex-col items-center">
@@ -45,9 +45,9 @@ const SignUp = () => {
                 </div>
 
                 <div className="mx-auto max-w-2xl w-full ">
-                  <div className="w-full flex flex-col justify-start items-start gap-2 shadow-md rounded-xl    p-6 border-2 border-cyan-400  ">
+                  <div className="w-full flex flex-col justify-start items-start gap-0 shadow-md rounded-xl    p-6 max-lg:p-0 max-lg:border-none border-2 border-[#1565C0]  ">
                     <div className="w-full bg-gray-100 px-4 py-3   ">
-                      <h2 className="w-full text-2xl font-poppins text-center font-semibold text-cyan-500  ">
+                      <h2 className="w-full text-2xl font-poppins text-center font-semibold text-[#1565C0]  ">
                         Sign up
                       </h2>
                     </div>
