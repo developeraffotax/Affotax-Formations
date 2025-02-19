@@ -8,7 +8,7 @@ const FailDiv = ({ companyName,  onSubmitHandler, setCompanyName, isLoading, isI
     
 
   return (
-    <div className="w-[60%]  text-white pt-20 pb-20 max-xl:pb-12 max-w-2xl ">
+    <div className="w-[60%] max-lg:w-full text-white pt-20 pb-20 max-xl:pb-12 max-w-2xl ">
       <div className="flex flex-col items-center justify-center gap-4 mb-8 max-xl:mb-8   bg-white  backdrop-blur-md   rounded-xl shadow-md shadow-gray-800/50  py-8 px-16 font-Inter">
         <span className="bg-red-500 text-white  text-[60px] rounded-full p-2  ">
           <RxCross2 />

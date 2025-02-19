@@ -106,7 +106,7 @@ console.log()
      <section id="main-header" className=" max-xl:hidden w-full  fixed bg-slate-100 backdrop-blur-sm py-4  top-0 left-0 z-[999] transition-all duration-500 h-28 shadow-[0px_6px_6px_0px_rgba(0,_0,_0,_0.1)]" >
         <div className="w-full container mx-auto px-40 max-xl:px-8">
           <div className="w-full">
-            <div className="w-full flex flex-row justify-between items-center mb-4">
+            <div className="w-full flex flex-row justify-between items-center mb-2">
               <div className="cursor-pointer "> <Link href="/"><Logo /></Link> </div>
 
               <div className="flex justify-center items-center gap-3  ">
@@ -170,7 +170,7 @@ console.log()
 
           <div>
             {!user && <Link href={"/client-login"}> {" "} <button className="bg-primary px-4 py-2 rounded-lg text-white hover:bg-primary/90 transition-all ">  <span className="flex justify-start items-center gap-1 "> <MdOutlineLock /> <p className="">Login</p> </span> </button>{" "} </Link>}
-              {user && <div className="bg-primary px-4 py-2 rounded-lg text-white hover:bg-primary/90 transition-all ">  <span className="flex justify-start items-center gap-1 "> <UserDropdown /> </span> </div> }
+              {user && <div className="  rounded-lg text-white   ">  <span className="flex justify-start items-center gap-1 "> <UserDropdown /> </span> </div> }
           </div>
         </div>
 

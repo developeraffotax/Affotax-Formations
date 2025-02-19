@@ -51,6 +51,7 @@ const Hero = () => {
           progress: undefined,
           theme: "colored",
           transition: Bounce,
+          containerId: "homepage_toast"
         })
       }
       
@@ -76,6 +77,7 @@ const Hero = () => {
             progress: undefined,
             theme: "dark",
             transition: Flip,
+            containerId: "homepage_toast"
             });
         }
     } finally {
@@ -116,14 +118,14 @@ const Hero = () => {
 
   return (
     <section className="w-full  mesh  font-Inter relative max-xl:px-0 ">
-      <ToastContainer />
+      <ToastContainer containerId="homepage_toast"/>
       <div className="w-full overflow-hidden relative ">
         {/* <span className="w-[50%] max-xl:hidden   absolute -right-16 bottom-0"> {" "} <svg viewBox="0 0 827 498" fill="none" xmlns="http://www.w3.org/2000/svg" > {" "} <path d="M366.37 361.625C648.83 419.253 803.815 144.553 846 0V526H0C4.43117 447.197 83.9087 303.997 366.37 361.625Z" fill="#FC6600" />{" "} </svg>{" "} </span> */}
         <div className="container mx-auto w-full px-40 max-xl:px-8  ">
           <div className="w-full flex flex-row max-xl:flex-col gap-8  justify-between items-start">
             {
               (isCompanyNameAvailable && isTouched) ? <SuccessDiv   searchAgainBtnHandler={searchAgainBtnHandler} companyNameToShow={companyNameToShow}/> : (!isCompanyNameAvailable && isTouched) ? <FailDiv companyName={companyName} onSubmitHandler={onSubmitHandler} setCompanyName={setCompanyName} isLoading={isLoading} isInputEmpty={isInputEmpty} companyNameToShow={companyNameToShow}/> : 
-              <div className="text-white pt-20 pb-20 max-xl:pb-12 w-[60%] max-w-2xl">
+              <div className="text-white pt-20 pb-20 max-xl:pb-12 w-[60%] max-lg:w-full max-w-2xl">
               <div className="flex flex-col items-start justify-start gap-8 mb-16 max-xl:mb-8  ">
                 <h1 className="text-5xl font-semibold font-poppins"> UK Company Formation </h1>
 

@@ -63,14 +63,16 @@ import Link from "next/link";
               as="button"
               
               avatarProps={{
-                 className: 'bg-transparent',
+                className: 'bg-transparent  ',
                 isBordered: false,
-                icon: <LuCircleUserRound className="text-3xl -mr-2 text-gray-700 "/>,
+
+                  icon: <LuCircleUserRound className="text-3xl -mr-2 text-gray-700 "/>,
                
               }}
               className="transition-transform  "
               // description={user?.email}
-              name={"My Account"}
+              name={<p className="max-lg:hidden">My Account</p>}
+               
             />
           </DropdownTrigger>
 
