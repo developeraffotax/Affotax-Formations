@@ -132,9 +132,10 @@ const Login = () => {
 
     const supabase = createClient();
 
-    const {data, error} = await supabase.auth.signInWithOAuth({
+    const {data, error,} = await supabase.auth.signInWithOAuth({
       provider: 'google',
-     
+       
+
     })
 
 

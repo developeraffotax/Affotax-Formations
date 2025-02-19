@@ -14,12 +14,15 @@ const SavedCards = ({outerFormSubmitHandler}) => {
 
     const [value, setValue] = useState('');
 
+    const [errorMsg, setErrorMsg] = useState('');
+
     useEffect(() => {
         localStorage.setItem("payment_id", value);
     }, [value])
 
 
     const handleChange = (event) => {
+      setErrorMsg('')
       setValue(event.target.value);
     };
 
@@ -28,7 +31,19 @@ const SavedCards = ({outerFormSubmitHandler}) => {
 
     const [isLoading, setIsLoading] = useState(false)
 
-     
+      
+    const submit = () => {
+
+
+      if(!value) {
+        return setErrorMsg("Please select a card")
+      }
+
+
+      outerFormSubmitHandler()
+    }
+
+
 
   const fetchCards = async () => {
     setIsLoading(true)
@@ -85,6 +100,7 @@ const SavedCards = ({outerFormSubmitHandler}) => {
          cards.length === 0 && !isLoading && <Alert severity="info" color="error">No Cards Saved!</Alert>
     }
     <RadioGroup
+    
        sx={{
         width: '100%',
         maxWidth: 'none'
@@ -105,9 +121,12 @@ const SavedCards = ({outerFormSubmitHandler}) => {
 
 
     </RadioGroup>
+    {
+      errorMsg && <p className="w-full text-start text-red-500">{errorMsg}</p>
+    }
 
    {
-    cards.length !== 0 &&  <Button sx={{ backgroundColor: '#0FC3E2', width: '100%', paddingY: 1 }} onClick={outerFormSubmitHandler} variant="contained">Pay</Button>
+    cards.length !== 0 &&  <Button sx={{ backgroundColor: '#0FC3E2', width: '100%', paddingY: 1 }} onClick={submit} variant="contained">Pay</Button>
    }
   </FormControl>
 
