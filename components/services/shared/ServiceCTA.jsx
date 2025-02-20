@@ -4,8 +4,8 @@ import { FiPhoneCall } from "react-icons/fi";
 
 const ServiceCTA = () => {
   return (
-    <section className="w-full container mx-auto px-40 max-xl:px-0 font-Inter">
-      <div className="  bg-[#002B5B] py-8 space-y-3 text-white  ">
+    <section className="w-full container mx-auto px-40 max-lg:px-0 font-Inter ">
+      <div className=" max-lg:px-8 bg-[#002B5B] py-8 space-y-3 text-white  ">
         <h3 className="w-full text-center text-3xl  font-semibold ">
           You Can Also Order Via Phone
         </h3>

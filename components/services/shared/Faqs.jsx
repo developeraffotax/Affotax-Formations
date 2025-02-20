@@ -58,7 +58,7 @@ const Faqs = ({items}) => {
 
 
         <div className="w-full flex justify-center  ">
-        <h2 className=" text-black   rounded-3xl border  text-2xl font-poppins font-semibold    py-1 pr-4 shadow-md  ">
+        <h2 className=" text-black   rounded-3xl border  text-2xl max-lg:text-lg font-poppins font-semibold    py-1 pr-4 shadow-md  ">
           <span className="bg-[#002B5B]  text-white px-4 rounded-3xl py-1 shadow-md ">
         Frequently
         </span>

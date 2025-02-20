@@ -40,7 +40,7 @@ const ServicesMenuMobile = ({className, onClick, onCancel}) => {
     <Link onClick={onClick} href="/service/registered-office-address" className="flex justify-start items-start text-sm "><MdKeyboardArrowRight className="text-xl"/>London Registered Office - £35/yr</Link>
     <Link onClick={onClick} href="/service/director-service-address" className="flex justify-start items-start text-sm "><MdKeyboardArrowRight className="text-xl"/>London Service Address - £24/yr</Link>
     <Link onClick={onClick} href="/service/non-uk-resident-business-address" className="flex justify-start items-start text-sm "><MdKeyboardArrowRight className="text-xl"/>London Non-UK Resident Business Address - £75/yr</Link>
-    <Link onClick={onClick} href="/service/london-virtual-office-address" className="flex justify-start items-start text-sm "><MdKeyboardArrowRight className="text-xl"/> Annual Renewals</Link>
+    <Link onClick={onClick} href="/service/annual-renewals" className="flex justify-start items-start text-sm "><MdKeyboardArrowRight className="text-xl"/> Annual Renewals</Link>
     
 </ul>
 

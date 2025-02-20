@@ -180,7 +180,7 @@ console.log()
               <button onClick={hamBurgerHandlerClose} className={`hover:text-primary  w-full   pl-10  py-1`} > {" "} <MdOutlineKeyboardBackspace className="text-2xl" /> </button>
               <Link onClick={hamBurgerHandlerClose} href={"/"} className={`hover:text-primary  w-full   pl-10  py-1`} > {" "} Home{" "} </Link>
 
-              <Link onClick={hamBurgerHandlerClose} href={"/company-formation"} className={`hover:text-primary w-full   pl-10 py-1`} > {" "} Company Formation{" "} </Link>
+              <Link onClick={hamBurgerHandlerClose} href={"/packages/limited-company"} className={`hover:text-primary w-full   pl-10 py-1`} > {" "} Company Formation{" "} </Link>
               <li onClick={() => setIsMblMenuShow(true)}  className={`hover:text-primary w-full   pl-10 py-1 cursor-pointer flex justify-start items-center gap-1  `} > {" "} Business Services <RiArrowRightSLine className=" text-xl  "/>{" "} </li>
 
               {/* <Link onClick={hamBurgerHandlerClose} href={"/blogs"} className={`hover:text-primary w-full  pl-10  py-1`} > {" "} Blogs{" "} </Link> */}

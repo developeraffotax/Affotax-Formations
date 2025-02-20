@@ -22,11 +22,11 @@ const BankOption = () => {
 
 
   return (
-    <section className="w-full bg-gradient-to-bl from-gray-100 to-orange-50 pt-16 pb-16  font-Inter relative ">
+    <section className="w-full bg-gradient-to-bl from-gray-100 to-orange-50 pt-16 pb-16   font-Inter relative ">
 
        
 
-        <div className="w-full mx-auto container px-40 max-xl:px-8">
+        <div className="w-full mx-auto container px-40 max-lg:px-8">
 
 
             <h2 className="w-full max-xl:text-start text-center text-4xl font-semibold mb-8 text-black">Open a business bank account Online with one of our Partners</h2>
@@ -35,7 +35,7 @@ const BankOption = () => {
             </div>
 
 
-            <ul className="w-full p-8 flex flex-row max-xl:flex-col  justify-end items-center gap-8 ">
+            <ul className="w-full p-8 max-lg:px-0  flex flex-row max-xl:flex-col  justify-end items-center gap-8 ">
                 {
                     LIST.map((el) => {
                         return (

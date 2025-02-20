@@ -14,7 +14,7 @@ const RegisteredOfficeAddress = () => {
   return (
     <>
       <section className="w-full container mx-auto font-Inter px-40 max-xl:px-8 pb-0">
-        <div className="  max-xl:px-8 w-full flex justify-between items-center gap-8 border-b-2 border-gray-300  mb-6 pt-12 pb-2">
+        <div className="   w-full flex justify-between items-center gap-8 border-b-2 border-gray-300  mb-6 pt-12 max-lg:pt-4 pb-2">
           <h2 className="w-full text-4xl  py-2">
           Registered Office Address
           </h2>
@@ -129,7 +129,7 @@ const RegisteredOfficeAddress = () => {
       <div className="w-full py-16 ">
         <h3 className="w-full text-center text-3xl    font-poppins mb-12">Who Can Use a Registered Office Address Service?</h3>
 
-        <ul className="w-full flex justify-center  items-center gap-5 divide-x ">
+        <ul className="w-full flex justify-center  items-center gap-5 divide-x max-lg:flex-col max-lg:divide-x-0 max-lg:grid grid-cols-2   ">
 
           <li className="flex flex-col justify-center items-center gap-3 px-12  "> <span className="text-[5rem] text-orange-500 "><IoHomeOutline /></span> <h4 className="text-lg font-poppins  ">Home Businesses</h4> </li>
           <li className="flex flex-col justify-center items-center gap-3 px-12  "> <span className="text-[5rem] text-orange-500 "><PiHandshakeDuotone /></span> <h4 className="text-lg font-poppins  ">Sole Traders</h4> </li>

@@ -8,8 +8,8 @@ const ConfirmationStatement = () => {
   return (
     <>
       <section className="w-full container mx-auto font-Inter px-40 max-xl:px-8 pb-16">
-        <div className="  max-xl:px-8 w-full flex justify-between items-center gap-8 border-b-2 border-gray-300  mb-6 pt-12 pb-2">
-          <h2 className="w-full text-4xl  py-2">
+        <div className="    w-full flex justify-between items-center gap-8 border-b-2 border-gray-300  mb-6 pt-12 max-lg:pt-4 pb-2">
+          <h2 className="w-full text-4xl  py-2 ">
           Confirmation Statement Filing
           </h2>
         </div>
@@ -126,11 +126,11 @@ const ConfirmationStatement = () => {
               <h4 className="text-lg font-semibold mb-2 text-[#002B5B]  "> {" "} How Affotax Formations File Confirmation Statements </h4>
               <p className="text-gray-800 mb-2  "> Confirmation statement filing (previously known as annual return filing) is a mandatory annual requirement for all limited and LLP companies. An annual confirmation statement is a snapshot of the company on a given date each year, usually the incorporation date. We can file your annual confirmation statement at Companies House correctly, ensuring complete compliance for your UK company. </p>
               <p className="text-gray-800 mb-2  "> At Affotax Formations, we can handle the entire confirmation statement filing process on your behalf. We will: </p>
-              <ul className="list-none w-full grid grid-cols-4  gap-4 pt-5  ">
-                <li className=" flex flex-col justify-start items-center gap-4 p-6 border border-orange-500 text-center shadow-md shadow-black/10 "> <h5 className="font-semibold text-orange-400  text-xl  "> Step - 1 </h5> <p> Prepare your annual confirmation statement </p> </li>
-                <li className=" flex flex-col justify-start items-center gap-4 p-6 border border-orange-500 text-center shadow-md shadow-black/10 "> <h5 className="font-semibold text-orange-400  text-xl  "> Step - 2 </h5> <p>File your confirmation statement to Companies House</p> </li>
-                <li className=" flex flex-col justify-start items-center gap-4 p-6 border border-orange-500 text-center shadow-md shadow-black/10 "> <h5 className="font-semibold text-orange-400  text-xl  "> Step - 3 </h5> <p> Fill in your confirmation statement form </p> </li>
-                <li className=" flex flex-col justify-start items-center gap-4 p-6 border border-orange-500 text-center shadow-md shadow-black/10 "> <h5 className="font-semibold text-orange-400  text-xl  "> Step - 4 </h5> <p> Ensure your company’s confirmation statement is filed in accordance with all UK regulations </p> </li>
+              <ul className="list-none w-full grid grid-cols-4  gap-4 pt-5  max-lg:flex max-lg:flex-col ">
+                <li className=" flex flex-col justify-start items-center gap-4 p-6 border border-orange-500 text-center shadow-md shadow-black/10  "> <h5 className="font-semibold text-orange-400  text-xl  "> Step - 1 </h5> <p> Prepare your annual confirmation statement </p> </li>
+                <li className=" flex flex-col justify-start items-center gap-4 p-6 border border-orange-500 text-center shadow-md shadow-black/10  "> <h5 className="font-semibold text-orange-400  text-xl  "> Step - 2 </h5> <p>File your confirmation statement to Companies House</p> </li>
+                <li className=" flex flex-col justify-start items-center gap-4 p-6 border border-orange-500 text-center shadow-md shadow-black/10  "> <h5 className="font-semibold text-orange-400  text-xl  "> Step - 3 </h5> <p> Fill in your confirmation statement form </p> </li>
+                <li className=" flex flex-col justify-start items-center gap-4 p-6 border border-orange-500 text-center shadow-md shadow-black/10  "> <h5 className="font-semibold text-orange-400  text-xl  "> Step - 4 </h5> <p> Ensure your company’s confirmation statement is filed in accordance with all UK regulations </p> </li>
 
                 
               </ul>
@@ -140,7 +140,7 @@ const ConfirmationStatement = () => {
             
       </section>
 
-      <section className="pb-16">
+      <section className=" ">
       <ServiceCTA />
       </section>
 

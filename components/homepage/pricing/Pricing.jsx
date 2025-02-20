@@ -90,7 +90,7 @@ const Pricing = () => {
 
 
 
-        <div className="grid grid-cols-4 max-xl:grid-cols-1 gap-8 max-xl:px-12 ">
+        <div className="grid grid-cols-4 max-xl:grid-cols-1 gap-8 max-lg:px-8 ">
 
           {
               PRICING_ARRAY.map((price) => {

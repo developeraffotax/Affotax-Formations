@@ -135,11 +135,14 @@ const Contact = () => {
 
 
 
-        <section className="w-full py-12 ">
+        <section className="w-full py-12 max-lg:py-0 ">
        
-       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 ">
-         <div className="grid lg:grid-cols-2 grid-cols-1  ">
-             <div className="lg:mb-0 mb-10 ">
+       <div className="mx-auto max-w-7xl px-8 max-lg:px-0 ">
+         <div className="grid lg:grid-cols-2 grid-cols-1      ">
+
+
+
+             <div className="lg:mb-0 order-1 max-lg:order-2  ">
                  <div className="group w-full h-full  ">
                      <div className="relative h-full ">
                          <img src="https://pagedone.io/asset/uploads/1696488602.png" alt="ContactUs tailwind section" className="w-full h-full lg:rounded-l-2xl   bg-blend-multiply bg-secondary object-cover"/>
@@ -171,7 +174,7 @@ const Contact = () => {
                  </div>
              </div>
    
-             <div className="bg-gray-50 p-5 lg:p-11 lg:rounded-r-2xl ">
+             <div className="bg-gray-50 p-12    lg:rounded-r-2xl order-2 max-lg:order-1 ">
                  <h2 className="text-secondary font-manrope text-4xl font-semibold leading-10 mb-11">Send Us A Message</h2>
                  <div className="w-full ">
                    {inValidArr.includes('name') && <p className="ml-2 mb-1 text-sm text-red-500">Required</p>}

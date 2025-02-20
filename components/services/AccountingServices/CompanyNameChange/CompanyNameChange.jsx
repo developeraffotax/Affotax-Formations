@@ -13,8 +13,8 @@ import Faqs from "../../shared/Faqs";
 const CompanyNameChange = () => {
   return (
     <>
-      <section className="w-full container mx-auto font-Inter px-40 max-xl:px-8 pb-16">
-        <div className="  max-xl:px-8 w-full flex justify-between items-center gap-8 border-b-2 border-gray-300  mb-6 pt-12 pb-2">
+      <section className="w-full container mx-auto font-Inter px-40 max-xl:px-8 pb-16 max-lg:pb-0 ">
+        <div className="   w-full flex justify-between items-center gap-8 border-b-2 border-gray-300  mb-6 pt-12 max-lg:pt-4 pb-2">
           <h2 className="w-full text-4xl  py-2">
           Change Your Company Name 
            
@@ -124,7 +124,7 @@ const CompanyNameChange = () => {
 
 
 
-      <section className="w-full container mx-auto font-Inter px-40 max-xl:px-8 py-8  text-white">
+      <section className="w-full container mx-auto font-Inter px-40 max-lg:px-0 py-8  text-white">
           <div className="w-full grid grid-cols-1 gap-4 bg-[#002B5B] p-16 ">
 
               <div className="w-full flex flex-col justify-center items-center py-4 gap-4 ">
@@ -133,7 +133,7 @@ const CompanyNameChange = () => {
               </div>
 
 
-              <ul className="w-full grid grid-cols-2    justify-center py-4 gap-8">
+              <ul className="w-full grid grid-cols-2  max-lg:grid-cols-1  justify-center py-4 gap-8">
 
                   
 
@@ -178,7 +178,7 @@ const CompanyNameChange = () => {
           <h2 className="w-full font-bold text-5xl py-2 mb-12 text-center font-poppins bg-gradient-to-r from-yellow-500 via-red-500 to-pink-500 text-transparent bg-clip-text">Companies House Name Change Process</h2>
 
 
-          <ul className="w-full grid grid-cols-4 gap-5  ">
+          <ul className="w-full grid grid-cols-4 max-lg:grid-cols-1 gap-5  ">
 
 
             <li className="flex flex-col justify-start items-center gap-4 "> <div className="p-8 rounded-full bg-orange-500 text-white relative shadow-md shadow-black/20  "> <span className="text-[60px] drop-shadow-lg  "> <LuSearchCheck /> </span> <span className="absolute right-0 bottom-0 w-8 h-8 bg-white  backdrop-blur-md  border-orange-500 border-2 rounded-full flex justify-center items-center  text-[#002B5B] font-semibold     ">1</span> </div> <h4 className="text-lg text-center   "> Provide Your New Company Name </h4> <p className="text-sm text-gray-700  text-center"> As a director, or once a majority of your shareholders have agreed to the name change, you provide us with your new company name. </p> </li>
@@ -210,19 +210,19 @@ const CompanyNameChange = () => {
 
 
 
+    <hr/>
 
 
 
 
+      <section className="w-full container mx-auto font-Inter px-40 max-lg:px-0  py-8 max-lg:py-0 ">
 
-      <section className="w-full container mx-auto font-Inter px-40 max-xl:px-8 py-8  ">
-
-          <div className="w-full grid grid-cols-2 gap-12 p-8  ">
-
+          <div className="w-full grid grid-cols-2 max-lg:grid-cols-1 gap-12 p-8 max-lg:p-0   ">
 
 
 
-            <div>
+
+            <div className="max-lg:px-12">
                 <h2 className="text-lg mb-2 font-semibold  text-[#002B5B] ">Documents Required to Change Company Name</h2>
 
                 <p className="mb-2 ">There are several standard documents you will need to change your company’s name with Companies House.</p>
@@ -325,7 +325,7 @@ const CompanyNameChange = () => {
 
 
 
-      <section className="py-16">
+      <section className="">
         <ServiceCTA />
       </section>
 

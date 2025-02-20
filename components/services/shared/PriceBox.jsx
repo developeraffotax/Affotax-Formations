@@ -3,9 +3,9 @@
 import { useRouter } from "next/navigation";
 import React from "react";
 
-const PriceBox = ({title, content, includesList, price, serviceName}) => {
+const PriceBox = ({title, content, includesList = [], price, serviceName}) => {
 
-
+    console.log(includesList)
     const router = useRouter()
 
     const buyNowHandler = () => {
@@ -33,9 +33,11 @@ const PriceBox = ({title, content, includesList, price, serviceName}) => {
         <p className="w-full  text-black text-base font-Inter px-2">{content}</p>
 
 
-        <div className="w-full ">
-        <span className="     bg-gray-400 text-white font-poppins text-sm   rounded-lg  py-1 px-4 ">Package Includes: </span>
-        </div>
+        {
+            includesList?.length !== 0 && <div className="w-full ">
+            <span className="     bg-gray-400 text-white font-poppins text-sm   rounded-lg  py-1 px-4 ">Package Includes: </span>
+            </div>
+        }
         <ul className="w-full list-disc text-sm ml-5 pb-2">
 
             {

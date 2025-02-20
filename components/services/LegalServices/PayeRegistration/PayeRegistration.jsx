@@ -10,7 +10,7 @@ const PayeRegistration = () => {
   return (
     <>
       <section className="w-full container mx-auto font-Inter px-40 max-xl:px-8 pb-16">
-        <div className="  max-xl:px-8 w-full flex justify-between items-center gap-8 border-b-2 border-gray-300  mb-6 pt-12 pb-2">
+        <div className="   w-full flex justify-between items-center gap-8 border-b-2 border-gray-300  mb-6 pt-12 max-lg:pt-4 pb-2">
           <h2 className="w-full text-4xl  py-2">
           PAYE Registration
           </h2>
