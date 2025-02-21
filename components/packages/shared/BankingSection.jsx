@@ -31,7 +31,7 @@ const BankingSection = () => {
   return (
     <section className="w-full bg-cyan-800 ">
 
-        <div className="w-full container mx-auto  px-40 max-xl:px-8 py-24">
+        <div className="w-full container mx-auto  px-40 max-xl:px-8 py-24 max-lg:py-12 ">
 
 
 
@@ -42,7 +42,7 @@ const BankingSection = () => {
         </div>
 
 
-        <ul className="w-full grid grid-cols-3 gap-8   ">
+        <ul className="w-full grid grid-cols-3 max-lg:grid-cols-1  gap-8   ">
                 {
                     LIST.map((el) => {
                         return (

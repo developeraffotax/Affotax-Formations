@@ -6,6 +6,8 @@ import { IoCheckmark } from "react-icons/io5";
 import { RxCross2 } from "react-icons/rx";
 import Link from "next/link";
 import dynamic from 'next/dynamic'
+import MobilePackage from "./shared/MobilePackage";
+import { Badge } from "@heroui/react";
  
 const BuyNowBtn = dynamic(
   () => import('./BuyNowBtn'),
@@ -20,10 +22,9 @@ const BuyNowBtn = dynamic(
 const LimitedCompany = () => {
   return (
         
-
-
-<div className="w-full grid grid-cols-1  py-20  ">
-            <ul className="w-[50%] grid grid-cols-3 gap-0  border  shadow-md">
+<>
+<div className="w-full grid grid-cols-1  py-20  max-lg:hidden ">
+            <ul className="w-[50%] grid grid-cols-3  gap-0  border  shadow-md">
               <Link
                 href="/packages/limited-company"
                 className="flex  justify-center items-center py-3 border-r text-sm  hover:bg-orange-500  bg-orange-500 text-white    "
@@ -396,6 +397,120 @@ const LimitedCompany = () => {
               </li>
             </ul>
           </div>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <div className="w-full grid grid-cols-1  py-12   lg:hidden ">
+            <ul className="w-full grid grid-cols-1  gap-6     ">
+ 
+
+
+                <MobilePackage title={"Basic"} description={'A great choice if you want to reserve a company name for future use or form a dormant company.'} price={'49'} whatsIncludedArr={[ 'Limited Company', 'Digital Company Documents', 'Tax Consultation (30min)' ]} > <BuyNowBtn href={"/buy/packages/limited-company/basic-package"} pkg={"basic-package"} company={"limited-company"}/> </MobilePackage>
+
+
+
+                <MobilePackage title={"Standard"} description={'A great choice if you want to reserve a company name for future use or form a dormant company.'} price={'99'} whatsIncludedArr={[ 'Limited Company', 'Digital Company Documents', 'Tax Consultation (30min)', 'London Registered Address', 'London Service Address' ]} >  <BuyNowBtn href={"/buy/packages/limited-company/standard-package"} pkg={"standard-package"} company={"limited-company"}/> </MobilePackage>
+
+
+
+                <Badge classNames={{badge: 'px-2 py-1   top-0 right-[50%]   '}}  color="primary" content={<p><span className="line-through">£332</span> | 40% OFF</p>} placement="top-right" shape="rectangle"   >
+      
+                <MobilePackage title={"Premium"} description={'A great choice if you want to reserve a company name for future use or form a dormant company.'} price={'199'} whatsIncludedArr={[ 'Limited Company', 'Digital Company Documents', 'Tax Consultation (30min)', 'London Registered Address', 'London Service Address', 'London Trading Address', 'Confirmation Statement Service', 'PAYE Registration' ]} >  <BuyNowBtn href={"/buy/packages/limited-company/premium-package"} pkg={"premium-package"} company={"limited-company"}/> </MobilePackage>
+</Badge>
+
+
+
+
+
+
+
+                <Badge classNames={{badge: 'px-2 py-1   top-0 right-[50%]   '}}  color="primary" content={<p><span className="line-through">£799</span> | 50% OFF</p>} placement="top-right" shape="rectangle"   >
+      
+                <MobilePackage title={"All-Inclusive"} description={'A great choice if you want to reserve a company name for future use or form a dormant company.'} price={'399'} whatsIncludedArr={[ 'Limited Company', 'Digital Company Documents', 'Tax Consultation (30min)','London Registered Address', 'London Service Address', 'London Trading Address', 'Confirmation Statement Service', 'PAYE Registration', 'Full Company Secreterial Service (Worth £149)', 'Company Accounts (Worth £99)', 'Company Tax Return (Worth £249)'  ]} > <BuyNowBtn href={"/buy/packages/limited-company/all-inclusive-package"} pkg={"all-inclusive-package"} company={"limited-company"}/></MobilePackage>
+</Badge>
+
+
+
+
+
+
+
+
+            </ul>
+
+           
+          </div>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          </>
+
+
   );
 };
 

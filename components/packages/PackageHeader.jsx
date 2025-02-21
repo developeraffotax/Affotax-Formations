@@ -9,7 +9,7 @@ import { CiViewList } from "react-icons/ci";
 
 const PackageHeader = () => {
   return (
-    <section className="w-full grid   grid-cols-[2fr_1fr_2fr_1fr_2fr_1fr_2fr] py-12    ">
+    <section className="w-full grid   grid-cols-[2fr_1fr_2fr_1fr_2fr_1fr_2fr] py-12  max-lg:hidden  ">
 
 
       <div className=" flex flex-col justify-center items-center gap-4 text-cyan-500   border-b-2 pb-2 border-cyan-500    "> 

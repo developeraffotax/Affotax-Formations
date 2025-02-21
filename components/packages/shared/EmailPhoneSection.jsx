@@ -11,8 +11,8 @@ import Call2 from'@/public/call3.png';
 const EmailPhoneSection = () => {
   return (
     <div className="w-full bg-transparent    ">
-    <div className="w-full mx-auto container py-24 px-40 max-xl:px-0 max-xl:py-0   ">
-        <div className="w-full relative isolate overflow-hidden bg-slate-900 px-6 pt-16 shadow-lg shadow-black/40  sm:rounded-3xl sm:px-16 md:pt-24 lg:flex-row flex-col gap-8  flex items-center justify-between  lg:gap-x-20 lg:px-24 lg:pt-0">
+    <div className="w-full mx-auto container py-24 px-40 max-lg:px-0 max-lg:py-0   ">
+        <div className="w-full relative isolate overflow-hidden bg-slate-900 px-6 pt-16 max-lg:pb-16 shadow-lg shadow-black/40  sm:rounded-3xl sm:px-16 md:pt-24 lg:flex-row flex-col gap-8  flex items-center justify-between  lg:gap-x-20 lg:px-24 lg:pt-0">
             <svg viewBox="0 0 1024 1024" aria-hidden="true" className="absolute left-1/2 top-1/2 -z-10 h-[64rem] w-[64rem] -translate-y-1/2 [mask-image:radial-gradient(closest-side,white,transparent)] sm:left-full sm:-ml-80 lg:left-1/2 lg:ml-0 lg:-translate-x-1/2 lg:translate-y-0" > <circle r={512} cx={512} cy={512} fill="url(#purple-blue-gradient)" fillOpacity="0.7" /> <defs> <radialGradient id="purple-blue-gradient"> <stop stopColor="#6A5ACD" /> <stop offset={1} stopColor="#00BFFF" /> </radialGradient> </defs> </svg>
 
             <div className="mx-auto max-w-lg text-center max-xl:text-start  lg:mx-0 lg:flex-auto lg:py-12 lg:text-left  lg:w-[50%]" >
@@ -50,7 +50,7 @@ const EmailPhoneSection = () => {
                 </div>
             </div>
 
-            <div className="relative  lg:w-[50%]  w-full max-w-[380px] ">
+            <div className="relative  lg:w-[50%]   w-full max-w-[380px] ">
                 
 
                 <div>

@@ -6,6 +6,8 @@ import { IoCheckmark } from "react-icons/io5";
 import { RxCross2 } from "react-icons/rx";
 import Link from "next/link";
 import dynamic from 'next/dynamic'
+import MobilePackage from "./shared/MobilePackage";
+import { Badge } from "@heroui/react";
  
 const BuyNowBtn = dynamic(
   () => import('./BuyNowBtn'),
@@ -26,7 +28,7 @@ const Llp = () => {
 
 
 
-<div className="w-full grid grid-cols-1  py-20  ">
+<div className="w-full grid grid-cols-1  py-20   max-lg:hidden">
             <ul className="w-[50%] grid grid-cols-3 gap-0  border  shadow-md">
               <Link
                 href="/packages/limited-company"
@@ -59,7 +61,7 @@ const Llp = () => {
               </li>
 
               <li className="flex flex-col justify-center items-center py-2 px-2 border-r text-lg  relative    ">
-                <h3>Standard</h3> <span className="font-semibold text-2xl text-orange-500">£99</span><span className="text-xs text-gray-700 text-center ">+ £50 Govt. Fee</span>
+                <h3>Standard</h3> <span className="font-semibold text-2xl text-orange-500">£199</span><span className="text-xs text-gray-700 text-center ">+ £50 Govt. Fee</span>
               </li>
               <li className="flex flex-col justify-center items-center py-2 px-2  border-r text-lg relative">
                 {" "}
@@ -344,6 +346,90 @@ const Llp = () => {
                 
               </li> */}
             </ul>
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+          <div className="w-full grid grid-cols-1  py-12   lg:hidden ">
+            <ul className="w-full grid grid-cols-1  gap-6     ">
+ 
+
+
+
+
+
+                <MobilePackage title={"Standard"} description={'A great choice if you want to reserve a company name for future use or form a dormant company.'} price={'199'} whatsIncludedArr={[ 'Limited Liability Company', 'Digital Memorandum and Articles of Association', 'Digital (Word) Draft LLP Agreement', 'Tax Consultation (30min)', 'London Registered Address', 'London Service Address', 'London Trading Address', 'Confirmation Statement Service' ]} ><BuyNowBtn href={"/buy/packages/llp/standard-package"}  pkg={"standard-package"} company={"llp"}/>
+                </MobilePackage>
+
+
+
+
+                  
+
+    <Badge classNames={{badge: 'px-2 py-1   top-0 right-[50%]   '}}  color="primary" content={<p><span className="line-through">£999</span> | 50% OFF</p>} placement="top-right" shape="rectangle"   >
+      
+                <MobilePackage title={"Premium"} description={'A great choice if you want to reserve a company name for future use or form a dormant company.'} price={'499'} whatsIncludedArr={[ 'Limited Liability Company', 'Digital Memorandum and Articles of Association', 'Digital (Word) Draft LLP Agreement', 'Tax Consultation (30min)', 'London Registered Address', 'London Service Address', 'London Trading Address', 'Confirmation Statement Service', 'Full LLP Secreterial Service (Worth £149)', 'Annual LLP Accounts filing (Worth £399)' ]} >    <BuyNowBtn href={"/buy/packages/llp/premium-package"}  pkg={"premium-package"} company={"llp"}/></MobilePackage>
+</Badge>
+
+
+
+
+
+
+
+
+            </ul>
+
+           
           </div>
     </>
   );

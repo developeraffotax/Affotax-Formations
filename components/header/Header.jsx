@@ -16,6 +16,8 @@ import ServicesMenuMobile from "./ServicesMenuMobile";
 import { RiArrowRightSLine } from "react-icons/ri";
 import UserDropdown from "./UserDropdown";
 import { UserContext } from "@/app/(user)/layout";
+import PackagesMenuMobile from "./PackagesMenuMobile";
+import ListIcon from "./ListIcon";
  
  
 
@@ -47,6 +49,8 @@ const Header = () => {
 
   const [isMblMenuShow, setIsMblMenuShow] = useState(false);
 
+ 
+
 
 
 
@@ -60,6 +64,10 @@ const Header = () => {
 
   const servicesMenuClassesMbl = ['fixed',  'bg-white',  'transition-all', 'w-[70%]',  'z-[9999]', '-translate-x-0', 'top-0', 'left-0', 'h-[100vh]', 'overflow-y-auto'];
   const servicesMenuClasses2Mbl = ['fixed',  'bg-white',  'transition-all', 'w-[70%]',  'z-[9999]', '-translate-x-[9999px]', 'top-0', 'left-0', 'h-[100vh]', 'overflow-y-auto'];
+
+
+
+  
 
 
   const onClickHandler = () => {
@@ -180,7 +188,27 @@ console.log()
               <button onClick={hamBurgerHandlerClose} className={`hover:text-primary  w-full   pl-10  py-1`} > {" "} <MdOutlineKeyboardBackspace className="text-2xl" /> </button>
               <Link onClick={hamBurgerHandlerClose} href={"/"} className={`hover:text-primary  w-full   pl-10  py-1`} > {" "} Home{" "} </Link>
 
-              <Link onClick={hamBurgerHandlerClose} href={"/packages/limited-company"} className={`hover:text-primary w-full   pl-10 py-1`} > {" "} Company Formation{" "} </Link>
+              <li   className={`hover:text-primary w-full   pl-10 py-1`} > {" "} {" "}
+
+
+
+                  <span className="  text-start    py-1     ">Company Formation</span>
+
+                  <ul className="w-full flex flex-col justify-start items-start gap-2 mt-2 ml-0">
+                  
+                     <Link onClick={hamBurgerHandlerClose} href={"/packages/limited-company"} className="flex  text-blue-500  underline  justify-start items-center text-sm  "> <RiArrowRightSLine className=" text-xl  "/>  Limited Company <ListIcon /> </Link>
+                     <Link onClick={hamBurgerHandlerClose} href={"/packages/non-residents"} className="flex  text-blue-500  underline  justify-start items-center text-sm  "> <RiArrowRightSLine className=" text-xl  "/> Non-Residents<ListIcon /> </Link>
+                     <Link onClick={hamBurgerHandlerClose} href={"/packages/llp"} className="flex  text-blue-500  underline  justify-start items-center text-sm  "> <RiArrowRightSLine className=" text-xl  "/> Limited Liability Partnership - LLP<ListIcon /> </Link>
+
+                  </ul>
+              
+              
+              
+              
+              
+               </li>
+
+              {/* <li onClick={() => setIsMblMenuShow(true)}  className={`hover:text-primary w-full   pl-10 py-1 cursor-pointer flex justify-start items-center gap-1  `} > {" "}  Company Formation<RiArrowRightSLine className=" text-xl  "/>{" "} </li> */}
               <li onClick={() => setIsMblMenuShow(true)}  className={`hover:text-primary w-full   pl-10 py-1 cursor-pointer flex justify-start items-center gap-1  `} > {" "} Business Services <RiArrowRightSLine className=" text-xl  "/>{" "} </li>
 
               {/* <Link onClick={hamBurgerHandlerClose} href={"/blogs"} className={`hover:text-primary w-full  pl-10  py-1`} > {" "} Blogs{" "} </Link> */}
@@ -235,6 +263,8 @@ console.log()
         <div onClick={() => {hamBurgerHandlerClose(); setIsMblMenuShow(false);}} ref={backdropRef} className="fixed w-[100vw]  h-[100vh] bg-black/25 backdrop-blur-sm z-[7777] hidden top-0 left-0" ></div>
 
         <ServicesMenuMobile onClick={() => {setIsMblMenuShow(false); hamBurgerHandlerClose()} } onCancel={() => setIsMblMenuShow(false)}  className={isMblMenuShow ? servicesMenuClassesMbl.join(' ') : servicesMenuClasses2Mbl.join(' ')}/>
+
+        {/* <PackagesMenuMobile onClick={() => {setIsMblMenuShow(false); hamBurgerHandlerClose()} } onCancel={() => setIsMblMenuShow(false)}  className={isMblMenuShow ? servicesMenuClassesMbl.join(' ') : servicesMenuClasses2Mbl.join(' ')}/> */}
 
       </section>
     </>
