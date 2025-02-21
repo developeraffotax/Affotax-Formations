@@ -456,21 +456,23 @@ const LimitedCompany = () => {
 
 
           <div className="w-full grid grid-cols-1  py-12   lg:hidden ">
+
             <ul className="w-full grid grid-cols-1  gap-6     ">
  
+            <h3 className="text-xl w-full text-center font-poppins ">Limited Company Packages</h3>
 
 
                 <MobilePackage title={"Basic"} description={'A great choice if you want to reserve a company name for future use or form a dormant company.'} price={'49'} whatsIncludedArr={[ 'Limited Company', 'Digital Company Documents', 'Tax Consultation (30min)' ]} > <BuyNowBtn href={"/buy/packages/limited-company/basic-package"} pkg={"basic-package"} company={"limited-company"}/> </MobilePackage>
 
 
 
-                <MobilePackage title={"Standard"} description={'A great choice if you want to reserve a company name for future use or form a dormant company.'} price={'99'} whatsIncludedArr={[ 'Limited Company', 'Digital Company Documents', 'Tax Consultation (30min)', 'London Registered Address', 'London Service Address' ]} >  <BuyNowBtn href={"/buy/packages/limited-company/standard-package"} pkg={"standard-package"} company={"limited-company"}/> </MobilePackage>
+                <MobilePackage title={"Standard"} description={'A great choice if you want to reserve a company name for future use or form a dormant company. Includes everything in Basic plus London Registered Address, London Service Address. '} price={'99'} whatsIncludedArr={[ 'Limited Company', 'Digital Company Documents', 'Tax Consultation (30min)', 'London Registered Address', 'London Service Address' ]} >  <BuyNowBtn href={"/buy/packages/limited-company/standard-package"} pkg={"standard-package"} company={"limited-company"}/> </MobilePackage>
 
 
 
                 <Badge classNames={{badge: 'px-2 py-1   top-0 right-[50%]   '}}  color="primary" content={<p><span className="line-through">£332</span> | 40% OFF</p>} placement="top-right" shape="rectangle"   >
       
-                <MobilePackage title={"Premium"} description={'A great choice if you want to reserve a company name for future use or form a dormant company.'} price={'199'} whatsIncludedArr={[ 'Limited Company', 'Digital Company Documents', 'Tax Consultation (30min)', 'London Registered Address', 'London Service Address', 'London Trading Address', 'Confirmation Statement Service', 'PAYE Registration' ]} >  <BuyNowBtn href={"/buy/packages/limited-company/premium-package"} pkg={"premium-package"} company={"limited-company"}/> </MobilePackage>
+                <MobilePackage title={"Premium"} description={'A limited company, providing printed documents and a prestige registered office address. Includes everything in Standard Package plus London Trading Address, Confirmation Statement Service, PAYE Registration.'} price={'199'} whatsIncludedArr={[ 'Limited Company', 'Digital Company Documents', 'Tax Consultation (30min)', 'London Registered Address', 'London Service Address', 'London Trading Address', 'Confirmation Statement Service', 'PAYE Registration' ]} >  <BuyNowBtn href={"/buy/packages/limited-company/premium-package"} pkg={"premium-package"} company={"limited-company"}/> </MobilePackage>
 </Badge>
 
 
@@ -481,7 +483,7 @@ const LimitedCompany = () => {
 
                 <Badge classNames={{badge: 'px-2 py-1   top-0 right-[50%]   '}}  color="primary" content={<p><span className="line-through">£799</span> | 50% OFF</p>} placement="top-right" shape="rectangle"   >
       
-                <MobilePackage title={"All-Inclusive"} description={'A great choice if you want to reserve a company name for future use or form a dormant company.'} price={'399'} whatsIncludedArr={[ 'Limited Company', 'Digital Company Documents', 'Tax Consultation (30min)','London Registered Address', 'London Service Address', 'London Trading Address', 'Confirmation Statement Service', 'PAYE Registration', 'Full Company Secreterial Service (Worth £149)', 'Company Accounts (Worth £99)', 'Company Tax Return (Worth £249)'  ]} > <BuyNowBtn href={"/buy/packages/limited-company/all-inclusive-package"} pkg={"all-inclusive-package"} company={"limited-company"}/></MobilePackage>
+                <MobilePackage title={"All-Inclusive"} description={'Our premier package offering everything you need to start a new business, including our Full Company Secretary Service. Includes everything in Premium Package plus Full Company Secreterial Service (Worth £149), Company Accounts (Worth £99), Company Tax Return (Worth £249).'} price={'399'} whatsIncludedArr={[ 'Limited Company', 'Digital Company Documents', 'Tax Consultation (30min)','London Registered Address', 'London Service Address', 'London Trading Address', 'Confirmation Statement Service', 'PAYE Registration', 'Full Company Secreterial Service (Worth £149)', 'Company Accounts (Worth £99)', 'Company Tax Return (Worth £249)'  ]} > <BuyNowBtn href={"/buy/packages/limited-company/all-inclusive-package"} pkg={"all-inclusive-package"} company={"limited-company"}/></MobilePackage>
 </Badge>
 
 

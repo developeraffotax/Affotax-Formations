@@ -11,7 +11,7 @@ const BuyNowBtn = ({ href, company,  pkg }) => {
 
   return (
     <>
-      <Link className="w-full" href={!localStorage?.getItem('company_name') ? `/search-company-name?company=${company}&package=${pkg}` : href}>
+      <Link className="max-lg:w-full" href={!localStorage?.getItem('company_name') ? `/search-company-name?company=${company}&package=${pkg}` : href}>
         <button className="w-full bg-orange-500 shadow-sm shadow-black/30  text-white px-4 py-2 rounded-lg hover:bg-cyan-500 hover:scale-105 active:scale-95 transition-all  ">
           BUY NOW
         </button>

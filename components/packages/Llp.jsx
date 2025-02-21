@@ -400,14 +400,17 @@ const Llp = () => {
 
           
           <div className="w-full grid grid-cols-1  py-12   lg:hidden ">
+
             <ul className="w-full grid grid-cols-1  gap-6     ">
+
+          <h3 className="text-xl w-full text-center font-poppins ">Limited Liabality Partnership - LLP Packages</h3>
  
 
 
 
 
 
-                <MobilePackage title={"Standard"} description={'A great choice if you want to reserve a company name for future use or form a dormant company.'} price={'199'} whatsIncludedArr={[ 'Limited Liability Company', 'Digital Memorandum and Articles of Association', 'Digital (Word) Draft LLP Agreement', 'Tax Consultation (30min)', 'London Registered Address', 'London Service Address', 'London Trading Address', 'Confirmation Statement Service' ]} ><BuyNowBtn href={"/buy/packages/llp/standard-package"}  pkg={"standard-package"} company={"llp"}/>
+                <MobilePackage title={"Standard"} description={`Our limited liability partnership formation package, is ideal for any type of profession that would normally operate as a traditional partnership, but whose members require limited liability.`} price={'199'} whatsIncludedArr={[ 'Limited Liability Company', 'Digital Memorandum and Articles of Association', 'Digital (Word) Draft LLP Agreement', 'Tax Consultation (30min)', 'London Registered Address', 'London Service Address', 'London Trading Address', 'Confirmation Statement Service' ]} ><BuyNowBtn href={"/buy/packages/llp/standard-package"}  pkg={"standard-package"} company={"llp"}/>
                 </MobilePackage>
 
 
@@ -417,7 +420,7 @@ const Llp = () => {
 
     <Badge classNames={{badge: 'px-2 py-1   top-0 right-[50%]   '}}  color="primary" content={<p><span className="line-through">£999</span> | 50% OFF</p>} placement="top-right" shape="rectangle"   >
       
-                <MobilePackage title={"Premium"} description={'A great choice if you want to reserve a company name for future use or form a dormant company.'} price={'499'} whatsIncludedArr={[ 'Limited Liability Company', 'Digital Memorandum and Articles of Association', 'Digital (Word) Draft LLP Agreement', 'Tax Consultation (30min)', 'London Registered Address', 'London Service Address', 'London Trading Address', 'Confirmation Statement Service', 'Full LLP Secreterial Service (Worth £149)', 'Annual LLP Accounts filing (Worth £399)' ]} >    <BuyNowBtn href={"/buy/packages/llp/premium-package"}  pkg={"premium-package"} company={"llp"}/></MobilePackage>
+                <MobilePackage title={"Premium"} description={`Our limited liability partnership formation package, is ideal for any type of profession that would normally operate as a traditional partnership, but whose members require limited liability. Includes everything in Standard Package plus Full LLP Secreterial Service (Worth £149), Annual LLP Accounts filing (Worth £399).`} price={'499'} whatsIncludedArr={[ 'Limited Liability Company', 'Digital Memorandum and Articles of Association', 'Digital (Word) Draft LLP Agreement', 'Tax Consultation (30min)', 'London Registered Address', 'London Service Address', 'London Trading Address', 'Confirmation Statement Service', 'Full LLP Secreterial Service (Worth £149)', 'Annual LLP Accounts filing (Worth £399)' ]} >    <BuyNowBtn href={"/buy/packages/llp/premium-package"}  pkg={"premium-package"} company={"llp"}/></MobilePackage>
 </Badge>
 
 
