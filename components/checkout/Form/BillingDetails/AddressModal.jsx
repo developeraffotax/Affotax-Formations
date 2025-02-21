@@ -31,12 +31,13 @@ const AddressModal = ({
       <Button onPress={onOpen} className="bg-cyan-400 text-white ">
         Enter Address
       </Button>
-<div className="z-[9999] fixed top-0  ">
+<div className="z-[9999] fixed top-0   ">
 
   
 <Modal backdrop="blur"
 
         classNames={{
+          
           wrapper: "z-[9999]",
           backdrop: "bg-gradient-to-b from-zinc-900 to-cyan-600/40 backdrop-opacity-20  z-[8888]",
         }} isDismissable={false}   ref={targetRef} isOpen={isOpen} onOpenChange={onOpenChange}>

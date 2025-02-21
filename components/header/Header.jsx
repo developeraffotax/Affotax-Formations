@@ -196,9 +196,9 @@ console.log()
 
                   <ul className="w-full flex flex-col justify-start items-start gap-2 mt-2 ml-0">
                   
-                     <Link onClick={hamBurgerHandlerClose} href={"/packages/limited-company"} className="flex  text-blue-500  underline  justify-start items-center text-sm  "> <RiArrowRightSLine className=" text-xl  "/>  Limited Company <ListIcon /> </Link>
-                     <Link onClick={hamBurgerHandlerClose} href={"/packages/non-residents"} className="flex  text-blue-500  underline  justify-start items-center text-sm  "> <RiArrowRightSLine className=" text-xl  "/> Non-Residents<ListIcon /> </Link>
-                     <Link onClick={hamBurgerHandlerClose} href={"/packages/llp"} className="flex  text-blue-500  underline  justify-start items-center text-sm  "> <RiArrowRightSLine className=" text-xl  "/> Limited Liability Partnership - LLP<ListIcon /> </Link>
+                     <Link onClick={hamBurgerHandlerClose} href={"/packages/limited-company"} className="flex  text-blue-500  underline  justify-start items-center text-sm  "> <RiArrowRightSLine className=" text-xl  "/>  Limited Company  </Link>
+                     <Link onClick={hamBurgerHandlerClose} href={"/packages/non-residents"} className="flex  text-blue-500  underline  justify-start items-center text-sm  "> <RiArrowRightSLine className=" text-xl  "/> Non-Residents </Link>
+                     <Link onClick={hamBurgerHandlerClose} href={"/packages/llp"} className="flex  text-blue-500  underline  justify-start items-center text-sm  "> <RiArrowRightSLine className=" text-xl  "/> Limited Liability Partnership - LLP </Link>
 
                   </ul>
               
@@ -249,7 +249,7 @@ console.log()
 
 
             <ul className="flex flex-col justify-center items-start gap-2 pl-10">
-              <Link href={"/contact-us"}> {" "} <button className="bg-primary px-4 py-2 rounded-lg text-white hover:bg-primary/90 transition-all "> {" "} Contact Us{" "} </button>{" "} </Link>
+              <Link onClick={hamBurgerHandlerClose} href={"/contact-us"}> {" "} <button className="bg-primary px-4 py-2 rounded-lg text-white hover:bg-primary/90 transition-all "> {" "} Contact Us{" "} </button>{" "} </Link>
               <li className=" hover:text-primary text-sm  ">
                 <a href="tel:+0208 144 6811"> <FaPhone className="inline-block mr-2   " /> <span>0208 144 6811</span>{" "} </a>
               </li>
