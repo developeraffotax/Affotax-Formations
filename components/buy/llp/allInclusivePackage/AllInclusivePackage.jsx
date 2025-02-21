@@ -208,15 +208,15 @@ const fromBasketToRecHandler = (id) => {
   return (
     <>
     
-   <div className="w-full container mx-auto px-40 max-xl:px-8">
+   <div className="w-full container mx-auto px-40 max-lg:hidden">
    <PackageHeader />
    </div>
     
-    <section className="w-full container mx-auto px-40 max-xl:px-8 flex flex-row justify-between items-start gap-12 pt-2 pb-16 " >
+    <section className="w-full container mx-auto px-40 max-xl:px-8 flex flex-row max-lg:flex-col-reverse justify-between items-start gap-12 pt-2 pb-16 " >
 
 
 
-      <div className="w-[60%] flex flex-col justify-start items-start gap-2 " >
+      <div className="w-[60%] max-lg:w-full flex flex-col justify-start items-start gap-2 " >
         <h2 className="w-full text-2xl font-poppins border-b py-1  ">Customers also bought: </h2>
         <div className="p-4 bg-orange-100 text-orange-700 flex justify-start items-start gap-2 font-poppins">
           <span className="text-3xl  mt-1 "> <RiInformation2Line /></span>
@@ -229,7 +229,7 @@ const fromBasketToRecHandler = (id) => {
 
 
 
-      <div className="w-[40%] flex flex-col justify-start items-start gap-2  ">
+      <div className="w-[40%] max-lg:w-full flex flex-col justify-start items-start gap-2  ">
 
           {
           storedValue &&

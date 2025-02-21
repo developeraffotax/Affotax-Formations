@@ -103,22 +103,22 @@ const Checkout = () => {
 
   return (
     <>
-    <div className="w-full container mx-auto px-40 max-xl:px-8">
+    <div className="w-full container mx-auto px-40 max-xl:px-8 max-lg:hidden">
    <PackageHeader />
    </div>
    
    
-   <section className="w-full container mx-auto px-40 max-xl:px-8 flex flex-row justify-between items-start gap-12 pt-2 pb-16 " >
+   <section className="w-full container mx-auto px-40 max-xl:px-8 flex flex-row max-lg:flex-col-reverse  justify-between items-start gap-12 pt-2 pb-16 " >
 
 
-   <div className="w-[60%] flex flex-col justify-start items-start gap-2 " >
+   <div className="w-[60%] max-lg:w-full flex flex-col justify-start items-start gap-2 " >
         <Form company_name={storedValue} selectedPackages={selectedPackages} mainPkg={mainPkg} mainPkgPrice={mainPkgPrice} tPriceWithoutTax={tPriceWithoutTax} addressObj={addressObj} setAddressObj={setAddressObj} orderRef={orderRef}/>
       </div>
 
 
 
 
-      <div className="w-[40%] flex flex-col justify-start items-start gap-2 " >
+      <div className="w-[40%] max-lg:w-full flex flex-col justify-start items-start gap-2 " >
         {
                   storedValue &&
                   <div className="w-full flex flex-row justify-start items-center gap-4 ">

@@ -17,11 +17,11 @@ const LayoutHOC = ({children, companyName}) => {
 
           {
             companyName ? <div className="w-full flex  gap-2 justify-center items-center pt-8 max-lg:text-base  ">
-            <span className="text-[40px] text-cyan-500 max-lg:text-base">
+            <span className="text-[40px] text-orange-500 max-lg:text-base">
                 <FaRegCheckCircle className=" "/>
             </span>
 
-            <h3 className="bg-gradient-to-r text-cyan-500  font-poppins text-2xl  font-semibold max-lg:text-sm max-lg:font-normal ">Your New Company Name: {companyName} </h3>
+            <h3 className="bg-gradient-to-r text-orange-500  font-poppins text-2xl  font-semibold max-lg:text-sm max-lg:font-normal ">Your New Company Name: {companyName} </h3>
           </div> : null
           }
 
