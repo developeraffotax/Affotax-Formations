@@ -134,7 +134,7 @@ console.log(companyInfo, )
 
     share_currency: 'GBP',
 
-    num_of_share_holders: 1,
+    num_of_share_holders: "1",  
     
     num_of_shares: 1,
     value_per_share: 1,
@@ -335,7 +335,7 @@ const { user, setUser } = useContext(UserContext);
           const shareholders_stats = {
             share_currency: shareholders.share_currency,
 
-            num_of_share_holders: shareholders.num_of_share_holders,
+            num_of_share_holders: +(shareholders.num_of_share_holders),
             
             num_of_shares: shareholders.num_of_shares,
             value_per_share: shareholders.value_per_share,
@@ -477,17 +477,17 @@ const { user, setUser } = useContext(UserContext);
 
 
   return <>
-   <div className="w-full container mx-auto px-40 max-xl:px-20 max-lg:px-8 ">
+   <div className="w-full container mx-auto px-40 max-xl:px-20 max-lg:px-0    ">
       {
         accessDenied ? <p className="w-full mx-auto py-16 text-red-500  text-center text-2xl font-poppins ">Access Denied😥</p> : 
         <>
         <ToastContainer />
-         <section className="    w-[60%]   ">
+         <section className=" max-lg:hidden   w-[60%]   ">
       <RowSteps color="secondary" currentStep={(currentStep - 1)} steps={[ { title: "Registered Office", }, { title: "Directors", }, { title: "Share Holders", }, { title: "Summary", }, ]} />
     </section>
   
   
-    <section className="    w-[60%] py-20  ">
+    <section className="    w-[60%] max-lg:w-full  py-20 max-lg:py-8  ">
 
        {(activePage === 'address') &&  <Suspense fallback={<p>Loading</p>}><CompanyAddress setOrderId={setOrderId} setAccessDenied={setAccessDenied} companyInfo={companyInfo} setCompanyInfo={setCompanyInfo} address={address} setAddress={setAddress} continueBtnHandler={gotoBtnHandler(2,'directors') }   /></Suspense>} 
        {(activePage === 'directors') &&  <Directors directors={directors} setDirectors={setDirectors} continueBtnHandler={gotoBtnHandler(3,'shareholders') }  goBackBtnHandler={gotoBtnHandler(1,'address')} />}

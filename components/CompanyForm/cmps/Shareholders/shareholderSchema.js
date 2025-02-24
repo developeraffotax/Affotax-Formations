@@ -41,7 +41,7 @@ export const shareholderSchema = z.object({
 
   share_currency: z.string(),
 
-  num_of_share_holders: z.number().min(1).max(10),
+  num_of_share_holders: z.string().min(1).max(10),
   num_of_shares: z.number().min(1).max(100000),
   value_per_share:  z.number().min(1).max(100000),
   // total_shares: z.number(),

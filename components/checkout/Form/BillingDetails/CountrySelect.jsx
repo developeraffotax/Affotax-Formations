@@ -218,7 +218,7 @@ export default function CountrySelect({modalForm, modalFormHandler, isCountryInv
   return (
     
 
-<div className="w-full   flex flex-row-reverse justify-start items-start gap-1  mt-2 ">
+<div className="w-full   flex flex-row-reverse justify-start items-start gap-1  mt-2  ">
 {isCountryInvalid && ( <p className="text-red-500 text-sm mt-1 font-poppins  px-2 py-2 animate-pulse "> {"Required*"} </p> )}
 <Select
    showScrollIndicators={false}

@@ -52,13 +52,21 @@ const Shareholders = ({ shareholders, setShareholders, directors, continueBtnHan
   const [isLoading, setIsLoading] = useState(false);
   const [errorMsg, setIsErrorMsg] = useState("");
 
-  const { register, handleSubmit, formState: { errors }, clearErrors, setValue, watch, getValues, control, } = useForm({ resolver: zodResolver(shareholderSchema), defaultValues: { ...shareholders }, });
+  const { register, handleSubmit, formState: { errors }, clearErrors, setValue, watch, getValues, control, } = useForm({ resolver: zodResolver(shareholderSchema), defaultValues: { ...shareholders, }, });
 
   
-  const num_of_share_holders = watch("num_of_share_holders", 1);
+  // const num_of_share_holders = watch("num_of_share_holders", 1);
 
-  const num = watch("num_of_shares", 1);
-  const val = watch("value_per_share", 1);
+  // const num = watch("num_of_shares", 1);
+  // const val = watch("value_per_share", 1);
+
+
+  const num_of_share_holders = watch("num_of_share_holders");
+
+  const num = watch("num_of_shares");
+  const val = watch("value_per_share");
+
+
 
   const selectedOption = watch("pre_filled");
 
@@ -96,7 +104,10 @@ const Shareholders = ({ shareholders, setShareholders, directors, continueBtnHan
      
 
     console.log(num_of_share_holders, "THE LENGTH OPF ARR")
-    const temp = new Array(num_of_share_holders).fill({
+
+    const selectedNumber = +num_of_share_holders
+
+    const temp = new Array(selectedNumber).fill({
       ...SHAREHOLDER_SCHEMA,
     })
 
@@ -104,7 +115,7 @@ const Shareholders = ({ shareholders, setShareholders, directors, continueBtnHan
 
     const shareholdersArr = [...getValues('shareholders')];
 
-    const slicedArr = shareholdersArr.slice(0, num_of_share_holders)
+    const slicedArr = shareholdersArr.slice(0, selectedNumber)
 
     for (let i=0; i<slicedArr.length; i++) {
       temp[i] = slicedArr[i];
@@ -123,7 +134,7 @@ const Shareholders = ({ shareholders, setShareholders, directors, continueBtnHan
 
 
 
-
+console.log(num_of_share_holders)
 
 
 
@@ -303,7 +314,7 @@ const Shareholders = ({ shareholders, setShareholders, directors, continueBtnHan
                 <td className="border px-5 py-2 flex justify-start items-center gap-2 "> Ordinary </td>
               </tr>
 
-              <tr className="  ">
+              {/* <tr className="  ">
                 <td className="border px-5 py-2   w-[40%]  "> Number of Share Holders </td>
                 <td className="border px-5 py-2 flex justify-start items-center gap-2 "> <div className="w-full"> {" "} <Controller control={control} name="num_of_share_holders" render={({ field }) => ( <Input {...field} onChange={(e) => {
                   const num = +e.target.value;
@@ -312,7 +323,36 @@ const Shareholders = ({ shareholders, setShareholders, directors, continueBtnHan
                   }
                   return field.onChange(+e.target.value)
                 }} size="sm" variant="bordered" errorMessage={errors?.num_of_share_holders?.message} isInvalid={ errors?.num_of_share_holders ? true : false } key="num_of_share_holders" type="number" /> )} />{" "} </div> </td>
+              </tr> */}
+
+
+
+              <tr className="  ">
+                <td className="border px-5 py-2   w-[40%]  "> Number of Share Holders </td>
+                <td className="border px-5 py-2 flex justify-start items-center gap-2 "> <div className="w-full"> {" "} <Controller  defaultValue={shareholders?.num_of_share_holders}   control={control} name="num_of_share_holders" render={({ field }) => ( <Select   
+                onChange={(e) => field.onChange(e)} selectedKeys={[field.value]}
+                size="sm" variant="bordered" errorMessage={errors?.num_of_share_holders?.message} isInvalid={ errors?.num_of_share_holders ? true : false } key="num_of_share_holders"  >
+                  
+                  
+                  
+                    <SelectItem key={"1"}>1</SelectItem>
+                    <SelectItem key={"2"}>2</SelectItem>
+                    <SelectItem key={"3"}>3</SelectItem>
+                    <SelectItem key={"4"}>4</SelectItem>
+                    <SelectItem key={"5"}>5</SelectItem>
+                    <SelectItem key={"6"}>6</SelectItem>
+                    <SelectItem key={"7"}>7</SelectItem>
+                    <SelectItem key={"8"}>8</SelectItem>
+                    <SelectItem key={"9"}>9</SelectItem>
+                    <SelectItem key={"10"}>10</SelectItem>
+                     
+                  
+                   </Select> )} />{" "} </div> </td>
               </tr>
+
+
+
+
 
               <tr className="  ">
                 <td className="border px-5 py-2   w-[40%]  "> Number of shares </td>
@@ -356,32 +396,98 @@ const Shareholders = ({ shareholders, setShareholders, directors, continueBtnHan
                       </div>
 
                       <div className="w-full flex flex-col justify-start items-start gap-2   p-5     ">
-                        <div className="w-full"> <Controller  name={`shareholders.${index}.shareholder_title`} control={control} render={({ field }) => ( <Input {...field}    size="sm" errorMessage={ errors?.shareholders?.length > 0 && errors?.shareholders[index]?.shareholder_title ?.message } isInvalid={ errors?.shareholders?.length > 0 && errors?.shareholders[index]?.shareholder_title ? true : false } classNames={{ mainWrapper: "w-full ", label: "w-[40%] text-base p-0", }} key={"shareholders.${index}.shareholder_title"} label="Title*	" labelPlacement="outside-left" type="text" /> )} /> </div>
-
-                        <div className="w-full"> <Controller name={`shareholders.${index}.shareholder_first_name`} control={control} render={({ field }) => ( <Input {...field} size="sm" errorMessage={ errors?.shareholders?.length > 0 && errors?.shareholders[index] ?.shareholder_first_name?.message } isInvalid={ errors?.shareholders?.length > 0 && errors?.shareholders[index] ?.shareholder_first_name ? true : false } classNames={{ mainWrapper: "w-full ", label: "w-[40%] text-base p-0 ", }} label="First Name*	" labelPlacement="outside-left" type="text" /> )} /> </div>
-
-                        <div className="w-full"> <Controller name={`shareholders.${index}.shareholder_middle_name`} control={control} render={({ field }) => ( <Input {...field} size="sm" errorMessage={ errors?.shareholders?.length > 0 && errors?.shareholders[index] ?.shareholder_middle_name?.message } isInvalid={ errors?.shareholders?.length > 0 && errors?.shareholders[index] ?.shareholder_middle_name ? true : false } classNames={{ mainWrapper: "w-full ", label: "w-[40%] text-base p-0", }} label="Middle Name	" labelPlacement="outside-left" type="text" /> )} /> </div>
-
-                        <div className="w-full"> <Controller name={`shareholders.${index}.shareholder_last_name`} control={control} render={({ field }) => ( <Input {...field} size="sm" errorMessage={ errors?.shareholders?.length > 0 && errors?.shareholders[index] ?.shareholder_last_name?.message } isInvalid={ errors?.shareholders?.length > 0 && errors?.shareholders[index] ?.shareholder_last_name ? true : false } classNames={{ mainWrapper: "w-full ", label: "w-[40%] text-base p-0", }} label="Last Name*	" labelPlacement="outside-left" type="text" /> )} /> </div>
-
-                        <div className="w-full flex justify-between items-center "> {" "} <label className={` ${errors?.shareholders?.length > 0 && errors?.shareholders[index]?.shareholder_person_dob && 'text-red-500'}`}>Date of Birth*</label> <div className="w-[60%]"><Controller control={control} name={`shareholders.${index}.shareholder_person_dob`} render={({ field }) => ( <DatePicker   showMonthAndYearPickers     {...field} onChange={e => field.onChange(e?.toString())} value={parseDate(field.value)}    size="sm" errorMessage={errors?.shareholders?.length > 0 && errors?.shareholders[index]?.shareholder_person_dob?.message} isInvalid={errors?.shareholders?.length > 0 && errors?.shareholders[index]?.shareholder_person_dob ? true : false}  classNames={{    base:"   " }}    /> )} />{" "}</div> </div>
 
 
-                        <div className="w-full"> <Controller name={`shareholders.${index}.shareholder_nationality`} control={control} render={({ field }) => ( <Input {...field} size="sm" errorMessage={ errors?.shareholders?.length > 0 && errors?.shareholders[index] ?.shareholder_nationality?.message } isInvalid={ errors?.shareholders?.length > 0 && errors?.shareholders[index] ?.shareholder_nationality ? true : false } classNames={{ mainWrapper: "w-full ", label: "w-[40%] text-base p-0", }} label="Nationality*		" labelPlacement="outside-left" type="text" /> )} /> </div>
+                        <div className="w-full flex flex-row justify-between items-center gap-4"> {" "}<label className={`text-base max-lg:text-sm ${errors?.shareholders?.length > 0 && errors?.shareholders[index]?.shareholder_title ? "text-rose-500" : ""} `} > {" "} Title*{" "} </label>  <Controller control={control} name={`shareholders.${index}.shareholder_title`} render={({ field }) => ( <Select {...field} size="sm" errorMessage={ errors?.shareholders?.length > 0 && errors?.shareholders[index]?.shareholder_title ?.message }  isInvalid={ errors?.shareholders?.length > 0 && errors?.shareholders[index]?.shareholder_title ? true : false }  classNames={{ base: "w-[60%]" }}    onChange={(e) => field.onChange(e)} selectedKeys={[field.value]} > 
+                        
+                        
+                                           <SelectItem key={"Mr"}>Mr</SelectItem>
+                                          <SelectItem key={"Ms"}>Ms</SelectItem>
+                                          <SelectItem key={"Miss"}>Miss</SelectItem>
+                                          <SelectItem key={"Mrs"}>Mrs</SelectItem>
+                                          <SelectItem key={"Dr"}>Dr</SelectItem>
+                                          <SelectItem key={"Prof"}>Prof</SelectItem>
+                                          <SelectItem key={"Master"}>Master</SelectItem>
+                                          <SelectItem key={"Rev"}>Rev</SelectItem>
+                                          <SelectItem key={"Sir"}>Sir</SelectItem>
+                                          <SelectItem key={"Lord"}>Lord</SelectItem>
+                                          <SelectItem key={"Lady"}>Lady</SelectItem>
+                                          <SelectItem key={"Mx"}>Mx</SelectItem>
+                        
+                        
+                        
+                        
+                        
+                                  </Select> )} />{" "} </div>
 
-                        <div className="w-full"> <Controller name={`shareholders.${index}.shareholder_country_of_residence`} control={control} render={({ field }) => ( <Input {...field} size="sm" errorMessage={ errors?.shareholders?.length > 0 && errors?.shareholders[index] ?.shareholder_country_of_residence?.message } isInvalid={ errors?.shareholders?.length > 0 && errors?.shareholders[index] ?.shareholder_country_of_residence ? true : false } classNames={{ mainWrapper: "w-full ", label: "w-[40%] text-base p-0", }} label="Country of residence*	" labelPlacement="outside-left" type="text" /> )} /> </div>
 
-                        <div className="w-full"> <Controller name={`shareholders.${index}.shareholder_num_of_shares`} control={control} render={({ field }) => ( <Input {...field} onChange={(e) => field.onChange(+e.target.value)} size="sm" errorMessage={ errors?.shareholders?.length > 0 && errors?.shareholders[index] ?.shareholder_num_of_shares?.message } isInvalid={ errors?.shareholders?.length > 0 && errors?.shareholders[index] ?.shareholder_num_of_shares ? true : false } classNames={{ mainWrapper: "w-full ", label: "w-[40%] text-base p-0", }} label="Num of shares*	" labelPlacement="outside-left" type="number" /> )} /> </div>
+                        {/* <div className="w-full"> <Controller  name={`shareholders.${index}.shareholder_title`} control={control} render={({ field }) => ( <Input {...field}    size="sm" errorMessage={ errors?.shareholders?.length > 0 && errors?.shareholders[index]?.shareholder_title ?.message } isInvalid={ errors?.shareholders?.length > 0 && errors?.shareholders[index]?.shareholder_title ? true : false } classNames={{ mainWrapper: "w-full ", label: "w-[40%] text-base max-lg:text-sm p-0", }} key={"shareholders.${index}.shareholder_title"} label="Title*	" labelPlacement="outside-left" type="text" /> )} /> </div> */}
+
+                        <div className="w-full"> <Controller name={`shareholders.${index}.shareholder_first_name`} control={control} render={({ field }) => ( <Input {...field} size="sm" errorMessage={ errors?.shareholders?.length > 0 && errors?.shareholders[index] ?.shareholder_first_name?.message } isInvalid={ errors?.shareholders?.length > 0 && errors?.shareholders[index] ?.shareholder_first_name ? true : false } classNames={{ mainWrapper: "w-full ", label: "w-[40%] text-base max-lg:text-sm p-0 ", }} label="First Name*	" labelPlacement="outside-left" type="text" /> )} /> </div>
+
+                        <div className="w-full"> <Controller name={`shareholders.${index}.shareholder_middle_name`} control={control} render={({ field }) => ( <Input {...field} size="sm" errorMessage={ errors?.shareholders?.length > 0 && errors?.shareholders[index] ?.shareholder_middle_name?.message } isInvalid={ errors?.shareholders?.length > 0 && errors?.shareholders[index] ?.shareholder_middle_name ? true : false } classNames={{ mainWrapper: "w-full ", label: "w-[40%] text-base max-lg:text-sm p-0", }} label="Middle Name	" labelPlacement="outside-left" type="text" /> )} /> </div>
+
+                        <div className="w-full"> <Controller name={`shareholders.${index}.shareholder_last_name`} control={control} render={({ field }) => ( <Input {...field} size="sm" errorMessage={ errors?.shareholders?.length > 0 && errors?.shareholders[index] ?.shareholder_last_name?.message } isInvalid={ errors?.shareholders?.length > 0 && errors?.shareholders[index] ?.shareholder_last_name ? true : false } classNames={{ mainWrapper: "w-full ", label: "w-[40%] text-base max-lg:text-sm p-0", }} label="Last Name*	" labelPlacement="outside-left" type="text" /> )} /> </div>
+
+                        <div className="w-full flex justify-between items-center "> {" "} <label className={`max-lg:text-sm ${errors?.shareholders?.length > 0 && errors?.shareholders[index]?.shareholder_person_dob && 'text-red-500'}`}>Date of Birth*</label> <div className="w-[60%]"><Controller control={control} name={`shareholders.${index}.shareholder_person_dob`} render={({ field }) => ( <DatePicker   showMonthAndYearPickers     {...field} onChange={e => field.onChange(e?.toString())} value={parseDate(field.value)}    size="sm" errorMessage={errors?.shareholders?.length > 0 && errors?.shareholders[index]?.shareholder_person_dob?.message} isInvalid={errors?.shareholders?.length > 0 && errors?.shareholders[index]?.shareholder_person_dob ? true : false}  classNames={{    base:"   " }}    /> )} />{" "}</div> </div>
+
+
+                        <div className="w-full"> <Controller name={`shareholders.${index}.shareholder_nationality`} control={control} render={({ field }) => ( <Input {...field} size="sm" errorMessage={ errors?.shareholders?.length > 0 && errors?.shareholders[index] ?.shareholder_nationality?.message } isInvalid={ errors?.shareholders?.length > 0 && errors?.shareholders[index] ?.shareholder_nationality ? true : false } classNames={{ mainWrapper: "w-full ", label: "w-[40%] text-base max-lg:text-sm p-0", }} label="Nationality*		" labelPlacement="outside-left" type="text" /> )} /> </div>
+
+                        <div className="w-full"> <Controller name={`shareholders.${index}.shareholder_country_of_residence`} control={control} render={({ field }) => ( <Input {...field} size="sm" errorMessage={ errors?.shareholders?.length > 0 && errors?.shareholders[index] ?.shareholder_country_of_residence?.message } isInvalid={ errors?.shareholders?.length > 0 && errors?.shareholders[index] ?.shareholder_country_of_residence ? true : false } classNames={{ mainWrapper: "w-full ", label: "w-[40%] text-base max-lg:text-sm p-0", }} label="Country of residence*	" labelPlacement="outside-left" type="text" /> )} /> </div>
+
+                        <div className="w-full"> <Controller name={`shareholders.${index}.shareholder_num_of_shares`} control={control} render={({ field }) => ( <Input {...field} onChange={(e) => field.onChange(+e.target.value)} size="sm" errorMessage={ errors?.shareholders?.length > 0 && errors?.shareholders[index] ?.shareholder_num_of_shares?.message } isInvalid={ errors?.shareholders?.length > 0 && errors?.shareholders[index] ?.shareholder_num_of_shares ? true : false } classNames={{ mainWrapper: "w-full ", label: "w-[40%] text-base max-lg:text-sm p-0", }} label="Num of shares*	" labelPlacement="outside-left" type="number" /> )} /> </div>
 
 
                         
-                        <div className="w-full"> <Controller name={`shareholders.${index}.shareholder_address_name_or_number`} control={control} render={({ field }) => ( <Input {...field}  size="sm" errorMessage={ errors?.shareholders?.length > 0 && errors?.shareholders[index] ?.shareholder_address_name_or_number?.message } isInvalid={ errors?.shareholders?.length > 0 && errors?.shareholders[index] ?.shareholder_address_name_or_number ? true : false } classNames={{ mainWrapper: "w-full ", label: "w-[40%] text-base p-0", }} label="Building Name/Number*	" labelPlacement="outside-left" type="text" /> )} /> </div>
-                        <div className="w-full"> <Controller name={`shareholders.${index}.shareholder_address_street`} control={control} render={({ field }) => ( <Input {...field}  size="sm" errorMessage={ errors?.shareholders?.length > 0 && errors?.shareholders[index] ?.shareholder_address_street?.message } isInvalid={ errors?.shareholders?.length > 0 && errors?.shareholders[index] ?.shareholder_address_street ? true : false } classNames={{ mainWrapper: "w-full ", label: "w-[40%] text-base p-0", }} label="Street*	" labelPlacement="outside-left" type="text" /> )} /> </div>
-                        <div className="w-full"> <Controller name={`shareholders.${index}.shareholder_address_locality`} control={control} render={({ field }) => ( <Input {...field}  size="sm" errorMessage={ errors?.shareholders?.length > 0 && errors?.shareholders[index] ?.shareholder_address_locality?.message } isInvalid={ errors?.shareholders?.length > 0 && errors?.shareholders[index] ?.shareholder_address_locality ? true : false } classNames={{ mainWrapper: "w-full ", label: "w-[40%] text-base p-0", }} label="Locality	" labelPlacement="outside-left" type="text" /> )} /> </div>
-                        <div className="w-full"> <Controller name={`shareholders.${index}.shareholder_address_town`} control={control} render={({ field }) => ( <Input {...field}  size="sm" errorMessage={ errors?.shareholders?.length > 0 && errors?.shareholders[index] ?.shareholder_address_town?.message } isInvalid={ errors?.shareholders?.length > 0 && errors?.shareholders[index] ?.shareholder_address_town ? true : false } classNames={{ mainWrapper: "w-full ", label: "w-[40%] text-base p-0", }} label="Town*	" labelPlacement="outside-left" type="text" /> )} /> </div>
-                        <div className="w-full"> <Controller name={`shareholders.${index}.shareholder_address_county`} control={control} render={({ field }) => ( <Input {...field}  size="sm" errorMessage={ errors?.shareholders?.length > 0 && errors?.shareholders[index] ?.shareholder_address_county?.message } isInvalid={ errors?.shareholders?.length > 0 && errors?.shareholders[index] ?.shareholder_address_county ? true : false } classNames={{ mainWrapper: "w-full ", label: "w-[40%] text-base p-0", }} label="County" labelPlacement="outside-left" type="text" /> )} /> </div>
-                        <div className="w-full"> <Controller name={`shareholders.${index}.shareholder_address_postcode`} control={control} render={({ field }) => ( <Input {...field}  size="sm" errorMessage={ errors?.shareholders?.length > 0 && errors?.shareholders[index] ?.shareholder_address_postcode?.message } isInvalid={ errors?.shareholders?.length > 0 && errors?.shareholders[index] ?.shareholder_address_postcode ? true : false } classNames={{ mainWrapper: "w-full ", label: "w-[40%] text-base p-0", }} label="Postcode*	" labelPlacement="outside-left" type="text" /> )} /> </div>
-                        <div className="w-full"> <Controller name={`shareholders.${index}.shareholder_address_country`} control={control} render={({ field }) => ( <Input {...field}  size="sm" errorMessage={ errors?.shareholders?.length > 0 && errors?.shareholders[index] ?.shareholder_address_country?.message } isInvalid={ errors?.shareholders?.length > 0 && errors?.shareholders[index] ?.shareholder_address_country ? true : false } classNames={{ mainWrapper: "w-full ", label: "w-[40%] text-base p-0", }} label="Country*	" labelPlacement="outside-left" type="text" /> )} /> </div>
+                        <div className="w-full"> <Controller name={`shareholders.${index}.shareholder_address_name_or_number`} control={control} render={({ field }) => ( <Input {...field}  size="sm" errorMessage={ errors?.shareholders?.length > 0 && errors?.shareholders[index] ?.shareholder_address_name_or_number?.message } isInvalid={ errors?.shareholders?.length > 0 && errors?.shareholders[index] ?.shareholder_address_name_or_number ? true : false } classNames={{ mainWrapper: "w-full ", label: "w-[40%] text-base max-lg:text-sm p-0", }} label="Building Name/Number*	" labelPlacement="outside-left" type="text" /> )} /> </div>
+                        <div className="w-full"> <Controller name={`shareholders.${index}.shareholder_address_street`} control={control} render={({ field }) => ( <Input {...field}  size="sm" errorMessage={ errors?.shareholders?.length > 0 && errors?.shareholders[index] ?.shareholder_address_street?.message } isInvalid={ errors?.shareholders?.length > 0 && errors?.shareholders[index] ?.shareholder_address_street ? true : false } classNames={{ mainWrapper: "w-full ", label: "w-[40%] text-base max-lg:text-sm p-0", }} label="Street*	" labelPlacement="outside-left" type="text" /> )} /> </div>
+                        <div className="w-full"> <Controller name={`shareholders.${index}.shareholder_address_locality`} control={control} render={({ field }) => ( <Input {...field}  size="sm" errorMessage={ errors?.shareholders?.length > 0 && errors?.shareholders[index] ?.shareholder_address_locality?.message } isInvalid={ errors?.shareholders?.length > 0 && errors?.shareholders[index] ?.shareholder_address_locality ? true : false } classNames={{ mainWrapper: "w-full ", label: "w-[40%] text-base max-lg:text-sm p-0", }} label="Locality	" labelPlacement="outside-left" type="text" /> )} /> </div>
+                        <div className="w-full"> <Controller name={`shareholders.${index}.shareholder_address_town`} control={control} render={({ field }) => ( <Input {...field}  size="sm" errorMessage={ errors?.shareholders?.length > 0 && errors?.shareholders[index] ?.shareholder_address_town?.message } isInvalid={ errors?.shareholders?.length > 0 && errors?.shareholders[index] ?.shareholder_address_town ? true : false } classNames={{ mainWrapper: "w-full ", label: "w-[40%] text-base max-lg:text-sm p-0", }} label="Town*	" labelPlacement="outside-left" type="text" /> )} /> </div>
+                        <div className="w-full"> <Controller name={`shareholders.${index}.shareholder_address_county`} control={control} render={({ field }) => ( <Input {...field}  size="sm" errorMessage={ errors?.shareholders?.length > 0 && errors?.shareholders[index] ?.shareholder_address_county?.message } isInvalid={ errors?.shareholders?.length > 0 && errors?.shareholders[index] ?.shareholder_address_county ? true : false } classNames={{ mainWrapper: "w-full ", label: "w-[40%] text-base max-lg:text-sm p-0", }} label="County" labelPlacement="outside-left" type="text" /> )} /> </div>
+                        <div className="w-full"> <Controller name={`shareholders.${index}.shareholder_address_postcode`} control={control} render={({ field }) => ( <Input {...field}  size="sm" errorMessage={ errors?.shareholders?.length > 0 && errors?.shareholders[index] ?.shareholder_address_postcode?.message } isInvalid={ errors?.shareholders?.length > 0 && errors?.shareholders[index] ?.shareholder_address_postcode ? true : false } classNames={{ mainWrapper: "w-full ", label: "w-[40%] text-base max-lg:text-sm p-0", }} label="Postcode*	" labelPlacement="outside-left" type="text" /> )} /> </div>
+
+
+
+
+
+
+
+                        <div className="w-full flex flex-row justify-between items-center gap-4"> <label className={`text-base max-lg:text-sm ${errors?.shareholders?.length > 0 && errors?.shareholders[index] ?.shareholder_address_country ? "text-rose-500" : ""} `} > {" "} Country*{" "} </label>  <Controller name={`shareholders.${index}.shareholder_address_country`} control={control} render={({ field }) => ( <Select {...field} size="sm" errorMessage={ errors?.shareholders?.length > 0 && errors?.shareholders[index] ?.shareholder_address_country?.message } isInvalid={ errors?.shareholders?.length > 0 && errors?.shareholders[index] ?.shareholder_address_country ? true : false }  classNames={{ base: "w-[60%]" }}    onChange={(e) => field.onChange(e)} selectedKeys={[field.value]} >
+                          
+                          
+                          
+                          
+                          
+                            {
+                              COUNTRIES.map((country) => {
+                                return <SelectItem key={country} >{country}</SelectItem>
+                              })
+                            }
+                          
+                          
+
+                          
+                          
+                          
+                          
+                          
+                          
+                          
+                          
+                          
+                          </Select> )} /> </div>
+
+
+
+
+
+
+
+
+
+
+                        {/* <div className="w-full"> <Controller name={`shareholders.${index}.shareholder_address_country`} control={control} render={({ field }) => ( <Input {...field}  size="sm" errorMessage={ errors?.shareholders?.length > 0 && errors?.shareholders[index] ?.shareholder_address_country?.message } isInvalid={ errors?.shareholders?.length > 0 && errors?.shareholders[index] ?.shareholder_address_country ? true : false } classNames={{ mainWrapper: "w-full ", label: "w-[40%] text-base max-lg:text-sm p-0", }} label="Country*	" labelPlacement="outside-left" type="text" /> )} /> </div> */}
                       </div>
                     </div>
                   );
