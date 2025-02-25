@@ -58,10 +58,10 @@ import Link from "next/link";
                {/*<p className="font-bold">{"email"}</p> */}
               <p className=" ">{user?.email }</p>
             </DropdownItem>
-            <DropdownItem   ><Link  href="/client/dashboard"><h3  >Dashboard</h3></Link></DropdownItem>
-            <DropdownItem><Link  href="/client/companies"><h3>My Companies</h3></Link></DropdownItem>
-            <DropdownItem><Link href="/client/orders"><h3>Orders</h3></Link></DropdownItem>
-            <DropdownItem ><Link href="/client/user-details"><h3>Personal Details</h3></Link></DropdownItem>
+            <DropdownItem onPress={() => router.push("/client/dashboard")}  ><h3  >Dashboard</h3></DropdownItem>
+            <DropdownItem onPress={() => router.push("/client/companies")}><h3>My Companies</h3></DropdownItem>
+            <DropdownItem onPress={() => router.push("/client/orders")}><h3>Orders</h3></DropdownItem>
+            <DropdownItem onPress={() => router.push("/client/user-details")}><h3>Personal Details</h3></DropdownItem>
           
             <DropdownItem onPress={handleLogout} key="logout" color="danger"> Log Out </DropdownItem>
 

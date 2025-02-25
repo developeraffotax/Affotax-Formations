@@ -247,11 +247,11 @@ cards?.map((card) => {
       >
 
         <div className="w-full "></div>
-        <Box  display="flex" flexDirection={"column"} gap={2} justifyContent="center" alignItems="center" sx={{ width: "100%", padding: 8,  position:'absolute'  }} >
+        <Box  display="flex" flexDirection={"column"} gap={2} justifyContent="center" alignItems="center" sx={{ width: "100%", padding: 2,  position:'absolute'  }} >
 
             
 
-           <form   className="w-[30%] flex flex-col justify-center items-start gap-2 bg-gray-100  p-8 rounded-md ">
+           <form   className="w-[30%] max-lg:w-full  flex flex-col justify-center items-start gap-2 bg-gray-100  p-8 rounded-md ">
             
               {errorMessage && <Alert variant="filled" severity="error" sx={{width: '100%'}}> {errorMessage} </Alert>}
 
