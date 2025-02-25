@@ -218,12 +218,14 @@ export default function CountrySelect({modalForm, modalFormHandler, isCountryInv
   return (
     
 
-<div className="w-full   flex flex-row-reverse justify-start items-start gap-1  mt-2  ">
+<>
+
+<div className="w-full   flex flex-row-reverse justify-start items-start gap-1  mt-2 max-lg:hidden ">
 {isCountryInvalid && ( <p className="text-red-500 text-sm mt-1 font-poppins  px-2 py-2 animate-pulse "> {"Required*"} </p> )}
 <Select
-   showScrollIndicators={false}
-    isVirtualized={false}
   
+   variant="faded"
+   size="sm"
   className="max-w-md font-poppins"
   label="Select country"
   value={modalForm.country}
@@ -235,9 +237,41 @@ export default function CountrySelect({modalForm, modalFormHandler, isCountryInv
   {COUNTRIES.map((country) => {
     return <SelectItem className="font-poppins" key={country}>{country}</SelectItem>;
   })}
+
+  
 </Select>
+ 
 
 </div>
+
+
+
+
+<div className="w-full   flex flex-row-reverse justify-start items-start gap-1  mt-2 lg:hidden ">
+{isCountryInvalid && ( <p className="text-red-500 text-sm mt-1 font-poppins  px-2 py-2 animate-pulse "> {"Required*"} </p> )}
+<select
+  
+   
+  className="max-w-md w-full font-poppins   rounded-xl bg-gray-100 p-2    "
+  label="Select country"
+  value={modalForm.country}
+  onChange={modalFormHandler}
+  name="country"
+   
+  isInvalid={isCountryInvalid}
+>
+  {COUNTRIES.map((country) => {
+    return <option className="font-poppins" value={country}>{country}</option>;
+  })}
+
+  
+</select>
+ 
+
+</div>
+
+
+</>
   );
 }
 

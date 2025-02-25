@@ -13,7 +13,8 @@ const SavedCard = ({last4, cardholderName, expMonth, expYear, cardBrand, id, val
         <Card
           variant="outlined"
           sx={{
-            width: 500,
+            marginY:2,
+            width: "100%",
             border: value === id ? "2px solid #1C78D3" : "1px solid gray",
           }}
         >
