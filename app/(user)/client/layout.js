@@ -11,7 +11,11 @@ import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import { UserContext } from '../layout';
 import PaymentIcon from '@mui/icons-material/Payment';
  
- 
+import PaymentsOutlinedIcon from '@mui/icons-material/PaymentsOutlined';
+import LoginOutlinedIcon from '@mui/icons-material/LoginOutlined';
+import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
+import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
+import HistoryOutlinedIcon from '@mui/icons-material/HistoryOutlined';
  
  
  
@@ -36,31 +40,16 @@ const NAVIGATION = [
     segment: 'client/companies',
 
     title: 'My Companies',
-    icon: <ApartmentIcon />,
+    icon: <HomeOutlinedIcon />,
     pattern: 'client/companies{/:slug}*',
 
   },
   
 
-
- 
-
-
-
-
-  {
-    segment: 'client/orders',
-    title: 'Order History',
-    icon: <ShoppingCartIcon />,
-    pattern: 'client/orders{/:slug}*',
-    
-
-  },
-
   {
     segment: 'client/payment-methods',
     title: 'Payment Methods',
-    icon: <PaymentIcon />,
+    icon: <PaymentsOutlinedIcon />,
      
     
 
@@ -71,10 +60,35 @@ const NAVIGATION = [
   {
     segment: 'client/user-details',
     title: 'Personal Details',
-    icon: <AccountBoxIcon />,
+    icon: <AccountCircleOutlinedIcon />,
     
 
   },
+ 
+
+
+
+
+  {
+    segment: 'client/orders',
+    title: 'My Order History',
+    icon: <HistoryOutlinedIcon />,
+    pattern: 'client/orders{/:slug}*',
+    
+
+  },
+
+
+
+  {
+    segment: 'client/login-details',
+    title: 'Login Details',
+    icon: <LoginOutlinedIcon />,
+    
+
+  },
+
+
 ];
 
 

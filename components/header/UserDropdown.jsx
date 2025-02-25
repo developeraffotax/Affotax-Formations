@@ -60,8 +60,10 @@ import Link from "next/link";
             </DropdownItem>
             <DropdownItem onPress={() => router.push("/client/dashboard")}  ><h3  >Dashboard</h3></DropdownItem>
             <DropdownItem onPress={() => router.push("/client/companies")}><h3>My Companies</h3></DropdownItem>
-            <DropdownItem onPress={() => router.push("/client/orders")}><h3>Orders</h3></DropdownItem>
+            <DropdownItem onPress={() => router.push("/client/payment-methods")}><h3>Payment Methods</h3></DropdownItem>
             <DropdownItem onPress={() => router.push("/client/user-details")}><h3>Personal Details</h3></DropdownItem>
+            <DropdownItem onPress={() => router.push("/client/orders")}><h3>My Order History</h3></DropdownItem>
+            <DropdownItem onPress={() => router.push("/client/login-details")}><h3>Login Details</h3></DropdownItem>
           
             <DropdownItem onPress={handleLogout} key="logout" color="danger"> Log Out </DropdownItem>
 
