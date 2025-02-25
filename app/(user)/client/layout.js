@@ -80,7 +80,9 @@ const NAVIGATION = [
 
 
 const BRANDING = {
-  title: 'Affotax Formations Client Portal',
+  title: ' Client Portal',
+  // logo: <img src="https://mui.com/static/logo.png" alt=" logo" />,
+
 };
 
 
